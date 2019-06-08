@@ -33,6 +33,18 @@ atlassian*
 /grunt-config.json
 /dev/tools/grunt/configs/local-themes.js
 
+# Magento 2
+/bin
+/dev/tests
+/dev/tools/grunt/assets
+/dev/tools/grunt/configs/*.*
+/dev/tools/grunt/tasks
+/dev/tools/grunt/tools
+/dev/tools/Magento
+/dev/tools/*.*
+/dev/travis
+/dev/*.*
+
 /pub/media/*.*
 !/pub/media/.htaccess
 /pub/media/attribute/*
