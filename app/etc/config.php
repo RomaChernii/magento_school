@@ -3,6 +3,8 @@ return array (
   'modules' => 
   array (
     'Hodovanuk_FirstModule' => 1,
+    'Lebed_FirstModule' => 1,
+    'Dehtiarov_FirstModule' => 1,
     'Magento_Store' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
     'Magento_Directory' => 1,
