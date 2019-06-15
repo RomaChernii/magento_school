@@ -6,6 +6,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Hodovanuk_FirstHomeTask',
+    'Hodovanuk_Task',
     __DIR__
 );

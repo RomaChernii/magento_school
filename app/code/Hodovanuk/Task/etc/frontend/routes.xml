@@ -7,8 +7,8 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
-        <route id="hodovanuk_first_home_task" frontName="hodovanuk_first_home_task">
-            <module name="Hodovanuk_FirstHomeTask" />
+        <route id="hodovanuk_task" frontName="hodovanuk_task">
+            <module name="Hodovanuk_Task" />
         </route>
     </router>
 </config>

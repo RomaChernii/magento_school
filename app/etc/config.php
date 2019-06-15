@@ -2,7 +2,7 @@
 return array (
   'modules' => 
   array (
-    'Hodovanuk_FirstHomeTask' => 1,
+    'Hodovanuk_Task' => 1,
     'Magento_Store' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
     'Magento_Directory' => 1,
