@@ -2,6 +2,7 @@
 return array (
   'modules' => 
   array (
+    'Borovets_FirstModule' => 1,
     'Koshyk_FirstModule' => 1,
     'Hodovanuk_FirstModule' => 1,
     'Lebed_FirstModule' => 1,
