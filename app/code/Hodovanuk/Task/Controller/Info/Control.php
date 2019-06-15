@@ -1,9 +1,14 @@
 <?php
-
+/**
+ *
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
 namespace Hodovanuk\Task\Controller\Info;
-use Magento\Framework\App\Action\Action as AbstractAccount;
 
-class Control extends AbstractAccount
+use Magento\Framework\App\Action\Action;
+
+class Control extends Action
 {
     public function execute()
     {
