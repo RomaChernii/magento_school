@@ -132,5 +132,6 @@ return array (
     'Magento_WishlistSampleData' => 1,
     'Potapchuk_FirstModule' => 1,
     'Shopial_Facebook' => 1,
+    'Skavronskiy_FirstModule' => 1,
   ),
 );
