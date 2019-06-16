@@ -29,11 +29,10 @@
         "magento/module-grouped-product-sample-data": "100.2.*",
         "magento/module-swatches-sample-data": "100.2.*",
         "magento/sample-data-media": "100.2.*",
-        "magento/module-offline-shipping-sample-data": "100.2.*",
-        "squizlabs/php_codesniffer": "^3.4"
+        "magento/module-offline-shipping-sample-data": "100.2.*"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "3.*",
+        "squizlabs/php_codesniffer": "^3.4",
         "phpunit/phpunit": "~6.2.0",
         "phpmd/phpmd": "@stable",
         "pdepend/pdepend": "2.5.0",
