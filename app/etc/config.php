@@ -2,14 +2,17 @@
 return array (
   'modules' => 
   array (
+
     'Koshyk_HomeTaskModule' => 1,
     'Hodovanuk_Task' => 1,
     'Chleck_FirstModule' => 1,
     'Borovets_FirstModule' => 1,
-    'Koshyk_FirstModule' => 1,
-    'Hodovanuk_FirstModule' => 1,
-    'Lebed_FirstModule' => 1,
+    'Chleck_FirstModule' => 1,
     'Dehtiarov_FirstModule' => 1,
+    'Hodovanuk_FirstModule' => 1,
+    'Hodovanuk_Task' => 1,
+    'Koshyk_FirstModule' => 1,
+    'Lebed_FirstModule' => 1,
     'Magento_Store' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
     'Magento_Directory' => 1,
@@ -137,5 +140,6 @@ return array (
     'Potapchuk_FirstModule' => 1,
     'Shopial_Facebook' => 1,
     'Skavronskiy_FirstModule' => 1,
+    'Skavronskiy_FirstModule_HW' => 1,
   ),
 );
