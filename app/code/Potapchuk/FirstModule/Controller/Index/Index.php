@@ -23,7 +23,9 @@ class Index extends AbstractAction
      */
     public function execute()
     {
-       echo "Hello world";
-       exit();
+      $resultRedirect = $this->resultRedirectFactory->create();
+      $resultRedirect->setPath('customer/account/index');
+
+      return $resultRedirect;
     }
 }
