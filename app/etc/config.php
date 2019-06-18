@@ -127,6 +127,7 @@ return array (
     'Magento_Wishlist' => 1,
     'Magento_WishlistSampleData' => 1,
     'Potapchuk_FirstModule' => 1,
+    'Potapchuk_HomeTask' => 1,
     'Shopial_Facebook' => 1,
   ),
 );
