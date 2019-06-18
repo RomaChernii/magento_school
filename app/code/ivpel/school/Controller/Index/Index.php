@@ -2,11 +2,14 @@
 
 namespace ivpel\school\Controller\Index;
 
+use \Magento\Framework\App\Action\Action;
+
 /**
  * Class Index
+ *
  * @package ivpel\school\Controller\Index
  */
-class Index extends \Magento\Framework\App\Action\Action
+class Index extends Action
 {
     /**
      * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|void

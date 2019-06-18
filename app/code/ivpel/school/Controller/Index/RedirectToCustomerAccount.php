@@ -5,6 +5,7 @@ use \Magento\Framework\App\Action\Action;
 
 /**
  * Class RedirectToCustomerAccount
+ *
  * @package ivpel\school\Controller\Index
  */
 class RedirectToCustomerAccount extends Action

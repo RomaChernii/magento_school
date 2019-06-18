@@ -2,15 +2,17 @@
 
 namespace ivpel\homework\Block;
 
+use \Magento\Framework\View\Element\Template;
+
 /**
  * Class Index
+ *
  * @package ivpel\homework\Block
  */
-class Index extends \Magento\Framework\View\Element\Template
+class Index extends Template
 {
-
     /**
-     * @return array
+     * @return string
      */
     public function getStudentsList(){
         # Here must be request to DB (?) but for now it is just example.
@@ -24,6 +26,5 @@ class Index extends \Magento\Framework\View\Element\Template
         foreach ($students as $key => $value){
             echo "<li> {$key} ". " is: "."  {$value}</li><br/> ";
         }
-
     }
 }
