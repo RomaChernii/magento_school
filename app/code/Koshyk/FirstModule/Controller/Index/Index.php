@@ -6,14 +6,17 @@
  */
 namespace Koshyk\FirstModule\Controller\Index;
 
-use Magento\Framework\App\Action\Action as AbstractAction;
+use Magento\Framework\App\Action\Action;
 
-class Index extends AbstractAction
+class Index extends Action
 {
 
     public function execute()
     {
-    echo 'HelloWorld';
-    exit();
+    $resultRedirect = $this->resultRedirectFactory->create();
+    $resultRedirect->setPath('customer/account/index');
+
+    return $resultRedirect;
     }
 }
+
