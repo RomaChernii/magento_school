@@ -26,4 +26,3 @@ class Nordhing extends Template
         return __('Hello World');
     }
 }
-
