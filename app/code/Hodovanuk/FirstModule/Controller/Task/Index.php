@@ -11,6 +11,7 @@ namespace Hodovanuk\FirstModule\Controller\Task;
 use Magento\Framework\App\Action\Action;
 use \Magento\Framework\App\Action\Context;
 use \Magento\Framework\View\Result\PageFactory;
+
 class Index extends Action
 {
     protected $_pageFactory;
