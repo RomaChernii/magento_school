@@ -127,6 +127,7 @@ return array (
     'Magento_Wishlist' => 1,
     'Magento_WishlistSampleData' => 1,
     'Shopial_Facebook' => 1,
+    'ivpel_homework' => 1,
     'ivpel_school' => 1,
   ),
 );
