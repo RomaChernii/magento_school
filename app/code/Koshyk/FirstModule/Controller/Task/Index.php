@@ -1,9 +1,11 @@
 <?php
+
 /**
  *
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Koshyk\FirstModule\Controller\Task;
 
 use Magento\Framework\App\Action\Action;
@@ -26,6 +28,7 @@ class Index extends Action
      * @param Context     $context
      * @param PageFactory $resultPageFactory
      */
+
     public function __construct(
         Context $context,
         PageFactory $resultPageFactory
@@ -39,6 +42,7 @@ class Index extends Action
      *
      * @return \Magento\Framework\View\Result\Page
      */
+
     public function execute()
     {
         /** @var \Magento\Framework\View\Result\Page $resultPage */
