@@ -12,6 +12,8 @@ use \Magento\Framework\View\Element\Template;
 class SmileSchool extends Template
 {
     /**
+     * Get welcome text
+     *
      * @return string
      */
     public function getWelcomeText()

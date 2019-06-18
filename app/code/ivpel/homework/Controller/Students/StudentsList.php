@@ -12,6 +12,8 @@ use \Magento\Framework\App\Action\Action;
 class StudentsList extends Action
 {
     /**
+     * StudentsList action
+     *
      * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|void
      */
     public function execute()

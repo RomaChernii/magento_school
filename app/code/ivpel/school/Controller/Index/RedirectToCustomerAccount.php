@@ -1,4 +1,5 @@
 <?php
+
 namespace ivpel\school\Controller\Index;
 
 use \Magento\Framework\App\Action\Action;
@@ -12,6 +13,8 @@ class RedirectToCustomerAccount extends Action
 {
 
     /**
+     * RedirectToCustomerAccount Action
+     *
      * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\Result\Redirect|\Magento\Framework\Controller\ResultInterface
      */
     public function execute()

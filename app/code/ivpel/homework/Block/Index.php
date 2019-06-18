@@ -12,6 +12,8 @@ use \Magento\Framework\View\Element\Template;
 class Index extends Template
 {
     /**
+     * Get students list
+     *
      * @return string
      */
     public function getStudentsList(){
