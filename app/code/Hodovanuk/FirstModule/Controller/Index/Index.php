@@ -8,9 +8,9 @@
 
 namespace Hodovanuk\FirstModule\Controller\Index;
 
-use Magento\Framework\App\Action\Action as AbstractAction;
+use Magento\Framework\App\Action\Action;
 
-class Index extends AbstractAction
+class Index extends Action
 {
 
 
@@ -21,7 +21,10 @@ class Index extends AbstractAction
      */
     public function execute()
     {
-       echo 'Hello world';
-       exit();
+//      $resultRedirect = $this->resultRedirectFactory->create();
+//      $resultRedirect->setPath('customer/account/index');
+//      return $resultRedirect;
+        echo "this";
+        exit();
     }
 }
