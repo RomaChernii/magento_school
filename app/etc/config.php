@@ -126,6 +126,8 @@ return array (
     'Magento_WidgetSampleData' => 1,
     'Magento_Wishlist' => 1,
     'Magento_WishlistSampleData' => 1,
+    'Myskovets_FirstModule' => 1,
+    'Myskovets_SecondModule' => 1,
     'Shopial_Facebook' => 1,
   ),
 );
