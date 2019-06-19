@@ -7,8 +7,8 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
-        <route id="borovets_firstmodule" frontName="borovets_firstmodule">
-            <module name="Borovets_FirstModule" />
+        <route id="skavronskiy_first_module_hw" frontName="skavronskiy_first_module_hw">
+            <module name="Skavronskiy_FirstModule_HW" />
         </route>
     </router>
 </config>
