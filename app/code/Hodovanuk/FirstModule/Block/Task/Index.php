@@ -8,6 +8,6 @@ class Index extends Template
 {
     public function toDo()
     {
-        return "something";
+        return __("something");
     }
 }

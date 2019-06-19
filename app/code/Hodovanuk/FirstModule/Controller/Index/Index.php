@@ -16,7 +16,7 @@ class Index extends Action
     {
         $resultRedirect = $this->resultRedirectFactory->create();
         $resultRedirect->setPath('customer/account/index');
-        $params=$this->getRequest()->getParams();
+        $params = $this->getRequest()->getParams();
         if(array_key_exists('success', $params)) {
             $resultRedirect->setPath('hodovanukfm/task/index');
         }
