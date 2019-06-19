@@ -1,21 +1,21 @@
 <?php
 
 /**
+ * Koshyk/FirstModule/Block/Renderer/Nordhing
  *
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * @category Koshyk
+ * @package Koshyk/FirstModule
+ * @author Roman Koshyk <romadaaaa@gmail.com>
  */
-
-namespace koshyk\FirstModule\Block\Renderer;
+namespace Koshyk\FirstModule\Block\Renderer;
 
 use Magento\Framework\View\Element\Template;
 
 /**
  * Class Nordhing
  *
- * @package koshyk\FirstModule\Block\Renderer
+ * @package Koshyk\FirstModule\Block\Renderer
  */
-
 class Nordhing extends Template
 {
     /**
@@ -23,7 +23,7 @@ class Nordhing extends Template
      *
      * return string
      */
-    public function getText ()
+    public function getText()
     {
         return __('Hello World');
     }
