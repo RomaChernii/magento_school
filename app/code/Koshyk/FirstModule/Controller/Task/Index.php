@@ -1,11 +1,13 @@
 <?php
-
 /**
+ * Koshyk/FirstModule/Controller/Task/Index
  *
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Connects the layout and context to the page
+ *
+ * @category Koshyk
+ * @package Koshyk/FirstModule
+ * @author Roman Koshyk <romadaaaa@gmail.com>
  */
-
 namespace Koshyk\FirstModule\Controller\Task;
 
 use Magento\Framework\App\Action\Action;

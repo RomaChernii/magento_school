@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Koshyk/FirstModule/Block/Renderer/Nordhing
  *
