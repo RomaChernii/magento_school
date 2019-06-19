@@ -10,5 +10,4 @@ class Index extends Template
     {
         return "something";
     }
-
 }

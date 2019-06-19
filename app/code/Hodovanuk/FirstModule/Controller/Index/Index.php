@@ -12,19 +12,15 @@ use Magento\Framework\App\Action\Action;
 
 class Index extends Action
 {
-
-
-    /**
-     * Default customer account page
-     *
-     * @return \Magento\Framework\View\Result\Page
-     */
     public function execute()
     {
-//      $resultRedirect = $this->resultRedirectFactory->create();
-//      $resultRedirect->setPath('customer/account/index');
-//      return $resultRedirect;
-        echo "this";
-        exit();
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('customer/account/index');
+        $params=$this->getRequest()->getParams();
+        if(array_key_exists('success', $params)) {
+            $resultRedirect->setPath('hodovanukfm/task/index');
+        }
+
+        return $resultRedirect;
     }
 }
