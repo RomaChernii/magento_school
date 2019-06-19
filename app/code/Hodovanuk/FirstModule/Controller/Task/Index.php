@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Hodovanuk/FirstModule/Controller/Task/Index
  *
@@ -9,7 +8,6 @@
  * @package Hodovanuk/FirstModule
  * @author Mikhaylo Hodovanuk <mishagodovanuk@gmail.com>
  */
-
 namespace Hodovanuk\FirstModule\Controller\Task;
 
 use Magento\Framework\App\Action\Action;

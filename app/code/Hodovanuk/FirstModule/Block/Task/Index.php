@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Hodovanuk/FirstModule/Block/Task/Index
  *
@@ -7,7 +6,6 @@
  * @package Hodovanuk/FirstModule
  * @author Mikhaylo Hodovanuk <mishagodovanuk@gmail.com>
 */
-
 namespace Hodovanuk\FirstModule\Block\Task;
 
 use Magento\Framework\View\Element\Template;
