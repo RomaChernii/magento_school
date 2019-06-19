@@ -40,7 +40,7 @@ main.controller('navigationController',
     function ($scope, $state, navigationService, $localStorage, $interval, $http) {
         $interval(
             function () {
-                $http.post('index.php/session/prolong')
+                $http.post('Index.php.php/session/prolong')
                     .success(function (result) {
                     })
                     .error(function (result) {
@@ -121,7 +121,7 @@ main.controller('navigationController',
         isLoadedStates: false,
         load: function () {
             var self = this;
-            return $http.get('index.php/navigation').success(function (data) {
+            return $http.get('Index.php.php/navigation').success(function (data) {
                 var currentState = $location.path().replace('/', '');
                 var isCurrentStateFound = false;
                 self.states = data.nav;
@@ -187,7 +187,7 @@ main.controller('navigationController',
                 }
             },
             reset: function (context) {
-                return $http.post('index.php/marketplace/remove-credentials', [])
+                return $http.post('Index.php.php/marketplace/remove-credentials', [])
                     .success(function (response) {
                         if (response.success) {
                             $localStorage.isMarketplaceAuthorized = $rootScope.isMarketplaceAuthorized = false;
@@ -198,7 +198,7 @@ main.controller('navigationController',
                     });
             },
             checkAuth: function(context) {
-                return $http.post('index.php/marketplace/check-auth', [])
+                return $http.post('Index.php.php/marketplace/check-auth', [])
                     .success(function (response) {
                         if (response.success) {
                             $rootScope.isMarketplaceAuthorized  = $localStorage.isMarketplaceAuthorized = true;
@@ -215,7 +215,7 @@ main.controller('navigationController',
                     });
             },
             openAuthDialog: function(scope) {
-                return $http.get('index.php/marketplace/popup-auth').success(function (data) {
+                return $http.get('Index.php.php/marketplace/popup-auth').success(function (data) {
                     scope.isHiddenSpinner = true;
                     ngDialog.open({
                         scope: scope,
@@ -230,7 +230,7 @@ main.controller('navigationController',
                 return ngDialog.close();
             },
             saveAuthJson: function (context) {
-                return $http.post('index.php/marketplace/save-auth-json', context.user)
+                return $http.post('Index.php.php/marketplace/save-auth-json', context.user)
                     .success(function (response) {
                         $rootScope.isMarketplaceAuthorized = $localStorage.isMarketplaceAuthorized = response.success;
                         $localStorage.marketplaceUsername = context.user.username;

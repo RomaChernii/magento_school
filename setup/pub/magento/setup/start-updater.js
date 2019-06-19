@@ -34,7 +34,7 @@ angular.module('start-updater', ['ngStorage'])
                 'headerTitle': $scope.packages.size == 1 ? $scope.title : 'Process extensions',
                 'dataOption': $localStorage.dataOption
             };
-            $http.post('index.php/start-updater/update', payLoad)
+            $http.post('Index.php.php/start-updater/update', payLoad)
                 .success(function (data) {
                     if (data['success']) {
                         $window.location.href = '../update/index.php';

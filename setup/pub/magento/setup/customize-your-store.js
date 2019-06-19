@@ -30,7 +30,7 @@ angular.module('customize-your-store', ['ngStorage', 'ngSanitize'])
         $scope.loading = false;
 
         if (!$localStorage.store) {
-            $http.get('index.php/customize-your-store/default-time-zone',{'responseType' : 'json'})
+            $http.get('Index.php.php/customize-your-store/default-time-zone',{'responseType' : 'json'})
                 .success(function (data) {
                     $scope.store.timezone = data.defaultTimeZone;
                 })
@@ -47,7 +47,7 @@ angular.module('customize-your-store', ['ngStorage', 'ngSanitize'])
             $state.loadModules();
             $localStorage.store = $scope.store;
             $scope.loading = true;
-            $http.post('index.php/modules/all-modules-valid', $scope.store)
+            $http.post('Index.php.php/modules/all-modules-valid', $scope.store)
                 .success(function (data) {
                     $scope.checkModuleConstraints.result = data;
                     if (($scope.checkModuleConstraints.result !== undefined) && ($scope.checkModuleConstraints.result.success)) {
@@ -61,7 +61,7 @@ angular.module('customize-your-store', ['ngStorage', 'ngSanitize'])
         };
 
         if (!$scope.store.loadedAllModules) {
-            $http.get('index.php/modules').success(function (data) {
+            $http.get('Index.php.php/modules').success(function (data) {
                 $state.loadedModules = data;
                 $scope.store.showModulesControl = true;
                 if (data.error) {
@@ -119,7 +119,7 @@ angular.module('customize-your-store', ['ngStorage', 'ngSanitize'])
             var moduleStatus = (idx > -1) ? true : false;
             var allParameters = {'allModules' : $scope.store.allModules, 'selectedModules' : $scope.store.selectedModules, 'module' : module, 'status' : moduleStatus};
 
-            $http.post('index.php/modules/validate', allParameters)
+            $http.post('Index.php.php/modules/validate', allParameters)
                 .success(function (data) {
                     $scope.checkModuleConstraints.result = data;
                     if ((($scope.checkModuleConstraints.result.error !== undefined) && (!$scope.checkModuleConstraints.result.success))) {

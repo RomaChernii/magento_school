@@ -26,7 +26,7 @@ angular.module('select-version', ['ngStorage'])
                 );
         };
 
-        $http.get('index.php/select-version/systemPackage', {'responseType' : 'json'})
+        $http.get('Index.php.php/select-version/systemPackage', {'responseType' : 'json'})
             .success(function (data) {
                 if (data.responseType != 'error') {
                     $scope.upgradeProcessError = true;
@@ -101,7 +101,7 @@ angular.module('select-version', ['ngStorage'])
                 $scope.updateComponents.no = false;
                 if (!$scope.componentsProcessed && !$scope.componentsProcessError) {
                     $scope.componentsReadyForNext = false;
-                    $http.get('index.php/other-components-grid/components', {'responseType': 'json'}).
+                    $http.get('Index.php.php/other-components-grid/components', {'responseType': 'json'}).
                         success(function (data) {
                             if (data.responseType != 'error') {
                                 $scope.components = data.components;

@@ -21,7 +21,7 @@ TabsTest.prototype.testCreate = function() {
      </li>
     </ul></div>*/
     var tabs = jQuery('#tabs').tabs({active: 'tab2'});
-    assertEquals(tabs.tabs('option', 'active'), tabs.data("tabs").anchors.index(jQuery('#tab2')));
+    assertEquals(tabs.tabs('option', 'active'), tabs.data("tabs").anchors.Index(jQuery('#tab2')));
 };
 
 TabsTest.prototype.testActiveAnchor = function() {

@@ -304,7 +304,7 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
     this.$active = this.$element.find('.item.active')
     this.$items  = this.$active.parent().children()
 
-    return this.$items.index(this.$active)
+    return this.$items.Index(this.$active)
   }
 
   Carousel.prototype.to = function (pos) {

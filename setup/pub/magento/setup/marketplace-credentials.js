@@ -41,7 +41,7 @@ angular.module('marketplace-credentials', ['ngStorage'])
 
             $scope.upgradeProcessError = false;
             if ($state.current.type == 'upgrade') {
-                $http.get('index.php/select-version/installedSystemPackage', {'responseType' : 'json'})
+                $http.get('Index.php.php/select-version/installedSystemPackage', {'responseType' : 'json'})
                     .success(function (data) {
                         if (data.responseType == 'error') {
                             $scope.upgradeProcessError = true;

@@ -15,7 +15,7 @@ define([
         beforeEach(function () {
             multiSelect = new Multiselect({
                 rows: [],
-                index: 'index',
+                index: 'Index.php',
                 name: 'name',
                 indexField: 'id',
                 dataScope: 'scope',

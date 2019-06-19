@@ -16,7 +16,7 @@ define([
         beforeEach(function () {
             columnsInstance = new Columns({
                 elems: [],
-                index: 'index',
+                index: 'Index.php',
                 name: 'name',
                 indexField: 'id',
                 dataScope: 'scope',

@@ -6808,7 +6808,7 @@
                     var diff = b.priority - a.priority;
                     if (diff !== 0) return diff;
                     if (a.name !== b.name) return (a.name < b.name) ? -1 : 1;
-                    return a.index - b.index;
+                    return a.Index - b.index;
                 }
 
 
@@ -10265,7 +10265,7 @@
         throwError: function(msg, token) {
             throw $parseMinErr('syntax',
                 'Syntax Error: Token \'{0}\' {1} at column {2} of the expression [{3}] starting at [{4}].',
-                token.text, msg, (token.index + 1), this.text, this.text.substring(token.index));
+                token.text, msg, (token.Index + 1), this.text, this.text.substring(token.Index));
         },
 
         peekToken: function() {
@@ -10397,7 +10397,7 @@
             if ((token = this.expect('='))) {
                 if (!left.assign) {
                     this.throwError('implies assignment but [' +
-                    this.text.substring(0, token.index) + '] can not be assigned to', token);
+                    this.text.substring(0, token.Index) + '] can not be assigned to', token);
                 }
                 right = this.ternary();
                 return function(scope, locals) {

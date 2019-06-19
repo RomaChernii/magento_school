@@ -15,7 +15,7 @@ define([
         beforeEach(function () {
             group = new Group({
                 elems: [],
-                index: 'index',
+                index: 'Index.php',
                 name: 'name',
                 indexField: 'id',
                 dataScope: 'scope',

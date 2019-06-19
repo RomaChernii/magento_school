@@ -105,10 +105,10 @@ angular.module('install', ['ngStorage'])
     .service('progress', ['$http', function ($http) {
         return {
             get: function (callback) {
-                $http.post('index.php/install/progress').then(callback);
+                $http.post('Index.php.php/install/progress').then(callback);
             },
             post: function (data, callback) {
-                $http.post('index.php/install/start', data).success(callback);
+                $http.post('Index.php.php/install/start', data).success(callback);
             }
         };
     }]);
