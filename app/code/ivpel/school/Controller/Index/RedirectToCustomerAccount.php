@@ -24,8 +24,8 @@ class RedirectToCustomerAccount extends Action
         $params = $this->getRequest()->getParams();
         $resultRedirect->setPath('customer/account/index');
         if (array_key_exists("success", $params)){
-            $urlToRedirect =  $resultRedirect->setPath('homework/students/studentslist');
+            $resultRedirect->setPath('homework/students/studentslist');
         }
-        return $urlToRedirect;
+        return $resultRedirect;
     }
 }
