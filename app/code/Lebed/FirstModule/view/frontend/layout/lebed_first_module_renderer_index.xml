@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed FirstModule Renderer Index controller
+ *
+ * @category  Lebed
+ * @package   Lebed/FirstModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<!-- Layout file name     route_id + controller_path    -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Lebed\FirstModule\Block\Renderer\Wording" name="renderer.wording" template="Lebed_FirstModule::renderer/wording.phtml" />
+        </referenceContainer>
+    </body>
+</page>

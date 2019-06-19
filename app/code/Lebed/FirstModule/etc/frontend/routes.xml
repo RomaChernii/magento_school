@@ -1,13 +1,17 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Lebed FirstModule routes
+ *
+ * @category  Lebed
+ * @package   Lebed/FirstModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
-        <route id="first_module" frontName="first_module">
+        <route id="lebed_first_module" frontName="lebed_first_module">
             <module name="Lebed_FirstModule" />
         </route>
     </router>

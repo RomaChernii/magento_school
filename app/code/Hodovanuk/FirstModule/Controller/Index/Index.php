@@ -1,27 +1,28 @@
 <?php
-
 /**
+ * Hodovanuk/FirstModule/Controller/Index/Index
  *
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * The page will automatically be redirected if there is no success parameter
+ *
+ * @category Hodovanuk
+ * @package Hodovanuk/FirstModule
+ * @author Mikhaylo Hodovanuk <mishagodovanuk@gmail.com>
  */
-
 namespace Hodovanuk\FirstModule\Controller\Index;
 
-use Magento\Framework\App\Action\Action as AbstractAction;
+use Magento\Framework\App\Action\Action;
 
-class Index extends AbstractAction
+class Index extends Action
 {
-
-
-    /**
-     * Default customer account page
-     *
-     * @return \Magento\Framework\View\Result\Page
-     */
     public function execute()
     {
-       echo 'Hello world';
-       exit();
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('customer/account/index');
+        $params = $this->getRequest()->getParams();
+        if(array_key_exists('success', $params)) {
+            $resultRedirect->setPath('hodovanukfm/task/index');
+        }
+
+        return $resultRedirect;
     }
 }
