@@ -14,7 +14,7 @@ class Index extends Template
     /**
      * Get students list
      *
-     * @return string
+     * @return array
      */
     public function getStudentsList(){
         # Here must be request to DB (?) but for now it is just example.
@@ -24,9 +24,6 @@ class Index extends Template
             "Roma" => "Magento developer",
             "Ivan" => "QA",
         );
-
-        foreach ($students as $key => $value){
-            echo "<li> {$key} ". " is: "."  {$value}</li><br/> ";
-        }
+        return $students;
     }
 }
