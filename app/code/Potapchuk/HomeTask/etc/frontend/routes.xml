@@ -7,8 +7,8 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
-        <route id="koshykfm" frontName="koshykfm">
-            <module name="Koshyk_FirstModule" />
+        <route id="first_hometask" frontName="first_hometask">
+            <module name="Potapchuk_HomeTask" />
         </route>
     </router>
 </config>

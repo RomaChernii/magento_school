@@ -3,9 +3,11 @@ return array (
   'modules' => 
   array (
     'Borovets_FirstHomeModule' => 1,
+    'Chleck_FirstModuleHW' => 1,
     'Borovets_FirstModule' => 1,
     'Chleck_FirstModule' => 1,
     'Dehtiarov_FirstModule' => 1,
+    'Dehtiarov_HomeTaskVideh' => 1,
     'Hodovanuk_FirstModule' => 1,
     'Hodovanuk_Task' => 1,
     'Koshyk_FirstModule' => 1,
@@ -137,6 +139,7 @@ return array (
     'Magento_Wishlist' => 1,
     'Magento_WishlistSampleData' => 1,
     'Potapchuk_FirstModule' => 1,
+    'Potapchuk_HomeTask' => 1,
     'Shopial_Facebook' => 1,
     'Skavronskiy_FirstModule' => 1,
     'Skavronskiy_FirstModule_HW' => 1,
