@@ -1,9 +1,13 @@
 <?php
 
 /**
+ * Hodovanuk/FirstModule/Controller/Task/Index
  *
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Connects the layout and context to the page
+ *
+ * @category Hodovanuk
+ * @package Hodovanuk/FirstModule
+ * @author Mikhaylo Hodovanuk <mishagodovanuk@gmail.com>
  */
 
 namespace Hodovanuk\FirstModule\Controller\Task;

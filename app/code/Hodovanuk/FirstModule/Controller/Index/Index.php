@@ -1,9 +1,13 @@
 <?php
 
 /**
+ * Hodovanuk/FirstModule/Controller/Index/Index
  *
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * The page will automatically be redirected if there is no success parameter
+ *
+ * @category Hodovanuk
+ * @package Hodovanuk/FirstModule
+ * @author Mikhaylo Hodovanuk <mishagodovanuk@gmail.com>
  */
 
 namespace Hodovanuk\FirstModule\Controller\Index;
