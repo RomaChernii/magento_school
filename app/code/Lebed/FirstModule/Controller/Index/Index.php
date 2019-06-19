@@ -1,28 +1,33 @@
 <?php
 /**
+ * Lebed FirstModule Index Index controller
  *
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * @category  Lebed
+ * @package   Lebed/FirstModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
  */
 namespace Lebed\FirstModule\Controller\Index;
 
 use Magento\Framework\App\Action\Action as AbstractAction;
 
+/*
+ * Class Index
+ *
+ * @package Lebed\FirstModule\Controller\Index
+ */
 class Index extends AbstractAction
 {
     /**
-     * @var PageFactory
-     */
-    protected $resultPageFactory;
-
-    /**
-     * Default customer account page
+     * Index action
      *
-     * @return \Magento\Framework\View\Result\Page
+     * @return \Magento\Framework\Controller\Result\Redirect
      */
     public function execute()
     {
-        echo 'Hello World';
-        exit();
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('customer/account/index');
+
+        return $resultRedirect;
     }
 }
