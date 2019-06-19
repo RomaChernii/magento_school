@@ -1,19 +1,29 @@
 <?php
 /**
+ * Koshyk/FirstModule/Controller/Index/Index
  *
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Redirected page if URL is no success parameter
+ *
+ * @category Koshyk
+ * @package Koshyk/FirstModule
+ * @author Roman Koshyk <romadaaaa@gmail.com>
  */
 namespace Koshyk\FirstModule\Controller\Index;
 
-use Magento\Framework\App\Action\Action as AbstractAction;
+use Magento\Framework\App\Action\Action;
 
-class Index extends AbstractAction
+class Index extends Action
 {
-
     public function execute()
     {
-    echo 'HelloWorld';
-    exit();
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('customer/account/index');
+        $params = $this->getRequest()->getParams();
+        if(array_key_exists('success', $params)) {
+            $resultRedirect->setPath('koshykfm/task/index');
+        }
+
+        return $resultRedirect;
     }
 }
+
