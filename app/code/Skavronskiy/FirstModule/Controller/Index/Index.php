@@ -13,8 +13,10 @@ class Index extends AbstractAction
 
     public function execute()
     {
-        echo 'Hello World';
-        function name($w ,$r);
-        exit();
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('customer/account/index');
+
+        return $resultRedirect;
     }
 }
+
