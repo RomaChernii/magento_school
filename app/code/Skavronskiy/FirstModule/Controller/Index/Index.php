@@ -15,6 +15,8 @@ class Index extends AbstractAction
     {
         $resultRedirect = $this->resultRedirectFactory->create();
         $resultRedirect->setPath('customer/account/index');
+
         return $resultRedirect;
     }
 }
+

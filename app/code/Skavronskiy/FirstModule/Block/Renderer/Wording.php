@@ -6,8 +6,8 @@
  */
 namespace Skavronskiy\FirstModule\Block\Renderer;
 
-
 use Magento\Framework\View\Element\Template;
+
 class Wording extends Template
 {
     public function getText()
@@ -15,3 +15,4 @@ class Wording extends Template
        return __('Hello World');
     }
 }
+
