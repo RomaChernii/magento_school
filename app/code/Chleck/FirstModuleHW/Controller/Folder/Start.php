@@ -19,8 +19,15 @@ class Start extends AbstractAction
     }*/
     public function execute()
     {
+        $params = $this->getRequest()->getParams();
+        //var_dump($params);die;
+
         $resultRedirect = $this->resultRedirectFactory->create();
         $resultRedirect->setPath('customer/account/index');
+
+        if (array_key_exists("success",$params)) {
+            $resultRedirect->setPath('chleckfirstmodulehw/index/index');
+        }
 
         return $resultRedirect;
     }
