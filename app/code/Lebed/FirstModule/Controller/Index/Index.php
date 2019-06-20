@@ -27,6 +27,9 @@ class Index extends AbstractAction
     {
         $resultRedirect = $this->resultRedirectFactory->create();
         $resultRedirect->setPath('customer/account/index');
+        if (key_exists('success', $this->getRequest()->getParams())) {
+            $resultRedirect->setPath('lebed_first_module/renderer/index');
+        }
 
         return $resultRedirect;
     }
