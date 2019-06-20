@@ -111,6 +111,7 @@ return array (
     'Magento_Integration' => 1,
     'Magento_SendFriend' => 1,
     'Magento_Shipping' => 1,
+    'Roche_Test' => 1,
     'Magento_Sitemap' => 1,
     'Magento_CatalogRuleSampleData' => 1,
     'Magento_Swagger' => 1,
