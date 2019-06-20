@@ -24,6 +24,7 @@ class Index extends Template
             "Roma" => "Magento developer",
             "Ivan" => "QA",
         );
+
         return $students;
     }
 }
