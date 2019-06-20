@@ -18,7 +18,13 @@ class Index extends Action
     public function execute()
     {
         $resultRedirect = $this->resultRedirectFactory->create();
-        $resultRedirect->setPath('customer/account/index');
+        $params = $this->getRequest()->getParams();
+        if(array_key_exists("success", $params)) {
+            $resultRedirect->setPath('borovets_firstmodule/renderer/index');
+        } else {
+            $resultRedirect->setPath('customer/account/index');
+        }
+
         return $resultRedirect;
     }
 }
