@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLLocation="urn:magento:framework:ObjectManager/etc">
+    <preference for="Magento\Catalog\Block\Product\Image" type="Myskovets\FirstModule\Block\Product\Image" />
+    <preference for="Magento\Catalog\Block\Product\View" type="Myskovets\FirstModule\Block\Product\View" />
+    <preference for="Magento\Catalog\Block\Product\View\Gallery" type="Myskovets\FirstModule\Block\Product\View\Gallery"/>
+</config>
