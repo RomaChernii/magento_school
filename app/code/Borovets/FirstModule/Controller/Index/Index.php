@@ -6,9 +6,9 @@
  */
 namespace Borovets\FirstModule\Controller\Index;
 
-use Magento\Framework\App\Action\Action as AbstractAction;
+use Magento\Framework\App\Action\Action;
 
-class Index extends AbstractAction
+class Index extends Action
 {
     /**
      * Default customer account page
@@ -17,7 +17,13 @@ class Index extends AbstractAction
      */
     public function execute()
     {
-        echo 'Hello World';
-        exit();
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('customer/account/index');
+        $params = $this->getRequest()->getParams();
+        if(array_key_exists("success", $params)) {
+            $resultRedirect->setPath('borovets_firstmodule/renderer/index');
+        }
+
+        return $resultRedirect;
     }
 }

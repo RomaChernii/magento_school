@@ -2,12 +2,17 @@
 return array (
   'modules' => 
   array (
+    'Borovets_FirstHomeModule' => 1,
+    'Chleck_FirstModuleHW' => 1,
     'Borovets_FirstModule' => 1,
     'Chleck_FirstModule' => 1,
     'Dehtiarov_FirstModule' => 1,
+    'Dehtiarov_HomeTaskVideh' => 1,
     'Hodovanuk_FirstModule' => 1,
     'Hodovanuk_Task' => 1,
     'Koshyk_FirstModule' => 1,
+    'Koshyk_HomeTaskModule' => 1,
+    'Lebed_FirstHome' => 1,
     'Lebed_FirstModule' => 1,
     'Magento_Store' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
@@ -106,6 +111,7 @@ return array (
     'Magento_Integration' => 1,
     'Magento_SendFriend' => 1,
     'Magento_Shipping' => 1,
+    'Roche_Test' => 1,
     'Magento_Sitemap' => 1,
     'Magento_CatalogRuleSampleData' => 1,
     'Magento_Swagger' => 1,
@@ -134,8 +140,12 @@ return array (
     'Magento_Wishlist' => 1,
     'Magento_WishlistSampleData' => 1,
     'Potapchuk_FirstModule' => 1,
+    'Potapchuk_HomeTask' => 1,
     'Semysiuk_FirstModule' => 1,
     'Shopial_Facebook' => 1,
     'Skavronskiy_FirstModule' => 1,
+    'Skavronskiy_FirstModule_HW' => 1,
+    'ivpel_homework' => 1,
+    'ivpel_school' => 1,
   ),
 );
