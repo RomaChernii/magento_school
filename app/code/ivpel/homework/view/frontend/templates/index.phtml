@@ -1,2 +1,6 @@
 <h2>Course students and their profession</h2>
-<ul><?php echo $block->escapeHtml($block->getStudentsList()) ?></ul>
+<ul>
+    <?php foreach ($block->getStudentsList() as $key => $value):?>
+      <li> <?php echo "{$key} ". " is: "."  {$value}"; ?> </li><br/>
+    <?php endforeach; ?>
+</ul>
