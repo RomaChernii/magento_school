@@ -7,8 +7,12 @@ class Index extends Action
 {
     public function execute()
     {
+        $params = $this->getRequest()->getParams();
         $resultRedirect = $this->resultRedirectFactory->create();
-        $resultRedirect->setPath('customer/account/index');
+
+            isset($params['success']) ?
+            $resultRedirect->setPath('semysiuk_firstmodule/renderer/index') :
+            $resultRedirect->setPath('customer/account/index');
 
         return $resultRedirect;
     }
