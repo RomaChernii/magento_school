@@ -8,7 +8,9 @@ class Index extends AbstractAccount
 {
     public function execute()
     {
-        echo "Hello World";
-        exit();
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('customer/account/index');
+
+        return $resultRedirect;
     }
 }
