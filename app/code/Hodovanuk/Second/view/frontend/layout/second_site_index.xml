@@ -10,14 +10,10 @@
             </container>
         </referenceContainer>
         <referenceContainer name="content">
-            <block class="Hodovanuk\Second\Block\Site\Main" name="task_index" template="Hodovanuk_Second::site.phtml">
-                <arguments>
-                    <argument name="class" xsi:type="string">my_first_block_color</argument>
-                </arguments>
-            </block>
+            <block class="Hodovanuk\Second\Block\Site\Main" name="task_index" template="Hodovanuk_Second::site.phtml"/>
         </referenceContainer>
         <referenceContainer name="footer-container">
-            <block class="Hodovanuk\Second\Block\Site\MyEmpty" name="my.footer.block" template="Hodovanuk_Second::footer_block.phtml"/>
+            <block class="Hodovanuk\Second\Block\Site\Main" name="my.footer.block" template="Hodovanuk_Second::footer_block.phtml"/>
         </referenceContainer>
     </body>
 </page>

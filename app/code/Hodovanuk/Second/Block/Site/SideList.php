@@ -1,6 +1,6 @@
 <?php
 /**
- * Hodovanuk/FirstModule/Block/Task/Index
+ * Hodovanuk/FirstModule/Block/Site/SideList
  *
  * @category Hodovanuk
  * @package Hodovanuk/FirstModule

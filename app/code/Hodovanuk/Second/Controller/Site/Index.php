@@ -3,7 +3,7 @@
  * Connects the layout and context to the page
  *
  * @category Hodovanuk
- * @package Hodovanuk/FirstModule
+ * @package Hodovanuk/Second
  * @author Mikhaylo Hodovanuk <mishagodovanuk@gmail.com>
  */
 namespace Hodovanuk\Second\Controller\Site;
