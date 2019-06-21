@@ -1,14 +1,15 @@
 <?php
 namespace Semysiuk\FirstModule\Controller\Index;
 
-use Magento\Framework\App\Action\Action as AbstractAction;
+use Magento\Framework\App\Action\Action;
 
-class Index extends AbstractAction
+class Index extends Action
 {
     public function execute()
     {
-        echo "Hello World";
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('customer/account/index');
 
-        exit();
+        return $resultRedirect;
     }
 }
