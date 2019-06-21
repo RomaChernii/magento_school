@@ -11,9 +11,7 @@ class Index extends AbstractAccount
         $params = $this->getRequest()->getParams();
         $redirectPath = 'customer/account/index';
 
-        foreach ($params as $key => $val) {
-            if ($key == 'success') $redirectPath = 'dehtiarov_firstmodule/renderer/index';
-        }
+        if (array_key_exists('success', $params)) $redirectPath = 'dehtiarov_firstmodule/renderer/index';
 
         $resultRedirect = $this->resultRedirectFactory->create();
         $resultRedirect->setPath($redirectPath);
