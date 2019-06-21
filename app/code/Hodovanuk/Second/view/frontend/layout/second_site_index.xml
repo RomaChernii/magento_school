@@ -1,8 +1,23 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="mishagodovanuk.css"/>
+    </head>
     <body>
+        <referenceContainer name="div.sidebar.main" htmlTag="div">
+            <container name="list.value1" htmlTag="ol">
+                <block class="Hodovanuk\Second\Block\Site\SideList" name="head.bar" template="Hodovanuk_Second::side_list.phtml"/>
+            </container>
+        </referenceContainer>
         <referenceContainer name="content">
-            <block class="Hodovanuk\Second\Block\Site\Main" name="task_index" template="Hodovanuk_Second::site.phtml"/>
+            <block class="Hodovanuk\Second\Block\Site\Main" name="task_index" template="Hodovanuk_Second::site.phtml">
+                <arguments>
+                    <argument name="class" xsi:type="string">my_first_block_color</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="footer-container">
+            <block class="Hodovanuk\Second\Block\Site\MyEmpty" name="my.footer.block" template="Hodovanuk_Second::footer_block.phtml"/>
         </referenceContainer>
     </body>
 </page>

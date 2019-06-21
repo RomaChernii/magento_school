@@ -1,7 +1,5 @@
 <?php
 /**
- * Hodovanuk/FirstModule/Controller/Task/Index
- *
  * Connects the layout and context to the page
  *
  * @category Hodovanuk
