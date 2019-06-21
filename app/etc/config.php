@@ -140,6 +140,7 @@ return array (
     'Magento_WishlistSampleData' => 1,
     'Potapchuk_FirstModule' => 1,
     'Potapchuk_HomeTask' => 1,
+    'Semysiuk_FirstModule' => 1,
     'Roche_Test' => 1,
     'Semysiuk_HomeWorkModule' => 1,
     'Shopial_Facebook' => 1,
