@@ -8,6 +8,6 @@ class Wording extends Template
 {
     public function getText()
     {
-        return __('Hello World');
+        return __('Wording');
     }
 }
