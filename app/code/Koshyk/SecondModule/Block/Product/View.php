@@ -17,11 +17,6 @@ use Magento\Catalog\Block\Product\View as MagentoView;
  */
 class View extends MagentoView
 {
-    public function getText()
-    {
-        return __('Hello World');
-    }
-
     public function getProductDefaultQty($product = null)
     {
         return 15;
