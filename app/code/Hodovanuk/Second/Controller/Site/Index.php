@@ -18,8 +18,11 @@ class Index extends Action
     protected $_pageFactory;
     protected $_pageConfig;
 
-    public function __construct(Context $context, PageFactory $pageFactory, Config $pageConfig)
-    {
+    public function __construct(
+        Context $context,
+        PageFactory $pageFactory,
+        Config $pageConfig
+    ) {
         $this->_pageConfig = $pageConfig;
         $this->_pageFactory = $pageFactory;
         parent::__construct($context);
