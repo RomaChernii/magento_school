@@ -10,9 +10,9 @@ class Index extends Action
         $params = $this->getRequest()->getParams();
         $resultRedirect = $this->resultRedirectFactory->create();
 
-            isset($params['success']) ?
-            $resultRedirect->setPath('semysiuk_firstmodule/renderer/index') :
-            $resultRedirect->setPath('customer/account/index');
+        isset($params['success']) ?
+        $resultRedirect->setPath('semysiuk_firstmodule/renderer/index') :
+        $resultRedirect->setPath('customer/account/index');
 
         return $resultRedirect;
     }
