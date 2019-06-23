@@ -6,13 +6,12 @@
  * @package Koshyk/FirstModule
  * @author Roman Koshyk <romadaaaa@gmail.com>
  */
-
 namespace Koshyk\FirstModule\Block\Product;
 
 use Magento\Catalog\Block\Product\View as MagentoView;
 
 /**
- * Class Nordhing
+ * Class View
  *
  * @package Koshyk\FirstModule\Block\Product
  */
