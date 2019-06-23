@@ -16,6 +16,7 @@ use \Magento\Framework\View\Page\Config;
 class Index extends Action
 {
     protected $_pageFactory;
+
     protected $_pageConfig;
 
     public function __construct(
