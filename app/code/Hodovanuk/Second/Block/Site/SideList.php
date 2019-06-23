@@ -17,5 +17,5 @@ class SideList extends Template
         return __('something');
     }
 
-    public $_myArrValues = array('first','second','third','fourth');
+    public $_myArrValues = array('first', 'second', 'third', 'fourth');
 }
