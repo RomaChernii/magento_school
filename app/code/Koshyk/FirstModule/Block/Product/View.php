@@ -19,7 +19,7 @@ class View extends MagentoView
 {
     public function getText()
     {
-        return __('Hello World');
+        return __('New Product');
     }
 
     public function getProductDefaultQty($product = null)
