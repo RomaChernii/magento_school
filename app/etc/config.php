@@ -60,7 +60,7 @@ return array (
     'Magento_Developer' => 1,
     'Magento_Dhl' => 1,
     'Magento_Captcha' => 1,
-    'Magento_Authorizene' => 1,
+    'Magento_Authorizenet' => 1,
     'Magento_ImportExport' => 1,
     'Magento_User' => 1,
     'Magento_Tax' => 1,
