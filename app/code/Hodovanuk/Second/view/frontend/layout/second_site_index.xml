@@ -29,8 +29,8 @@
             <block class="Hodovanuk\Second\Block\Site\SideList" name="task_index" template="Hodovanuk_Second::site.phtml"/>
             <block class="Magento\Framework\View\Element\Template" name="my_modelview" template="Hodovanuk_Second::viewmodel.phtml">
                 <arguments>
-                    <argument name="viewModel" xsi:type="object">Hodovanuk\Second\ViewModel\PriceCurrencey</argument>
-                    <argument name="viewSecond" xsi:type="object">Hodovanuk\Second\ViewModel\PriceSecondary</argument>
+                    <argument name="viewModel" xsi:type="object">Hodovanuk\Second\ViewModel\FirstVm</argument>
+                    <argument name="viewSecond" xsi:type="object">Hodovanuk\Second\ViewModel\SecondVm</argument>
                 </arguments>
             </block>
         </referenceContainer>

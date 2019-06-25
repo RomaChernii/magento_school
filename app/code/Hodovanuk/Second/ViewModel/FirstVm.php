@@ -2,20 +2,19 @@
 
 namespace Hodovanuk\Second\ViewModel;
 
-use Magento\Framework\Pricing\PriceCurrencyInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 /**
- * Class PriceSecondary
+ * Class PriceCurrencey
  * @package Hodovanuk\Second\ViewModel
  */
-class PriceSecondary implements ArgumentInterface
+class FirstVm implements ArgumentInterface
 {
     /**
      * @return string
      */
-    public function getSecondary()
+    public function getString()
     {
-        return __('This is secondary');
+        return __('This is string date');
     }
 }
