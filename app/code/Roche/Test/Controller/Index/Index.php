@@ -25,8 +25,13 @@ class Index extends Action
      */
     public function execute()
     {
-       $resultRedirect = $this->resultRedirectFactory->create();
+        $params = $this->getRequest()->getParams();
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $resultRedirect->setPath('customer/account/index');
+        if (array_key_exists('success', $params)) {
+            $resultRedirect->setPath('roche_test/renderer/index');
+        }
 
-       return $resultRedirect->setPath('customer/account/index');
+        return $resultRedirect;
     }
 }
