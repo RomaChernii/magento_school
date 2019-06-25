@@ -12,20 +12,6 @@ use Magento\Framework\View\Element\Block\ArgumentInterface;
 class PriceSecondary implements ArgumentInterface
 {
     /**
-     * @var PriceCurrencyInterface
-     */
-    protected $priceCurrency;
-
-    /**
-     * PriceSecondary constructor.
-     * @param PriceCurrencyInterface $priceInterface
-     */
-    public function __construct(PriceCurrencyInterface $priceInterface)
-    {
-        $this->priceCurrency = $priceInterface;
-    }
-
-    /**
      * @return string
      */
     public function getSecondary()
