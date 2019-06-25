@@ -8,10 +8,11 @@ class Index extends Action
 {
     public function execute()
     {
+        $param = $this->getRequest()->getParam("success");
         $resultRedirect = $this->resultRedirectFactory->create();
 
-        isset($_GET["success"]) ?
-            $resultRedirect->setPath("layout_block/Renderer/Index") :
+        isset($param) ?
+            $resultRedirect->setPath("layout_block/renderer/index") :
             $resultRedirect->setPath("customer/account/index");
 
         return $resultRedirect;
