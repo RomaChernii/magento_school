@@ -1,23 +1,24 @@
 <?php
 /**
- * Hodovanuk/FirstModule/Block/Site/SideList
+ * Set url variable
  *
  * @category Hodovanuk
- * @package Hodovanuk/FirstModule
  * @author Mikhaylo Hodovanuk <mishagodovanuk@gmail.com>
  */
+
 namespace Hodovanuk\Third\Block;
 
 use Magento\Framework\View\Element\Template;
 
 /**
- * Class SideList
- * @package Hodovanuk\Second\Block\Site
+ * Class Arrival
+ * @package Hodovanuk\Third\Block
  */
 class Arrival extends Template
 {
     /**
-     * @return string
+     * Contain url
+     * @var string
      */
     public $urlToCart = 'http://localhost/magento_school/checkout/cart/';
 }

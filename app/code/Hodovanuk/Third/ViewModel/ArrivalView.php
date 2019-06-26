@@ -1,4 +1,8 @@
 <?php
+/**
+ * @category Hodovanuk
+ * @author Mikhaylo Hodovanuk <mishagodovanuk@gmail.com>
+ */
 
 namespace Hodovanuk\Third\ViewModel;
 
