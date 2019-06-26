@@ -1,2 +1,2 @@
 <h3>This is destination page:</h3>
-<a href="<?= $block->urlToCart; ?>"><button type="submit">Go to Cart</button></a>
+<a href="<?= $block->getBaseUrl() . $block->urlToCart; ?>"><button type="submit">Go to Cart</button></a>

@@ -20,5 +20,5 @@ class Arrival extends Template
      * Contain url
      * @var string
      */
-    public $urlToCart = 'http://localhost/magento_school/checkout/cart/';
+    public $urlToCart = 'checkout/cart/';
 }
