@@ -12,7 +12,8 @@ class Control extends Action
 {
     public function execute()
     {
-        echo "Hodovanuk 1.1 test task";
+        var_dump($this->getRequest()->getParams());
+        echo '<form method="get" action=""><input type="submit" id="submitid" name="submitname" value="submitvakue"></form>';
         exit();
     }
 }

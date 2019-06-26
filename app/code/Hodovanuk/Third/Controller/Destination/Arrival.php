@@ -42,6 +42,16 @@ class Arrival extends Action
      */
     public function execute()
     {
+        $param = $this->getRequest()->getParams();
+
+        $myRedirect = $this->resultRedirectFactory->create();
+
+        if (array_key_exists('submit', $param)){
+            $myRedirect->setPath('checkout/cart/');
+
+            return $myRedirect;
+        }
+
         return $this->_pageFactory->create();
     }
 }
