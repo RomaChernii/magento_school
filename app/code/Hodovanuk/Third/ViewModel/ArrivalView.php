@@ -19,6 +19,6 @@ class ArrivalView implements ArgumentInterface
      */
     public function getText()
     {
-        return __('Click on the button to go to the Card page');
+        return __('Click on the button or link at the top, to go to the Card page');
     }
 }
