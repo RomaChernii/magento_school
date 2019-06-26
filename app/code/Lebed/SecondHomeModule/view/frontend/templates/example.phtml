@@ -1,0 +1,15 @@
+<?php
+/**
+ * Lebed SecondHomeModule example.phtml
+ *
+ * @category  Lebed
+ * @package   Lebed/SecondHomeModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+/** @var \Lebed\SecondHomeModule\Block\Example $block */
+
+/** @var  string $cssClass */
+$cssClass = $block->getCssClass();
+?>
+<h1 class="<?= $block->escapeHtml($cssClass) ?>"><?= $block->escapeHtml($block->getExampleText()) ?></h1>

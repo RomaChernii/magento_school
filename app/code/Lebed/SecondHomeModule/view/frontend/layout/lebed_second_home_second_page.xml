@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed SecondHomeModule Second Page layout
+ *
+ * @category  Lebed
+ * @package   Lebed/SecondHomeModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="div.sidebar.main">
+            <block class="Lebed\SecondHomeModule\Block\Example" name="second.page.example.block" template="Lebed_SecondHomeModule::example.phtml" after="-">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">page-title</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

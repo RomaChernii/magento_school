@@ -1,0 +1,17 @@
+<?php
+/**
+ * Lebed FirstModule template_with_view_model.phtml
+ *
+ * @category  Lebed
+ * @package   Lebed/FirstModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+/** @var \Magento\Framework\View\Element\Template $block */
+
+/** @var \Lebed\FirstModule\ViewModel\PriceCurrency $priceCurrencyViewModel */
+$priceCurrencyViewModel = $block->getPriceCurrency();
+$price = 111.111111111111;
+?>
+<p><?= $block->escapeHtml(__('Original price: ') . $price); ?></p>
+<p><?= $block->escapeHtml(__('Rounded price: ') . $priceCurrencyViewModel->testViewModel($price)); ?></p>
