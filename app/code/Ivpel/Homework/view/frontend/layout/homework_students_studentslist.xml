@@ -3,7 +3,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="ivpel\homework\Block\Index" name="students.list" template="ivpel_homework::index.phtml" />
+            <block class="Ivpel\Homework\Block\Index" name="students.list" template="Ivpel_Homework::index.phtml" />
         </referenceContainer>
     </body>
 </page>

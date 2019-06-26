@@ -7,7 +7,7 @@ use \Magento\Framework\View\Element\Template;
 /**
  * Class SmileSchool
  *
- * @package ivpel\school\Block
+ * @package Ivpel\School\Block
  */
 class SmileSchool extends Template
 {

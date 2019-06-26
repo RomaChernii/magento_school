@@ -7,7 +7,7 @@ use \Magento\Framework\App\Action\Action;
 /**
  * Class RedirectToCustomerAccount
  *
- * @package ivpel\school\Controller\Index
+ * @package Ivpel\School\Controller\Index
  */
 class RedirectToCustomerAccount extends Action
 {
@@ -24,7 +24,7 @@ class RedirectToCustomerAccount extends Action
         $params = $this->getRequest()->getParams();
         $resultRedirect->setPath('customer/account/index');
         if (array_key_exists("success", $params)) {
-            $resultRedirect->setPath('homework/students/studentslist');
+            $resultRedirect->setPath('Homework/students/studentslist');
         }
 
         return $resultRedirect;

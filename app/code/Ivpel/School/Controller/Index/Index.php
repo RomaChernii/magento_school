@@ -1,18 +1,18 @@
 <?php
 
-namespace ivpel\homework\Controller\Students;
+namespace ivpel\school\Controller\Index;
 
 use \Magento\Framework\App\Action\Action;
 
 /**
- * Class StudentsList
+ * Class Index
  *
- * @package ivpel\homework\Controller\Students
+ * @package Ivpel\School\Controller\Index
  */
-class StudentsList extends Action
+class Index extends Action
 {
     /**
-     * StudentsList action
+     * Index action
      *
      * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|void
      */

@@ -7,7 +7,7 @@ use \Magento\Framework\View\Element\Template;
 /**
  * Class Index
  *
- * @package ivpel\homework\Block
+ * @package Ivpel\Homework\Block
  */
 class Index extends Template
 {
