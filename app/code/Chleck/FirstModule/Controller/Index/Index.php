@@ -13,7 +13,7 @@ class Index extends AbstractAction
 
     public function execute()
     {
-        echo "Hello World";
-        exit();
+        $this->_view->loadLayout();
+        $this->_view->renderLayout();
     }
 }

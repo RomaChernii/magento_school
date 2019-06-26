@@ -1,0 +1,32 @@
+<?php
+/**
+ * Roche Test controller index index
+ *
+ * @category  Roche
+ * @package   Roche\Test
+ * @author    Roman Chernii <roche@smile.fr>
+ * @copyright 2019 Smile
+ */
+namespace Roche\Test\Controller\Index;
+
+use Magento\Framework\App\Action\Action;
+
+/**
+ * Class Index
+ *
+ * @package Roche\Test\Controller\Index
+ */
+class Index extends Action
+{
+    /**
+     * Index action
+     *
+     * @return \Magento\Framework\Controller\Result\Redirect
+     */
+    public function execute()
+    {
+       $resultRedirect = $this->resultRedirectFactory->create();
+
+       return $resultRedirect->setPath('customer/account/index');
+    }
+}
