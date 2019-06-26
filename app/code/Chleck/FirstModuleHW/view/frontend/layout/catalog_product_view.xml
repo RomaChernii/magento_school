@@ -8,6 +8,5 @@
             </action>
         </referenceBlock>
 
-        <!--<referenceBlock name="product.info.review" template="Chleck_FirstModuleHW::product/view/review.phtml"/>-->
     </body>
 </page>
