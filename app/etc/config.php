@@ -11,6 +11,7 @@ return array (
     'Hodovanuk_FirstModule' => 1,
     'Hodovanuk_Second' => 1,
     'Hodovanuk_Task' => 1,
+    'Hodovanuk_Third' => 1,
     'Magento_Directory' => 1,
     'Koshyk_HomeTaskModule' => 1,
     'Koshyk_SecondModule' => 1,
