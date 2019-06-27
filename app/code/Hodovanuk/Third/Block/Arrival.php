@@ -31,4 +31,8 @@ class Arrival extends Template
         return $this->getUrl($this->urlToCart);
     }
 
+    public function getButtonLink()
+    {
+        return $this->getUrl('*/*/*', ['_query' => 'submit']);
+    }
 }
