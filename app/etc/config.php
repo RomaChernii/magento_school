@@ -146,6 +146,7 @@ return array (
     'Roche_Test' => 1,
     'Semysiuk_FirstModule' => 1,
     'Semysiuk_HomeWorkModule' => 1,
+    'Semysiuk_LayoutBlockModule' => 1,
     'Shopial_Facebook' => 1,
     'Skavronskiy_FirstModule' => 1,
     'Skavronskiy_FirstModule_HW' => 1,

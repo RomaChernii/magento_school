@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Roche test renderer index page xml
+ *
+ * @category  Roche
+ * @package   Roche\Test
+ * @author    Roman Chernii <roche@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Roche\Test\Block\Renderer\Wording" name="renderer_wording" template="Roche_Test::renderer/wording.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
