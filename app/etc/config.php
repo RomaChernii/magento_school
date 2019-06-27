@@ -15,6 +15,7 @@ return array (
     'Koshyk_HomeTaskModule' => 1,
     'Koshyk_SecondModule' => 1,
     'Lebed_FirstHome' => 1,
+    'Lebed_SecondHomeModule' => 1,
     'Magento_Eav' => 1,
     'Magento_Theme' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
