@@ -19,6 +19,16 @@ class Arrival extends Template
     /**
      * Contain url
      * @var string
+     *
      */
     public $urlToCart = 'checkout/cart/';
+
+    /**
+     * @return string
+     */
+    public function getLink()
+    {
+        return $this->getUrl($this->urlToCart);
+    }
+
 }

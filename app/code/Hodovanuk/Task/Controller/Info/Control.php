@@ -12,8 +12,7 @@ class Control extends Action
 {
     public function execute()
     {
-        var_dump($this->getRequest()->getParams());
-        echo '<form method="get" action=""><input type="submit" id="submitid" name="submitname" value="submitvakue"></form>';
+        echo 'hello word hodovanuk 1.1 test task';
         exit();
     }
 }
