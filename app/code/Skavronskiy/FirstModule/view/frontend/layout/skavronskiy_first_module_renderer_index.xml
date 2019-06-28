@@ -9,9 +9,9 @@
     <body>
         <referenceContainer name="content">
             <block class="Magento\Framework\View\Element\Template" name="first_view_model" template="Skavronskiy_FirstModule::renderer/price.phtml">
-            <arguments>
-                <argument name="priceCurrency" xsi:type="object">Skavronskiy\FirstModule\ViewModel\PriceCurrency</argument>
-            </arguments>
+                <arguments>
+                    <argument name="priceCurrency" xsi:type="object">Skavronskiy\FirstModule\ViewModel\PriceCurrency</argument>
+                </arguments>
             </block>
         </referenceContainer>
     </body>
