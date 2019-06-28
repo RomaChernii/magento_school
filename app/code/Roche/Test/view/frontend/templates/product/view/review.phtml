@@ -1,0 +1,15 @@
+<?php
+/**
+ * Roche product view review template
+ *
+ * @category  Roche
+ * @package   Roche\Test
+ * @author    Roman Chernii <roche@smile.fr>
+ * @copyright 2019 Smile
+ */
+/** @var \Roche\Test\Block\Product\View $block */
+?>
+<div class="reviews-actions">
+    <a class="action add" href="<?php echo $block->getReviewUrl(); ?>"><?php echo __('Add Your Review'); ?></a>
+</div>
+<?php echo $block->getChildHtml('renderer_wording'); ?>

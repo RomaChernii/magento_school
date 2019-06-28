@@ -2,6 +2,24 @@
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="page.main.title" remove="true"/>
+        <referenceBlock name="breadcrumbs">
+            <action method="addCrumb">
+                <argument name="crumbName" xsi:type="string">Home</argument>
+                <argument name="crumbInfo" xsi:type="array">
+                    <item name="title" xsi:type="string">Home</item>
+                    <item name="label" xsi:type="string">Home</item>
+                    <item name="link" xsi:type="string">{{baseUrl}}</item>
+                </argument>
+            </action>
+            <action method="addCrumb">
+                <argument name="crumbName" xsi:type="string">Hodovanuk</argument>
+                <argument name="crumbInfo" xsi:type="array">
+                    <item name="title" xsi:type="string">Hodovanuk</item>
+                    <item name="label" xsi:type="string">Hodovanuk</item>
+                </argument>
+<!--No need of link to a current page-->
+            </action>
+        </referenceBlock>
         <referenceContainer name="div.sidebar.main" htmlTag="div">
             <container name="list.value1" htmlTag="ol">
                 <block class="Hodovanuk\Second\Block\Site\SideList" name="head.bar" template="Hodovanuk_Second::side_list.phtml"/>
@@ -9,6 +27,12 @@
         </referenceContainer>
         <referenceContainer name="content">
             <block class="Hodovanuk\Second\Block\Site\SideList" name="task_index" template="Hodovanuk_Second::site.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="my_modelview" template="Hodovanuk_Second::viewmodel.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Hodovanuk\Second\ViewModel\FirstVm</argument>
+                    <argument name="viewSecond" xsi:type="object">Hodovanuk\Second\ViewModel\SecondVm</argument>
+                </arguments>
+            </block>
         </referenceContainer>
         <referenceContainer name="footer-container">
             <block class="Hodovanuk\Second\Block\Site\SideList" name="my.footer.block" template="Hodovanuk_Second::footer_block.phtml"/>

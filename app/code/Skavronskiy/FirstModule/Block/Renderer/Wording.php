@@ -15,4 +15,3 @@ class Wording extends Template
        return __('Hello World');
     }
 }
-

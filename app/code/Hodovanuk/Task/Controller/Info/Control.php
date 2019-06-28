@@ -12,7 +12,7 @@ class Control extends Action
 {
     public function execute()
     {
-        echo "Hodovanuk 1.1 test task";
+        echo 'hello word hodovanuk 1.1 test task';
         exit();
     }
 }
