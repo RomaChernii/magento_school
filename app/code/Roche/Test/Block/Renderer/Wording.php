@@ -7,6 +7,7 @@
  * @author    Roman Chernii <roche@smile.fr>
  * @copyright 2019 Smile
  */
+
 namespace Roche\Test\Block\Renderer;
 
 use Magento\Framework\View\Element\Template;

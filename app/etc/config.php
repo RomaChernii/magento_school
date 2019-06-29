@@ -4,7 +4,7 @@ return array (
   array (
     'Borovets_FirstHomeModule' => 1,
     'Magento_Store' => 1,
-<<<<<<< HEAD
+
     'Magento_Directory' => 1,
     'Magento_Eav' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
@@ -16,7 +16,7 @@ return array (
     'Magento_AdminNotification' => 1,
     'Magento_BundleImportExport' => 1,
     'Magento_Indexer' => 1,
-=======
+
     'Chleck_FirstModule' => 1,
     'Chleck_FirstModuleHW' => 1,
     'Dehtiarov_FirstModule' => 1,
@@ -39,7 +39,7 @@ return array (
     'Magento_Indexer' => 1,
     'Magento_BundleImportExport' => 1,
     'Magento_Search' => 1,
->>>>>>> 8401cf612b75b866d8ecec3bd00d206898972a01
+
     'Magento_CacheInvalidate' => 1,
     'Magento_Cms' => 1,
     'Magento_Catalog' => 1,
@@ -52,55 +52,55 @@ return array (
     'Magento_SalesSequence' => 1,
     'Magento_CatalogUrlRewrite' => 1,
     'Magento_Widget' => 1,
-<<<<<<< HEAD
+
     'Magento_SalesSequence' => 1,
     'Magento_Sales' => 1,
     'Chleck_FirstModuleHW' => 1,
-=======
+
     'Magento_Sales' => 1,
     'Magento_CatalogInventory' => 1,
     'Lebed_FirstModule' => 1,
->>>>>>> 8401cf612b75b866d8ecec3bd00d206898972a01
+
     'Magento_Downloadable' => 1,
     'Magento_CmsUrlRewrite' => 1,
     'Magento_Config' => 1,
     'Magento_ConfigurableImportExport' => 1,
-<<<<<<< HEAD
+
     'Magento_CatalogInventory' => 1,
     'Magento_Checkout' => 1,
     'Magento_UrlRewrite' => 1,
-=======
+
     'Magento_UrlRewrite' => 1,
     'Magento_Checkout' => 1,
     'Magento_CatalogSearch' => 1,
->>>>>>> 8401cf612b75b866d8ecec3bd00d206898972a01
+
     'Magento_Contact' => 1,
     'Magento_Cookie' => 1,
     'Magento_Cron' => 1,
     'Magento_CurrencySymbol' => 1,
-<<<<<<< HEAD
+
     'Magento_Captcha' => 1,
-=======
+
     'Borovets_FirstModule' => 1,
->>>>>>> 8401cf612b75b866d8ecec3bd00d206898972a01
+
     'Magento_CustomerImportExport' => 1,
     'Magento_SampleData' => 1,
     'Magento_Deploy' => 1,
     'Magento_Developer' => 1,
     'Magento_Dhl' => 1,
-<<<<<<< HEAD
+
     'Magento_Authorizenet' => 1,
     'Magento_CatalogSearch' => 1,
     'Magento_ImportExport' => 1,
     'Magento_User' => 1,
     'Magento_CatalogRule' => 1,
-=======
+
     'Magento_Captcha' => 1,
     'Magento_User' => 1,
     'Magento_ImportExport' => 1,
     'Magento_Tax' => 1,
     'Magento_Authorizenet' => 1,
->>>>>>> 8401cf612b75b866d8ecec3bd00d206898972a01
+
     'Magento_Email' => 1,
     'Magento_EncryptionKey' => 1,
     'Magento_Fedex' => 1,
@@ -112,11 +112,11 @@ return array (
     'Magento_GroupedProduct' => 1,
     'Magento_Tax' => 1,
     'Magento_DownloadableImportExport' => 1,
-<<<<<<< HEAD
+
     'Magento_Weee' => 1,
-=======
+
     'Magento_CatalogRule' => 1,
->>>>>>> 8401cf612b75b866d8ecec3bd00d206898972a01
+
     'Magento_Security' => 1,
     'Magento_LayeredNavigation' => 1,
     'Magento_Marketplace' => 1,
@@ -130,21 +130,21 @@ return array (
     'Magento_SalesRule' => 1,
     'Magento_OfflineShipping' => 1,
     'Magento_PageCache' => 1,
-<<<<<<< HEAD
+
     'Magento_ConfigurableProductSales' => 1,
-=======
+
     'Magento_CatalogSampleData' => 1,
->>>>>>> 8401cf612b75b866d8ecec3bd00d206898972a01
+
     'Magento_Vault' => 1,
     'Magento_Persistent' => 1,
     'Magento_ProductAlert' => 1,
     'Magento_BundleSampleData' => 1,
     'Magento_ProductVideo' => 1,
-<<<<<<< HEAD
+
     'Magento_Paypal' => 1,
-=======
+
     'Magento_ConfigurableProductSales' => 1,
->>>>>>> 8401cf612b75b866d8ecec3bd00d206898972a01
+
     'Magento_Reports' => 1,
     'Magento_RequireJs' => 1,
     'Magento_Review' => 1,
@@ -155,19 +155,18 @@ return array (
     'Magento_Paypal' => 1,
     'Magento_SalesInventory' => 1,
     'Magento_OfflineShippingSampleData' => 1,
-<<<<<<< HEAD
+
     'Magento_BundleSampleData' => 1,
     'Magento_CustomerSampleData' => 1,
     'Magento_ThemeSampleData' => 1,
     'Magento_ConfigurableSampleData' => 1,
     'Magento_ReviewSampleData' => 1,
-=======
+
     'Magento_ConfigurableSampleData' => 1,
     'Magento_CustomerSampleData' => 1,
     'Magento_CheckoutAgreements' => 1,
     'Magento_ThemeSampleData' => 1,
     'Magento_ProductLinksSampleData' => 1,
->>>>>>> 8401cf612b75b866d8ecec3bd00d206898972a01
     'Magento_Integration' => 1,
     'Magento_SendFriend' => 1,
     'Magento_Shipping' => 1,
@@ -180,11 +179,11 @@ return array (
     'Magento_GroupedProductSampleData' => 1,
     'Magento_TaxImportExport' => 1,
     'Magento_TaxSampleData' => 1,
-<<<<<<< HEAD
+
     'Chleck_SecondModuleHW' => 1,
-=======
+
     'Koshyk_FirstModule' => 1,
->>>>>>> 8401cf612b75b866d8ecec3bd00d206898972a01
+
     'Magento_CmsSampleData' => 1,
     'Magento_Translation' => 1,
     'Magento_GoogleOptimizer' => 1,

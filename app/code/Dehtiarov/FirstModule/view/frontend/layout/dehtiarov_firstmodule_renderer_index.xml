@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="Customer My Account (All Pages)" design_abstraction="custom">
-    <body>
-        <referenceContainer name="content">
-            <block class="Dehtiarov\FirstModule\Block\Renderer\Wording" name="renderer_wording" template="Dehtiarov_FirstModule::renderer/wording.phtml" />
-        </referenceContainer>
-    </body>
-</page>
