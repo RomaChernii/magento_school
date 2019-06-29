@@ -3,29 +3,42 @@
 
 namespace Chleck\FirstModuleHW\Controller\Index;
 use Magento\Framework\App\Action\Action;
-/*use Magento\Framework\App\Action\Context;
-use Magento\Framework\View\Result\PageFactory;
-*/
+
+/**
+ * Class Index
+ * @package Chleck\FirstModuleHW\Controller\Index
+ */
 
 class Index extends Action
 {
+    /**
+     * @var PageFactory
+     */
 
-   /*public  $pageFactory;
+   public  $pageFactory;
 
-   public function __construct(Context $context,
-                                PageFactory $pageFactory)
+    /**
+     * Index constructor.
+     * @param Context $context
+     * @param PageFactory $pageFactory
+     */
+
+   public function __construct(Context $context, PageFactory $pageFactory)
     {
         $this-> pageFactory = $pageFactory;
         return parent::__construct($context);
-    }*/
+    }
 
-
+    /**
+     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|void
+     */
 
     public function execute(){
-        //var_dump(123213);die;
+
         $this->_view->loadLayout();
         $this->_view->renderLayout();
     }
 
 
 }
+

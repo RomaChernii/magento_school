@@ -10,6 +10,9 @@ use Magento\Framework\App\Action\Action as AbstractAction;
 
 class Index extends AbstractAction
 {
+    /**
+     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|void
+     */
 
     public function execute()
     {
@@ -17,3 +20,4 @@ class Index extends AbstractAction
         $this->_view->renderLayout();
     }
 }
+

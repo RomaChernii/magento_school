@@ -16,14 +16,10 @@ class Test extends MagentoView
      * @return int|\Magento\Catalog\Model\Product
      */
 
-   /* public function getProduct()
-    {
-        return "Hi";
-    }*/
-
     public function hasOptions()
     {
 
         return "Hi";
     }
 }
+
