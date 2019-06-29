@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Roche test category product view xml
+ *
+ * @category  Roche
+ * @package   Roche\Test
+ * @author    Roman Chernii <roche@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <block class="Roche\Test\Block\Product\View" name="product.info.review" template="Roche_Test::product/view/review.phtml" after="product.info.stock.sku">
+            <block class="Roche\Test\Block\Renderer\Wording" name="renderer_wording" template="Roche_Test::renderer/wording.phtml"/>
+        </block>
+    </body>
+</page>
