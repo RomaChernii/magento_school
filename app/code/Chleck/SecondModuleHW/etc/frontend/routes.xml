@@ -7,8 +7,8 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
-        <route id="chleckhw" frontName="chleckfirstmodulehw">
-            <module name="Chleck_FirstModuleHW" />
+        <route id="mymodule" frontName="secondmodulehw">
+            <module name="Chleck_SecondModuleHW" />
         </route>
     </router>
 </config>
