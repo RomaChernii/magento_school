@@ -2,13 +2,13 @@
 
 
 namespace Chleck\FirstModuleHW\Controller\Index;
+
 use Magento\Framework\App\Action\Action;
 
 /**
  * Class Index
  * @package Chleck\FirstModuleHW\Controller\Index
  */
-
 class Index extends Action
 {
     /**
@@ -19,7 +19,5 @@ class Index extends Action
         $this->_view->loadLayout();
         $this->_view->renderLayout();
     }
-
-
 }
 

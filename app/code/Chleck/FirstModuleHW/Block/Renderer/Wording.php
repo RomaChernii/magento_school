@@ -2,6 +2,7 @@
 
 
 namespace Chleck\FirstModuleHW\Block\Renderer;
+
 use Magento\Framework\View\Element\Template;
 
 /**
@@ -9,7 +10,6 @@ use Magento\Framework\View\Element\Template;
  *
  * @package Rochle\test\Block\Remember
  */
-
 class Wording extends Template
 {
     /**
@@ -21,5 +21,4 @@ class Wording extends Template
     {
         return __('Hello World');
     }
-
 }
