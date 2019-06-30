@@ -10,4 +10,4 @@
 
 
 <h2 class="one"><?php echo $block->escapeHtml($block->getText()); ?></h2>
-<h2 class="one"><a  href="<?php echo $block->getReviewUrl(); ?>">--->Go to shopping cart<---</a></h2>
+<h2 class="one"><a  href="<?php echo $block->escapeHtml($block->getCartUrl()); ?>">--->Go to shopping cart<---</a></h2>

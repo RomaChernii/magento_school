@@ -13,9 +13,9 @@
         <referenceContainer name="content">
             <block class="Koshyk\ThirdModule\Block\Page\View" name="content_block" template="Koshyk_ThirdModule::firstblock.phtml"/>
             <block class="Magento\Framework\View\Element\Template" name="view_model" template="Koshyk_ThirdModule::secondblock.phtml">
-                    <arguments>
-                        <argument name="priceCurrency" xsi:type="object">Koshyk\ThirdModule\ViewModel\PriceCurrency</argument>
-                    </arguments>
+                <arguments>
+                    <argument name="priceCurrency" xsi:type="object">Koshyk\ThirdModule\ViewModel\PriceCurrency</argument>
+                </arguments>
             </block>
         </referenceContainer>
     </body>

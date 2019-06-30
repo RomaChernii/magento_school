@@ -22,7 +22,7 @@ class View extends Template
         return ('Welcome to this page');
     }
 
-    public function getReviewUrl()
+    public function getCartUrl()
     {
         return $this->getUrl('checkout\cart');
     }
