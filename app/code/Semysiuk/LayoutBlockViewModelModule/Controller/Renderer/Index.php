@@ -8,10 +8,7 @@ class Index extends Action
 {
     public function execute()
     {
-        echo "Hello from renderer";
-
-        exit();
-//        $this->_view->loadLayout();
-//        $this->_view->renderLayout();
+        $this->_view->loadLayout();
+        $this->_view->renderLayout();
     }
 }
