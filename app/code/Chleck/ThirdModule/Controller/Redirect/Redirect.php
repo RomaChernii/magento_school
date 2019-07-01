@@ -15,33 +15,11 @@ use Magento\Framework\App\Action\Context;
 
 class Redirect extends Action
 {
-    /**
-     * @var PageFactory
-     */
-    protected $PageFactory;
 
-    /**
-     * Redirect constructor.
-     * @param Context $context
-     * @param PageFactory $PageFactory
-     */
-    public function __construct(
-        Context $context,
-        PageFactory $PageFactory
-    )
-    {
-        parent::__construct($context);
-        $this->PageFactory = $PageFactory;
-    }
 
-    /**
-     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|\Magento\Framework\View\Result\Page
-     */
     public function execute()
     {
+       return "You was redirected from controller(Chleck\ThirdModule\Controller\Index)";
 
-        $resultPage = $this->PageFactory->create();
-
-        return $resultPage;
     }
 }

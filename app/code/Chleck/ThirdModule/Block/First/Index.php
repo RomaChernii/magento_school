@@ -26,15 +26,6 @@ class Index extends MagentoView
             'success' => 1
         ];
 
-        return $this->getUrl('third/index/index', $params);
-    }
-
-    /**
-     * @param null $product
-     * @return float|int
-     */
-    public function getProductDefaultQty($product = null)
-    {
-        echo "My home work.";
+        return "Url is: ".$this->getUrl('third/index/index', $params);
     }
 }

@@ -24,6 +24,6 @@ class Index extends Template
      */
     public function getText()
     {
-        echo "Hi:)";
+        return "Hi it is magento module:)";
     }
 }
