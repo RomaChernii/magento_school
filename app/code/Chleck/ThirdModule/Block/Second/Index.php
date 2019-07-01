@@ -18,8 +18,6 @@ use Magento\Framework\View\Element\Template;
 class Index extends Template
 {
     /**
-     * Get text
-     *
      * @return string
      */
     public function getText()

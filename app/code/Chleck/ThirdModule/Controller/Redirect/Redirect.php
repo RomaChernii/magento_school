@@ -10,16 +10,15 @@
 namespace Chleck\ThirdModule\Controller\Redirect;
 
 use Magento\Framework\App\Action\Action;
-use Magento\Framework\View\Result\PageFactory;
-use Magento\Framework\App\Action\Context;
 
+/**
+ * Class Redirect
+ * @package Chleck\ThirdModule\Controller\Redirect
+ */
 class Redirect extends Action
 {
-
-
     public function execute()
     {
        return "You was redirected from controller(Chleck\ThirdModule\Controller\Index)";
-
     }
 }
