@@ -19,6 +19,9 @@ class Redirect extends Action
 {
     public function execute()
     {
-       return "You was redirected from controller(Chleck\ThirdModule\Controller\Index)";
+        $this->_view->loadLayout();
+        $this->_view->renderLayout();
+
+       return "You was redirected from controller (Chleck\ThirdModule\Controller\Index).";
     }
 }
