@@ -6,7 +6,6 @@
  * @category  Chleck
  * @package   Chleck\ThirdModule
  * @author    Yuri Chleck <yurichlek@gmail.com>
- * @copyright 2019 Smile
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">

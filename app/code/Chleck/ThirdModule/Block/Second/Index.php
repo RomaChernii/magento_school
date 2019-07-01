@@ -5,7 +5,6 @@
  * @category  Chleck
  * @package   Chleck\ThirdModule
  * @author    Yuri Chleck <yurichlek@gmail.com>
- * @copyright 2019 Smile
  */
 
 namespace Chleck\ThirdModule\Block\Second;

@@ -5,7 +5,6 @@
  * @category  Chleck
  * @package   Chleck\ThirdModule
  * @author    Yuri Chleck <yurichlek@gmail.com>
- * @copyright 2019 Smile
  */
 
 namespace Chleck\ThirdModule\Controller\Redirect;
@@ -19,20 +18,20 @@ class Redirect extends Action
     /**
      * @var PageFactory
      */
-    protected $resultPageFactory;
+    protected $PageFactory;
 
     /**
      * Redirect constructor.
      * @param Context $context
-     * @param PageFactory $resultPageFactory
+     * @param PageFactory $PageFactory
      */
     public function __construct(
         Context $context,
-        PageFactory $resultPageFactory
+        PageFactory $PageFactory
     )
     {
         parent::__construct($context);
-        $this->resultPageFactory = $resultPageFactory;
+        $this->PageFactory = $PageFactory;
     }
 
     /**
@@ -41,7 +40,7 @@ class Redirect extends Action
     public function execute()
     {
 
-        $resultPage = $this->resultPageFactory->create();
+        $resultPage = $this->PageFactory->create();
 
         return $resultPage;
     }

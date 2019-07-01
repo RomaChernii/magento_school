@@ -3,7 +3,6 @@
 
 namespace Chleck\FirstModule\ViewModel;
 
-use Magento\Framework\Pricing\PriceCurrencyInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 /**
