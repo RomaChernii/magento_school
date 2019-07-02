@@ -30,14 +30,14 @@ class Index extends Action
      * @param Context $context
      * @param PageFactory $resultPageFactory
      */
-//    public function __construct(
-//        Context $context,
-//        PageFactory $resultPageFactory
-//    )
-//    {
-//        parent::__construct($context);
-//        $this->resultPageFactory = $resultPageFactory;
-//    }
+    public function __construct(
+        Context $context,
+        PageFactory $resultPageFactory
+    )
+    {
+        parent::__construct($context);
+        $this->resultPageFactory = $resultPageFactory;
+    }
 
     /**
      * Index action
@@ -46,11 +46,9 @@ class Index extends Action
      */
     public function execute()
     {
-        $this->_view->loadLayout();
-        $this->_view->renderLayout();
         /** @var \Magento\Framework\View\Result\Page $resultPage */
-        //$resultPage = $this->resultPageFactory->create();
+        $resultPage = $this->resultPageFactory->create();
 
-        //return $resultPage;
+        return $resultPage;
     }
 }
