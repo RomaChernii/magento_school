@@ -13,7 +13,7 @@ use Magento\Framework\App\Action\Context;
 /**
  * Class Index
  *
- * @package Roche\Test\Controller\Renderer
+ * @package Borovets\SecondModule\Controller\Renderer
  */
 class Index extends Action
 {

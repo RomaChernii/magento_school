@@ -6,7 +6,6 @@
  */
 namespace Borovets\SecondModule\Block\Renderer;
 
-use http\Client\Curl\User;
 use Magento\Framework\View\Element\Template;
 
 class Wording extends Template
