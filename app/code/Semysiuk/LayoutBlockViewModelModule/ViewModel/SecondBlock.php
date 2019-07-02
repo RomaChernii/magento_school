@@ -6,15 +6,10 @@ use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class SecondBlock implements ArgumentInterface
 {
-    private $secondBlockName = "HELLO FROM SECOND BLOCK-VIEW_MODEL";
+    const TEXT = "HELLO FROM SECOND BLOCK-VIEW_MODEL";
 
-    public function __construct()
+    public function getText()
     {
-
-    }
-
-    public function getBlockName()
-    {
-        return $this->secondBlockName;
+        return self::TEXT;
     }
 }

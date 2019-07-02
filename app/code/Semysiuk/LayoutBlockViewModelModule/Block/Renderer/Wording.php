@@ -6,15 +6,16 @@ use Magento\Framework\View\Element\Template;
 
 class Wording extends Template
 {
-    public $url = "checkout/cart/index";
+    const CHECKOUT_CART_URL = "checkout/cart/index";
+    const TEXT = "HELLO FROM FIRST WORDING BLOCK-TEMPLATE";
 
     public function getUrlLink()
     {
-        return $this->getUrl($this->url);
+        return $this->getUrl(self::CHECKOUT_CART_URL);
     }
 
     public function getText()
     {
-        return __("HELLO FROM FIRST WORDING BLOCK-TEMPLATE");
+        return self::TEXT;
     }
 }
