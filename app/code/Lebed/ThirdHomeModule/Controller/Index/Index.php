@@ -42,7 +42,7 @@ class Index extends Action
     }
 
     /**
-     * Page action
+     * Index action
      *
      * @return \Magento\Framework\View\Result\Page
      */
