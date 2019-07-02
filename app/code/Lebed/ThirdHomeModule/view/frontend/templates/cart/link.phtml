@@ -1,0 +1,14 @@
+<?php
+/**
+ * Lebed ThirdHomeModule cart link template
+ *
+ * @category  Lebed
+ * @package   Lebed/ThirdHomeModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+/** @var Lebed\ThirdHomeModule\Block\Cart\Link $block */
+?>
+<div>
+    <a href="<?= $block->escapeUrl($block->getCartLink()) ?>" target="_blank"><?= __('Go to cart') ?></a>
+</div>
