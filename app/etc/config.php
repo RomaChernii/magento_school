@@ -2,6 +2,7 @@
 return array (
   'modules' => 
   array (
+    'Magento_Config' => 1,
     'Borovets_FirstHomeModule' => 1,
     'Magento_Store' => 1,
     'Borovets_SecondModule' => 1,
@@ -15,6 +16,7 @@ return array (
     'Hodovanuk_Second' => 1,
     'Hodovanuk_Task' => 1,
     'Hodovanuk_Third' => 1,
+    'Koshyk_ConfigurationK' => 1,
     'Magento_Theme' => 1,
     'Koshyk_HomeTaskModule' => 1,
     'Koshyk_SecondModule' => 1,
@@ -50,6 +52,8 @@ return array (
     'Magento_Downloadable' => 1,
     'Magento_CmsUrlRewrite' => 1,
     'Hodovanuk_Config' => 1,
+    'Borovets_Configuration' => 1,
+    'Lebed_FourthModule' => 1,
     'Magento_ConfigurableImportExport' => 1,
     'Magento_UrlRewrite' => 1,
     'Magento_ConfigurableProduct' => 1,
