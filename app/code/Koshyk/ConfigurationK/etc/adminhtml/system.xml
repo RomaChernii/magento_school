@@ -21,10 +21,12 @@
                 <field id="field_id" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Koshyk Yes/No</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>section/key/first_key</config_path>
                 </field>
                 <field id="validate_vat_number" translate="text" sortOrder="62" showInDefault="1" showInWebsite="1" showInStore="1">
                    <label>Input</label>
                    <comment>Please set string</comment>
+                   <config_path>section/key/second_key</config_path>
                 </field>
             </group>
             <group id="koshyk_section" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">

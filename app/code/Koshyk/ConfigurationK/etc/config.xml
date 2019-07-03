@@ -12,5 +12,11 @@
                 <koshyk_key>654</koshyk_key>
             </koshyk>
         </payment>
+        <section>
+            <key>
+                <first_key>1</first_key>
+                <second_key>default value</second_key>
+            </key>
+        </section>
     </default>
 </config>
