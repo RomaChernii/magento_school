@@ -22,6 +22,8 @@ class Index extends AbstractAction
     {
         $this->_view->loadLayout();
         $this->_view->renderLayout();
+
+        return "Hi";
     }
 }
 
