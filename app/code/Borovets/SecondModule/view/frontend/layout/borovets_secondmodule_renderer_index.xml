@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Borovets\SecondModule\Block\Renderer\Wording" name="renderer_wording" template="Borovets_SecondModule::renderer/wording.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="footer">
+            <block class="Borovets\SecondModule\Block\Renderer\Wording" name="renderer_wording2" template="Borovets_SecondModule::renderer/footer.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
