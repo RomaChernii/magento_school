@@ -10,14 +10,23 @@
             <tab>hodovanuk</tab>
             <resource>Hodovanuk_Config::config_hodovanuk</resource>
             <group id="hodovanuk_store_information" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>Hodovanuk main configuration</label>
+                <label>Hodovanuk feedback form</label>
                 <field id="hodovanuk_field" type="select" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Hodovanuk selector</label>
+                    <label>Are you male gender?</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="hodovanuk_second" type="text" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Hodovanuk Input field</label>
-                    <comment>Hodovanuk comments</comment>
+                <field id="hodovanuk_second" type="text" translate="label" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Name</label>
+                    <comment>Please input name</comment>
+                    <config_path>hodovanuk/second_field/value</config_path>
+                </field>
+                <field id="hodovanuk_text_area" type="textarea" translate="label" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Feedback</label>
+                    <comment>Pleace input your comment</comment>
+                    <config_path>hodovanuk/textarea_field/value</config_path>
+                </field>
+                <field id="hodovanuk_submit_button" type="submit" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <config_path>hodovanuk/button_field/value</config_path>
                 </field>
             </group>
             <group id="hodovanuk_next_fild" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
