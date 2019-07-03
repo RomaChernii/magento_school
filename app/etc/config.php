@@ -2,6 +2,7 @@
 return array (
   'modules' => 
   array (
+    'Magento_Config' => 1,
     'Borovets_FirstHomeModule' => 1,
     'Magento_Store' => 1,
     'Borovets_SecondModule' => 1,
@@ -49,7 +50,8 @@ return array (
     'Chleck_SecondModuleHW' => 1,
     'Magento_Downloadable' => 1,
     'Magento_CmsUrlRewrite' => 1,
-    'Magento_Config' => 1,
+    'Borovets_Configuration' => 1,
+    'Lebed_FourthModule' => 1,
     'Magento_ConfigurableImportExport' => 1,
     'Magento_UrlRewrite' => 1,
     'Magento_ConfigurableProduct' => 1,
