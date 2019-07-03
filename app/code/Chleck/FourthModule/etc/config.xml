@@ -5,7 +5,8 @@
  * See COPYING.txt for license details.
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <!--<export>
             <customer_page_size>
@@ -16,6 +17,16 @@
         <payment>
             <my_first_group>
                 <api_key>1222299239jifvjndjfksw12</api_key>
+            </my_first_group>
+        </payment>
+        <chleck_task>
+            <my_first_group>
+                <chleck_id>default_value</chleck_id>
+            </my_first_group>
+        </chleck_task>
+        <payment>
+            <my_first_group>
+                <chleck_id>default_value</chleck_id>
             </my_first_group>
         </payment>
     </default>
