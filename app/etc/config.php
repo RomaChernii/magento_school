@@ -2,6 +2,7 @@
 return array (
   'modules' => 
   array (
+    'Magento_Config' => 1,
     'Borovets_FirstHomeModule' => 1,
     'Magento_Store' => 1,
     'Borovets_SecondModule' => 1,
@@ -20,7 +21,6 @@ return array (
     'Koshyk_ThirdModule' => 1,
     'Lebed_FirstHome' => 1,
     'Magento_Customer' => 1,
-    'Magento_Config' => 1,
     'Lebed_SecondHomeModule' => 1,
     'Magento_AdminNotification' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
@@ -49,6 +49,7 @@ return array (
     'Chleck_SecondModuleHW' => 1,
     'Magento_Downloadable' => 1,
     'Magento_CmsUrlRewrite' => 1,
+    'Borovets_Configuration' => 1,
     'Lebed_FourthModule' => 1,
     'Magento_ConfigurableImportExport' => 1,
     'Magento_UrlRewrite' => 1,
