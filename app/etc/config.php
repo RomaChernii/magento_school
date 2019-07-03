@@ -50,6 +50,7 @@ return array (
     'Magento_Downloadable' => 1,
     'Magento_CmsUrlRewrite' => 1,
     'Borovets_Configuration' => 1,
+    'Lebed_FourthModule' => 1,
     'Magento_ConfigurableImportExport' => 1,
     'Magento_UrlRewrite' => 1,
     'Magento_ConfigurableProduct' => 1,
