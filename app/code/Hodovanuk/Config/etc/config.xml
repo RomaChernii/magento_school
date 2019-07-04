@@ -16,6 +16,9 @@
             <button_field>
                 <value>Submit</value>
             </button_field>
+            <first_field>
+                <value>1</value>
+            </first_field>
         </hodovanuk>
     </default>
 </config>
