@@ -1,12 +1,8 @@
 <?php
 
-
 namespace Chleck\FirstModule\ViewModel;
 
-<<<<<<< HEAD
 use Magento\Framework\Pricing\PriceCurrencyInterface;
-=======
->>>>>>> 8a9cb34061c603472565ddf7cc2ba27172981609
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 /**
@@ -37,4 +33,3 @@ class PriceCurrency implements ArgumentInterface
         return $this->priceCurrency->convertAndFormat($value);
     }
 }
-
