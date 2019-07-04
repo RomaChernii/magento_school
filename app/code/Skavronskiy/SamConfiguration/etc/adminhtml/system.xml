@@ -31,6 +31,14 @@
                     <comment>Please set string</comment>
                 </field>
             </group>
+            <group id="my_sam_2" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Is Disabled</label>
+                <attribute type="expanded">0</attribute>
+                <field id="sam_id" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>My Yes/No Field</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
         </section>
         <section id="payment">
             <group id="sam_payment" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1"
