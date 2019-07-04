@@ -1,2 +1,5 @@
-
-<h1><?php echo $block->getText();?></h1>
+<?php
+$configData = $this->helper('Chleck\FourthModule\Helper\Data');
+?>
+<h1><?php echo $block->getText(); ?></h1>
+<h1><?php echo $configData->getString(); ?></h1>

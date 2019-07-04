@@ -21,12 +21,12 @@
         </payment>
         <chleck_task>
             <my_first_group>
-                <chleck_id>default_value</chleck_id>
+                <chleck_id>1</chleck_id>
             </my_first_group>
         </chleck_task>
         <payment>
             <my_first_group>
-                <chleck_id>default_value</chleck_id>
+                <chleck_id>1</chleck_id>
             </my_first_group>
         </payment>
     </default>
