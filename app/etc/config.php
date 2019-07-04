@@ -6,6 +6,7 @@ return array (
     'Borovets_FirstHomeModule' => 1,
     'Magento_Store' => 1,
     'Borovets_SecondModule' => 1,
+    'Borovets_ThirdModule' => 1,
     'Chleck_FirstModule' => 1,
     'Magento_Directory' => 1,
     'Magento_Eav' => 1,
