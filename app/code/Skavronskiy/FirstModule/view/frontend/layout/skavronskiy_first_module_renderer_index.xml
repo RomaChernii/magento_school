@@ -13,6 +13,7 @@
                     <argument name="priceCurrency" xsi:type="object">Skavronskiy\FirstModule\ViewModel\PriceCurrency</argument>
                 </arguments>
             </block>
+            <block class="Skavronskiy\FirstModule\Block\Renderer\Wording" name="first_view_model2" template="Skavronskiy_FirstModule::renderer/wording.phtml" />
         </referenceContainer>
     </body>
 </page>
