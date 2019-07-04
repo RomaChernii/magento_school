@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="tab_id" translate="label" sortOrder="110">
+            <label>TAB_Semysiuk</label>
+        </tab>
+        <section id="section_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Customer Configuration</label>
+            <tab>tab_id</tab>
+            <resource>Semysiuk_AdminConfigModule::config_Semysiuk</resource>
+            <group id="group_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Is Enable</label>
+                <attribute type="expanded">1</attribute>
+                <field id="field_id" translate="label component" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>My Yes/No Field</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="field_id_input" translate="label component" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input</label>
+                    <comment>Please set string</comment>
+                </field>
+            </group>
+            <group id="group_id_1" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Is Disabled</label>
+                <attribute type="expanded">0</attribute>
+                <field id="field_id" translate="label component" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>My Yes/No Field</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
