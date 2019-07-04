@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Semysiuk\LayoutBlockViewModelModule\Block\Renderer\Wording" name="layout_view" template="Semysiuk_LayoutBlockViewModelModule::wording.phtml"></block>
+            <block class="Magento\Framework\View\Element\Template" name="second_view_model" template="Semysiuk_LayoutBlockViewModelModule::view_model.phtml">
+                <arguments>
+                    <argument name="blockName" xsi:type="object">Semysiuk\LayoutBlockViewModelModule\ViewModel\SecondBlock</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

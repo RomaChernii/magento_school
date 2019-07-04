@@ -1,0 +1,12 @@
+<style>
+    .second {
+        color: black;
+        text-align: center;
+    }
+    .second:hover {
+        color: red;
+        transform: scale(2,2);
+        transition: all 0.5s ;
+    }
+</style>
+    <h3 class="second"><?php echo $block->getData('priceCurrency')->getCheckoutPrice(123);?></h3>
