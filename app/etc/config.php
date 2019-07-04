@@ -153,6 +153,7 @@ return array (
     'Potapchuk_FirstModule' => 1,
     'Potapchuk_HomeTask' => 1,
     'Roche_Test' => 1,
+    'Semysiuk_AdminConfigModule' => 1,
     'Semysiuk_FirstModule' => 1,
     'Semysiuk_HomeWorkModule' => 1,
     'Semysiuk_LayoutBlockModule' => 1,
