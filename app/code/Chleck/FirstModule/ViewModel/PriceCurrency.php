@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Chleck\FirstModule\ViewModel;
 
 use Magento\Framework\Pricing\PriceCurrencyInterface;
