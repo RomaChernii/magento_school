@@ -53,11 +53,12 @@ class Items implements ArgumentInterface
      * @return string
      */
     public function getCartInfo() {
+        $cartInfo = __('Your cart is empty');
         $qty = $this->getCartItemsQty();
         if ($qty) {
-            return __('You have %1 item(s) quantity in your cart', $qty);
+            $cartInfo = __('You have %1 item(s) quantity in your cart', $qty);
         }
 
-        return __('Your cart is empty');
+        return $cartInfo;
     }
 }
