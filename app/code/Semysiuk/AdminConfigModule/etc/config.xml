@@ -7,5 +7,10 @@
                 <api_key>A8EEFE76A5E5F7A6S7E5FS67E5</api_key>
             </semysiuk>
         </payment>
+        <section_id>
+            <group_id>
+                <field_id_input>Default string value...</field_id_input>
+            </group_id>
+        </section_id>
     </default>
 </config>
