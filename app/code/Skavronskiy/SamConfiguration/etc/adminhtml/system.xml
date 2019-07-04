@@ -20,10 +20,9 @@
                    showInStore="0">
                 <label>Is SAM</label>
                 <attribute type="expanded">1</attribute>
-                <field id="sam_id" translate="label sam" type="select" sortOrder="10" showInDefault="1"
+                <field id="sam_id" translate="label sam" type="text" sortOrder="10" showInDefault="1"
                        showInWebsite="1" showInStore="1">
-                    <label>My SAM or Not Sam</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <label>SAM</label>
                 </field>
                 <field id="sam_input" translate="label_comment" type="text" sortOrder="20" showInDefault="1"
                        showInWebsite="1" showInStore="1">
