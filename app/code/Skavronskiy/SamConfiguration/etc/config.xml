@@ -7,9 +7,15 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
+        <sam_section>
+            <my_sam>
+                <sam_id>0</sam_id>
+                <sam_input>SAM</sam_input>
+            </my_sam>
+        </sam_section>
         <payment>
             <sam_payment>
-                <api_key>23131231231312312311</api_key>
+                <api_key>231312321231312312311</api_key>
             </sam_payment>
         </payment>
     </default>
