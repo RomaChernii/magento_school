@@ -8,6 +8,7 @@ return array (
     'Chleck_FirstModule' => 1,
     'Magento_Directory' => 1,
     'Magento_Eav' => 1,
+    'Dehtiarov_BlogVideh' => 1,
     'Magento_Config' => 1,
     'Dehtiarov_FirstModule' => 1,
     'Dehtiarov_HomeTaskVideh' => 1,
