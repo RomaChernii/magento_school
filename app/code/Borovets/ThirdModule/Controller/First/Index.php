@@ -18,7 +18,7 @@ class Index extends Action
     public function execute()
     {
         $resultRedirect = $this->resultRedirectFactory->create();
-        $resultRedirect->setPath('borovets_thirdmodule/Second/Index');
+        $resultRedirect->setPath('borovets_thirdmodule/second/index');
 
         return $resultRedirect;
     }

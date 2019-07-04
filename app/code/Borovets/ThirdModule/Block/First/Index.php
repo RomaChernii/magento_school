@@ -19,8 +19,9 @@ class Index extends Template
     {
         return __('Hello World!');
     }
+
     public function getMyUrl()
     {
-        return $this->getUrl().'checkout/cart';
+        return $this->getUrl('checkout/cart');
     }
 }
