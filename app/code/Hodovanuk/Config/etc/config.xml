@@ -6,5 +6,16 @@
                <api_key>install api key</api_key>
            </hodovanuk>
        </payment>
+        <hodovanuk>
+            <second_field>
+                <value>Hodovanuk Mikhaylo</value>
+            </second_field>
+            <textarea_field>
+                <value>Your default text</value>
+            </textarea_field>
+            <button_field>
+                <value>Submit</value>
+            </button_field>
+        </hodovanuk>
     </default>
 </config>
