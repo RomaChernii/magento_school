@@ -8,7 +8,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="borovets" translate="label" sortOrder="110">
-            <label>New feature</label>
+            <label>Borovets Tab</label>
         </tab>
         <section id="borovets_section" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
@@ -16,7 +16,7 @@
             <tab>borovets</tab>
             <resource>Borovets_Configuration::config_borovets</resource>
             <group id="my_group_1" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>Is Enabke</label>
+                <label>Is Enable</label>
                 <attribute type="expanded">1</attribute>
                 <field id="field_id" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>My Yes/No Field</label>
