@@ -9,7 +9,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="sam" translate="label" sortOrder="110">
-            <label>Hello</label>
+            <label>SAM</label>
         </tab>
         <section id="sam_section" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
@@ -20,9 +20,10 @@
                    showInStore="0">
                 <label>Is SAM</label>
                 <attribute type="expanded">1</attribute>
-                <field id="sam_id" translate="label sam" type="text" sortOrder="10" showInDefault="1"
+                <field id="sam_id" translate="label sam" type="select" sortOrder="10" showInDefault="1"
                        showInWebsite="1" showInStore="1">
                     <label>SAM</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="sam_input" translate="label_comment" type="text" sortOrder="20" showInDefault="1"
                        showInWebsite="1" showInStore="1">
