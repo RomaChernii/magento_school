@@ -19,6 +19,7 @@ class Data extends AbstractHelper
         $text = "";
         if($this->getIsEnable())
             $text = $this->scopeConfig->getValue(static::INPUT_VALUE_CONFIG_PATH);
+        
         return $text;
     }
 }
