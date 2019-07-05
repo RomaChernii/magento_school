@@ -1,8 +1,5 @@
 <?php
-
-
 namespace Hodovanuk\Blog\Setup;
-
 
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -11,9 +8,12 @@ use Magento\Framework\DB\Ddl\Table;
 
 class InstallSchema implements InstallSchemaInterface
 {
-    public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
-    {
+    public function install(
+        SchemaSetupInterface $setup,
+        ModuleContextInterface $context
+    ) {
         $installer = $setup;
+
         $installer->startSetup();
 
         $table = $installer->getConnection()->newTable(
