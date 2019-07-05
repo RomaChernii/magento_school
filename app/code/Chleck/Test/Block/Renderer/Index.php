@@ -10,6 +10,8 @@ class Index extends Template
 {
     public function getWelcomeText()
     {
-        return 'Hello World';
+       return 'Hello World';
+      /*  var_dump(11111111111111111);
+        die();*/
     }
 }
