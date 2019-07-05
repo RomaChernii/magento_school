@@ -3,12 +3,13 @@
 
 namespace Chleck\Test\Block\Renderer;
 
+
 use Magento\Framework\View\Element\Template;
 
 class Index extends Template
 {
-    public function getText()
+    public function getWelcomeText()
     {
-        return 'Hello World! ))';
+        return 'Hello World';
     }
 }
