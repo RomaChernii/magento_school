@@ -14,6 +14,7 @@
                 <field id="hodovanuk_field" type="select" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Are you male gender?</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>hodovanuk/first_field/value</config_path>
                 </field>
                 <field id="hodovanuk_second" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Name</label>
