@@ -2,6 +2,7 @@
 return array (
   'modules' => 
   array (
+    'Borovets_Blog' => 1,
     'Magento_Config' => 1,
     'Borovets_FirstHomeModule' => 1,
     'Magento_Store' => 1,
