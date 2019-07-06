@@ -22,7 +22,6 @@ class Index extends Action
      */
     public function execute()
     {
-
         $resultRedirect = $this->resultRedirectFactory->create();
 
         $resultRedirect->setPath('third/redirect/redirect');

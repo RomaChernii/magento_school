@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Chleck\FirstModuleHW\Block\Product;
 
 use Magento\Catalog\Block\Product\View as MagentoView;
@@ -20,4 +19,3 @@ class View extends MagentoView
         return 12;
     }
 }
-

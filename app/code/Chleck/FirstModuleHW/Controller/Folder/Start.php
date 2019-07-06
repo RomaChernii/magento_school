@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Chleck\FirstModuleHW\Controller\Folder;
 
 use Magento\Framework\App\Action\Action as AbstractAction;
@@ -20,11 +19,10 @@ class Start extends AbstractAction
         $resultRedirect = $this->resultRedirectFactory->create();
         $resultRedirect->setPath('customer/account/index');
 
-        if (array_key_exists("success",$params)) {
+        if (array_key_exists("success", $params)) {
             $resultRedirect->setPath('chleckfirstmodulehw/index/index');
         }
 
         return $resultRedirect;
     }
 }
-

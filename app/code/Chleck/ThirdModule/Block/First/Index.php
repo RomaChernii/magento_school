@@ -26,6 +26,6 @@ class Index extends MagentoView
             'success' => 1
         ];
 
-        return "Url is: ".$this->getUrl('third/index/index', $params);
+        return "Url is: " . $this->getUrl('third/index/index', $params);
     }
 }

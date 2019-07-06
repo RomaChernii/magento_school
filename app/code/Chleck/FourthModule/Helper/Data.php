@@ -4,6 +4,10 @@ namespace Chleck\FifthModule\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 
+/**
+ * Class Data
+ * @package Chleck\FifthModule\Helper
+ */
 class Data extends AbstractHelper
 {
 

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Chleck\FirstModuleHW\Block\Renderer;
 
 use Magento\Framework\View\Element\Template;

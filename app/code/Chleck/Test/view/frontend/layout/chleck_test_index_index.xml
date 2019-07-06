@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="Customer My Account (All Pages)" design_abstraction="custom">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+      label="Customer My Account (All Pages)" design_abstraction="custom">
     <body>
         <referenceContainer name="content">
-            <block class="Chleck\Test\Block\Renderer\Index" name="renderer_message" template="Chleck_Test::renderer/message.phtml" />
+            <block class="Chleck\Test\Block\Renderer\Index" name="renderer_message"
+                   template="Chleck_Test::renderer/message.phtml"/>
         </referenceContainer>
     </body>
 </page>

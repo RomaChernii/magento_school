@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Chleck\FirstModuleHW\Controller\Folder\Start;
 
 use Magento\Framework\App\Action\Action as AbstractAction;

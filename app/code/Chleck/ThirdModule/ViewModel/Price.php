@@ -26,7 +26,8 @@ class Price implements ArgumentInterface
      */
     public function __construct(
         PriceCurrencyInterface $priceCurrency
-    ) {
+    )
+    {
         $this->priceCurrency = $priceCurrency;
     }
 
