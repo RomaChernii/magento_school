@@ -12,23 +12,20 @@ use Magento\Framework\App\Action\Context;
 class Index extends AbstractAction
 {
 
-    private function initIndex() {
-    }
-
-    private function generateContent() {
-        return 'Hello World';
-    }
-
     public function __construct(Context $context)
     {
         parent::__construct($context);
-        $this->initIndex();
     }
 
 
     public function execute()
     {
-        echo $this->generateContent();
-        exit();
+        $resultRedirect = $this->resultRedirectFactory->create();
+
+        if (isset($this->getRequest()->getParams()['success'])) {
+            return $resultRedirect->setPath("first_module");
+        }
+
+        return $resultRedirect->setPath('customer/account/index');
     }
 }
