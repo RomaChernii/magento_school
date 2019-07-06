@@ -1,4 +1,5 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-sudo -s php ./bin/magento setup:di:compile
-sudo -s php ./bin/magento setup:upgrade
+php ./bin/magento setup:upgrade
+php ./bin/magento setup:di:compile
+php ./bin/magento cache:clean layout

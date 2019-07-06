@@ -1,0 +1,30 @@
+<style>
+    table.my-table thead {
+        background-color: black;
+        color: white;
+
+        padding: 8px;
+    }
+
+    table.my-table tbody * {
+        padding: 8px 4px;
+        border: 1px lightgrey;
+    }
+</style>
+
+<div>
+    <table class="my-table">
+
+        <thead>
+            <tr><th>Name</th><th>Value</th></tr>
+        </thead>
+
+        <tbody>
+            <?php foreach ($block->getMyData() as $name => $value) { ?>
+
+                <?= $block->mapper($name, $value) ?>
+
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
