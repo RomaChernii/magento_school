@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Koshyk Second Module config
+ *
+ * @category  Koshyk
+ * @package   Koshyk\SecondModule
+ * @author    Roman Koshyk <romadaaaa@gmail.com>
+ */
+ -->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="footer-container">
+            <block class="Koshyk\SecondModule\Block\Page\View" name="string.footer" template="Koshyk_SecondModule::page/footer.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Koshyk\SecondModule\Block\Page\View" name="string.content" template="Koshyk_SecondModule::page/content.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="first_view_model" template="Koshyk_SecondModule::site.phtml">
+                    <arguments>
+                        <argument name="priceCurrency" xsi:type="object">Koshyk\SecondModule\ViewModel\PriceCurrency</argument>
+                    </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

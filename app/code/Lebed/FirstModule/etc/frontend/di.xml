@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed FirstHome di
+ *
+ * @category  Lebed
+ * @package   Lebed\FirstHome
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Instead  Magento\Catalog\Block\Product\View    use    Lebed\FirstModule\Block\Product\View   everywhere -->
+    <preference for="Magento\Catalog\Block\Product\View" type="Lebed\FirstModule\Block\Product\View" />
+</config>

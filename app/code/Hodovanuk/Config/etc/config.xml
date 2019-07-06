@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+       <payment>
+           <hodovanuk>
+               <api_key>install api key</api_key>
+           </hodovanuk>
+       </payment>
+        <hodovanuk>
+            <second_field>
+                <value>Hodovanuk Mikhaylo</value>
+            </second_field>
+            <textarea_field>
+                <value>Your default text</value>
+            </textarea_field>
+            <button_field>
+                <value>Submit</value>
+            </button_field>
+            <first_field>
+                <value>1</value>
+            </first_field>
+        </hodovanuk>
+    </default>
+</config>
