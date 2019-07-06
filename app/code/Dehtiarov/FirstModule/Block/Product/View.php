@@ -17,16 +17,15 @@ use Magento\Catalog\Block\Product\View as MagentoView;
  *
  * @package Dehtiarov\FirstModule\Block\Product
  */
-
 class View extends MagentoView
 {
+    /**
+     * Get Custom Review Text
+     *
+     * @return Magento\Framework\Phrase
+     */
     public function getCustomReview()
     {
-        /**
-         * Get Custom Review Text
-         *
-         * @return Magento\Framework\Phrase
-         */
         return __("My custom review products!!!");
     }
 }
