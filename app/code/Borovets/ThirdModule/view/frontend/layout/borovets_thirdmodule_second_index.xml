@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Borovets\ThirdModule\Block\First\Index" name="first_index" template="Borovets_ThirdModule::first.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="home_view_model" template="Borovets_ThirdModule::second.phtml">
+                <arguments>
+                    <argument name="someClass" xsi:type="object">Borovets\ThirdModule\ViewModel\SomeClass</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

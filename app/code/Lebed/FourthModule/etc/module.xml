@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed FourthModule module
+ *
+ * @category  Lebed
+ * @package   Lebed/FourthModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Lebed_FourthModule" setup_version="0.0.1" >
+        <sequence>
+            <module name="Magento_Config"/>
+        </sequence>
+    </module>
+</config>

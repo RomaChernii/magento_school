@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Skavronskiy\ThirdModuleSam\Block\Renderer\Wording" name="first_block" template="Skavronskiy_ThirdModuleSam::first.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="home_view_model" template="Skavronskiy_ThirdModuleSam::second.phtml">
+                <arguments>
+                    <argument name="sam" xsi:type="object">Skavronskiy\ThirdModuleSam\ViewModel\SamClass</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
