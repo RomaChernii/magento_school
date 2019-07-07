@@ -153,6 +153,7 @@ return array (
     'Magento_WidgetSampleData' => 1,
     'Magento_Wishlist' => 1,
     'Magento_WishlistSampleData' => 1,
+    'Myskovets_BlogModule' => 1,
     'Myskovets_FifthModule' => 1,
     'Myskovets_FirstModule' => 1,
     'Myskovets_FourthModule' => 1,
