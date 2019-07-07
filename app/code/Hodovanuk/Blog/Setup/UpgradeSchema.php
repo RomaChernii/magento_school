@@ -25,12 +25,14 @@ class UpgradeSchema implements UpgradeSchemaInterface
         $installer = $setup;
 
         $installer->startSetup();
-        $installer->getConnection()->addColumn(
-            $installer->getTable('hodovanuk_blog_post'),
-            'description',
-            ['type' => Table::TYPE_TEXT,
-                'size' => '64k',
-                'comment' => 'Post Description']);
+        if (version_compare($context->getVersion(), '0.0.2') < 0) {
+            $installer->getConnection()->addColumn(
+                $installer->getTable('hodovanuk_blog_post'),
+                'description',
+                ['type' => Table::TYPE_TEXT,
+                    'size' => '64k',
+                    'comment' => 'Post Description']);
+        }
         $setup->endSetup();
     }
 }
