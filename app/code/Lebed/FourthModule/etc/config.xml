@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed FourthModule config
+ *
+ * @category  Lebed
+ * @package   Lebed/FourthModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <lebed>
+                <api_key>my custom api key value</api_key>
+            </lebed>
+        </payment>
+        <lebed_section>
+            <lebed_fourth_module_group>
+                <text_field>custom text</text_field>
+                <yes_no_field>1</yes_no_field>
+            </lebed_fourth_module_group>
+        </lebed_section>
+    </default>
+</config>

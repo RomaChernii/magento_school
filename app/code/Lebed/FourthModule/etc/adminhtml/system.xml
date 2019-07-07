@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed FourthModule system
+ *
+ * @category  Lebed
+ * @package   Lebed/FourthModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="lebed" translate="label" sortOrder="110">
+            <label>Lebed Fourth Module Tab</label>
+        </tab>
+        <section id="lebed_section" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Lebed Fourth Module Section</label>
+            <tab>lebed</tab>
+            <resource>Lebed_FourthModule::config_lebed</resource>
+            <group id="lebed_fourth_module_group" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Lebed Fourth Module Group</label>
+                <attribute type="expanded">1</attribute>
+                <field id="yes_no_field" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>My Yes / No Fields</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="text_field" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Input</label>
+                    <comment>Text field comment</comment>
+                </field>
+            </group>
+            <group id="lebed_fourth_module_second_group" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Is Disabled</label>
+                <attribute type="expanded">0</attribute>
+                <field id="second_yes_no" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Second Yes/No Field</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+        <section id="payment">
+            <group id="lebed_payment_group" type="text" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Lebed Custom Payment Group</label>
+                <field id="api_key" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" >
+                    <label>API Key</label>
+                    <!-- Default config_path payment/lebed_payment_group/api_key -->
+                    <config_path>payment/lebed/api_key</config_path>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
