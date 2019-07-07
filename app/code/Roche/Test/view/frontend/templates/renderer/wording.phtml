@@ -8,5 +8,8 @@
  * @copyright 2019 Smile
  */
 /** @var \Roche\Test\Block\Renderer\Wording $block */
+/** @var \Roche\Configuration\Helper\Data $configData */
+$configData = $this->helper('Roche\Configuration\Helper\Data');
 ?>
 <h1><?php echo $block->getText(); ?></h1>
+<h1><?php echo $configData->getInputValue(); ?></h1>
