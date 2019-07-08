@@ -26,6 +26,7 @@ class Index extends Action
     public function execute()
     {
         $resultRedirect = $this->resultRedirectFactory->create();
+
         return $resultRedirect->setPath('lebed_third_home/index/index');
     }
 }
