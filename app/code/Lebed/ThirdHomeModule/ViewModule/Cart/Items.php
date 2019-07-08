@@ -7,7 +7,6 @@
  * @author    Tetiana Lebed <teleb@smile.fr>
  * @copyright 2019 Smile
  */
-
 namespace Lebed\ThirdHomeModule\ViewModule\Cart;
 
 use Magento\Framework\View\Element\Block\ArgumentInterface;
