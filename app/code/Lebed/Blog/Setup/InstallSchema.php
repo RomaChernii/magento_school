@@ -22,6 +22,11 @@ use Magento\Framework\DB\Ddl\Table;
 class InstallSchema implements InstallSchemaInterface
 {
     /**
+     * BLOG POST TABLE NAME
+     */
+    const BLOG_POST_TABLE_NAME = 'lebed_blog_post';
+
+    /**
      * Install table lebed_blog_post
      *
      * @param SchemaSetupInterface   $setup
@@ -32,7 +37,7 @@ class InstallSchema implements InstallSchemaInterface
         $setup->startSetup();
 
         $table = $setup->getConnection()->newTable(
-            $setup->getTable('lebed_blog_post')
+            $setup->getTable(self::BLOG_POST_TABLE_NAME)
         )->addColumn(
             'id',
             Table::TYPE_INTEGER,
