@@ -37,9 +37,9 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 $setup->getTable(\Lebed\Blog\Setup\InstallSchema::BLOG_POST_TABLE_NAME),
                 'description',
                 [
-                    'type' => Table::TYPE_TEXT,
-                    'size' => '64k',
-                    'comment' => 'Post Description'
+                    'type'    => Table::TYPE_TEXT,
+                    'size'    => '64k',
+                    'comment' => 'Post Description',
                 ]
             );
         }
