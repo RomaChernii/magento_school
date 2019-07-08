@@ -33,4 +33,3 @@ class PriceCurrency implements ArgumentInterface
         return $this->priceCurrency->convertAndFormat($value);
     }
 }
-

@@ -1,21 +1,23 @@
 <?php
 
-namespace Chleck\SecondModuleHW\Controller\ChleckIndexTest;
+namespace Chleck\Test\Controller\Index;
+
 use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
 
 /**
  * Class Index
- * @package Chleck\SecondModuleHW\Controller\Index
+ * @package Chleck\Test\Controller\Index
  */
-class IndexTest extends Action
+class Index extends Action
 {
     /**
      * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|void
      */
-    public function execute(){
-
+    public function execute()
+    {
         $this->_view->loadLayout();
         $this->_view->renderLayout();
-        echo "Hi, it is my home work.)))";
     }
 }
