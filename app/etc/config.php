@@ -20,6 +20,7 @@ return array (
     'Hodovanuk_Second' => 1,
     'Hodovanuk_Task' => 1,
     'Hodovanuk_Third' => 1,
+    'Koshyk_Blog' => 1,
     'Koshyk_ConfigurationK' => 1,
     'Magento_Theme' => 1,
     'Koshyk_HomeTaskModule' => 1,
