@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed ThirdHomeModule Third Page layout
+ *
+ * @category  Lebed
+ * @package   Lebed/ThirdHomeModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="div.sidebar.main">
+            <block class="Lebed\ThirdHomeModule\Block\Cart\Link" name="cart.link.block" template="Lebed_ThirdHomeModule::cart/link.phtml" before="-" />
+            <block class="Magento\Framework\View\Element\Template" name="test" template="Lebed_ThirdHomeModule::cart/items.phtml" before="cart.link.block">
+                <arguments>
+                    <argument name="cart_items_view_model" xsi:type="object">Lebed\ThirdHomeModule\ViewModule\Cart\Items</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

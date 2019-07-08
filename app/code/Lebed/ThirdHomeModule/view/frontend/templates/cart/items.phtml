@@ -1,0 +1,16 @@
+<?php
+/**
+ * Lebed ThirdHomeModule cart items template
+ *
+ * @category  Lebed
+ * @package   Lebed/ThirdHomeModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Lebed\ThirdHomeModule\ViewModule\Cart\Items $viewModel */
+$viewModel = $block->getCartItemsViewModel();
+?>
+<div>
+    <p><?= $block->escapeHtml($viewModel->getCartInfo()); ?></p>
+</div>
