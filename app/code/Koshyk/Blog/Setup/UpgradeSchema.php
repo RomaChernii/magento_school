@@ -1,5 +1,5 @@
 <?php
-namespace Inchoo\Custom\Setup;
+namespace Koshyk\Blog\Setup;
 
 use Magento\Framework\Setup\UpgradeSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
@@ -12,7 +12,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
     {
         $setup->startSetup();
 
-        if (version_compare($context->getVersion(), '0.0.2') < 0) {
+        if (version_compare($context->getVersion(), '0.0.3', '<')) {
             $connection = $setup->getConnection();
             $connection->addColumn(
                 $setup->getTable('koshyk_blog_post'),
