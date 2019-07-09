@@ -16,7 +16,7 @@ interface CommentInterface
     const LAST_NAME   = 'last_name';
     const ANSWER      = 'answer';
     const COMMENT     = 'comment';
-    const CREATE_DATA        = 'data';
+    const CREATE_DATA = 'data';
     const POST_ID     = 'post_id';
     const EMAIL       = 'email';
     /**#@-*/
