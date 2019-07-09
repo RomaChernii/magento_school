@@ -1,24 +1,10 @@
 <?php
-/**
- * Blog post model
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
- */
 namespace Hodovanuk\Blog\Model;
 
 use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Model\AbstractModel;
 use Hodovanuk\Blog\Api\Data\PostInterface;
 
-/**
- * Class Post
- *
- * @package Roche\Blog\Model\Post
- *
- */
 class Post extends AbstractModel implements PostInterface, IdentityInterface
 {
     /**#@+
@@ -29,7 +15,7 @@ class Post extends AbstractModel implements PostInterface, IdentityInterface
     /**#@-*/
 
     /**
-     * Roche post cache tag
+     * Hodovanuk post cache tag
      */
     const CACHE_TAG = 'hodovanuk_blog_post';
 

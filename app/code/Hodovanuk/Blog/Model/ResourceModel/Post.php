@@ -1,12 +1,4 @@
 <?php
-/**
- * Blog post
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
- */
 namespace Hodovanuk\Blog\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
@@ -14,7 +6,7 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 /**
  * Post
  *
- * @package Roche\Blog\Model\ResourceModel\Post
+ * @package Hodovanuk\Blog\Model\ResourceModel\Post
  */
 class Post extends AbstractDb
 {

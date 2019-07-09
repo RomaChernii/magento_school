@@ -1,12 +1,4 @@
 <?php
-/**
- * Blog post collection
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
- */
 namespace Hodovanuk\Blog\Model\ResourceModel\Post;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
@@ -14,7 +6,7 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 /**
  * Class Collection
  *
- * @package Roche\Blog\Model\ResourceModel\Post\Collection
+ * @package Hodovanuk\Blog\Model\ResourceModel\Post\Collection
  *
  */
 class Collection extends AbstractCollection
