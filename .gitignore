@@ -46,6 +46,7 @@ atlassian*
 /dev/*.*
 
 /pub/media/*.*
+/pub/media/
 !/pub/media/.htaccess
 /pub/media/attribute/*
 !/pub/media/attribute/.htaccess
