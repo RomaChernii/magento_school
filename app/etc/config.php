@@ -32,6 +32,7 @@ return array (
     'Magento_AdminNotification' => 1,
     'Lebed_FourthModule' => 1,
     'Lebed_SecondHomeModule' => 1,
+    'Lebed_ThirdHomeModule' => 1,
     'Magento_Indexer' => 1,
     'Magento_AdvancedPricingImportExport' => 1,
     'Magento_Backend' => 1,
