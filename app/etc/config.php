@@ -159,6 +159,7 @@ return array (
     'Magento_WishlistSampleData' => 1,
     'Potapchuk_FirstModule' => 1,
     'Potapchuk_HomeTask' => 1,
+    'Roche_Blog' => 1,
     'Roche_Configuration' => 1,
     'Roche_Test' => 1,
     'Semysiuk_AdminConfigModule' => 1,
