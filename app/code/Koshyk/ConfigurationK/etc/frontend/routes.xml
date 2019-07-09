@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Koshyk Third Module frontend routes
+ *
+ * @category  Koshyk
+ * @package   Koshyk\ThirdModule
+ * @author    Roman Koshyk <romadaaaa@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="konfigurationk" frontName="konfigurationk">
+            <module name="Koshyk_KonfigurationK"/>
+        </route>
+    </router>
+</config>

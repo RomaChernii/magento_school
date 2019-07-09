@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <borovets_section>
+            <my_group_1>
+                <field_id>1</field_id>
+                <field_id_input>Default text</field_id_input>
+            </my_group_1>
+        </borovets_section>
+        <payment>
+            <borovets>
+                <api_key>GDFHFG84DFDG1DF1FIF645GEC</api_key>
+            </borovets>
+        </payment>
+    </default>
+</config>

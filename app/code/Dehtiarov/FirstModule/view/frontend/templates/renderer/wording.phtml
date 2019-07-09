@@ -1,1 +1,5 @@
+<?php $configData = $this->helper('Dehtiarov\ConfigVideh\Helper\Data') ?>
 <h1><?= $block->getText(); ?></h1>
+<?php if($configData->getText()) : ?>
+    <h2><?= $configData->getText(); ?></h2>
+<?php endif; ?>
