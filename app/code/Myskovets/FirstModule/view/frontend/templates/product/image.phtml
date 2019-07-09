@@ -1,0 +1,15 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Myskovets\FirstModule\Block\Product\Image; ?>
+<?php /** @var $block Image */ ?>
+
+<img class="photo image"
+    <?= /* @escapeNotVerified */ $block->getCustomAttributes() ?>
+     src="<?= /* @escapeNotVerified */ $block->getImageUrl() ?>"
+     width="<?= /* @escapeNotVerified */ $block->getWidth() ?>"
+     height="<?= /* @escapeNotVerified */ $block->getHeight() ?>"
+     alt="<?= /* @escapeNotVerified */ $block->stripTags($block->getLabel(), null, true) ?>" />
