@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Roche Blog menu
+ *
+ * @category  Roche
+ * @package   Roche\Blog
+ * @author    Roman Chernii <roche@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Roche_Blog::Blog_core"
+             title="Blog"
+             module="Roche_Blog"
+             sortOrder="50"
+             resource="Roche_Blog::Blog_core" />
+
+        <add id="Roche_Blog::post"
+             title="Post"
+             module="Roche_Blog"
+             sortOrder="10"
+             parent="Roche_Blog::Blog_core"
+             action="roche_blog/post"
+             resource="Roche_Blog::post" />
+    </menu>
+</config>
