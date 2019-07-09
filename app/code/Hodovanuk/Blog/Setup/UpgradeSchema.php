@@ -83,12 +83,34 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 'post_id',
                 Table::TYPE_INTEGER,
                 null,
-                [],
+                [
+                    'unsigned' => true,
+                    'nullable' => false
+                ],
                 'post foreignkey'
             )->setComment(
                 'Blog Comment Table'
-            );
+            )->addForeignKey(
+                $installer->getFkName(
+                    'hodovanuk_blog_comment',
+                    'post_id',
+                    'hodovanuk_blog_post',
+                    'id'),
+                'post_id',
+                $installer->getTable('hodovanuk_blog_post'),
+                'id',
+                \Magento\Framework\DB\Ddl\Table::ACTION_CASCADE
+            );;
             $installer->getConnection()->createTable($table);
+        }
+
+        if (version_compare($context->getVersion(), '0.0.3') < 0) {
+            $installer->getConnection()->addColumn(
+                $installer->getTable('hodovanuk_blog_comment'),
+                'email',
+                ['type' => Table::TYPE_TEXT,
+                    'size' => 255,
+                    'comment' => 'EMAIL']);
         }
         $installer->endSetup();
     }

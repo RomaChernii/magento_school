@@ -1,12 +1,4 @@
 <?php
-/**
- * Blog post index
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
- */
 namespace Hodovanuk\Blog\Controller\Adminhtml\Post;
 
 use Magento\Backend\App\Action;
@@ -16,7 +8,7 @@ use Magento\Framework\View\Result\PageFactory;
 /**
  * Class Index
  *
- * @package Roche\Blog\Controller\Adminhtml\Post
+ * @package Hodovanuk\Blog\Controller\Adminhtml\Post
  */
 class Index extends Action
 {

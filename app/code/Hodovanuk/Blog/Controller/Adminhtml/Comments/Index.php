@@ -1,12 +1,4 @@
 <?php
-/**
- * Blog post index
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
- */
 namespace Hodovanuk\Blog\Controller\Adminhtml\Comments;
 
 use Magento\Backend\App\Action;
@@ -16,7 +8,7 @@ use Magento\Framework\View\Result\PageFactory;
 /**
  * Class Index
  *
- * @package Roche\Blog\Controller\Adminhtml\Post
+ * @package Hodovanuk\Blog\Controller\Adminhtml\Comments
  */
 class Index extends Action
 {
@@ -25,7 +17,7 @@ class Index extends Action
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'Hodovanuk_Blog::post';
+    const ADMIN_RESOURCE = 'Hodovanuk_Blog::comments';
 
     /**
      * @var PageFactory
@@ -54,9 +46,9 @@ class Index extends Action
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('Hodovanuk_Blog::post');
-        $resultPage->addBreadcrumb(__('Blog Posts'), __('Blog Posts'));
-        $resultPage->addBreadcrumb(__('Blog Posts'), __('Blog Posts'));
-        $resultPage->getConfig()->getTitle()->prepend(__('Blog Posts'));
+        $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
+        $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Blog Comments'));
 
         return $resultPage;
     }
