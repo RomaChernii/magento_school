@@ -14,5 +14,13 @@
              parent="Hodovanuk_Blog::blog_core"
              action="hodovanuk_blog/post"
              resource="Hodovanuk_Blog::post" />
+
+        <add id="Hodovanuk_Blog::comments"
+             title="Hodovanuk blog Comments"
+             module="Hodovanuk_Blog"
+             sortOrder="10"
+             parent="Hodovanuk_Blog::blog_core"
+             action="hodovanuk_blog/comments"
+             resource="Hodovanuk_Blog::comments" />
     </menu>
 </config>

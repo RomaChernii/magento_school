@@ -12,12 +12,7 @@ use Magento\Framework\DB\Ddl\Table;
  */
 class UpgradeSchema implements UpgradeSchemaInterface
 {
-    /**
-     * Add description column to exist table
-     *
-     * @param SchemaSetupInterface $setup
-     * @param ModuleContextInterface $context
-     */
+
     public function upgrade(
         SchemaSetupInterface $setup,
         ModuleContextInterface $context
@@ -33,6 +28,68 @@ class UpgradeSchema implements UpgradeSchemaInterface
                     'size' => '64k',
                     'comment' => 'Post Description']);
         }
-        $setup->endSetup();
+
+        if((version_compare($context->getVersion(), '0.0.3') < 0) ){
+            $table = $installer->getConnection()->newTable(
+                $installer->getTable('hodovanuk_blog_comment')
+            )->addColumn(
+                'id',
+                Table::TYPE_INTEGER,
+                null,
+                [
+                    'identity' => true,
+                    'unsigned' => true,
+                    'nullable' => false,
+                    'primary' => true
+                ],
+                'Comment id'
+            )->addColumn(
+                'first_name',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'Creator first name'
+            )->addColumn(
+                'last_name',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'Creator last name'
+            )->addColumn(
+                'answer',
+                Table::TYPE_SMALLINT,
+                null,
+                [
+                    'nullable' => false,
+                    'default' => '1'
+                ],
+                'Comment status'
+            )->addColumn(
+                'comment',
+                Table::TYPE_TEXT,
+                '2M',
+                [],
+                'User comment'
+            )->addColumn(
+                'data',
+                Table::TYPE_TIMESTAMP,
+                null,
+                [
+                    'nullable' => false,
+                    'default' => Table::TIMESTAMP_INIT
+                ],
+                'Comment created at'
+            )->addColumn(
+                'post_id',
+                Table::TYPE_INTEGER,
+                null,
+                [],
+                'post foreignkey'
+            )->setComment(
+                'Blog Comment Table'
+            );
+            $installer->getConnection()->createTable($table);
+        }
+        $installer->endSetup();
     }
 }

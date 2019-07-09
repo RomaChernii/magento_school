@@ -7,7 +7,7 @@
  * @author    Roman Chernii <roche@smile.fr>
  * @copyright 2019 Smile
  */
-namespace Hodovanuk\Blog\Controller\Adminhtml\Post;
+namespace Hodovanuk\Blog\Controller\Adminhtml\Comments;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
