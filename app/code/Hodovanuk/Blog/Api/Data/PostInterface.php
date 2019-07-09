@@ -1,18 +1,10 @@
 <?php
-/**
- * Roche post interface
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
- */
 namespace Hodovanuk\Blog\Api\Data;
 
 /**
  * Interface PostInterface
  *
- * @package Roche\Blog\Api\Data
+ * @package Hodovanuk\Blog\Api\Data
  */
 interface PostInterface
 {
