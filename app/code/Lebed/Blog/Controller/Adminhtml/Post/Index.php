@@ -2,12 +2,12 @@
 /**
  * Blog post index
  *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
+ * @category  Lebed
+ * @package   Lebed\Blog
+ * @author    Tetiana Lebed <teleb@smile.fr>
  * @copyright 2019 Smile
  */
-namespace Roche\Blog\Controller\Adminhtml\Post;
+namespace Lebed\Blog\Controller\Adminhtml\Post;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -16,7 +16,7 @@ use Magento\Framework\View\Result\PageFactory;
 /**
  * Class Index
  *
- * @package Roche\Blog\Controller\Adminhtml\Post
+ * @package Lebed\Blog\Controller\Adminhtml\Post
  */
 class Index extends Action
 {
@@ -25,7 +25,7 @@ class Index extends Action
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'Roche_Blog::post';
+    const ADMIN_RESOURCE = 'Lebed_Blog::post';
 
     /**
      * @var PageFactory
@@ -53,10 +53,10 @@ class Index extends Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Roche_Blog::post');
-        $resultPage->addBreadcrumb(__('Blog Posts'), __('Blog Posts'));
-        $resultPage->addBreadcrumb(__('Blog Posts'), __('Blog Posts'));
-        $resultPage->getConfig()->getTitle()->prepend(__('Blog Posts'));
+        $resultPage->setActiveMenu('Lebed_Blog::post');
+        $resultPage->addBreadcrumb(__('Lebed Blog Posts'), __('Lebed Blog Posts'));
+        $resultPage->addBreadcrumb(__('Lebed Blog Posts'), __('Lebed Blog Posts'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Lebed Blog Posts'));
 
         return $resultPage;
     }

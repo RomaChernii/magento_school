@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="admin">
-        <route id="roche_blog" frontName="roche_blog">
-            <module name="Roche_Blog" before="Magento_Backend" />
+        <route id="lebed_blog" frontName="lebed_blog">
+            <module name="Lebed_Blog" before="Magento_Backend" />
         </route>
     </router>
 </config>
