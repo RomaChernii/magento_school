@@ -4,7 +4,7 @@ namespace Chleck\Blog\Model;
 
 use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Model\AbstractModel;
-use Roche\Blog\Api\Data\PostInterface;
+use Chleck\Blog\Api\Data\PostInterface;
 
 /**
  * Class Post

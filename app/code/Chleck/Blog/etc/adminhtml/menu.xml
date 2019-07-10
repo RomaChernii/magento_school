@@ -24,12 +24,13 @@
              parent="Chleck_Blog::blog_core"
              action="chleck_blog/post"
              resource="Chleck_Blog::post" />
-        <add id="Chleck_Blog::new post"
-             title="New Post"
+
+        <add id="Chleck_Blog::comment"
+             title="Comments"
              module="Chleck_Blog"
              sortOrder="10"
              parent="Chleck_Blog::blog_core"
-             action="chleck_blog/post"
+             action="chleck_blog/comment"
              resource="Chleck_Blog::post" />
     </menu>
 </config>

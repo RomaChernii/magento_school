@@ -37,9 +37,20 @@ class UpgradeSchema implements UpgradeSchemaInterface
         if (version_compare($context->getVersion(), '1.0.2') < 0){
 
         $table = $setup->getConnection()->newTable(
-            $setup->getTable('chleck_blog_post')
+            $setup->getTable('chleck_blog_comment')
         )->addColumn(
-            'Comment id',
+            'post_id',
+            Table::TYPE_INTEGER,
+            null,
+            [
+                'identity' => true,
+                'unsigned' => true,
+                'nullable' => false,
+                'primary' => true
+            ],
+            'Post_id'
+        )->addColumn(
+            'comment_id',
             Table::TYPE_INTEGER,
             null,
             [
@@ -50,37 +61,31 @@ class UpgradeSchema implements UpgradeSchemaInterface
             ],
             'Comment id'
         )->addColumn(
-            'Post id',
-            Table::TYPE_TEXT,
-            255,
-            [],
-            'Post id'
-        )->addColumn(
-            'Name',
+            'name',
             Table::TYPE_TEXT,
             255,
             [],
             'User name'
         )->addColumn(
-            'Surname',
+            'surname',
             Table::TYPE_TEXT,
             255,
             [],
             'User surname'
         )->addColumn(
-            'Email',
+            'email',
             Table::TYPE_TEXT,
             255,
             [],
             'User email'
         )->addColumn(
-            'Comment',
+            'comment',
             Table::TYPE_TEXT,
             255,
             [],
             'New comment'
         )->addColumn(
-            'Answer',
+            'answer',
             Table::TYPE_TEXT,
             255,
             [],

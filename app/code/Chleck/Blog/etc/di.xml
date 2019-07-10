@@ -2,4 +2,5 @@
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Chleck\Blog\Api\Data\PostInterface" type="Chleck\Blog\Model\Post" />
+    <preference for="Chleck\Blog\Api\Data\CommentInterface" type="Chleck\Blog\Model\Comment" />
 </config>
