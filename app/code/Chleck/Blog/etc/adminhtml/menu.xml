@@ -12,7 +12,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Chleck_Blog::blog_core"
-             title="Blog_Chl"
+             title="Blog_Chleck"
              module="Chleck_Blog"
              sortOrder="50"
              resource="Roche_Blog::blog_core" />

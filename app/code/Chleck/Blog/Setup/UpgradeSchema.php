@@ -34,30 +34,3 @@ class UpgradeSchema implements UpgradeSchemaInterface
         $setup->endSetup();
     }
 }
-
-////////////// For example/////////////////
-
-/*public function upgrade(
-    SchemaSetupInterface $setup,
-    ModuleContextInterface $context
-) {
-    $installer = $setup;
-
-    $installer->startSetup();
-    if (version_compare($context->getVersion(), "1.0.0", "<")) {
-        //Your upgrade script
-    }
-    if (version_compare($context->getVersion(), '1.0.1', '<')) {
-        $installer->getConnection()->addColumn(
-            $installer->getTable('lime_eleveniacategory'),
-            'category_depth',
-            [
-                'type' => \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
-                'length' => 10,
-                'nullable' => true,
-                'comment' => 'Category Depth'
-            ]
-        );
-    }
-    $installer->endSetup();
-}*/
