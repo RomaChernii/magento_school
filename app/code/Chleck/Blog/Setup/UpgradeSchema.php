@@ -51,14 +51,9 @@ class UpgradeSchema implements UpgradeSchemaInterface
             'Post_id'
         )->addColumn(
             'comment_id',
-            Table::TYPE_INTEGER,
-            null,
-            [
-                'identity' => true,
-                'unsigned' => true,
-                'nullable' => false,
-                'primary' => true
-            ],
+            Table::TYPE_TEXT,
+            255,
+            [],
             'Comment id'
         )->addColumn(
             'name',

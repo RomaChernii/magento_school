@@ -9,6 +9,7 @@ use Chleck\Blog\Api\Data\CommentInterface;
 
 
 class Comment extends AbstractModel implements CommentInterface, IdentityInterface
+
 {
     /**#@+
      * Post's Statuses
@@ -69,9 +70,9 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
     /**
      * Get comment ID
      *
-     * @return int
+     * @return string
      */
-    public function geCommentId()
+    public function getCommentId()
     {
         return $this->getData(self::COMMENT_ID);
     }

@@ -15,7 +15,7 @@
              title="Blog_Chleck"
              module="Chleck_Blog"
              sortOrder="50"
-             resource="Roche_Blog::blog_core" />
+             resource="Chleck_Blog::blog_core" />
 
         <add id="Chleck_Blog::post"
              title="Post"
