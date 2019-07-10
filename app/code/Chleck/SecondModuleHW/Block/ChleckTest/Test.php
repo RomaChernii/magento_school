@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Chleck\SecondModuleHW\Block\ChleckTest;
 
 use Magento\Catalog\Block\Product\View as MagentoView;
@@ -19,4 +18,3 @@ class Test extends MagentoView
         return "Hi";
     }
 }
-

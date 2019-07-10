@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Chleck\FirstModuleHW\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
@@ -20,4 +19,3 @@ class Index extends Action
         $this->_view->renderLayout();
     }
 }
-

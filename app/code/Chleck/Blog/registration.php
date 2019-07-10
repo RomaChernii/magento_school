@@ -6,6 +6,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Chleck_FirstModule',
+    'Chleck_Blog',
     __DIR__
 );
