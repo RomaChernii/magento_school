@@ -12,7 +12,11 @@ use Magento\Framework\DB\Ddl\Table;
  */
 class UpgradeSchema implements UpgradeSchemaInterface
 {
-
+    /**
+     * @param SchemaSetupInterface $setup
+     * @param ModuleContextInterface $context
+     * @throws \Zend_Db_Exception
+     */
     public function upgrade(
         SchemaSetupInterface $setup,
         ModuleContextInterface $context
@@ -20,6 +24,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         $installer = $setup;
 
         $installer->startSetup();
+
         if (version_compare($context->getVersion(), '0.0.2') < 0) {
             $installer->getConnection()->addColumn(
                 $installer->getTable('hodovanuk_blog_post'),
@@ -29,7 +34,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
                     'comment' => 'Post Description']);
         }
 
-        if((version_compare($context->getVersion(), '0.0.3') < 0) ){
+        if((version_compare($context->getVersion(), '0.0.5') < 0) ){
             $table = $installer->getConnection()->newTable(
                 $installer->getTable('hodovanuk_blog_comment')
             )->addColumn(
@@ -55,6 +60,12 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 255,
                 [],
                 'Creator last name'
+            )->addColumn(
+                'email',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'Creator email'
             )->addColumn(
                 'answer',
                 Table::TYPE_SMALLINT,
@@ -88,8 +99,6 @@ class UpgradeSchema implements UpgradeSchemaInterface
                     'nullable' => false
                 ],
                 'post foreignkey'
-            )->setComment(
-                'Blog Comment Table'
             )->addForeignKey(
                 $installer->getFkName(
                     'hodovanuk_blog_comment',
@@ -99,18 +108,12 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 'post_id',
                 $installer->getTable('hodovanuk_blog_post'),
                 'id',
-                \Magento\Framework\DB\Ddl\Table::ACTION_CASCADE
-            );;
-            $installer->getConnection()->createTable($table);
-        }
-
-        if (version_compare($context->getVersion(), '0.0.3') < 0) {
-            $installer->getConnection()->addColumn(
-                $installer->getTable('hodovanuk_blog_comment'),
-                'email',
-                ['type' => Table::TYPE_TEXT,
-                    'size' => 255,
-                    'comment' => 'EMAIL']);
+                Table::ACTION_CASCADE
+            )->setComment(
+                'Blog Comment Table'
+            );
+            $installer->getConnection()
+                ->createTable($table);
         }
         $installer->endSetup();
     }
