@@ -28,7 +28,7 @@ class Uploader extends ImageUploader
     /**
      * Plan path
      */
-    const PLAN_FILE_PATH = 'roche_blog/post/image';
+    const FILE_PATH = 'roche_blog/post/image';
 
     /**
      * Allowed mime types
@@ -113,7 +113,7 @@ class Uploader extends ImageUploader
         if ($this->getOriginalFileName()) {
             $originalFileName = $this->getOriginalFileName();
             $discretionPath = $uploader->getDispretionPath($originalFileName);
-            $baseTmpPath = static::PLAN_FILE_PATH . $discretionPath;
+            $baseTmpPath = static::FILE_PATH . $discretionPath;
         }
         $result = $uploader->save($this->mediaDirectory->getAbsolutePath($baseTmpPath), $fileName);
         unset($result['path']);

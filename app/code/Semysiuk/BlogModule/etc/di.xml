@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Semysiuk\BlogModule\Api\Data\PostInterface" type="Semysiuk\BlogModule\Model\Post" />
+    <preference for="Semysiuk\BlogModule\Api\Data\CommentInterface" type="Semysiuk\BlogModule\Model\Comment" />
+</config>
