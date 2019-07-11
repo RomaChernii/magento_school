@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Koshyk Blog dependency injection
+ *
+* @category  Koshyk
+ * @package   Koshyk\Blog
+ * @author    Roman Koshyk <romadaaaa@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Koshyk\Blog\Api\Data\PostInterface" type="Koshyk\Blog\Model\Post" />
+    <preference for="Koshyk\Blog\Api\Data\CommentInterface" type="Koshyk\Blog\Model\Comment" />
+</config>
