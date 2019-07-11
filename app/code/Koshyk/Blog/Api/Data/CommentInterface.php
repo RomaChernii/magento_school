@@ -113,7 +113,7 @@ interface CommentInterface
      */
     public function setLastName($lastName);
     /**
-     * Set comment data
+     * Set comment date
      *
      * @param bool $commentDate
      *
