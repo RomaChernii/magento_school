@@ -1,5 +1,9 @@
 <?php
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc40ecd596f4c7d16299811d4fea74cdbf97d655
 namespace Chleck\Blog\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;

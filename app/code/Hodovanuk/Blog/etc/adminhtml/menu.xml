@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Hodovanuk_Blog::blog_core"
+             title="Blog Hodovanuk"
+             module="Hodovanuk_Blog"
+             sortOrder="60"
+             resource="Hodovanuk_Blog::blog_core" />
+
+        <add id="Hodovanuk_Blog::post"
+             title="Hodovanuk blog Post"
+             module="Hodovanuk_Blog"
+             sortOrder="10"
+             parent="Hodovanuk_Blog::blog_core"
+             action="hodovanuk_blog/post"
+             resource="Hodovanuk_Blog::post" />
+
+        <add id="Hodovanuk_Blog::comments"
+             title="Hodovanuk blog Comments"
+             module="Hodovanuk_Blog"
+             sortOrder="10"
+             parent="Hodovanuk_Blog::blog_core"
+             action="hodovanuk_blog/comments"
+             resource="Hodovanuk_Blog::comments" />
+    </menu>
+</config>

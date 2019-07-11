@@ -103,7 +103,7 @@ class Edit extends Action
                 $resultPage->getConfig()->getTitle()->prepend(__('Edit Post - %1', $model->getTitle()));
 
             } catch (NoSuchEntityException $e) {
-                $this->messageManager->addExceptionMessage($e, __('Something went wrong while editing the space.'));
+                $this->messageManager->addExceptionMessage($e, __('Something went wrong while editing the post.'));
                 /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
 

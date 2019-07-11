@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Chleck\SecondModuleHW\Controller\ChleckIndexTest;
 use Magento\Framework\App\Action\Action;
 
@@ -20,4 +19,3 @@ class IndexTest extends Action
         echo "Hi, it is my home work.)))";
     }
 }
-

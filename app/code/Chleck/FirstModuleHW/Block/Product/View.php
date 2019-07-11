@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Chleck\FirstModuleHW\Block\Product;
 
 use Magento\Catalog\Block\Product\View as MagentoView;
