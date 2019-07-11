@@ -18,7 +18,7 @@ use Magento\Ui\Component\Listing\Columns\Column;
 /**
  * Class Thumbnail
  *
- * @package Roche\Blog\Ui\Component\Listing\Column
+ * @package Koshyk\Blog\Ui\Component\Listing\Column
  */
 class Thumbnail extends Column
 {
@@ -94,7 +94,7 @@ class Thumbnail extends Column
                 $item[$fieldName . '_src'] = $url;
                 $item[$fieldName . '_alt'] = $this->getAlt($item) ? : '';
                 $item[$fieldName . '_link'] = $this->urlBuilder->getUrl(
-                    'roche_blog/post/edit',
+                    'Koshyk_blog/post/edit',
                     ['id' => $item['id']]
                 );
                 $item[$fieldName . '_orig_src'] = $url;

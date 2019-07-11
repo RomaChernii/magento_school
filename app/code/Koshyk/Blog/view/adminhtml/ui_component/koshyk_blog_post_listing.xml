@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Roche Blog post listing
+ * Koshyk Blog post listing
  *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <koshyk@smile.fr>
- * @copyright 2019 Smile
+ * @category  Koshyk
+ * @package   Koshyk\Blog
+ * @author    Roman Koshyk <romadaaaa@gmail.com>
  */
 -->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">

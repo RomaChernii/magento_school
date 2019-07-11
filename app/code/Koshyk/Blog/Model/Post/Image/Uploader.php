@@ -1,11 +1,10 @@
 <?php
 /**
- * Roche Blog order plan file upload
+ * Koshyk Blog order plan file upload
  *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
+ * @category  Koshyk
+ * @package   Koshyk\Blog
+ * @author    Roman Koshyk <romadaaaa@gmail.com>
  */
 namespace Koshyk\Blog\Model\Post\Image;
 
@@ -21,7 +20,7 @@ use Magento\Framework\Exception\LocalizedException;
 /**
  * Class Uploader
  *
- * @package Roche\Blog\Model\Order\Stand
+ * @package Koshyk\Blog\Model\Order\Stand
  */
 class Uploader extends ImageUploader
 {

@@ -2,10 +2,9 @@
 /**
  * Blog post edit
  *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
+ * @category  Koshyk
+ * @package   Koshyk\Blog
+ * @author    Roman Koshyk <romadaaaa@gmail.com>
  */
 namespace Koshyk\Blog\Controller\Adminhtml\Post;
 

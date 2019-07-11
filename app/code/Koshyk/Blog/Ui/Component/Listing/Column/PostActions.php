@@ -16,7 +16,7 @@ use Magento\Ui\Component\Listing\Columns\Column;
 /**
  * Class PostActions
  *
- * @package Roche\Blog\Ui\Component\Listing\Colum\PostActions
+ * @package Koshyk\Blog\Ui\Component\Listing\Colum\PostActions
  */
 class PostActions extends Column
 {

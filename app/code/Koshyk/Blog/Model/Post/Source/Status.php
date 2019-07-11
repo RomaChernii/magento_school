@@ -2,10 +2,9 @@
 /**
  * Blog Post status
  *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
+ * @category  Koshyk
+ * @package   Koshyk\Blog
+ * @author    Roman Koshyk <romadaaaa@gmail.com>
  */
 namespace Koshyk\Blog\Model\Post\Source;
 
@@ -15,7 +14,7 @@ use Koshyk\Blog\Model\Post;
 /**
  * Class Status
  *
- * @package Roche\Blog\Model\Post\Source\Status
+ * @package Koshyk\Blog\Model\Post\Source\Status
  */
 class Status implements OptionSourceInterface
 {

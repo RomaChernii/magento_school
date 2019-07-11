@@ -14,7 +14,7 @@ use Koshyk\Blog\Api\Data\PostInterface;
 /**
  * Interface PostRepositoryInterface
  *
- * @package Roche\Blog\Api
+ * @package Koshyk\Blog\Api
  */
 interface PostRepositoryInterface
 {
