@@ -27,7 +27,7 @@
         <add id="Koshyk_Blog::comment"
              title="Comments"
              module="Koshyk_Blog"
-             sortOrder="10"
+             sortOrder="20"
              parent="Koshyk_Blog::blog_core"
              action="koshyk_blog/comment"
              resource="Koshyk_Blog::comment" />
