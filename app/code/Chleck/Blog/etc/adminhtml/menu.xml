@@ -9,13 +9,14 @@
  * @copyright 2019 Smile
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Chleck_Blog::blog_core"
              title="Blog_Chleck"
              module="Chleck_Blog"
              sortOrder="50"
-             resource="Chleck_Blog::blog_core" />
+             resource="Chleck_Blog::blog_core"/>
 
         <add id="Chleck_Blog::post"
              title="Post"
@@ -23,7 +24,7 @@
              sortOrder="10"
              parent="Chleck_Blog::blog_core"
              action="chleck_blog/post"
-             resource="Chleck_Blog::post" />
+             resource="Chleck_Blog::post"/>
 
         <add id="Chleck_Blog::comment"
              title="Comments"
@@ -31,6 +32,6 @@
              sortOrder="10"
              parent="Chleck_Blog::blog_core"
              action="chleck_blog/comment"
-             resource="Chleck_Blog::post" />
+             resource="Chleck_Blog::post"/>
     </menu>
 </config>

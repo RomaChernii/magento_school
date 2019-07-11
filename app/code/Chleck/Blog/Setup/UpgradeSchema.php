@@ -32,66 +32,65 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 ]
             );
         }
-       // $setup->endSetup();
 
-        if (version_compare($context->getVersion(), '1.0.2') < 0){
+        if (version_compare($context->getVersion(), '1.0.3') < 0) {
 
-        $table = $setup->getConnection()->newTable(
-            $setup->getTable('chleck_blog_comment')
-        )->addColumn(
-            'post_id',
-            Table::TYPE_INTEGER,
-            null,
-            [
-                'identity' => true,
-                'unsigned' => true,
-                'nullable' => false,
-                'primary' => true
-            ],
-            'Post_id'
-        )->addColumn(
-            'comment_id',
-            Table::TYPE_TEXT,
-            255,
-            [],
-            'Comment id'
-        )->addColumn(
-            'name',
-            Table::TYPE_TEXT,
-            255,
-            [],
-            'User name'
-        )->addColumn(
-            'surname',
-            Table::TYPE_TEXT,
-            255,
-            [],
-            'User surname'
-        )->addColumn(
-            'email',
-            Table::TYPE_TEXT,
-            255,
-            [],
-            'User email'
-        )->addColumn(
-            'comment',
-            Table::TYPE_TEXT,
-            255,
-            [],
-            'New comment'
-        )->addColumn(
-            'answer',
-            Table::TYPE_TEXT,
-            255,
-            [],
-            'New answer'
-        )->setComment(
-            'Blog Post And Comment Table'
-        );
+            $table = $setup->getConnection()->newTable(
+                $setup->getTable('chleck_blog_comment')
+            )->addColumn(
+                'comment_id',
+                Table::TYPE_INTEGER,
+                null,
+                [
+                    'identity' => true,
+                    'unsigned' => true,
+                    'nullable' => false,
+                    'primary' => true
+                ],
+                'Comment_id'
+            )->addColumn(
+                'post_id',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'Post id'
+            )->addColumn(
+                'name',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'User name'
+            )->addColumn(
+                'surname',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'User surname'
+            )->addColumn(
+                'email',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'User email'
+            )->addColumn(
+                'comment',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'New comment'
+            )->addColumn(
+                'answer',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'New answer'
+            )->setComment(
+                'Blog Post And Comment Table'
+            );
 
-        $setup->getConnection()->createTable($table);
+            $setup->getConnection()->createTable($table);
 
-    }
+        }
         $setup->endSetup();
     }
 }
