@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed blog post index layout
+ *
+ * @category  Lebed
+ * @package   Lebed\Blog
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+--><page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="lebed_blog_post_listing"/>
+        </referenceContainer>
+    </body>
+</page>
