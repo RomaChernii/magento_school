@@ -85,10 +85,9 @@ class Save extends Action
         $resultRedirect = $this->resultRedirectFactory->create();
 
         $data = $this->getRequest()->getPostValue();
-        $image = reset($data['image']);
-        if (!empty($image['tmp_name'])) {
-            $discretionPath = Uploader::getDispretionPath($image['file']);
-            $url = $discretionPath . '/' . $image['file'];
+        if ($data['image']) {
+            $image = reset($data['image']);
+            $url = 'roche_blog/post/image' . '/' . $image['file'];
             $data['image'] = $url;
         }
 
