@@ -11,6 +11,8 @@ namespace Roche\Blog\Model\Post;
 
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Ui\DataProvider\AbstractDataProvider;
+use Magento\Store\Model\StoreManagerInterface;
+use Magento\Backend\Model\UrlInterface;
 use Roche\Blog\Model\ResourceModel\Post\CollectionFactory;
 
 /**
@@ -42,6 +44,13 @@ class DataProvider extends AbstractDataProvider
     private $loadedData;
 
     /**
+     * Store manager
+     *
+     * @var StoreManagerInterface
+     */
+    protected $storeManager;
+
+    /**
      * DataProvider constructor
      *
      * @param string                 $name
@@ -49,6 +58,7 @@ class DataProvider extends AbstractDataProvider
      * @param string                 $requestFieldName
      * @param CollectionFactory      $PostCollectionFactory
      * @param DataPersistorInterface $dataPersistor
+     * @param StoreManagerInterface    $storeManager
      * @param array                  $meta
      * @param array                  $data
      */
@@ -58,11 +68,13 @@ class DataProvider extends AbstractDataProvider
         $requestFieldName,
         CollectionFactory $PostCollectionFactory,
         DataPersistorInterface $dataPersistor,
+        StoreManagerInterface $storeManager,
         array $meta = [],
         array $data = []
     ) {
         $this->collection = $PostCollectionFactory->create();
         $this->dataPersistor = $dataPersistor;
+        $this->storeManager = $storeManager;
         parent::__construct(
             $name,
             $primaryFieldName,
@@ -83,15 +95,23 @@ class DataProvider extends AbstractDataProvider
             return $this->loadedData;
         }
         $items = $this->collection->getItems();
-        foreach ($items as $Post) {
-            $this->loadedData[$Post->getId()] = $Post->getData();
+        foreach ($items as $post) {
+            $mediaUrl = $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA);
+            $url = $mediaUrl . $post->getImage();
+            $image[] = [
+                'url'  => $url,
+                'file' => basename($post->getImage())
+            ];
+            $post->setImage($image);
+
+            $this->loadedData[$post->getId()] = $post->getData();
         }
 
         $data = $this->dataPersistor->get('roche_blog_post');
         if (!empty($data)) {
-            $Post = $this->collection->getNewEmptyItem();
-            $Post->setData($data);
-            $this->loadedData[$Post->getId()] = $Post->getData();
+            $post = $this->collection->getNewEmptyItem();
+            $post->setData($data);
+            $this->loadedData[$post->getId()] = $post->getData();
             $this->dataPersistor->clear('roche_blog_post');
         }
 

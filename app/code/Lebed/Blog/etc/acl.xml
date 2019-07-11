@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Acl configuration
+ *
+ * @category  Lebed
+ * @package   Lebed\Blog
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Lebed_Blog::blog_core" title="Lebed Blog Core">
+                    <resource id="Lebed_Blog::post" title="Lebed Blog Post" translate="title" sortOrder="10">
+                        <resource id="Lebed_Blog::post_save" title="Lebed Save Post" translate="title" sortOrder="10" />
+                        <resource id="Lebed_Blog::post_delete" title="Lebed Delete Post" translate="title" sortOrder="20" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Roche Blog menu
+ *
+ * @category  Roche
+ * @package   Roche\Blog
+ * @author    Roman Chernii <roche@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Semysiuk_BlogModule::Blog_core"
+             title="Blog_Sem"
+             module="Semysiuk_BlogModule"
+             sortOrder="50"
+             resource="Semysiuk_BlogModule::Blog_core" />
+
+        <add id="Semysiuk_BlogModule::post"
+             title="Post"
+             module="Semysiuk_BlogModule"
+             sortOrder="10"
+             parent="Semysiuk_BlogModule::Blog_core"
+             action="semysiuk_blogmodule/post"
+             resource="Semysiuk_BlogModule::post" />
+
+        <add id="Semysiuk_BlogModule::comment"
+             title="Comment"
+             module="Semysiuk_BlogModule"
+             sortOrder="20"
+             parent="Semysiuk_BlogModule::Blog_core"
+             action="semysiuk_blogmodule/comment"
+             resource="Semysiuk_BlogModule::comment" />
+    </menu>
+</config>
