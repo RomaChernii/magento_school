@@ -108,6 +108,29 @@ class UpgradeSchema implements UpgradeSchemaInterface
             $installer->getConnection()
                 ->createTable($table);
         }
+
+        if (version_compare($context->getVersion(), '0.0.6', '<')) {
+            $connection->changeColumn(
+                $installer->getTable('koshyk_blog_comment'),
+                'answer',
+                'status',
+                [
+                    'type' => Table::TYPE_SMALLINT,
+                    'size' => null,
+                    'nullable' => false,
+                    'default' => '1'
+                ]
+            );
+            $connection->addColumn(
+                $installer->getTable('koshyk_blog_comment'),
+                'answer',
+                [
+                    'type' => Table::TYPE_TEXT,
+                    'size' => '2M',
+                    'comment' =>  'Answer'
+                ]
+            );
+        }
         $installer->endSetup();
     }
 }

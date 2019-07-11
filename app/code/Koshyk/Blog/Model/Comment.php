@@ -125,13 +125,22 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
         return $this->getData(self::COMMENT);
     }
     /**
-     * Get answer
+     * Get answer on comment
      *
      * @return string
      */
     public function getAnswer()
     {
         return $this->getData(self::ANSWER);
+    }
+    /**
+     * Get answer
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->getData(self::STATUS);
     }
     /**
      * Set ID
@@ -211,15 +220,26 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
         return $this->setData(self::COMMENT, $comment);
     }
     /**
-     * Set answer
+     * Set answer on comment
      *
-     * @param string $commentAnswer
+     * @param string $answer
      *
      * @return CommentInterface
      */
-    public function setAnswer($commentAnswer)
+    public function setAnswer($answer)
     {
-        return $this->setData(self::ANSWER, $commentAnswer);
+        return $this->setData(self::ANSWER, $answer);
+    }
+    /**
+     * Set status
+     *
+     * @param string $commentStatus
+     *
+     * @return CommentInterface
+     */
+    public function setStatus($commentStatus)
+    {
+        return $this->setData(self::STATUS, $commentStatus);
     }
     /**
      * Prepare comment's statuses.

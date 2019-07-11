@@ -30,6 +30,7 @@ interface CommentInterface
     const EMAIL       = 'email';
     const COMMENT     = 'comment';
     const ANSWER      = 'answer';
+    const STATUS      = 'status';
     /**#@-*/
 
     /**
@@ -77,9 +78,15 @@ interface CommentInterface
     /**
      * Get Answer
      *
-     * @return integer
+     * @return string
      */
     public function getAnswer();
+    /**
+     * Get status
+     *
+     * @return integer
+     */
+    public function getStatus();
     /**
      * Set ID
      *
@@ -137,12 +144,20 @@ interface CommentInterface
      */
     public function setComment($comment);
     /**
-     * Set comment answer
+     * Set answer text
      *
-     * @param string $commentAnswer
+     * @param string $answer
      *
      * @return CommentInterface
      */
-    public function setAnswer($commentAnswer);
+    public function setAnswer($answer);
+    /**
+     * Set comment answer
+     *
+     * @param string $commentStatus
+     *
+     * @return CommentInterface
+     */
+    public function setStatus($commentStatus);
 
 }
