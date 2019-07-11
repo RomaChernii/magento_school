@@ -18,6 +18,10 @@
                         <resource id="Lebed_Blog::post_save" title="Lebed Save Post" translate="title" sortOrder="10" />
                         <resource id="Lebed_Blog::post_delete" title="Lebed Delete Post" translate="title" sortOrder="20" />
                     </resource>
+                    <resource id="Lebed_Blog::comment" title="Lebed Blog Post Comment" translate="title" sortOrder="20">
+                        <resource id="Lebed_Blog::comment_save" title="Lebed Save Post Comment" translate="title" sortOrder="10" />
+                        <resource id="Lebed_Blog::comment_delete" title="Lebed Delete Post Comment" translate="title" sortOrder="20" />
+                    </resource>
                 </resource>
             </resource>
         </resources>
