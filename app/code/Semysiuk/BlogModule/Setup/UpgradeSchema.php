@@ -59,7 +59,7 @@ class UpgradeSchema implements  UpgradeSchemaInterface
                 "30",
                 [],
                 "Comment email"
-            )->AddColumn(
+            )->addColumn(
                 "comment",
                 Table::TYPE_TEXT,
                 "2M",
