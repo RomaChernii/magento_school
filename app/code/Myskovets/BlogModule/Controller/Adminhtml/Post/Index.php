@@ -3,7 +3,7 @@
  * Blog post index
  *
  * @category  Myskovets
- * @package   Myskovets\Blog
+ * @package   Myskovets\BlogModule
  * @author    Roman Myskovets
  * @copyright 2019 Smile
  */

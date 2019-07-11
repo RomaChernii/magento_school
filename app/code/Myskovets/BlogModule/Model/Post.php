@@ -43,7 +43,7 @@ class Post extends AbstractModel implements PostInterface, IdentityInterface
      */
     public function _construct()
     {
-        $this->_init('Myskovets\Blog\Model\ResourceModel\Post');
+        $this->_init('Myskovets\BlogModule\Model\ResourceModel\Post');
     }
 
     /**

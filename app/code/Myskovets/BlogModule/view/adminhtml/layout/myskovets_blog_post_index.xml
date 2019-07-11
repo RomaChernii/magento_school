@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<page>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="myskovets_blog_post_listing" />
+        </referenceContainer>
+    </body>
+</page>
