@@ -12,6 +12,7 @@ return array (
     'Chleck_FirstModule' => 1,
     'Magento_Directory' => 1,
     'Magento_Eav' => 1,
+    'Chleck_Test' => 1,
     'Dehtiarov_BlogVideh' => 1,
     'Dehtiarov_ConfigVideh' => 1,
     'Magento_Theme' => 1,
