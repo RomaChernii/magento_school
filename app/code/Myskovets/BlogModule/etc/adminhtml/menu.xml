@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Myskovets Blog menu
+ *
+ * @category  Myskovets
+ * @package   Myskovets\Blog
+ * @author    Roman Chernii <Myskovets@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Myskovets_BlogModule::blog_core"
+             title="Blog by Roma"
+             module="Myskovets_BlogModule"
+             sortOrder="50"
+             resource="Myskovets_BlogModule::blog_core" />
+
+        <add id="Myskovets_BlogModule::post"
+             title="Post"
+             module="Myskovets_BlogModule"
+             sortOrder="10"
+             parent="Myskovets_BlogModule::blog_core"
+             action="myskovets_blog/post"
+             resource="Myskovets_BlogModule::post" />
+
+        <add id="Myskovets_BlogModule::comment"
+             title="Comment"
+             module="Myskovets_BlogModule"
+             sortOrder="20"
+             parent="Myskovets_BlogModule::blog_core"
+             action="myskovets_blog/comment"
+             resource="Myskovets_BlogModule::comment"
+            />
+    </menu>
+</config>

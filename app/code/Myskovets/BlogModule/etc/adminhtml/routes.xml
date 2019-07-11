@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+
+<config>
+    <router id="admin">
+        <route id="myskovets_blog" frontName="myskovets_blog">
+            <module name="Myskovets_BlogModule" before="Magento_Backend" />
+        </route>
+    </router>
+</config>
