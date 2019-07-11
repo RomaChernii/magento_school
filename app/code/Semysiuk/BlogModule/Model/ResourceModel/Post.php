@@ -1,6 +1,6 @@
 <?php
 
-namespace Semysiuk\BlogModel\Model\ResourceModel;
+namespace Semysiuk\BlogModule\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 

@@ -24,5 +24,13 @@
              parent="Semysiuk_BlogModule::Blog_core"
              action="semysiuk_blogmodule/post"
              resource="Semysiuk_BlogModule::post" />
+
+        <add id="Semysiuk_BlogModule::comment"
+             title="Comment"
+             module="Semysiuk_BlogModule"
+             sortOrder="20"
+             parent="Semysiuk_BlogModule::Blog_core"
+             action="semysiuk_blogmodule/comment"
+             resource="Semysiuk_BlogModule::comment" />
     </menu>
 </config>
