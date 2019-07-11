@@ -170,25 +170,25 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
     /**
      * Set first name
      *
-     * @param string $first_name
+     * @param string $firstName
      *
      * @return CommentInterface
      */
-    public function setFirstName($first_name)
+    public function setFirstName($firstName)
     {
-        return $this->setData(self::FIRST_NAME, $first_name);
+        return $this->setData(self::FIRST_NAME, $firstName);
     }
 
     /**
      * Set last name
      *
-     * @param string $last_name
+     * @param string $lastName
      *
      * @return CommentInterface
      */
-    public function setLastName($last_name)
+    public function setLastName($lastName)
     {
-        return $this->setData(self::LAST_NAME, $last_name);
+        return $this->setData(self::LAST_NAME, $lastName);
     }
 
     /**
@@ -242,25 +242,25 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
     /**
      * Set writing time
      *
-     * @param string $writed_at
+     * @param string $writedAt
      *
      * @return CommentInterface
      */
-    public function setWritedAt($writed_at)
+    public function setWritedAt($writedAt)
     {
-        return $this->setData(self::WRITED_AT, $writed_at);
+        return $this->setData(self::WRITED_AT, $writedAt);
     }
 
     /**
      * Set post ID
      *
-     * @param int $post_id
+     * @param int $postId
      *
      * @return CommentInterface
      */
-    public function setPostId($post_id)
+    public function setPostId($postId)
     {
-        return $this->setData(self::POST_ID, $post_id);
+        return $this->setData(self::POST_ID, $postId);
     }
 
     /**
