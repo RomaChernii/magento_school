@@ -107,20 +107,20 @@ interface CommentInterface
     /**
      * Set first name
      *
-     * @param string $first_name
+     * @param string $firstName
      *
      * @return CommentInterface
      */
-    public function setFirstName($first_name);
+    public function setFirstName($firstName);
 
     /**
      * Set last name
      *
-     * @param string $last_name
+     * @param string $lastName
      *
      * @return CommentInterface
      */
-    public function setLastName($last_name);
+    public function setLastName($lastName);
 
     /**
      * Set e-mail
@@ -161,18 +161,18 @@ interface CommentInterface
     /**
      * Set writing time
      *
-     * @param string $writed_at
+     * @param string $writedAt
      *
      * @return CommentInterface
      */
-    public function setWritedAt($writed_at);
+    public function setWritedAt($writedAt);
 
     /**
      * Set post ID
      *
-     * @param int $post_id
+     * @param int $postId
      *
      * @return CommentInterface
      */
-    public function setPostId($post_id);
+    public function setPostId($postId);
 }
