@@ -1,6 +1,12 @@
 <?php
-
-namespace Semysiuk\BlogModule\Controller\Adminhtml\Post;
+/**
+ * Blog post index
+ *
+ * @category  Koshyk
+ * @package   Koshyk\Blog
+ * @author    Roman Koshyk <romadaaaa@gmail.com>
+ */
+namespace Koshyk\Blog\Controller\Adminhtml\Post;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -9,7 +15,7 @@ use Magento\Framework\View\Result\PageFactory;
 /**
  * Class Index
  *
- * @package Semysiuk\BlogModule\Controller\Adminhtml\Post
+ * @package Koshyk\Blog\Controller\Adminhtml\Post
  */
 class Index extends Action
 {
@@ -18,7 +24,7 @@ class Index extends Action
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'Semysiuk_BlogModule:post';
+    const ADMIN_RESOURCE = 'Koshyk_Blog::post';
 
     /**
      * @var PageFactory
@@ -46,7 +52,7 @@ class Index extends Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Semysiuk_BlogModule::post');
+        $resultPage->setActiveMenu('Koshyk_Blog::post');
         $resultPage->addBreadcrumb(__('Blog Posts'), __('Blog Posts'));
         $resultPage->addBreadcrumb(__('Blog Posts'), __('Blog Posts'));
         $resultPage->getConfig()->getTitle()->prepend(__('Blog Posts'));
@@ -54,4 +60,3 @@ class Index extends Action
         return $resultPage;
     }
 }
-

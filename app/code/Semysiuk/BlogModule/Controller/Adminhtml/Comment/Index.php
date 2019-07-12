@@ -1,6 +1,6 @@
 <?php
 
-namespace Semysiuk\BlogModule\Controller\Adminhtml\Post;
+namespace Semysiuk\BlogModule\Controller\Adminhtml\Comment;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -9,7 +9,7 @@ use Magento\Framework\View\Result\PageFactory;
 /**
  * Class Index
  *
- * @package Semysiuk\BlogModule\Controller\Adminhtml\Post
+ * @package Semysiuk\BlogModule\Controller\Adminhtml\Comment
  */
 class Index extends Action
 {
@@ -18,7 +18,7 @@ class Index extends Action
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'Semysiuk_BlogModule:post';
+    const ADMIN_RESOURCE = 'Semysiuk_BlogModule::comment';
 
     /**
      * @var PageFactory
@@ -46,12 +46,11 @@ class Index extends Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Semysiuk_BlogModule::post');
-        $resultPage->addBreadcrumb(__('Blog Posts'), __('Blog Posts'));
-        $resultPage->addBreadcrumb(__('Blog Posts'), __('Blog Posts'));
-        $resultPage->getConfig()->getTitle()->prepend(__('Blog Posts'));
+        $resultPage->setActiveMenu('Semysiuk_BlogModule::comment');
+        $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
+        $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Blog Comments'));
 
         return $resultPage;
     }
 }
-

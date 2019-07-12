@@ -5,9 +5,9 @@ namespace Semysiuk\BlogModule\Model\ResourceModel;
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 /**
- * Post
+ * Comment
  *
- * @package Semysiuk\BlogModule\Model\ResourceModel\Post
+ * @package Semysiuk\BlogModule\Model\ResourceModel\Comment
  */
 class Post extends AbstractDb
 {
@@ -18,6 +18,7 @@ class Post extends AbstractDb
      */
     public function _construct()
     {
-        $this->_init('semysiuk_blog_post', 'id');
+        $this->_init('semysiuk_blog_comment', 'id');
     }
 }
+
