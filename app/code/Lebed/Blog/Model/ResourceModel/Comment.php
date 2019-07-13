@@ -1,6 +1,6 @@
 <?php
 /**
- * Blog post
+ * Lebed Blog Comment ResourceModel
  *
  * @category  Lebed
  * @package   Lebed\Blog
@@ -12,19 +12,19 @@ namespace Lebed\Blog\Model\ResourceModel;
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
 /**
- * Post
+ * Class Comment
  *
  * @package Lebed\Blog\Model\ResourceModel
  */
-class Post extends AbstractDb
+class Comment extends AbstractDb
 {
     /**
-     * Initialize resource model
+     * Resource initialization
      *
      * @return void
      */
-    public function _construct()
+    protected function _construct()
     {
-        $this->_init('lebed_blog_post', 'id');
+        $this->_init('lebed_blog_comment', 'id');
     }
 }
