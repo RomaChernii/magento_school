@@ -1,36 +1,22 @@
 <?php
-/**
- * Blog post search results interface
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
- */
 namespace Hodovanuk\Blog\Api\Data;
 
 use Magento\Framework\Api\SearchResultsInterface;
 
 /**
- * Interface PostSearchResultsInterface
- *
- * @package Roche\Blog\Api\Data
+ * Interface CommentSearchResultsInterface
+ * @package Hodovanuk\Blog\Api\Data
  */
 interface CommentSearchResultsInterface extends SearchResultsInterface
 {
     /**
-     * Get post list
-     *
-     * @return \Roche\Blog\Api\Data\PostInterface[]
+     * @return \Magento\Framework\Api\ExtensibleDataInterface[]
      */
     public function getItems();
 
     /**
-     * Set post list
-     *
-     * @param \Roche\Blog\Api\Data\PostInterface[] $items
-     *
-     * @return PostSearchResultsInterface
+     * @param array $items
+     * @return SearchResultsInterface
      */
     public function setItems(array $items);
 }

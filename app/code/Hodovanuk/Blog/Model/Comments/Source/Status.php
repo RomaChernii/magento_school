@@ -6,21 +6,18 @@ use Hodovanuk\Blog\Model\Comment;
 
 /**
  * Class Status
- * @package Hodovanuk\Blog\Model\Post\Source
+ * @package Hodovanuk\Blog\Model\Comments\Source
  */
 class Status implements OptionSourceInterface
 {
     /**
-     * Post
-     *
-     * @var Post
+     * @var Comment
      */
     private $commentStatus;
 
     /**
-     * Status constructor
-     *
-     * @param Post $post
+     * Status constructor.
+     * @param Comment $comment
      */
     public function __construct(Comment $comment)
     {

@@ -10,7 +10,7 @@ use Hodovanuk\Blog\Model\ResourceModel\Comment\Collection as CommentCollection;
 
 /**
  * Class Collection
- * @package Hodovanuk\Blog\Model\ResourceModel\Post\Grid
+ * @package Hodovanuk\Blog\Model\ResourceModel\Comment\Grid
  */
 class Collection extends CommentCollection implements SearchResultInterface
 {

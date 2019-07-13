@@ -11,46 +11,37 @@ use Hodovanuk\Blog\Model\ResourceModel\Comment as ResourceComment;
 use Hodovanuk\Blog\Model\ResourceModel\Comment\CollectionFactory as CommentCollectionFactory;
 
 /**
- * Class PostRepository
+ * Class CommentRepository
  * @package Hodovanuk\Blog\Model
  */
 class CommentRepository implements CommentRepositoryInterface
 {
     /**
-     * Resource post
-     *
-     * @var ResourcePost
+     * @var ResourceComment
      */
     private $resource;
 
     /**
-     * Post factory
-     *
-     * @var PostFactory
+     * @var CommentFactory
      */
     private $commentFactory;
 
     /**
-     * Post collection factory
-     *
-     * @var PostCollectionFactory
+     * @var CommentCollectionFactory
      */
     private $commentCollectionFactory;
 
     /**
-     * Post search results interface factory
-     *
-     * @var PostSearchResultsInterfaceFactory
+     * @var Data\CommentSearchResultsInterfaceFactory
      */
     private $searchResultsFactory;
 
     /**
-     * PostRepository constructor
-     *
-     * @param ResourcePost                           $resource
-     * @param PostFactory                            $postFactory
-     * @param PostCollectionFactory                  $postCollectionFactory
-     * @param Data\PostSearchResultsInterfaceFactory $searchResultsFactory
+     * CommentRepository constructor.
+     * @param ResourceComment $resource
+     * @param CommentFactory $commentFactory
+     * @param CommentCollectionFactory $commentCollectionFactory
+     * @param Data\CommentSearchResultsInterfaceFactory $searchResultsFactory
      */
     public function __construct(
         ResourceComment $resource,
@@ -65,8 +56,8 @@ class CommentRepository implements CommentRepositoryInterface
     }
 
     /**
-     * @param Data\PostInterface $post
-     * @return Data\PostInterface|mixed
+     * @param Data\CommentInterface $comment
+     * @return Data\CommentInterface|mixed
      * @throws CouldNotSaveException
      */
     public function save(Data\CommentInterface $comment)
@@ -81,13 +72,9 @@ class CommentRepository implements CommentRepositoryInterface
     }
 
     /**
-     * Load Post data by given Post Identity
-     *
-     * @param string $postId
-     *
-     * @return Post
-     *
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @param $commentId
+     * @return Comment|mixed
+     * @throws NoSuchEntityException
      */
     public function getById($commentId)
     {
@@ -130,7 +117,7 @@ class CommentRepository implements CommentRepositoryInterface
     }
 
     /**
-     * @param Data\PostInterface $post
+     * @param Data\CommentInterface $comment
      * @return bool
      * @throws CouldNotDeleteException
      */
@@ -146,7 +133,7 @@ class CommentRepository implements CommentRepositoryInterface
     }
 
     /**
-     * @param $postId
+     * @param $commentId
      * @return bool|mixed
      * @throws CouldNotDeleteException
      * @throws NoSuchEntityException

@@ -15,7 +15,7 @@ class CommentsActions extends Column
     /**
      * Url path
      */
-    const URL_PATH_EDIT = 'hodovanuk_blog/comments/edit';
+    const URL_PATH_ANSWER = 'hodovanuk_blog/comments/answer';
     /**
      *
      */
@@ -68,9 +68,9 @@ class CommentsActions extends Column
                     $item[$this->getData('name')] = [
                         'edit' => [
                             'href' => $this->urlBuilder->getUrl(
-                                static::URL_PATH_EDIT,
+                                static::URL_PATH_ANSWER,
                                 [
-                                    'id' => $item['id']
+                                    'id' => $item['post_id']
                                 ]
                             ),
                             'label' => __('Answer')

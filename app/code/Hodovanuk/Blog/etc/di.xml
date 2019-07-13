@@ -56,7 +56,6 @@
             </argument>
         </arguments>
     </type>
-<!--    space beetwen two di components-->
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
