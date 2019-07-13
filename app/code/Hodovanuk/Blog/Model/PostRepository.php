@@ -1,12 +1,4 @@
 <?php
-/**
- * Blog post repository
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
- */
 namespace Hodovanuk\Blog\Model;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
@@ -20,10 +12,7 @@ use Hodovanuk\Blog\Model\ResourceModel\Post\CollectionFactory as PostCollectionF
 
 /**
  * Class PostRepository
- *
- * @package Roche\Blog\Model\PostRepository
- *
- * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
+ * @package Hodovanuk\Blog\Model
  */
 class PostRepository implements PostRepositoryInterface
 {
@@ -76,12 +65,8 @@ class PostRepository implements PostRepositoryInterface
     }
 
     /**
-     * Save Post data
-     *
-     * @param \Roche\Blog\Api\Data\PostInterface $post
-     *
-     * @return Post
-     *
+     * @param Data\PostInterface $post
+     * @return Data\PostInterface|mixed
      * @throws CouldNotSaveException
      */
     public function save(Data\PostInterface $post)
@@ -116,14 +101,8 @@ class PostRepository implements PostRepositoryInterface
     }
 
     /**
-     * Load Post data collection by given search criteria
-     *
-     * @param \Magento\Framework\Api\SearchCriteriaInterface $criteria
-     *
-     * @return \Roche\Blog\Model\ResourceModel\Post\Collection
-     *
-     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
-     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @param SearchCriteriaInterface|null $criteria
+     * @return mixed
      */
     public function getList(SearchCriteriaInterface $criteria = null)
     {
@@ -151,12 +130,8 @@ class PostRepository implements PostRepositoryInterface
     }
 
     /**
-     * Delete Post
-     *
-     * @param \Roche\Blog\Api\Data\PostInterface $post
-     *
+     * @param Data\PostInterface $post
      * @return bool
-     *
      * @throws CouldNotDeleteException
      */
     public function delete(Data\PostInterface $post)
@@ -171,12 +146,8 @@ class PostRepository implements PostRepositoryInterface
     }
 
     /**
-     * Delete Post by given Post Identity
-     *
-     * @param string $postId
-     *
-     * @return bool
-     *
+     * @param $postId
+     * @return bool|mixed
      * @throws CouldNotDeleteException
      * @throws NoSuchEntityException
      */

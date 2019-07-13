@@ -1,12 +1,4 @@
 <?php
-/**
- * Roche Blog order plan file upload
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
- */
 namespace Hodovanuk\Blog\Model\Post\Image;
 
 use Magento\Catalog\Model\ImageUploader;
@@ -20,8 +12,7 @@ use Magento\Framework\Exception\LocalizedException;
 
 /**
  * Class Uploader
- *
- * @package Roche\Blog\Model\Order\Stand
+ * @package Hodovanuk\Blog\Model\Post\Image
  */
 class Uploader extends ImageUploader
 {

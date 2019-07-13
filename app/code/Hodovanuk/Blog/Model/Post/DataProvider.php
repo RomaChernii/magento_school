@@ -1,12 +1,4 @@
 <?php
-/**
- * Blog Post data provider
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
- */
 namespace Hodovanuk\Blog\Model\Post;
 
 use Magento\Framework\App\Request\DataPersistorInterface;
@@ -17,15 +9,12 @@ use Hodovanuk\Blog\Model\ResourceModel\Post\CollectionFactory;
 
 /**
  * Class DataProvider
- *
- * @package Roche\Blog\Model\Post\DataProvider
+ * @package Hodovanuk\Blog\Model\Post
  */
 class DataProvider extends AbstractDataProvider
 {
     /**
-     * Post collection
-     *
-     * @var \Roche\Blog\Model\ResourceModel\Post\Collection
+     * @var
      */
     protected $collection;
 

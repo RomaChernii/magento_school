@@ -1,12 +1,4 @@
 <?php
-/**
- * Blog Post status
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
- */
 namespace Hodovanuk\Blog\Model\Post\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
@@ -14,8 +6,7 @@ use Hodovanuk\Blog\Model\Post;
 
 /**
  * Class Status
- *
- * @package Roche\Blog\Model\Post\Source\Status
+ * @package Hodovanuk\Blog\Model\Post\Source
  */
 class Status implements OptionSourceInterface
 {

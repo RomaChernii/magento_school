@@ -1,12 +1,4 @@
 <?php
-/**
- * Blog grid post collection
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
- */
 namespace Hodovanuk\Blog\Model\ResourceModel\Post\Grid;
 
 use Magento\Framework\Api\Search\AggregationInterface;
@@ -18,9 +10,7 @@ use Hodovanuk\Blog\Model\ResourceModel\Post\Collection as PostCollection;
 
 /**
  * Class Collection
- *
- * @package Roche\Blog\Model\ResourceModel\Post\Grid\Collection
- *
+ * @package Hodovanuk\Blog\Model\ResourceModel\Post\Grid
  */
 class Collection extends PostCollection implements SearchResultInterface
 {

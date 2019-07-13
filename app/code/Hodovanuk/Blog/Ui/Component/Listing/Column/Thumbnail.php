@@ -1,12 +1,4 @@
 <?php
-/**
- * Adminhtml grid image column
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
- */
 namespace Hodovanuk\Blog\Ui\Component\Listing\Column;
 
 use Magento\Catalog\Helper\Image;
@@ -18,8 +10,7 @@ use Magento\Ui\Component\Listing\Columns\Column;
 
 /**
  * Class Thumbnail
- *
- * @package Roche\Blog\Ui\Component\Listing\Column
+ * @package Hodovanuk\Blog\Ui\Component\Listing\Column
  */
 class Thumbnail extends Column
 {

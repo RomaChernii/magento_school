@@ -1,12 +1,4 @@
 <?php
-/**
- * Blog post actions
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
- */
 namespace Hodovanuk\Blog\Ui\Component\Listing\Column;
 
 use Magento\Framework\UrlInterface;
@@ -16,8 +8,7 @@ use Magento\Ui\Component\Listing\Columns\Column;
 
 /**
  * Class PostActions
- *
- * @package Roche\Blog\Ui\Component\Listing\Colum\PostActions
+ * @package Hodovanuk\Blog\Ui\Component\Listing\Column
  */
 class PostActions extends Column
 {
@@ -25,6 +16,9 @@ class PostActions extends Column
      * Url path
      */
     const URL_PATH_EDIT = 'hodovanuk_blog/post/edit';
+    /**
+     *
+     */
     const URL_PATH_DELETE = 'hodovanuk_blog/post/delete';
 
     /**
