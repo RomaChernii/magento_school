@@ -3,6 +3,9 @@
     <preference for="Hodovanuk\Blog\Api\Data\PostInterface" type="Hodovanuk\Blog\Model\Post" />
     <preference for="Hodovanuk\Blog\Api\Data\PostSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
     <preference for="Hodovanuk\Blog\Api\PostRepositoryInterface" type="Hodovanuk\Blog\Model\PostRepository" />
+    <preference for="Hodovanuk\Blog\Api\Data\CommentInterface" type="Hodovanuk\Blog\Model\Comment" />
+    <preference for="Hodovanuk\Blog\Api\Data\CommentSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Hodovanuk\Blog\Api\CommentRepositoryInterface" type="Hodovanuk\Blog\Model\CommentRepository" />
 
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
@@ -50,6 +53,56 @@
         <arguments>
             <argument name="hydrators" xsi:type="array">
                 <item name="Hodovanuk\Blog\Api\Data\PostInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+            </argument>
+        </arguments>
+    </type>
+<!--    space beetwen two di components-->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="hodovanuk_blog_comments_listing_data_source" xsi:type="string">Hodovanuk\Blog\Model\ResourceModel\Comment\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Hodovanuk\Blog\Model\ResourceModel\Comment\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">hodovanuk_blog_comment</argument>
+            <argument name="eventPrefix" xsi:type="string">hodovanuk_blog_comments_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">hodovanuk_grid_comment_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Hodovanuk\Blog\Model\ResourceModel\Comment</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="BlogGridFilterPoolHodovanukComment" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="Hodovanuk\Blog\Api\Data\CommentInterface" xsi:type="string">Hodovanuk\Blog\Api\CommentRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Hodovanuk\Blog\Api\Data\PostInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">hodovanuk_blog_comment</item>
+                    <item name="identifierField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\HydratorPool">
+        <arguments>
+            <argument name="hydrators" xsi:type="array">
+                <item name="Hodovanuk\Blog\Api\Data\CommentInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
             </argument>
         </arguments>
     </type>

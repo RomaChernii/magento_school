@@ -4,6 +4,7 @@ namespace Hodovanuk\Blog\Controller\Adminhtml\Comments;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
+use Hodovanuk\Blog\Model\CommentFactory;
 
 /**
  * Class Index
@@ -12,6 +13,7 @@ use Magento\Framework\View\Result\PageFactory;
  */
 class Index extends Action
 {
+    private $_commentFactory;
     /**
      * Authorization level of a basic admin session
      *
@@ -30,10 +32,12 @@ class Index extends Action
      */
     public function __construct(
         Context $context,
-        PageFactory $resultPageFactory
+        PageFactory $resultPageFactory,
+        CommentFactory $commentFactory
     ) {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
+        $this->_commentFactory = $commentFactory;
     }
 
     /**
