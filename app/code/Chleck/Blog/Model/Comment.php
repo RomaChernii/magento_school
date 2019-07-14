@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Chleck\Blog\Model;
 
 use Magento\Framework\DataObject\IdentityInterface;
@@ -76,7 +75,7 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
      */
     public function getCommentId()
     {
-        return $this->getData(self::COMMENT_ID);
+        return $this->getData(self::ID);
     }
 
     /**

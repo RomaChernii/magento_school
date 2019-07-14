@@ -2,10 +2,9 @@
 /**
  * Blog post repository interface
  *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
+ * @category  Chleck
+ * @package   Chleck\Blog
+ * @author    Yuri Chleck <yurichlek@gmail.com>
  */
 namespace Chleck\Blog\Api;
 

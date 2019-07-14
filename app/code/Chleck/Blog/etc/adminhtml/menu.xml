@@ -3,10 +3,9 @@
 /**
  * Roche Blog menu
  *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
+ *@category  Chleck
+ * @package   Chleck\Blog
+ * @author    Yuri Chleck <yurichlek@gmail.com>
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
