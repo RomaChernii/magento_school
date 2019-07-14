@@ -147,5 +147,15 @@
                 </item>
             </argument>
         </actionsColumn>
+        <actionsColumn name="addcomment" class="Hodovanuk\Blog\Ui\Component\Listing\Column\PostAdd">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Commented on</item>
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">107</item>
+                    <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </actionsColumn>
     </columns>
 </listing>
