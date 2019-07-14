@@ -10,7 +10,7 @@ interface CommentInterface
      * Constants defined for keys of data array.
      */
     const POST_ID     = 'post_id';
-    const COMMENT_ID  = 'comment_id';
+    const ID          = 'id';
     const NAME        = 'name';
     const SURNAME     = 'surname';
     const EMAIL       = 'email';

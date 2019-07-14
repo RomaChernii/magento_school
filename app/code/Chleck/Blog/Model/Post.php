@@ -20,7 +20,7 @@ class Post extends AbstractModel implements PostInterface, IdentityInterface
     /**#@-*/
 
     /**
-     * Roche post cache tag
+     * Chleck post cache tag
      */
     const CACHE_TAG = 'chleck_blog_post';
 

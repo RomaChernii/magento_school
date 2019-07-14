@@ -38,7 +38,16 @@ class UpgradeSchema implements UpgradeSchemaInterface
             $table = $setup->getConnection()->newTable(
                 $setup->getTable('chleck_blog_comment')
             )->addColumn(
-                'comment_id',
+                'post_id',
+                Table::TYPE_INTEGER,
+                null,
+                [
+                    'unsigned' => true,
+                    'nullable' => false,
+                ],
+                'Post_id'
+            )->addColumn(
+                'id',
                 Table::TYPE_INTEGER,
                 null,
                 [
@@ -46,14 +55,9 @@ class UpgradeSchema implements UpgradeSchemaInterface
                     'unsigned' => true,
                     'nullable' => false,
                     'primary' => true
+
                 ],
                 'Comment_id'
-            )->addColumn(
-                'post_id',
-                Table::TYPE_TEXT,
-                255,
-                [],
-                'Post id'
             )->addColumn(
                 'name',
                 Table::TYPE_TEXT,
@@ -84,6 +88,16 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 255,
                 [],
                 'New answer'
+            )->addForeignKey(
+                $setup->getFkName(
+                    'chleck_blog_comment',
+                    'post_id',
+                    'chleck_blog_post',
+                    'id'),
+                'post_id',
+                $setup->getTable('chleck_blog_post'),
+                'id',
+                Table::ACTION_CASCADE
             )->setComment(
                 'Blog Post And Comment Table'
             );

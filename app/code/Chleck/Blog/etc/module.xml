@@ -5,13 +5,10 @@
  * See COPYING.txt for license details.
  */
 -->
-<<<<<<< HEAD
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Chleck_Blog" setup_version="1.0.3">
-=======
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Chleck_Blog" setup_version="0.0.1">
->>>>>>> dc40ecd596f4c7d16299811d4fea74cdbf97d655
+
     </module>
 </config>

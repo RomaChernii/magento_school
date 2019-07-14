@@ -14,12 +14,14 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
     /**#@+
      * Post's Statuses
      */
-    const STATUS_ENABLED = 1;
-    const STATUS_DISABLED = 0;
+    const STATUS_NEW = 1;
+    const STATUS_IN_PROGRESS = 2;
+    const STATUS_CLOSED = 3;
+
     /**#@-*/
 
     /**
-     * Roche post cache tag
+     * Chleck post cache tag
      */
     const CACHE_TAG = 'chleck_blog_comment';
 
@@ -54,7 +56,7 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
      */
     public function getIdentities()
     {
-        return [self::CACHE_TAG . '_' . $this->getPostId()];
+        return [self::CACHE_TAG . '_' . $this->getCommentId()];
     }
 
     /**
@@ -220,6 +222,6 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
      */
     public function getAvailableStatuses()
     {
-        return [self::STATUS_ENABLED => __('Enabled'), self::STATUS_DISABLED => __('Disabled')];
+        return [self::STATUS_NEW => __('New comment'), self::STATUS_IN_PROGRESS => __('In progress'), self::STATUS_CLOSED => __('Closed')];
     }
 }

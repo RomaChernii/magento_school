@@ -2,9 +2,9 @@
 /**
  * Blog post
  *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
+ * @category  Chleck
+ * @package   Chleck\Blog
+ * @author    Yuri Chleck <yurichleck@gmail.com>
  * @copyright 2018 Smile
  */
 namespace Chleck\Blog\Model\ResourceModel;
