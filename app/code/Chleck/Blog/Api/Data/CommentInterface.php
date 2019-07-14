@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * Block comment interface
+ *
+ * @category  Chleck
+ * @package   Chleck\Blog
+ * @author    Yuri Chleck <yurichlek@gmail.com>
+ */
 namespace Chleck\Blog\Api\Data;
 
 interface CommentInterface
