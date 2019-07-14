@@ -7,7 +7,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Skavronskiy_Blog::blog_core"
-             title="Blog_Ska"
+             title="Blog_SAM"
              module="Skavronskiy_Blog"
              sortOrder="50"
              resource="Skavronskiy_Blog::blog_core" />
@@ -19,5 +19,13 @@
              parent="Skavronskiy_Blog::blog_core"
              action="skavronskiy_blog/post"
              resource="Skavronskiy_Blog::post" />
+
+        <add id="Skavronskiy_Blog::comment"
+             title="Comment"
+             module="Skavronskiy_Blog"
+             sortOrder="20"
+             parent="Skavronskiy_Blog::blog_core"
+             action="skavronskiy_blog/comment"
+             resource="Skavronskiy_Blog::comment" />
     </menu>
 </config>
