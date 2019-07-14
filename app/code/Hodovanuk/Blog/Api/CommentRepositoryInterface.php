@@ -5,7 +5,7 @@ use Magento\Framework\Api\SearchCriteriaInterface;
 use Hodovanuk\Blog\Api\Data\CommentInterface;
 
 /**
- * Interface PostRepositoryInterface
+ * Interface CommentRepositoryInterface
  * @package Hodovanuk\Blog\Api
  */
 interface CommentRepositoryInterface
@@ -23,7 +23,7 @@ interface CommentRepositoryInterface
     public function getList(SearchCriteriaInterface $searchCriteria = null);
 
     /**
-     * @param PostInterface $object
+     * @param CommentInterface $object
      * @return mixed
      */
     public function save(CommentInterface $object);

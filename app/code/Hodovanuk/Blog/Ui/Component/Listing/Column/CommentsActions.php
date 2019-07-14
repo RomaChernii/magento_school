@@ -7,7 +7,7 @@ use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 
 /**
- * Class PostActions
+ * Class CommentsActions
  * @package Hodovanuk\Blog\Ui\Component\Listing\Column
  */
 class CommentsActions extends Column
@@ -70,7 +70,7 @@ class CommentsActions extends Column
                             'href' => $this->urlBuilder->getUrl(
                                 static::URL_PATH_ANSWER,
                                 [
-                                    'id' => $item['post_id']
+                                    'id' => $item['id']
                                 ]
                             ),
                             'label' => __('Answer')
