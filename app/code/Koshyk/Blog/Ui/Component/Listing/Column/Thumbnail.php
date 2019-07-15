@@ -94,7 +94,7 @@ class Thumbnail extends Column
                 $item[$fieldName . '_src'] = $url;
                 $item[$fieldName . '_alt'] = $this->getAlt($item) ? : '';
                 $item[$fieldName . '_link'] = $this->urlBuilder->getUrl(
-                    'Koshyk_blog/post/edit',
+                    'koshyk_blog/post/edit',
                     ['id' => $item['id']]
                 );
                 $item[$fieldName . '_orig_src'] = $url;
