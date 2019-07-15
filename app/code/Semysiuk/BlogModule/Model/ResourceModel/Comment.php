@@ -9,7 +9,7 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
  *
  * @package Semysiuk\BlogModule\Model\ResourceModel\Comment
  */
-class Post extends AbstractDb
+class Comment extends AbstractDb
 {
     /**
      * Initialize resource model

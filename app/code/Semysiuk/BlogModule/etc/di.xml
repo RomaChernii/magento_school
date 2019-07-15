@@ -3,4 +3,18 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Semysiuk\BlogModule\Api\Data\PostInterface" type="Semysiuk\BlogModule\Model\Post" />
     <preference for="Semysiuk\BlogModule\Api\Data\CommentInterface" type="Semysiuk\BlogModule\Model\Comment" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="semysiuk_blogmodule_post_listing_data_source" xsi:type="string">Semysiuk\BlogModule\Model\ResourceModel\Post\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Semysiuk\BlogModule\Model\ResourceModel\Post\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">semysiuk_blog_post</argument>
+            <argument name="resourceModel" xsi:type="string">Semysiuk\BlogModule\Model\ResourceModel\Post</argument>
+        </arguments>
+    </virtualType>
 </config>
