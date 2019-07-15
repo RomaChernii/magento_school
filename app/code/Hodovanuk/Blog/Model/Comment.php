@@ -6,7 +6,7 @@ use Magento\Framework\Model\AbstractModel;
 use Hodovanuk\Blog\Api\Data\CommentInterface;
 
 /**
- * Class Post
+ * Class Comment
  *
  * @package Hodovanuk\Blog\Model\Comment
  *
