@@ -6,7 +6,7 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
 /**
  * Class Collection
- * @package Chleck\Blog\Model\ResourceModel\Post
+ * @package Chleck\Blog\Model\ResourceModel\Comment
  */
 class Collection extends AbstractCollection
 {

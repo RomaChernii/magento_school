@@ -28,7 +28,7 @@
         <add id="Chleck_Blog::comment"
              title="Comments"
              module="Chleck_Blog"
-             sortOrder="10"
+             sortOrder="20"
              parent="Chleck_Blog::blog_core"
              action="chleck_blog/comment"
              resource="Chleck_Blog::post"/>
