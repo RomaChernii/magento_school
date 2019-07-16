@@ -4,6 +4,7 @@
     <preference for="Semysiuk\BlogModule\Api\Data\PostInterface" type="Semysiuk\BlogModule\Model\Post" />
     <preference for="Semysiuk\BlogModule\Api\Data\CommentInterface" type="Semysiuk\BlogModule\Model\Comment" />
     <preference for="Semysiuk\BlogModule\Api\PostRepositoryInterface" type="Semysiuk\BlogModule\Model\PostRepository" />
+    <preference for="Semysiuk\BlogModule\Api\Data\PostSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
 
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
