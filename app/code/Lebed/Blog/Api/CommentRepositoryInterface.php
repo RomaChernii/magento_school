@@ -1,6 +1,6 @@
 <?php
 /**
- * Lebed Blog post repository interface
+ * Lebed Blog Comment Repository Interface
  *
  * @category  Lebed
  * @package   Lebed\Blog
@@ -9,47 +9,47 @@
  */
 namespace Lebed\Blog\Api;
 
+use Lebed\Blog\Api\Data\CommentInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
-use Lebed\Blog\Api\Data\PostInterface;
 
 /**
- * Interface PostRepositoryInterface
+ * Interface CommentRepositoryInterface
  *
  * @package Lebed\Blog\Api
  */
-interface PostRepositoryInterface
+interface CommentRepositoryInterface
 {
     /**
-     * Retrieve a post by it's id
+     * Retrieve a comment by it's id
      *
-     * @param int $objectId
+     * @param string $objectId
      *
-     * @return PostRepositoryInterface
+     * @return CommentRepositoryInterface
      */
     public function getById($objectId);
 
     /**
-     * Retrieve post which match a specified criteria.
+     * Retrieve comments which match a specified criteria.
      *
-     * @param SearchCriteriaInterface|null $searchCriteria
+     * @param SearchCriteriaInterface $searchCriteria
      *
      * @return \Magento\Framework\Api\SearchResults
      */
     public function getList(SearchCriteriaInterface $searchCriteria = null);
 
     /**
-     * Save post
+     * Save comment
      *
-     * @param PostInterface $object
+     * @param CommentInterface $object
      *
-     * @return PostRepositoryInterface
+     * @return CommentRepositoryInterface
      */
-    public function save(PostInterface $object);
+    public function save(CommentInterface $object);
 
     /**
-     * Delete a post by its id
+     * Delete a comment by its id
      *
-     * @param int $objectId
+     * @param string $objectId
      *
      * @return bool
      * @throws \Magento\Framework\Exception\NoSuchEntityException

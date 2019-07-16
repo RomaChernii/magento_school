@@ -18,11 +18,19 @@
              resource="Lebed_Blog::blog_core" />
 
         <add id="Lebed_Blog::post"
-             title="Lebed Post"
+             title="Lebed Posts"
              module="Lebed_Blog"
              sortOrder="10"
              parent="Lebed_Blog::blog_core"
              action="lebed_blog/post"
              resource="Lebed_Blog::post" />
+
+        <add id="Lebed_Blog::comment"
+             title="Lebed Comments"
+             module="Lebed_Blog"
+             sortOrder="20"
+             parent="Lebed_Blog::blog_core"
+             action="lebed_blog/comment"
+             resource="Lebed_Blog::comment" />
     </menu>
 </config>

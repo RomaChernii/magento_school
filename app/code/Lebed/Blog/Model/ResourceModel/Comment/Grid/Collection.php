@@ -1,27 +1,27 @@
 <?php
 /**
- * Lebed Blog grid post collection
+ * Lebed Blog grid comment Collection
  *
  * @category  Lebed
  * @package   Lebed\Blog
  * @author    Tetiana Lebed <teleb@smile.fr>
  * @copyright 2019 Smile
  */
-namespace Lebed\Blog\Model\ResourceModel\Post\Grid;
+namespace Lebed\Blog\Model\ResourceModel\Comment\Grid;
 
 use Magento\Framework\Api\Search\AggregationInterface;
 use Magento\Framework\Api\Search\SearchResultInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\View\Element\UiComponent\DataProvider\Document;
-use Lebed\Blog\Model\ResourceModel\Post;
-use Lebed\Blog\Model\ResourceModel\Post\Collection as PostCollection;
+use Lebed\Blog\Model\ResourceModel\Comment;
+use Lebed\Blog\Model\ResourceModel\Comment\Collection as CommentCollection;
 
 /**
  * Class Collection
  *
- * @package Lebed\Blog\Model\ResourceModel\Post\Grid
+ * @package Lebed\Blog\Model\ResourceModel\Comment\Grid
  */
-class Collection extends PostCollection implements SearchResultInterface
+class Collection extends CommentCollection implements SearchResultInterface
 {
     /**
      * Aggregations
@@ -31,13 +31,13 @@ class Collection extends PostCollection implements SearchResultInterface
     private $aggregations;
 
     /**
-     * Collection constructor
+     * Collection Constructor
      *
      * @return void
      */
     public function _construct()
     {
-        $this->_init(Document::class, Post::class);
+        $this->_init(Document::class, Comment::class);
     }
 
     /**
@@ -47,7 +47,7 @@ class Collection extends PostCollection implements SearchResultInterface
      */
     public function getAggregations()
     {
-        return $this->aggregations;
+        $this->aggregations;
     }
 
     /**
@@ -63,9 +63,9 @@ class Collection extends PostCollection implements SearchResultInterface
     }
 
     /**
-     * Get search criteria
+     * Get search criteria.
      *
-     * @return \Magento\Framework\Api\SearchCriteriaInterface|null
+     * @return SearchCriteriaInterface
      */
     public function getSearchCriteria()
     {
@@ -73,21 +73,21 @@ class Collection extends PostCollection implements SearchResultInterface
     }
 
     /**
-     * Set search criteria
+     * Set search criteria.
      *
-     * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
+     * @param SearchCriteriaInterface $searchCriteria
      *
      * @return $this
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function setSearchCriteria(SearchCriteriaInterface $searchCriteria = null)
+    public function setSearchCriteria(SearchCriteriaInterface $searchCriteria)
     {
         return $this;
     }
 
     /**
-     * Get total count
+     * Get total count.
      *
      * @return int
      */
@@ -97,7 +97,7 @@ class Collection extends PostCollection implements SearchResultInterface
     }
 
     /**
-     * Set total count
+     * Set total count.
      *
      * @param int $totalCount
      *
@@ -111,9 +111,9 @@ class Collection extends PostCollection implements SearchResultInterface
     }
 
     /**
-     * Set items list
+     * Set items list.
      *
-     * @param \Magento\Framework\Api\ExtensibleDataInterface[] $items
+     * @param \Magento\Framework\Api\Search\ExtensibleDataInterface[] $items
      *
      * @return $this
      *
