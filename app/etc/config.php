@@ -15,7 +15,7 @@ return array (
     'Dehtiarov_ConfigVideh' => 1,
     'Magento_Theme' => 1,
     'Dehtiarov_HomeTaskVideh' => 1,
-    'Hodovanuk_Blog' => 0,
+    'Hodovanuk_Blog' => 1,
     'Hodovanuk_Config' => 1,
     'Hodovanuk_FirstModule' => 1,
     'Hodovanuk_Second' => 1,
