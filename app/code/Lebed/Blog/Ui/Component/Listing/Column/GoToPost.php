@@ -1,6 +1,6 @@
 <?php
 /**
- * Lebed Blog post actions
+ * Lebed Blog GoToPost
  *
  * @category  Lebed
  * @package   Lebed\Blog
@@ -13,19 +13,19 @@ use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
+use Lebed\Blog\Ui\Component\Listing\Column\PostActions;
 
 /**
- * Class PostActions
+ * Class GoToPost
  *
- * @package Lebed\Blog\Ui\Component\Listing\Colum\PostActions
+ * @package Lebed\Blog\Ui\Component\Listing\Column
  */
-class PostActions extends Column
+class GoToPost extends Column
 {
     /**
      * Url path
      */
-    const URL_PATH_EDIT = 'lebed_blog/post/edit';
-    const URL_PATH_DELETE = 'lebed_blog/post/delete';
+    const BLOG_URL_PATH_EDIT = 'lebed_blog/comment/edit';
 
     /**
      * Url builder
@@ -72,14 +72,15 @@ class PostActions extends Column
             foreach ($dataSource['data']['items'] as & $item) {
                 if (isset($item['id'])) {
                     $item[$this->getData('name')] = [
-                        'edit' => [
-                            'href'  => $this->urlBuilder->getUrl(
-                                static::URL_PATH_EDIT,
+                        'go_to_post' => [
+                            'href'   => $this->urlBuilder->getUrl(
+                                static::BLOG_URL_PATH_EDIT,
                                 [
-                                    'id' => $item['id'],
+                                    'id' => $item['post_id'],
                                 ]
                             ),
-                            'label' => __('Edit'),
+                            'label'  => __('Go to Post %1', $item['post_id']),
+                            'target' => '_blank',
                         ],
                     ];
                 }

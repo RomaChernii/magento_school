@@ -1,6 +1,6 @@
 <?php
 /**
- * Lebed Blog post actions
+ * Lebed Blog comment actions
  *
  * @category  Lebed
  * @package   Lebed\Blog
@@ -15,17 +15,17 @@ use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 
 /**
- * Class PostActions
+ * Class CommentActions
  *
- * @package Lebed\Blog\Ui\Component\Listing\Colum\PostActions
+ * @package Lebed\Blog\Ui\Component\Listing\Column
  */
-class PostActions extends Column
+class CommentActions extends Column
 {
     /**
      * Url path
      */
-    const URL_PATH_EDIT = 'lebed_blog/post/edit';
-    const URL_PATH_DELETE = 'lebed_blog/post/delete';
+    const URL_PATH_EDIT = 'lebed_blog/comment/edit';
+    const URL_PATH_DELETE = 'lebed_blog/comment/delete';
 
     /**
      * Url builder
@@ -72,7 +72,7 @@ class PostActions extends Column
             foreach ($dataSource['data']['items'] as & $item) {
                 if (isset($item['id'])) {
                     $item[$this->getData('name')] = [
-                        'edit' => [
+                        'edit'       => [
                             'href'  => $this->urlBuilder->getUrl(
                                 static::URL_PATH_EDIT,
                                 [

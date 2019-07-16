@@ -21,7 +21,7 @@ use Lebed\Blog\Model\ResourceModel\Post\CollectionFactory as PostCollectionFacto
 /**
  * Class PostRepository
  *
- * @package Lebed\Blog\Model\PostRepository
+ * @package Lebed\Blog\Model
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
