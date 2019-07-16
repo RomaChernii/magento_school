@@ -9,11 +9,11 @@
         <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
     <settings>
-<!--        <buttons>-->
-<!--            <button name="save" class="Semysiuk\BlogModule\Block\Adminhtml\Post\Edit\SaveButton"/>-->
+        <buttons>
+            <button name="save" class="Semysiuk\BlogModule\Block\Adminhtml\Post\Edit\SaveButton"/>
 <!--            <button name="delete" class="Semysiuk\BlogModule\Block\Adminhtml\Post\Edit\DeleteButton"/>-->
-<!--            <button name="back" class="Semysiuk\BlogModule\Block\Adminhtml\Post\Edit\BackButton"/>-->
-<!--        </buttons>-->
+            <button name="back" class="Semysiuk\BlogModule\Block\Adminhtml\Post\Edit\BackButton"/>
+        </buttons>
         <namespace>semysiuk_blogmodule_post_form</namespace>
         <dataScope>data</dataScope>
         <deps>
@@ -89,9 +89,9 @@
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item>
-<!--                    <item name="uploaderConfig" xsi:type="array">-->
-<!--                        <item name="url" xsi:type="url" path="roche_blog/post/upload"/>-->
-<!--                    </item>-->
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="roche_blog/post/upload"/>
+                    </item>
                 </item>
             </argument>
         </field>
