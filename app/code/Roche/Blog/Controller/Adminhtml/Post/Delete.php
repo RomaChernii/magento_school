@@ -5,7 +5,7 @@
  * @category  Roche
  * @package   Roche\Blog
  * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
+ * @copyright 2019 Smile
  */
 namespace Roche\Blog\Controller\Adminhtml\Post;
 

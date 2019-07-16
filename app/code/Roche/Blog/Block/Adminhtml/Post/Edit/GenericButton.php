@@ -5,7 +5,7 @@
  * @category  Roche
  * @package   Roche\Blog
  * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
+ * @copyright 2019 Smile
  */
 namespace Roche\Blog\Block\Adminhtml\Post\Edit;
 
@@ -37,7 +37,7 @@ class GenericButton
     /**
      * GenericButton constructor
      *
-     * @param Context                     $context
+     * @param Context                 $context
      * @param PostRepositoryInterface $postRepository
      */
     public function __construct(
