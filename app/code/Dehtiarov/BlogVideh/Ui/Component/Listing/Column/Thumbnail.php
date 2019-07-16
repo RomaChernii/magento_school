@@ -4,7 +4,7 @@
  *
  * @category  Dehtiarov
  * @package   Dehtiarov\BlogVideh
- * @author    Roman Chernii <roche@smile.fr>
+ * @author    Dehtiarov Victor <videh@smile.fr>
  * @copyright 2019 Smile
  */
 namespace Dehtiarov\BlogVideh\Ui\Component\Listing\Column;

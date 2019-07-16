@@ -12,7 +12,7 @@ namespace Dehtiarov\BlogVideh\Api\Data;
 /**
  * Interface PostInterface
  *
- * @package Roche\Blog\Api\Data
+ * @package Dehtiarov\BlogVideh\Api\Data
  */
 interface PostInterface
 {

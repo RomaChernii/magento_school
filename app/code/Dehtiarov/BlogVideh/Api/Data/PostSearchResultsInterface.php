@@ -2,9 +2,9 @@
 /**
  * Blog post search results interface
  *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
+ * @category  Dehtiarov
+ * @package   Dehtiarov\BlogVideh
+ * @author    Dehtiarov Victor <videh@smile.fr>
  * @copyright 2019 Smile
  */
 namespace Dehtiarov\BlogVideh\Api\Data;

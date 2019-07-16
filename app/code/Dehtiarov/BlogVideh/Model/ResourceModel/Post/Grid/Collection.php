@@ -2,9 +2,9 @@
 /**
  * Blog grid post collection
  *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
+ * @category  Dehtiarov
+ * @package   Dehtiarov\BlogVideh
+ * @author    Dehtiarov Victor <videh@smile.fr>
  * @copyright 2018 Smile
  */
 namespace Dehtiarov\BlogVideh\Model\ResourceModel\Post\Grid;
