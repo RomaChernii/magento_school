@@ -21,10 +21,12 @@ use Magento\Framework\DB\Ddl\Table;
  */
 class InstallSchema implements InstallSchemaInterface
 {
-    /**
-     * BLOG POST TABLE NAME
+    /**#@+
+     * Constants defined for names of blog tables.
      */
     const BLOG_POST_TABLE_NAME = 'lebed_blog_post';
+    const BLOG_COMMENT_TABLE_NAME = 'lebed_blog_comment';
+    /**#@-*/
 
     /**
      * Install table lebed_blog_post

@@ -14,7 +14,7 @@ use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 /**
  * Post
  *
- * @package Lebed\Blog\Model\ResourceModel\Post
+ * @package Lebed\Blog\Model\ResourceModel
  */
 class Post extends AbstractDb
 {

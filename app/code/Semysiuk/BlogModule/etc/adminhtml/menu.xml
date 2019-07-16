@@ -1,14 +1,5 @@
 <?xml version="1.0"?>
-<!--
-/**
- * Roche Blog menu
- *
- * @category  Roche
- * @package   Roche\Blog
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
- */
--->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Semysiuk_BlogModule::Blog_core"

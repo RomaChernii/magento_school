@@ -8,7 +8,7 @@ use Magento\Framework\View\Element\Template;
 /**
  * Get text
  *
- * @package Rochle\test\Block\Remember
+ * @package Chleck\test\Block\Remember
  */
 class Wording extends Template
 {

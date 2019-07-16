@@ -17,7 +17,7 @@ use Lebed\Blog\Api\Data\PostInterface;
 /**
  * Class Post
  *
- * @package Lebed\Blog\Model\Post
+ * @package Lebed\Blog\Model
  *
  */
 class Post extends AbstractModel implements PostInterface, IdentityInterface
