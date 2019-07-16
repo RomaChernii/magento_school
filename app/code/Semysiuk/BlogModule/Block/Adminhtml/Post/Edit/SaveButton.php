@@ -7,7 +7,7 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 /**
  * Class SaveButton
  *
- * @package Roche\Blog\Block\Adminhtml\Post\Edit
+ * @package Semysiuk\BlogModule\Block\Adminhtml\Post\Edit
  */
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {

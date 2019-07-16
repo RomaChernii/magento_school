@@ -6,8 +6,6 @@ use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Roche\Blog\Model\Post;
-use Roche\Blog\Model\PostFactory;
 use Semysiuk\BlogModule\Api\Data;
 use Semysiuk\BlogModule\Api\PostRepositoryInterface;
 use Semysiuk\BlogModule\Model\ResourceModel\Post as ResourcePost;

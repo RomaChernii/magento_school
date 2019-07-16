@@ -130,7 +130,7 @@
         </column>
         <column name="is_active" component="Magento_Ui/js/grid/columns/select">
             <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">Roche\Blog\Model\Post\Source\Status</item>
+                <item name="options" xsi:type="object">Semysiuk\BlogModule\Model\Post\Source\Status</item>
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">select</item>
                     <item name="label" xsi:type="string" translate="true">Is active</item>

@@ -12,7 +12,7 @@ use Semysiuk\BlogModule\Model\ResourceModel\Post\Collection as PostCollection;
 /**
  * Class Collection
  *
- * @package Roche\Blog\Model\ResourceModel\Post\Grid\Collection
+ * @package Semysiuk\BlogModule\Model\ResourceModel\Post\Grid\Collection
  *
  */
 class Collection extends PostCollection implements SearchResultInterface
