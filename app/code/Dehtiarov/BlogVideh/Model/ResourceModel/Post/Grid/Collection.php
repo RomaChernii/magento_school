@@ -7,19 +7,19 @@
  * @author    Roman Chernii <roche@smile.fr>
  * @copyright 2018 Smile
  */
-namespace Roche\Blog\Model\ResourceModel\Post\Grid;
+namespace Dehtiarov\BlogVideh\Model\ResourceModel\Post\Grid;
 
 use Magento\Framework\Api\Search\AggregationInterface;
 use Magento\Framework\Api\Search\SearchResultInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\View\Element\UiComponent\DataProvider\Document;
-use Roche\Blog\Model\ResourceModel\Post;
-use Roche\Blog\Model\ResourceModel\Post\Collection as PostCollection;
+use Dehtiarov\BlogVideh\Model\ResourceModel\Post;
+use Dehtiarov\BlogVideh\Model\ResourceModel\Post\Collection as PostCollection;
 
 /**
  * Class Collection
  *
- * @package Roche\Blog\Model\ResourceModel\Post\Grid\Collection
+ * @package Dehtiarov\BlogVideh\Model\ResourceModel\Post\Grid\Collection
  *
  */
 class Collection extends PostCollection implements SearchResultInterface

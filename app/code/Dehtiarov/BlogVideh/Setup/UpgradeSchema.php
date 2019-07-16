@@ -90,7 +90,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
             )->addForeignKey(
                 $setup->getFkName('videh_blog_comment', 'id', 'videh_blog_post', 'id'),
                 'id',
-                $setup->getTable('videh_blog_post'), /* main table name */
+                $setup->getTable('videh_blog_post'),
                 'id',
                 Table::ACTION_CASCADE
             )->setComment(
