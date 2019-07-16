@@ -14,8 +14,7 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 /**
  * Class Collection
  *
- * @package Lebed\Blog\Model\ResourceModel\Post\Collection
- *
+ * @package Lebed\Blog\Model\ResourceModel\Post
  */
 class Collection extends AbstractCollection
 {

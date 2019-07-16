@@ -18,6 +18,6 @@ class Collection extends AbstractCollection
      */
     public function _construct()
     {
-        $this->_init('Hodovanuk\Blog\Model\Comment', 'Hodovanuk\Blog\Model\ResoursceModel\Comment');
+        $this->_init('Hodovanuk\Blog\Model\Comment', 'Hodovanuk\Blog\Model\ResourceModel\Comment');
     }
 }

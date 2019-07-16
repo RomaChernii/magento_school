@@ -2,7 +2,7 @@
 /**
  * Blog post save
  *
- * @category  Roche
+ * @category  Chleck
  * @package   Roche\Blog
  * @author    Roman Chernii <roche@smile.fr>
  * @copyright 2019 Smile
@@ -13,7 +13,7 @@ use Magento\Backend\App\Action;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\DataObject;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Magento\MediaStorage\Model\File\Uploader;
+use Roche\Blog\Model\Post\Image\Uploader;
 use Roche\Blog\Api\PostRepositoryInterface;
 use Roche\Blog\Model\PostFactory;
 
@@ -87,7 +87,7 @@ class Save extends Action
         $data = $this->getRequest()->getPostValue();
         if ($data['image']) {
             $image = reset($data['image']);
-            $url = 'roche_blog/post/image' . '/' . $image['file'];
+            $url = Uploader::FILE_PATH . '/' . $image['file'];
             $data['image'] = $url;
         }
 
