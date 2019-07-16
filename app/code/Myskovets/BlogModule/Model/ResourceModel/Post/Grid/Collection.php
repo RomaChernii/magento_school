@@ -72,7 +72,7 @@ class Collection extends PostCollection implements SearchResultInterface
      *
      * @param \Magento\Framework\Api\SearchCriteriaInterface $searchCriteria
      *
-     * @return \Roche\Blog\Model\ResourceModel\Post\Grid\Collection
+     * @return \Myskovets\BlogModule\Model\ResourceModel\Post\Grid\Collection
      *
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */

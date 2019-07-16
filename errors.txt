@@ -1,0 +1,138 @@
+Invalid Document 
+Element 'item': The type definition is abstract.
+Line: 25
+
+Element 'item': The type definition is abstract.
+Line: 70
+
+Element 'item', attribute 'name': The XPath '@name' of a field of key identity-constraint 'itemName' evaluates to a node-set with more than one member.
+Line: 53
+
+Element 'item': Not all fields of key identity-constraint 'itemName' evaluate to a node.
+Line: 53
+
+Element 'item', attribute 'name': The XPath '@name' of a field of key identity-constraint 'itemName' evaluates to a node-set with more than one member.
+Line: 54
+
+Element 'item': Not all fields of key identity-constraint 'itemName' evaluate to a node.
+Line: 54
+
+Element 'item': The type definition is abstract.
+Line: 59
+
+Element 'argument': The type definition is abstract.
+Line: 39
+
+Element 'argument': The type definition is abstract.
+Line: 40
+
+Element 'argument': The type definition is abstract.
+Line: 41
+
+Element 'argument': The type definition is abstract.
+Line: 42
+
+Internal error: xmlSchemaXPathProcessHistory, The state object to be removed is not the first in the list.
+Line: 38
+
+Internal error: xmlSchemaValidateChildElem, calling xmlRegExecPushString2().
+Line: 46
+
+Internal error: xmlSchemaValidateElem, calling xmlSchemaStreamValidateChildElement().
+Line: 46
+
+Internal error: xmlSchemaDocWalk, calling xmlSchemaValidateElem().
+Line: 46
+
+Invalid Document 
+Element 'item': The type definition is abstract.
+Line: 25
+
+Element 'item': The type definition is abstract.
+Line: 70
+
+Element 'item', attribute 'name': The XPath '@name' of a field of key identity-constraint 'itemName' evaluates to a node-set with more than one member.
+Line: 53
+
+Element 'item': Not all fields of key identity-constraint 'itemName' evaluate to a node.
+Line: 53
+
+Element 'item', attribute 'name': The XPath '@name' of a field of key identity-constraint 'itemName' evaluates to a node-set with more than one member.
+Line: 54
+
+Element 'item': Not all fields of key identity-constraint 'itemName' evaluate to a node.
+Line: 54
+
+Element 'item': The type definition is abstract.
+Line: 59
+
+Element 'argument': The type definition is abstract.
+Line: 39
+
+Element 'argument': The type definition is abstract.
+Line: 40
+
+Element 'argument': The type definition is abstract.
+Line: 41
+
+Element 'argument': The type definition is abstract.
+Line: 42
+
+Internal error: xmlSchemaXPathProcessHistory, The state object to be removed is not the first in the list.
+Line: 38
+
+Internal error: xmlSchemaValidateChildElem, calling xmlRegExecPushString2().
+Line: 46
+
+Internal error: xmlSchemaValidateElem, calling xmlSchemaStreamValidateChildElement().
+Line: 46
+
+Internal error: xmlSchemaDocWalk, calling xmlSchemaValidateElem().
+Line: 46
+
+Invalid Document 
+Element 'item': The type definition is abstract.
+Line: 25
+
+Element 'item': The type definition is abstract.
+Line: 70
+
+Element 'item', attribute 'name': The XPath '@name' of a field of key identity-constraint 'itemName' evaluates to a node-set with more than one member.
+Line: 53
+
+Element 'item': Not all fields of key identity-constraint 'itemName' evaluate to a node.
+Line: 53
+
+Element 'item', attribute 'name': The XPath '@name' of a field of key identity-constraint 'itemName' evaluates to a node-set with more than one member.
+Line: 54
+
+Element 'item': Not all fields of key identity-constraint 'itemName' evaluate to a node.
+Line: 54
+
+Element 'item': The type definition is abstract.
+Line: 59
+
+Element 'argument': The type definition is abstract.
+Line: 39
+
+Element 'argument': The type definition is abstract.
+Line: 40
+
+Element 'argument': The type definition is abstract.
+Line: 41
+
+Element 'argument': The type definition is abstract.
+Line: 42
+
+Internal error: xmlSchemaXPathProcessHistory, The state object to be removed is not the first in the list.
+Line: 38
+
+Internal error: xmlSchemaValidateChildElem, calling xmlRegExecPushString2().
+Line: 46
+
+Internal error: xmlSchemaValidateElem, calling xmlSchemaStreamValidateChildElement().
+Line: 46
+
+Internal error: xmlSchemaDocWalk, calling xmlSchemaValidateElem().
+Line: 46
+

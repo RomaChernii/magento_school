@@ -6,6 +6,10 @@ namespace Myskovets\BlogModule\Api\Data;
 
 interface CommentInterface
 {
+    const STATUS_NORMAL = 0;
+    const STATUS_EDITED = 1;
+    const STATUS_DELETED= 0xff;
+
     const TABLE_NAME = 'myskovets_blog_comment';
 
     CONST ID = "id";

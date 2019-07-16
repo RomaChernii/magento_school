@@ -1,0 +1,9 @@
+<page>
+    <update handle="styles"/>
+    <update handle="editor"/>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="myskovets_blog_post_form"/>
+        </referenceContainer>
+    </body>
+</page>

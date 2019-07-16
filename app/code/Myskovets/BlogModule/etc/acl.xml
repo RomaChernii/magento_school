@@ -21,7 +21,7 @@
                     <resource id="Myskovets_BlogModule::comment" title="Blog Comment" translate="title" sortOrder="20">
                         <resource id="Myskovets_BlogModule::comment_set_state" title="Set State of a Comment" translate="title" sortOrder="10" />
                         <resource id="Myskovets_BlogModule::comment_delete" title="Delete Comment" translate="title" sortOrder="20"/>
-                        <resource id="Myskovets_BlogModule::comment_edit" title="Edit Comment" translate="title" sortOrder="30"/>
+                        <resource id="Myskovets_BlogModule::comment_save" title="Edit Comment" translate="title" sortOrder="30"/>
                     </resource>
                 </resource>
             </resource>

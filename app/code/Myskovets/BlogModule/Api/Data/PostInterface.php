@@ -16,6 +16,8 @@ namespace Myskovets\BlogModule\Api\Data;
  */
 interface PostInterface
 {
+
+
     /**
      * Table name
      */

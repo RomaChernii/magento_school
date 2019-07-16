@@ -74,4 +74,12 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
     {
         $this->setData(self::STATUS, $status);
     }
+
+    public function getAvailableStatuses() {
+        return [
+            self::STATUS_NORMAL => "Normal",
+            self::STATUS_EDITED => "Normal, Edited",
+            self::STATUS_DELETED => "This comment was deleted"
+        ];
+    }
 }
