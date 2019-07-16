@@ -5,7 +5,7 @@
  * @category  Roche
  * @package   Roche\Blog
  * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
+ * @copyright 2019 Smile
  */
 namespace Roche\Blog\Model\Post;
 
@@ -56,9 +56,9 @@ class DataProvider extends AbstractDataProvider
      * @param string                 $name
      * @param string                 $primaryFieldName
      * @param string                 $requestFieldName
-     * @param CollectionFactory      $PostCollectionFactory
+     * @param CollectionFactory      $postCollectionFactory
      * @param DataPersistorInterface $dataPersistor
-     * @param StoreManagerInterface    $storeManager
+     * @param StoreManagerInterface  $storeManager
      * @param array                  $meta
      * @param array                  $data
      */
@@ -66,13 +66,13 @@ class DataProvider extends AbstractDataProvider
         $name,
         $primaryFieldName,
         $requestFieldName,
-        CollectionFactory $PostCollectionFactory,
+        CollectionFactory $postCollectionFactory,
         DataPersistorInterface $dataPersistor,
         StoreManagerInterface $storeManager,
         array $meta = [],
         array $data = []
     ) {
-        $this->collection = $PostCollectionFactory->create();
+        $this->collection = $postCollectionFactory->create();
         $this->dataPersistor = $dataPersistor;
         $this->storeManager = $storeManager;
         parent::__construct(
@@ -91,28 +91,29 @@ class DataProvider extends AbstractDataProvider
      */
     public function getData()
     {
-        if (isset($this->loadedData)) {
-            return $this->loadedData;
-        }
-        $items = $this->collection->getItems();
-        foreach ($items as $post) {
-            $mediaUrl = $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA);
-            $url = $mediaUrl . $post->getImage();
-            $image[] = [
-                'url'  => $url,
-                'file' => basename($post->getImage())
-            ];
-            $post->setImage($image);
+        if ($this->loadedData === null) {
+            $this->loadedData = [];
+            $items = $this->collection->getItems();
 
-            $this->loadedData[$post->getId()] = $post->getData();
-        }
+            foreach ($items as $post) {
+                $mediaUrl = $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA);
+                $url = $mediaUrl . $post->getImage();
+                $image[] = [
+                    'url'  => $url,
+                    'file' => basename($post->getImage())
+                ];
+                $post->setImage($image);
 
-        $data = $this->dataPersistor->get('roche_blog_post');
-        if (!empty($data)) {
-            $post = $this->collection->getNewEmptyItem();
-            $post->setData($data);
-            $this->loadedData[$post->getId()] = $post->getData();
-            $this->dataPersistor->clear('roche_blog_post');
+                $this->loadedData[$post->getId()] = $post->getData();
+            }
+
+            $data = $this->dataPersistor->get('roche_blog_post');
+            if (!empty($data)) {
+                $post = $this->collection->getNewEmptyItem();
+                $post->setData($data);
+                $this->loadedData[$post->getId()] = $post->getData();
+                $this->dataPersistor->clear('roche_blog_post');
+            }
         }
 
         return $this->loadedData;

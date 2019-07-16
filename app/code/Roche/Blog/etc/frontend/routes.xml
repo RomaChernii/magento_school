@@ -1,9 +1,18 @@
 <?xml version="1.0"?>
-
+<!--
+/**
+ * Roche Blog frontend routes
+ *
+ * @category  Roche
+ * @package   Roche\Blog
+ * @author    Roman Chernii <roche@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="admin">
+    <router id="standard">
         <route id="roche_blog" frontName="roche_blog">
-            <module name="Roche_Blog" before="Magento_Backend" />
+            <module name="Roche_Blog"/>
         </route>
     </router>
 </config>
