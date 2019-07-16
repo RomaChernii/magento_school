@@ -7,5 +7,75 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Borovets\Blog\Api\Data\PostInterface" type="Borovets\Blog\Model\Post" />
+    <preference for="Borovets\Blog\Api\Data\PostSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Borovets\Blog\Api\PostRepositoryInterface" type="Borovets\Blog\Model\PostRepository" />
     <preference for="Borovets\Blog\Api\Data\CommentInterface" type="Borovets\Blog\Model\Comment" />
+    <preference for="Borovets\Blog\Api\Data\CommentSearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+    <preference for="Borovets\Blog\Api\CommentRepositoryInterface" type="Borovets\Blog\Model\CommentRepository" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="borovets_blog_post_listing_data_source" xsi:type="string">Borovets\Blog\Model\ResourceModel\Post\Grid\Collection</item>
+                <item name="borovets_blog_comment_listing_data_source" xsi:type="string">Borovets\Blog\Model\ResourceModel\Comment\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Borovets\Blog\Model\ResourceModel\Post\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">borovets_blog_post</argument>
+            <argument name="eventPrefix" xsi:type="string">borovets_blog_post_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">post_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Borovets\Blog\Model\ResourceModel\Post</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="BlogGridFilterPoolBor" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="Borovets\Blog\Api\Data\PostInterface" xsi:type="string">Borovets\Blog\Api\PostRepositoryInterface</item>
+                <item name="Borovets\Blog\Api\Data\CommentInterface" xsi:type="string">Borovets\Blog\Api\CommentRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Borovets\Blog\Api\Data\PostInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">borovets_blog_post</item>
+                    <item name="identifierField" xsi:type="string">id</item>
+                </item>
+                <item name="Borovets\Blog\Api\Data\CommentInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">borovets_blog_comment</item>
+                    <item name="identifierField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\EntityManager\HydratorPool">
+        <arguments>
+            <argument name="hydrators" xsi:type="array">
+                <item name="Borovets\Blog\Api\Data\PostInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+                <item name="Borovets\Blog\Api\Data\CommentInterface" xsi:type="string">Magento\Framework\EntityManager\AbstractModelHydrator</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Borovets\Blog\Model\ResourceModel\Comment\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">borovets_blog_comment</argument>
+            <argument name="eventPrefix" xsi:type="string">borovets_blog_comment_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">comment_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Borovets\Blog\Model\ResourceModel\Comment</argument>
+        </arguments>
+    </type>
 </config>
