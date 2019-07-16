@@ -11,7 +11,7 @@
     <settings>
         <buttons>
             <button name="save" class="Semysiuk\BlogModule\Block\Adminhtml\Post\Edit\SaveButton"/>
-<!--            <button name="delete" class="Semysiuk\BlogModule\Block\Adminhtml\Post\Edit\DeleteButton"/>-->
+            <button name="delete" class="Semysiuk\BlogModule\Block\Adminhtml\Post\Edit\DeleteButton"/>
             <button name="back" class="Semysiuk\BlogModule\Block\Adminhtml\Post\Edit\BackButton"/>
         </buttons>
         <namespace>semysiuk_blogmodule_post_form</namespace>
