@@ -1,21 +1,11 @@
 <?php
-/**
- * Blog post block
- *
- * @category  Roche
- * @package   Roche\Test
- * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2019 Smile
- */
 namespace Hodovanuk\Blog\Block\Blog\Main;
+
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Framework\View\Element\Template;
 use Hodovanuk\Blog\Model\ResourceModel\Post\CollectionFactory;
-/**
- * Class View
- *
- * @package Roche\Blog\Block\Post
- */
+use Magento\Framework\UrlInterface;
+
 class Posts extends Template
 {
 
@@ -41,8 +31,10 @@ class Posts extends Template
         return $returnPosts;
     }
 
-    public function getImageUrl()
+    public function getImageUrl($post)
     {
-
+        $store = $this->_storeManager->getStore();
+        $mediaUrl = $store->getBaseUrl(UrlInterface::URL_TYPE_MEDIA);
+        return $mediaUrl . $post->getImage();
     }
 }

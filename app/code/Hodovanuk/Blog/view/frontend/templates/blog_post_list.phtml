@@ -1,6 +1,7 @@
 <?php
 $posts = $block->getPosts();
 //var_dump($block->getImageUrl($posts[0]));
-$block->getImageUrl();
+//$block->getImageUrl();
 //var_dump($posts[0]);
+var_dump($block->getViewFileUrl('image/post' . $posts[0]['image']));
 
