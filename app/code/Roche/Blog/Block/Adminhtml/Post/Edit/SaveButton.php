@@ -5,7 +5,7 @@
  * @category  Roche
  * @package   Roche\Blog
  * @author    Roman Chernii <roche@smile.fr>
- * @copyright 2018 Smile
+ * @copyright 2019 Smile
  */
 namespace Roche\Blog\Block\Adminhtml\Post\Edit;
 
@@ -16,7 +16,7 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
  *
  * @package Roche\Blog\Block\Adminhtml\Post\Edit
  */
-class SaveButton extends GenericButton implements ButtonProviderInterface
+class SaveButton implements ButtonProviderInterface
 {
     /**
      * Get save button data

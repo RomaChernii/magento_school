@@ -150,7 +150,7 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
      */
     public function setCommentId($commentId)
     {
-        return $this->setData(self::POST_ID, $commentId);
+        return $this->setData(self::ID, $commentId);
     }
 
     /**

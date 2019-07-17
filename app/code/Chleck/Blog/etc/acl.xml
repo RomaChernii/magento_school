@@ -18,9 +18,9 @@
                         <resource id="Chleck_Blog::post_save" title="Save Post" translate="title" sortOrder="10" />
                         <resource id="Chleck_Blog::post_delete" title="Delete Post" translate="title" sortOrder="20" />
                     </resource>
-                    <resource id="Chleck_Blog::comment" title="Blog Comment" translate="title" sortOrder="30">
-                        <resource id="Chleck_Blog::comment_save" title="Save Comment" translate="title" sortOrder="30" />
-                        <resource id="Chleck_Blog::comment_delete" title="Delete Comment" translate="title" sortOrder="40" />
+                    <resource id="Chleck_Blog::comment" title="Blog Comment" translate="title" sortOrder="10">
+                        <resource id="Chleck_Blog::comment_save" title="Save Comment" translate="title" sortOrder="10" />
+                        <resource id="Chleck_Blog::comment_delete" title="Delete Comment" translate="title" sortOrder="20" />
                     </resource>
                 </resource>
             </resource>

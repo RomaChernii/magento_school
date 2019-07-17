@@ -35,7 +35,7 @@
         </arguments>
     </type>
 
-    <virtualType name="BlogGridFilterPool_Ch" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+    <virtualType name="BlogGridFilterPool_ChleckPost" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
         <arguments>
             <argument name="appliers" xsi:type="array">
                 <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
@@ -86,7 +86,7 @@
         </arguments>
     </type>
 
-    <virtualType name="BlogGridFilterPool_Ch" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+    <virtualType name="BlogGridFilterPool_ChleckComment" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
         <arguments>
             <argument name="appliers" xsi:type="array">
                 <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>

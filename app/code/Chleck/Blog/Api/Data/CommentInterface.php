@@ -10,7 +10,7 @@ namespace Chleck\Blog\Api\Data;
 
 interface CommentInterface
 {
-    const TABLE_NAME = 'chleck_comment_comment';
+    const TABLE_NAME = 'chleck_blog_comment';
 
     /**#@+
      * Constants defined for keys of data array.

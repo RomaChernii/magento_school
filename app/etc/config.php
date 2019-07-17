@@ -29,7 +29,7 @@ return array (
     'Koshyk_HomeTaskModule' => 1,
     'Koshyk_SecondModule' => 1,
     'Koshyk_ThirdModule' => 1,
-    'Lebed_Blog' => 1,
+    'Lebed_Blog' => 0,
     'Lebed_FirstHome' => 1,
     'Magento_AdminNotification' => 1,
     'Lebed_FourthModule' => 1,
