@@ -19,7 +19,7 @@ class Uploader extends ImageUploader
     /**
      * Plan path
      */
-    const FILE_PATH = 'hodovanuk_blog/post/image';
+    const FILE_PATH = 'hodovanuk_blog/image/post';
 
     /**
      * Allowed mime types

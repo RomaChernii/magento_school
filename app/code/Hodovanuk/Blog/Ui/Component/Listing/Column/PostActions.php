@@ -15,7 +15,7 @@ class PostActions extends Column
     /**
      * Url path
      */
-    const URL_PATH_EDIT = 'hodovanuk_blog/post/edit';
+    const URL_PATH_EDIT = 'hodovanuk_blog/post/form';
     /**
      *
      */
@@ -74,6 +74,15 @@ class PostActions extends Column
                                 ]
                             ),
                             'label' => __('Edit')
+                        ],
+                        'delete' => [
+                            'href' => $this->urlBuilder->getUrl(
+                                static::URL_PATH_DELETE,
+                                [
+                                    'id' => $item['id']
+                                ]
+                            ),
+                            'label' => __('Delete')
                         ]
                     ];
                 }
