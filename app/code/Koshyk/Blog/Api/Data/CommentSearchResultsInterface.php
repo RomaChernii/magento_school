@@ -1,6 +1,6 @@
 <?php
 /**
- * Blog post search results interface
+ * Blog comment search results interface
  *
  * @category  Koshyk
  * @package   Koshyk\Blog
@@ -11,25 +11,25 @@ namespace Koshyk\Blog\Api\Data;
 use Magento\Framework\Api\SearchResultsInterface;
 
 /**
- * Interface PostSearchResultsInterface
+ * Interface CommentSearchResultsInterface
  *
  * @package Koshyk\Blog\Api\Data
  */
 interface CommentSearchResultsInterface extends SearchResultsInterface
 {
     /**
-     * Get post list
+     * Get comemnt list
      *
-     * @return \Koshyk\Blog\Api\Data\PostInterface[]
+     * @return \Koshyk\Blog\Api\Data\CommentInterface[]
      */
     public function getItems();
 
     /**
-     * Set post list
+     * Set comment list
      *
-     * @param \Koshyk\Blog\Api\Data\PostInterface[] $items
+     * @param \Koshyk\Blog\Api\Data\CommentInterface[] $items
      *
-     * @return PostSearchResultsInterface
+     * @return CommentSearchResultsInterface
      */
     public function setItems(array $items);
 }
