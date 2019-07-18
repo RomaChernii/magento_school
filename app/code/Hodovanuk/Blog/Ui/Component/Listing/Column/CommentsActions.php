@@ -74,7 +74,16 @@ class CommentsActions extends Column
                                 ]
                             ),
                             'label' => __('Answer')
-                        ]
+                        ],
+                        'delete' => [
+                            'href' => $this->urlBuilder->getUrl(
+                                static::URL_PATH_DELETE,
+                                [
+                                    'id' => $item['id']
+                                ]
+                            ),
+                            'label' => __('Delete')
+                        ],
                     ];
                 }
             }
