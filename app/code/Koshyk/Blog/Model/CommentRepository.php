@@ -58,8 +58,8 @@ class CommentRepository implements CommentRepositoryInterface
      * CommentRepository constructor
      *
      * @param ResourceComment                           $resource
-     * @param CommentFactory                            $postFactory
-     * @param CommentCollectionFactory                  $postCollectionFactory
+     * @param CommentFactory                            $commentFactory
+     * @param CommentCollectionFactory                  $commentCollectionFactory
      * @param Data\CommentSearchResultsInterfaceFactory $searchResultsFactory
      */
     public function __construct(
@@ -77,7 +77,7 @@ class CommentRepository implements CommentRepositoryInterface
     /**
      * Save Comment data
      *
-     * @param \Koshyk\Blog\Api\Data\PostInterface $comment
+     * @param \Koshyk\Blog\Api\Data\CommentInterface $comment
      *
      * @return Comment
      *
