@@ -5,6 +5,8 @@
     <preference for="Semysiuk\BlogModule\Api\Data\CommentInterface" type="Semysiuk\BlogModule\Model\Comment" />
     <preference for="Semysiuk\BlogModule\Api\PostRepositoryInterface" type="Semysiuk\BlogModule\Model\PostRepository" />
     <preference for="Semysiuk\BlogModule\Api\Data\PostSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="Semysiuk\BlogModule\Api\CommentRepositoryInterface" type="Semysiuk\BlogModule\Model\CommentRepository" />
+    <preference for="Semysiuk\BlogModule\Api\Data\CommentSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
 
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
@@ -24,6 +26,7 @@
         <arguments>
             <argument name="entities" xsi:type="array">
                 <item name="Semysiuk\BlogModule\Api\Data\PostInterface" xsi:type="string">Semysiuk\BlogModule\Api\PostRepositoryInterface</item>
+                <item name="Semysiuk\BlogModule\Api\Data\CommentInterface" xsi:type="string">Semysiuk\BlogModule\Api\CommentRepositoryInterface</item>
             </argument>
         </arguments>
     </type>
