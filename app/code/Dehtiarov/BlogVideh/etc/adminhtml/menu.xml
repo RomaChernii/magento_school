@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Dehtiarov Blog menu
+ *
+ * @category  Dehtiarov
+ * @package   Dehtiarov\BlogVideh
+ * @author    Victor Dehtiarov <videh@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dehtiarov_BlogVideh::blog_core"
+             title="BlogVideh"
+             module="Dehtiarov_BlogVideh"
+             sortOrder="50"
+             resource="Dehtiarov_BlogVideh::blog_core" />
+
+        <add id="Dehtiarov_BlogVideh::post"
+             title="Post"
+             module="Dehtiarov_BlogVideh"
+             sortOrder="10"
+             parent="Dehtiarov_BlogVideh::blog_core"
+             action="dehtiarov_blogvideh/post"
+             resource="Dehtiarov_BlogVideh::post" />
+    </menu>
+</config>
