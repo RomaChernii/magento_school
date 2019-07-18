@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Lebed Blog admin routes
+ * Lebed Blog routes
  *
  * @category  Lebed
  * @package   Lebed\Blog
@@ -10,9 +10,9 @@
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="admin">
+    <router id="standard">
         <route id="lebed_blog" frontName="lebed_blog">
-            <module name="Lebed_Blog" before="Magento_Backend" />
+            <module name="Lebed_Blog" />
         </route>
     </router>
 </config>
