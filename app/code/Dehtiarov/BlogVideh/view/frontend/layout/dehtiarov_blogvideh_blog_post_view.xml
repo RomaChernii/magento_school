@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Dehtiarov blog post page xml
+ *
+ * @category  Dehtiarov
+ * @package   Dehtiarov\Test
+ * @author    Dehtiarov Victor <videh@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Dehtiarov\BlogVideh\Block\Post\View" name="post_view" template="Dehtiarov_BlogVideh::post/view.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

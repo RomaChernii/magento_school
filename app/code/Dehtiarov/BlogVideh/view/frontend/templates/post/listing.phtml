@@ -1,0 +1,45 @@
+<?php
+/**
+ * Dehtiarov blog post listing template
+ *
+ * @category  Dehtiarov
+ * @package   Dehtiarov\BlogVideh
+ * @author    Dehtiarov Victor <videh@smile.fr>
+ * @copyright 2019 Smile
+ */
+/** @var \Dehtiarov\BlogVideh\Block\Post\Listing $block */
+?>
+<?php $posts = $block->getPosts()->getItems(); ?>
+<h1><?php echo __('Blog Posts'); ?></h1>
+<?php if (count($posts)): ?>
+    <div class="blog-post-list">
+        <?php /** @var $post \Dehtiarov\BlogVideh\Model\Post */ ?>
+        <?php foreach ($posts as $post) : ?>
+            <div class="blog-post-list-item">
+                <div class="post-title">
+                    <h3 class="blog-post-item-title">
+                        <a href="<?php echo $block->getPostUrl($post); ?>"><?php echo $post->getTitle(); ?></a>
+                    </h3>
+                    <img src="<?php echo $block->getImageUrl($post); ?>"
+                         height="<?php echo $block->getImageHeight(); ?>"
+                         width="<?php echo $block->getImageWidth(); ?>"/>
+                </div>
+                <div class="blog-post-item-content">
+                    <div class="blog-post-item-discription">
+                        <?php echo $post->getDescription(); ?>
+                    </div>
+
+                    <div class="blog-post-item-meta">
+                        <strong><?php echo __('Created at:') ?></strong> <?php echo $post->getCreatedAt(); ?>
+                        <strong><?php echo __('Update at:') ?></strong> <?php echo $post->getUpdateAt(); ?>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        <?php if ($block->getPagerHtml()) : ?>
+            <div class="blog-post-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+        <?php endif; ?>
+    </div>
+<?php else : ?>
+    <div class="message info empty"><span><?php /* @escapeNotVerified */ echo __('Blog haven\'t posts.'); ?></span></div>
+<?php endif; ?>
