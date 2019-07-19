@@ -33,4 +33,6 @@ interface CommentRepositoryInterface
      * @return mixed
      */
     public function deleteById($objectId);
+
+    public function getByPostId($postId);
 }

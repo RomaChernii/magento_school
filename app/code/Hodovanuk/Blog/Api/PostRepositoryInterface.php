@@ -33,4 +33,5 @@ interface PostRepositoryInterface
      * @return mixed
      */
     public function deleteById($objectId);
+
 }

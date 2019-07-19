@@ -21,6 +21,8 @@ class CommentsActions extends Column
      */
     const URL_PATH_DELETE = 'hodovanuk_blog/comments/delete';
 
+    const URL_PATH_ADMIN_POST = 'hodovanuk_blog/post/form';
+
     /**
      * Url builder
      *
@@ -66,7 +68,7 @@ class CommentsActions extends Column
             foreach ($dataSource['data']['items'] as & $item) {
                 if (isset($item['id'])) {
                     $item[$this->getData('name')] = [
-                        'edit' => [
+                        'answer' => [
                             'href' => $this->urlBuilder->getUrl(
                                 static::URL_PATH_ANSWER,
                                 [
@@ -83,6 +85,15 @@ class CommentsActions extends Column
                                 ]
                             ),
                             'label' => __('Delete')
+                        ],
+                        'form' => [
+                            'href' => $this->urlBuilder->getUrl(
+                                static::URL_PATH_ADMIN_POST,
+                                [
+                                    'id' => $item['post_id']
+                                ]
+                            ),
+                            'label' => __('Post admin')
                         ],
                     ];
                 }

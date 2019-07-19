@@ -1,6 +1,6 @@
 <?php
 /**
- * Index action
+ * View action
  *
  * @category Hodovanuk
  * @author Mikhaylo Hodovanuk <mishagodovanuk@gmail.com>
@@ -13,10 +13,10 @@ use \Magento\Framework\App\Action\Context;
 use \Magento\Framework\View\Result\PageFactory;
 
 /**
- * Class Index
+ * Class View
  * @package Hodovanuk\Blog\Controller\Blog
  */
-class Index extends Action
+class View extends Action
 {
     /**
      * @var PageFactory
@@ -24,7 +24,7 @@ class Index extends Action
     protected $_pageFactory;
 
     /**
-     * Index constructor.
+     * View constructor.
      * @param Context $context
      * @param PageFactory $pageFactory
      */
@@ -42,6 +42,9 @@ class Index extends Action
      */
     public function execute()
     {
+        $data = $this->getRequest()->getPostValue();
+
+
         $returnFactory = $this->_pageFactory->create();
 
         return $returnFactory;
