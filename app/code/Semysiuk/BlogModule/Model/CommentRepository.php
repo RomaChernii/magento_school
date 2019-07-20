@@ -6,8 +6,8 @@ use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
+use Semysiu\BlogModule\Api\CommentRepositoryInterface;
 use Semysiuk\BlogModule\Api\Data;
-use Semysiuk\BlogModule\Api\CommentRepositoryInterface;
 use Semysiuk\BlogModule\Model\ResourceModel\Comment as ResourceComment;
 use Semysiuk\BlogModule\Model\ResourceModel\Comment\CollectionFactory as CommentCollectionFactory;
 
@@ -30,9 +30,9 @@ class CommentRepository implements CommentRepositoryInterface
     /**
      * Post factory
      *
-     * @var PostFactory
+     * @var CommentFactory
      */
-    private $postFactory;
+    private $commentFactory;
 
     /**
      * Post collection factory
@@ -63,7 +63,7 @@ class CommentRepository implements CommentRepositoryInterface
         Data\CommentSearchResultsInterfaceFactory $searchResultsFactory
     ) {
         $this->resource = $resource;
-        $this->postFactory = $commentFactory;
+        $this->commentFactory = $commentFactory;
         $this->commentCollectionFactory = $commentCollectionFactory;
         $this->searchResultsFactory = $searchResultsFactory;
     }
@@ -152,7 +152,7 @@ class CommentRepository implements CommentRepositoryInterface
      *
      * @throws CouldNotDeleteException
      */
-    public function delete(Data\PostInterface $comment)
+    public function delete(Data\CommentInterface $comment)
     {
         try {
             $this->resource->delete($comment);

@@ -12,6 +12,7 @@
         <arguments>
             <argument name="collections" xsi:type="array">
                 <item name="semysiuk_blogmodule_post_listing_data_source" xsi:type="string">Semysiuk\BlogModule\Model\ResourceModel\Post\Grid\Collection</item>
+                <item name="semysiuk_blogmodule_comment_listing_data_source" xsi:type="string">Semysiuk\BlogModule\Model\ResourceModel\Comment\Grid\Collection</item>
             </argument>
         </arguments>
     </type>
@@ -21,7 +22,12 @@
             <argument name="resourceModel" xsi:type="string">Semysiuk\BlogModule\Model\ResourceModel\Post</argument>
         </arguments>
     </virtualType>
-
+    <virtualType name="Semysiuk\BlogModule\Model\ResourceModel\Comment\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">semysiuk_blog_comment</argument>
+            <argument name="resourceModel" xsi:type="string">Semysiuk\BlogModule\Model\ResourceModel\Comment</argument>
+        </arguments>
+    </virtualType>
     <type name="Magento\Framework\Model\Entity\RepositoryFactory">
         <arguments>
             <argument name="entities" xsi:type="array">

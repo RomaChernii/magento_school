@@ -22,7 +22,7 @@ interface CommentRepositoryInterface
     public function getById($objectId);
 
     /**
-     * Retrieve post which match a specified criteria.
+     * Retrieve comment which match a specified criteria.
      *
      * @param SearchCriteriaInterface|null $searchCriteria
      *
