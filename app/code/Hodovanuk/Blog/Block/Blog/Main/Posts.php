@@ -6,6 +6,7 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 use Hodovanuk\Blog\Api\Data\PostInterface;
 use Hodovanuk\Blog\Model\ResourceModel\Post\Collection as PostCollection;
 use Hodovanuk\Blog\Model\ResourceModel\Post\CollectionFactory;
+use Hodovanuk\Blog\Api\CommentRepositoryInterface;
 
 /**
  * Class Posts
@@ -24,6 +25,10 @@ class Posts extends AbstractPost
     protected $posts;
 
     /**
+     * @var CommentRepositoryInterface
+     */
+    protected $commentsCount;
+    /**
      * Posts constructor.
      * @param Context $context
      * @param CollectionFactory $postCollectionFactory
@@ -34,9 +39,11 @@ class Posts extends AbstractPost
         Context $context,
         CollectionFactory $postCollectionFactory,
         ScopeConfigInterface $scopeConfig,
+        CommentRepositoryInterface $commentRepository,
         array $data = []
     ) {
         $this->postCollectionFactory = $postCollectionFactory;
+        $this->commentsCount = $commentRepository;
         parent::__construct(
             $context,
             $scopeConfig,
@@ -106,5 +113,18 @@ class Posts extends AbstractPost
             'myblog/blog/view',
             ['id' => $post->getId()]
         );
+    }
+
+    /**
+     * Get comments number
+     * @param $id
+     * @return int|void
+     */
+    public function getCommentsNumber($id)
+    {
+        $returnComments = $this->commentsCount->getByPostId($id);
+        $returnComments = count($returnComments);
+
+        return $returnComments;
     }
 }
