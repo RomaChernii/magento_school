@@ -42,9 +42,6 @@ class View extends Action
      */
     public function execute()
     {
-        $data = $this->getRequest()->getPostValue();
-
-
         $returnFactory = $this->_pageFactory->create();
 
         return $returnFactory;

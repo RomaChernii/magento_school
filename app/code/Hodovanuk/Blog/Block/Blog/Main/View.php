@@ -1,6 +1,6 @@
 <?php
-
 namespace Hodovanuk\Blog\Block\Blog\Main;
+
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Hodovanuk\Blog\Api\PostRepositoryInterface;
@@ -9,7 +9,8 @@ use Hodovanuk\Blog\Model\ResourceModel\Comment\CollectionFactory;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Message\ManagerInterface;
 use Hodovanuk\Blog\Model\Comment;
-
+use Hodovanuk\Blog\Api\Data\CommentInterface;
+use Hodovanuk\Blog\Model\ResourceModel\Comment\Collection as CommentsCollection;
 /**
  * Class View
  * @package Hodovanuk\Blog\Block\Blog\Main
@@ -121,7 +122,12 @@ class View extends AbstractPost
     public function getComment()
     {
         $id = $this->getRequest()->getParam('id');
+
         $returnComments = $this->commentRepository->getByPostId($id);
+        $returnComments->addOrder(
+            CommentInterface::CREATE_DATA,
+            CommentsCollection::SORT_ORDER_ASC
+        );
 
         return $returnComments;
     }

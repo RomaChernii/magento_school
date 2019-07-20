@@ -35,4 +35,5 @@ interface CommentRepositoryInterface
     public function deleteById($objectId);
 
     public function getByPostId($postId);
+    
 }
