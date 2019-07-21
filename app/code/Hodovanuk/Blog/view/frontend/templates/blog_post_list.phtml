@@ -9,8 +9,8 @@
                         <a href="<?php echo $block->getPostUrl($post); ?>"><?php echo $post->getTitle(); ?></a>
                     </h3>
                     <img src="<?php echo $block->getImageUrl($post); ?>"
-                         height="600"
-                         width="400"/>
+                         height="<?= $block->getImageHeight(); ?>"
+                         width="<?= $block->getImageWidth(); ?>"/>
                 </div>
                 <div class="blog-post-item-content">
                     <div class="blog-post-item-discription">

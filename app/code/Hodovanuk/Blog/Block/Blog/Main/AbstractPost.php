@@ -8,6 +8,7 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 
 /**
  * Class AbstractPost
+ *
  * @package Hodovanuk\Blog\Block\Blog\Main
  */
 abstract class AbstractPost extends Template
@@ -17,6 +18,14 @@ abstract class AbstractPost extends Template
      * @var ScopeConfigInterface
      */
     protected $scopeConfig;
+
+    /**
+     * #@+
+     * Config path const
+     */
+    const DEMANDED_IMAGE_HEIGHT = 'hodovanuk_blog/posts_listing/image/height';
+    const DEMANDED_IMAGE_WIDTH = 'hodovanuk_blog/posts_listing/image/width';
+    /**#@-*/
 
     /**
      * AbstractPost constructor.
@@ -46,4 +55,23 @@ abstract class AbstractPost extends Template
         return $mediaUrl . $post->getImage();
     }
 
+    /**
+     * Get image height
+     *
+     * @return string
+     */
+    public function getImageHeight()
+    {
+        return $this->scopeConfig->getValue(static::DEMANDED_IMAGE_HEIGHT);
+    }
+
+    /**
+     * Get image width
+     *
+     * @return string
+     */
+    public function getImageWidth()
+    {
+        return $this->scopeConfig->getValue(static::DEMANDED_IMAGE_WIDTH);
+    }
 }

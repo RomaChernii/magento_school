@@ -1,13 +1,13 @@
 <?php
 $post = $block->getPost();
-$commentt = $block->getComment();
+$comments = $block->getComment();
 ?>
 <div class="post-header">
     <h1 class="blog-post-item-title"><?php echo $post->getTitle(); ?></h1>
 
     <img src="<?php echo $block->getImageUrl($post); ?>"
-         height="600"
-         width="800"/>
+         height="<?= $block->getImageHeight(); ?>"
+         width="<?= $block->getImageWidth(); ?>"/>
 </div>
 <div class="blog-post-item-meta">
     <strong><?php echo __('Created at:') ?></strong> <?php echo $post->getCreatedAt(); ?>
@@ -19,7 +19,7 @@ $commentt = $block->getComment();
 
 <div class="blog-post-item-content">
     <h2>Comments</h2>
-    <?php foreach ($commentt as $comment):?>
+    <?php foreach ($comments as $comment):?>
     <div>Name: <?= $comment->getFirstName(); ?> <?= $comment->getLastName(); ?></div>
     <div><?= $comment->getComment(); ?></div>
     <div>commented at: <?= $comment->getCreateData(); ?></div>

@@ -10,6 +10,7 @@ use Hodovanuk\Blog\Api\CommentRepositoryInterface;
 
 /**
  * Class Posts
+ *
  * @package Hodovanuk\Blog\Block\Blog\Main
  */
 class Posts extends AbstractPost
@@ -20,7 +21,7 @@ class Posts extends AbstractPost
     protected $postCollectionFactory;
 
     /**
-     * @var
+     * @var CollectionFactory
      */
     protected $posts;
 
@@ -28,6 +29,7 @@ class Posts extends AbstractPost
      * @var CommentRepositoryInterface
      */
     protected $commentsCount;
+
     /**
      * Posts constructor.
      * @param Context $context
@@ -57,6 +59,7 @@ class Posts extends AbstractPost
      * Create child template pager
      *
      * @return $this|AbstractPost
+     *
      * @throws \Magento\Framework\Exception\LocalizedException
      */
     protected function _prepareLayout()
@@ -78,6 +81,7 @@ class Posts extends AbstractPost
 
     /**
      * Get child template pager
+     *
      * @return string
      */
     public function getPagerHtml()
@@ -87,6 +91,7 @@ class Posts extends AbstractPost
 
     /**
      * Get active Posts
+     *
      * @return PostCollection
      */
     public function getPosts()
@@ -104,7 +109,9 @@ class Posts extends AbstractPost
 
     /**
      * Get for each post url
+     *
      * @param $post
+     *
      * @return string
      */
     public function getPostUrl($post)
@@ -117,7 +124,9 @@ class Posts extends AbstractPost
 
     /**
      * Get comments number
+     *
      * @param $id
+     *
      * @return int|void
      */
     public function getCommentsNumber($id)

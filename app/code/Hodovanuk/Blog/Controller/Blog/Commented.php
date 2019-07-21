@@ -9,8 +9,8 @@
 namespace Hodovanuk\Blog\Controller\Blog;
 
 use Magento\Framework\App\Action\Action;
-use \Magento\Framework\App\Action\Context;
-use \Magento\Framework\View\Result\PageFactory;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\DataObject;
 use Hodovanuk\Blog\Model\CommentFactory;
 use Hodovanuk\Blog\Api\CommentRepositoryInterface;
@@ -47,10 +47,15 @@ class Commented extends Action
 
     /**
      * Commented constructor.
+     *
      * @param Context $context
+     *
      * @param PageFactory $pageFactory
+     *
      * @param CommentFactory $cmFactory
+     *
      * @param CommentRepositoryInterface $cmRepository
+     *
      * @param DataPersistorInterface $dPresistor
      */
     public function __construct(
@@ -80,16 +85,12 @@ class Commented extends Action
         $data = $this->getRequest()->getPostValue();
 
         if ($data) {
-            $commentObject = new DataObject();
-            $commentObject->setData($data);
-
             try {
                 $model = $this->commentFactory->create();
                 $model->setData($data);
 
                 if ($this->commentRepository->save($model)) {
                     $this->messageManager->addSuccessMessage(__('Your comment save.'));
-                    $this->dataPersistor->clear('hodovanuk_blog_comment');
 
                     return $resultRedirect->setPath('*/*/view', ['id' => $model->getPostId()]);
 

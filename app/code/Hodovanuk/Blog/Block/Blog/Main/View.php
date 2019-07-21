@@ -11,12 +11,21 @@ use Magento\Framework\Message\ManagerInterface;
 use Hodovanuk\Blog\Model\Comment;
 use Hodovanuk\Blog\Api\Data\CommentInterface;
 use Hodovanuk\Blog\Model\ResourceModel\Comment\Collection as CommentsCollection;
+
 /**
  * Class View
  * @package Hodovanuk\Blog\Block\Blog\Main
  */
 class View extends AbstractPost
 {
+    /**
+     * #@+
+     * Config path const
+     */
+    const DEMANDED_IMAGE_HEIGHT = 'hodovanuk_blog/post_view/image/height';
+    const DEMANDED_IMAGE_WIDTH = 'hodovanuk_blog/post_view/image/width';
+    /**#@-*/
+
     /**
      * @var PostRepositoryInterface
      */
@@ -28,19 +37,15 @@ class View extends AbstractPost
     protected $commentRepository;
 
     /**
-     * @var
+     * @var PostRepositoryInterface
      */
     protected $post;
-
-    /**
-     * @var
-     */
-    protected $comments;
 
     /**
      * @var Comment
      */
     protected $commentModel;
+
     /**
      * @var ManagerInterface
      */
@@ -117,6 +122,7 @@ class View extends AbstractPost
 
     /**
      * Ge comments by post_id
+     *
      * @return mixed
      */
     public function getComment()
@@ -134,6 +140,7 @@ class View extends AbstractPost
 
     /**
      * @param $status
+     *
      * @return comment status
      */
     public function getCommentStatus($status)
