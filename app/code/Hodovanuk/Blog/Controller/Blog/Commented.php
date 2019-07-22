@@ -73,7 +73,7 @@ class Commented extends Action
     }
 
     /**
-     * Get form data and writes it into database
+     * Save comment action
      *
      * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\Result\Redirect|\Magento\Framework\Controller\ResultInterface
      */

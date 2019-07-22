@@ -38,6 +38,8 @@ class Index extends Action
     }
 
     /**
+     * Index page action
+     *
      * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|\Magento\Framework\View\Result\Page
      */
     public function execute()

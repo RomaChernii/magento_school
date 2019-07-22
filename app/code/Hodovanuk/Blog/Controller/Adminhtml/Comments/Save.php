@@ -16,7 +16,9 @@ use Hodovanuk\Blog\Model\CommentFactory;
 class Save extends Action
 {
     /**
+     * Authorization level of a basic admin session
      *
+     * @see _isAllowed()
      */
     const ADMIN_RESOURCE = 'Hodovanuk_Blog::comments_save';
 

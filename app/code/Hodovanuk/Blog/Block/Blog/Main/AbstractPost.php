@@ -29,6 +29,7 @@ abstract class AbstractPost extends Template
 
     /**
      * AbstractPost constructor.
+     *
      * @param Context $context
      * @param ScopeConfigInterface $scopeConfig
      * @param array $data
@@ -44,7 +45,9 @@ abstract class AbstractPost extends Template
 
     /**
      * Create Image url
+     *
      * @param $post
+     *
      * @return string
      */
     public function getImageUrl($post)

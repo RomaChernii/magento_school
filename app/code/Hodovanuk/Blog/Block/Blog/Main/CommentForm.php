@@ -11,6 +11,8 @@ class CommentForm extends Template
 {
 
     /**
+     * Get url action for form
+     *
      * @return string
      */
     public function getFormAction()
@@ -19,6 +21,8 @@ class CommentForm extends Template
     }
 
     /**
+     * Get current post id
+     *
      * @return mixed
      */
     public function getCurrentPostId()

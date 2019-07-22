@@ -56,8 +56,12 @@ class CommentRepository implements CommentRepositoryInterface
     }
 
     /**
+     * Save comment
+     *
      * @param Data\CommentInterface $comment
+     *
      * @return Data\CommentInterface|mixed
+     *
      * @throws CouldNotSaveException
      */
     public function save(Data\CommentInterface $comment)
@@ -72,8 +76,12 @@ class CommentRepository implements CommentRepositoryInterface
     }
 
     /**
+     * Get comment by id
+     *
      * @param $commentId
+     *
      * @return Comment|mixed
+     *
      * @throws NoSuchEntityException
      */
     public function getById($commentId)
@@ -88,7 +96,10 @@ class CommentRepository implements CommentRepositoryInterface
     }
 
     /**
+     * Get list
+     *
      * @param SearchCriteriaInterface|null $criteria
+     *
      * @return mixed
      */
     public function getList(SearchCriteriaInterface $criteria = null)
@@ -117,6 +128,8 @@ class CommentRepository implements CommentRepositoryInterface
     }
 
     /**
+     * Delete comment data object
+     *
      * @param Data\CommentInterface $comment
      * @return bool
      * @throws CouldNotDeleteException
@@ -133,8 +146,12 @@ class CommentRepository implements CommentRepositoryInterface
     }
 
     /**
+     * Get by id
+     *
      * @param $commentId
+     *
      * @return bool|mixed
+     *
      * @throws CouldNotDeleteException
      * @throws NoSuchEntityException
      */
@@ -143,6 +160,13 @@ class CommentRepository implements CommentRepositoryInterface
         return $this->delete($this->getById($commentId));
     }
 
+    /**
+     * Get by post_id
+     *
+     * @param $postId
+     *
+     * @return ResourceComment\Collection|mixed
+     */
     public function getByPostId($postId)
     {
         $returnComments = $this->commentCollectionFactory->create()

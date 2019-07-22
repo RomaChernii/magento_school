@@ -139,6 +139,8 @@ class View extends AbstractPost
     }
 
     /**
+     * Get comment status
+     *
      * @param $status
      *
      * @return comment status

@@ -75,6 +75,8 @@ class Edit extends Action
     }
 
     /**
+     * Edit action
+     *
      * @return \Magento\Backend\Model\View\Result\Page|\Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|\Magento\Framework\View\Result\Page
      */
     public function execute()

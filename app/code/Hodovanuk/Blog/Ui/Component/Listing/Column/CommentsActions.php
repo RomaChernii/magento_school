@@ -13,14 +13,18 @@ use Magento\Ui\Component\Listing\Columns\Column;
 class CommentsActions extends Column
 {
     /**
-     * Url path
+     * Url path to answer page
      */
     const URL_PATH_ANSWER = 'hodovanuk_blog/comments/answer';
+
     /**
-     *
+     * Url path to delete page
      */
     const URL_PATH_DELETE = 'hodovanuk_blog/comments/delete';
 
+    /**
+     * Url path to post form page
+     */
     const URL_PATH_ADMIN_POST = 'hodovanuk_blog/post/form';
 
     /**
