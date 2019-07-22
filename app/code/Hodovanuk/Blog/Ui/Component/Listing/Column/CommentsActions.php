@@ -13,13 +13,19 @@ use Magento\Ui\Component\Listing\Columns\Column;
 class CommentsActions extends Column
 {
     /**
-     * Url path
+     * Url path to answer page
      */
     const URL_PATH_ANSWER = 'hodovanuk_blog/comments/answer';
+
     /**
-     *
+     * Url path to delete page
      */
     const URL_PATH_DELETE = 'hodovanuk_blog/comments/delete';
+
+    /**
+     * Url path to post form page
+     */
+    const URL_PATH_ADMIN_POST = 'hodovanuk_blog/post/form';
 
     /**
      * Url builder
@@ -66,7 +72,7 @@ class CommentsActions extends Column
             foreach ($dataSource['data']['items'] as & $item) {
                 if (isset($item['id'])) {
                     $item[$this->getData('name')] = [
-                        'edit' => [
+                        'answer' => [
                             'href' => $this->urlBuilder->getUrl(
                                 static::URL_PATH_ANSWER,
                                 [
@@ -83,6 +89,15 @@ class CommentsActions extends Column
                                 ]
                             ),
                             'label' => __('Delete')
+                        ],
+                        'form' => [
+                            'href' => $this->urlBuilder->getUrl(
+                                static::URL_PATH_ADMIN_POST,
+                                [
+                                    'id' => $item['post_id']
+                                ]
+                            ),
+                            'label' => __('Post admin')
                         ],
                     ];
                 }

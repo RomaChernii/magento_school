@@ -38,6 +38,8 @@ class GenericButton
 
 
     /**
+     * Get comment id
+     *
      * @return |null
      */
     public function getCommentId()

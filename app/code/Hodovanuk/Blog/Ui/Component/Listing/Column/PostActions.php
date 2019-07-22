@@ -13,11 +13,12 @@ use Magento\Ui\Component\Listing\Columns\Column;
 class PostActions extends Column
 {
     /**
-     * Url path
+     * Url path to form page
      */
     const URL_PATH_EDIT = 'hodovanuk_blog/post/form';
+
     /**
-     *
+     * Url path to delete action
      */
     const URL_PATH_DELETE = 'hodovanuk_blog/post/delete';
 
