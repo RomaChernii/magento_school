@@ -18,12 +18,12 @@ $comments = $block->getComment();
 </div>
 
 <div class="blog-post-item-content">
-    <h2>Comments</h2>
+    <h2><?php echo __('Comments') ?></h2>
     <?php foreach ($comments as $comment):?>
-    <div>Name: <?= $comment->getFirstName(); ?> <?= $comment->getLastName(); ?></div>
+    <div><?php echo __('Name: ') ?><?= $comment->getFirstName(); ?><?= $comment->getLastName(); ?></div>
     <div><?= $comment->getComment(); ?></div>
-    <div>commented at: <?= $comment->getCreateData(); ?></div>
-    <div>comment status: <?= $block->getCommentStatus($comment->getAnswer()) ; ?></div>
+    <div><?php echo __('commented at: ') ?><?= $comment->getCreateData(); ?></div>
+    <div><?php echo __('comment status: ') ?><?= $block->getCommentStatus($comment->getAnswer()) ; ?></div>
         <br>
     <?php endforeach;?>
 </div>
