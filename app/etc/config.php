@@ -166,7 +166,7 @@ return array (
     'Roche_Setup' => 1,
     'Roche_Test' => 1,
     'Semysiuk_AdminConfigModule' => 1,
-    'Semysiuk_BlogModule' => 1,
+    'Semysiuk_BlogModule' => 0,
     'Semysiuk_FirstModule' => 1,
     'Semysiuk_HomeWorkModule' => 1,
     'Semysiuk_LayoutBlockModule' => 1,

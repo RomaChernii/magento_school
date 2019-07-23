@@ -109,9 +109,9 @@ class UpgradeSchema implements UpgradeSchemaInterface
             )->setComment(
                 'Blog Comment Table'
             );
+            $setup->getConnection()->createTable($table);
         }
 
-        $setup->getConnection()->createTable($table);
 
         $setup->endSetup();
     }

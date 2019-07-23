@@ -3,7 +3,7 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-namespace Roche\Blog\Setup;
+namespace Borovets\Blog\Setup;
 
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
@@ -42,22 +42,22 @@ class UpgradeData implements UpgradeDataInterface
     public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
-        if (version_compare($context->getVersion(), '0.1.0', '<')) {
-
+        if (version_compare($context->getVersion(), '0.0.5', '<')) {
             //Create new CMS page
             $pageData = [
                 [
-                    PageInterface::IDENTIFIER => 'roche-faq',
+                    PageInterface::IDENTIFIER => 'borovets-faq',
                     PageInterface::TITLE => 'Frequently Asked Questions',
                     PageInterface::PAGE_LAYOUT => '1column',
                     PageInterface::CONTENT_HEADING => 'Frequently Asked Questions',
-                    PageInterface::CONTENT => $this->cmsSetup->getIncludeFile(__DIR__ . '/include/page/roche-faq.phtml'),
+                    PageInterface::CONTENT => $this->cmsSetup->getIncludeFile(__DIR__ . '/include/page/borovets-faq.phtml'),
                     PageInterface::IS_ACTIVE => 1,
                     'store_code' => ''
                 ]
             ];
             $this->cmsSetup->createPages($pageData);
-
+        }
+        if (version_compare($context->getVersion(), '0.0.6', '<')) {
             //Update CMS block
             $stores = $this->cmsSetup->getStores();
             foreach ($stores as $store) {
@@ -67,7 +67,8 @@ class UpgradeData implements UpgradeDataInterface
                 $block->setContent($content);
                 $block->save();
             }
-
+        }
+        if (version_compare($context->getVersion(), '0.0.7', '<')) {
             //Create new CMS block
             $blockData = [
                 [
