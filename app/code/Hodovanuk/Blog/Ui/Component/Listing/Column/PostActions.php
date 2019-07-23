@@ -13,11 +13,12 @@ use Magento\Ui\Component\Listing\Columns\Column;
 class PostActions extends Column
 {
     /**
-     * Url path
+     * Url path to form page
      */
-    const URL_PATH_EDIT = 'hodovanuk_blog/post/edit';
+    const URL_PATH_EDIT = 'hodovanuk_blog/post/form';
+
     /**
-     *
+     * Url path to delete action
      */
     const URL_PATH_DELETE = 'hodovanuk_blog/post/delete';
 
@@ -74,6 +75,15 @@ class PostActions extends Column
                                 ]
                             ),
                             'label' => __('Edit')
+                        ],
+                        'delete' => [
+                            'href' => $this->urlBuilder->getUrl(
+                                static::URL_PATH_DELETE,
+                                [
+                                    'id' => $item['id']
+                                ]
+                            ),
+                            'label' => __('Delete')
                         ]
                     ];
                 }

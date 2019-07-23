@@ -117,7 +117,7 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
      */
     public function getCreateData()
     {
-        return (bool)$this->getData(self::CREATE_DATA);
+        return $this->getData(self::CREATE_DATA);
     }
 
     /**

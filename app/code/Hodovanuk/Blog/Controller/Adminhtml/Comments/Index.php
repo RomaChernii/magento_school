@@ -45,7 +45,7 @@ class Index extends Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Hodovanuk_Blog::post');
+        $resultPage->setActiveMenu('Hodovanuk_Blog::comments');
         $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
         $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
         $resultPage->getConfig()->getTitle()->prepend(__('Blog Comments'));

@@ -16,14 +16,14 @@ use Magento\Ui\Component\Listing\Columns\Column;
 /**
  * Class CommentActions
  *
- * @package Koshyk\Blog\Ui\Component\Listing\Colum\PostActions
+ * @package Koshyk\Blog\Ui\Component\Listing\Colum\CommentActions
  */
 class CommentActions extends Column
 {
     /**
      * Url path
      */
-    const URL_PATH_STATUS = 'koshyk_blog/comment/status';
+    const URL_PATH_EDIT = 'koshyk_blog/comment/edit';
     const URL_PATH_DELETE = 'koshyk_blog/comment/delete';
 
     /**
@@ -78,7 +78,7 @@ class CommentActions extends Column
                                     'id' => $item['id']
                                 ]
                             ),
-                            'label' => __('Status')
+                            'label' => __('Edit')
                         ]
                     ];
                 }

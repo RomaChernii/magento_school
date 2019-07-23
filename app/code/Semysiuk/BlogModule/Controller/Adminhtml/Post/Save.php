@@ -5,6 +5,7 @@ namespace Semysiuk\BlogModule\Controller\Adminhtml\Post;
 use Magento\Backend\App\Action;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\DataObject;
+use Semysiuk\BlogModule\Model\Post\Image\Uploader;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Semysiuk\BlogModule\Api\PostRepositoryInterface;
 use Semysiuk\BlogModule\Model\PostFactory;
@@ -79,7 +80,7 @@ class Save extends Action
         $data = $this->getRequest()->getPostValue();
         if ($data['image']) {
             $image = reset($data['image']);
-            $url = 'semysiuk_blogmodule/post/image' . '/' . $image['file'];
+            $url = Uploader::FILE_PATH . '/' . $image['file'];
             $data['image'] = $url;
         }
 

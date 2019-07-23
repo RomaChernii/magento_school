@@ -1,6 +1,6 @@
 <?php
 
-namespace Semysiuk\BlogModule\Model\Post\Source;
+namespace Semysiuk\BlogModule\Model\Post\Image;
 
 use Magento\Catalog\Model\ImageUploader;
 use Magento\Framework\Filesystem;

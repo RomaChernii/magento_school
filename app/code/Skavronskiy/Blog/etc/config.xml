@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Default configuration
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <skavronskiy_blog>
+            <post_listing>
+                <image>
+                    <height>500</height>
+                    <width>500</width>
+                </image>
+            </post_listing>
+            <post_view>
+                <image>
+                    <height>1000</height>
+                    <width>1000</width>
+                </image>
+            </post_view>
+        </skavronskiy_blog>
+    </default>
+</config>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Default configuration
+ *
+ * @category  Koshyk
+ * @package   Koshyk\Blog
+ * @author    Roman Koshyk <romadaaaa@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <koshyk_blog>
+            <post_listing>
+                <image>
+                    <height>500</height>
+                    <width>500</width>
+                </image>
+            </post_listing>
+            <post_view>
+                <image>
+                    <height>1000</height>
+                    <width>1000</width>
+                </image>
+            </post_view>
+        </koshyk_blog>
+    </default>
+</config>

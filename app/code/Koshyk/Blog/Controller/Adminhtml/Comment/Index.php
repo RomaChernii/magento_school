@@ -52,10 +52,10 @@ class Index extends Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Koshyk_Blog::post');
-        $resultPage->addBreadcrumb(__('Blog Comment'), __('Blog Comment'));
-        $resultPage->addBreadcrumb(__('Blog Comment'), __('Blog Comment'));
-        $resultPage->getConfig()->getTitle()->prepend(__('Blog Comment'));
+        $resultPage->setActiveMenu('Koshyk_Blog::comment');
+        $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
+        $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Blog Comments'));
 
         return $resultPage;
     }
