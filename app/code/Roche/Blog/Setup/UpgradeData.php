@@ -5,47 +5,30 @@
  */
 namespace Roche\Blog\Setup;
 
-use Magento\Cms\Model\PageFactory;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\UpgradeDataInterface;
-use Magento\Cms\Model\BlockFactory;
-use Magento\Cms\Api\BlockRepositoryInterface;
+use Magento\Cms\Api\Data\PageInterface;
 use Magento\Cms\Api\Data\BlockInterface;
-use Magento\Cms\Api\Data\BlockInterfaceFactory;
-use Magento\Cms\Model\ResourceModel\Block\CollectionFactory as BlockCollectionFactory;
+use Roche\Setup\Setup\CmsSetup;
 
 class UpgradeData implements UpgradeDataInterface
 {
     /**
-     * Block collection factory
+     * Cms setup
      *
-     * @var BlockCollectionFactory
+     * @var CmsSetup
      */
-    protected $blockCollectionFactory;
-
-    public function __construct(BlockCollectionFactory $blockCollectionFactory)
-    {
-        $this->blockCollectionFactory = $blockCollectionFactory;
-    }
+    protected $cmsSetup;
 
     /**
-     * Get cms block by identifier
+     * UpgradeData constructor
      *
-     * @param string $identifier Identifier
-     * @param string $store      Store
-     *
-     * @return \Magento\Framework\DataObject
+     * @param CmsSetup               $cmsSetup
      */
-    public function getCmsBlockByIdentifier($identifier, $store)
+    public function __construct(CmsSetup $cmsSetup)
     {
-        /** @var \Magento\Cms\Model\ResourceModel\Block\Collection $blocks */
-        $blocks = $this->blockCollectionFactory->create();
-        $blocks
-            ->addFieldToFilter(BlockInterface::IDENTIFIER, $identifier)
-            ->addStoreFilter($store);
-
-        return $blocks->getFirstItem();
+        $this->cmsSetup = $cmsSetup;
     }
 
     /**
@@ -53,31 +36,51 @@ class UpgradeData implements UpgradeDataInterface
      *
      * @param ModuleDataSetupInterface $setup
      * @param ModuleContextInterface $context
+     *
      * @return void
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */
     public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
-        if (version_compare($context->getVersion(), '0.0.2', '<')) {
+        if (version_compare($context->getVersion(), '0.1.0', '<')) {
 
-            $footerBlock = $this->getCmsBlockByIdentifier(
-                'footer_links_block',
-                0
-            );
-            $footerBlockId = $footerBlock->getId();
-            if ($footerBlockId) {
-                $content = <<<EOD
-<ul class="footer links">
-    <li class="nav item"><a href="{{store url='about-us'}}">About us</a></li>
-    <li class="nav item"><a href="{{store url='customer-service'}}">Customer Service</a></li>
-    <li class="nav item"><a href="{{store url='roche_blog/blog_post/index'}}">Roche Blog</a></li>
-</ul>
-EOD;
-                $footerBlock->setContent($content);
-                $footerBlock->save();
+            //Create new CMS page
+            $pageData = [
+                [
+                    PageInterface::IDENTIFIER => 'roche-faq',
+                    PageInterface::TITLE => 'Frequently Asked Questions',
+                    PageInterface::PAGE_LAYOUT => '1column',
+                    PageInterface::CONTENT_HEADING => 'Frequently Asked Questions',
+                    PageInterface::CONTENT => $this->cmsSetup->getIncludeFile(__DIR__ . '/include/page/roche-faq.phtml'),
+                    PageInterface::IS_ACTIVE => 1,
+                    'store_code' => ''
+                ]
+            ];
+            $this->cmsSetup->createPages($pageData);
+
+            //Update CMS block
+            $stores = $this->cmsSetup->getStores();
+            foreach ($stores as $store) {
+                /** @var \Magento\Cms\Model\Page $page */
+                $block = $this->cmsSetup->getCmsBlockByIdentifier('footer_links_block', $store);
+                $content = $this->cmsSetup->getIncludeFile(__DIR__ . '/include/block/footer-link.phtml');
+                $block->setContent($content);
+                $block->save();
             }
+
+            //Create new CMS block
+            $blockData = [
+                [
+                    BlockInterface::IDENTIFIER => 'block-comment-policy',
+                    BlockInterface::TITLE => 'Blog Comment Policy',
+                    BlockInterface::CONTENT => $this->cmsSetup->getIncludeFile(__DIR__ . '/include/block/block-comment-policy.phtml'),
+                    BlockInterface::IS_ACTIVE => 1,
+                    'store_code' => ''
+                ]
+            ];
+            $this->cmsSetup->createCmsBlock($blockData);
         }
+
         $setup->endSetup();
     }
 }

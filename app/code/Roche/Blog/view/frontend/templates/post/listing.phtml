@@ -9,10 +9,9 @@
  */
 /** @var \Roche\Blog\Block\Post\Listing $block */
 ?>
-<?php $postViewModel = $block->getData('post'); ?>
 <?php $posts = $block->getPosts()->getItems(); ?>
 <h1><?php echo __('Blog Posts'); ?></h1>
-<?php if (count($posts)): ?>
+<?php if (count($posts)) : ?>
     <div class="blog-post-list">
         <?php /** @var $post \Roche\Blog\Model\Post */ ?>
         <?php foreach ($posts as $post) : ?>
