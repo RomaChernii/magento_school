@@ -76,15 +76,15 @@
                 </item>
             </argument>
         </column>
-        <actionsColumn name="post_id_action" class="Lebed\Blog\Ui\Component\Listing\Column\GoToPost">
+        <column name="post_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Post Link</item>
-                    <item name="sortOrder" xsi:type="number">30</item>
-                    <item name="indexField" xsi:type="string">post_id</item>
+                    <item name="label" xsi:type="string" translate="true">Post ID</item>
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
                 </item>
             </argument>
-        </actionsColumn>
+        </column>
         <column name="first_name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -159,6 +159,15 @@
                     <item name="resizeEnabled" xsi:type="boolean">false</item>
                     <item name="resizeDefaultWidth" xsi:type="string">107</item>
                     <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </actionsColumn>
+        <actionsColumn name="post_id_action" class="Lebed\Blog\Ui\Component\Listing\Column\GoToPost">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Post Link</item>
+                    <item name="sortOrder" xsi:type="number">110</item>
+                    <item name="indexField" xsi:type="string">post_id</item>
                 </item>
             </argument>
         </actionsColumn>

@@ -13,7 +13,6 @@ use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
-use Lebed\Blog\Ui\Component\Listing\Column\PostActions;
 
 /**
  * Class GoToPost
@@ -25,7 +24,7 @@ class GoToPost extends Column
     /**
      * Url path
      */
-    const BLOG_URL_PATH_EDIT = 'lebed_blog/comment/edit';
+    const BLOG_URL_PATH_EDIT = 'lebed_blog/post/edit';
 
     /**
      * Url builder
