@@ -13,6 +13,11 @@
     <body>
         <referenceContainer name="content">
             <block class="Lebed\Blog\Block\Post\View" name="post_view" template="Lebed_Blog::post/view.phtml"/>
+            <block class="Magento\Cms\Block\Block" name="block-comment-policy">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block-comment-policy-lebed</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
