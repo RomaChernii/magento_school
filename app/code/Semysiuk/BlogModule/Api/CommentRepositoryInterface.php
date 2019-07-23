@@ -1,6 +1,6 @@
 <?php
 
-namespace Semysiu\BlogModule\Api;
+namespace Semysiuk\BlogModule\Api;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Semysiuk\BlogModule\Api\Data\CommentInterface;
@@ -13,7 +13,7 @@ use Semysiuk\BlogModule\Api\Data\CommentInterface;
 interface CommentRepositoryInterface
 {
     /**
-     * Retrieve a post by it's id
+     * Retrieve a comment by it's id
      *
      * @param $objectId
      *
@@ -31,7 +31,7 @@ interface CommentRepositoryInterface
     public function getList(SearchCriteriaInterface $searchCriteria = null);
 
     /**
-     * Save post
+     * Save comment
      *
      * @param \Semysiuk\BlogModule\Api\Data\CommentInterface $object
      *
