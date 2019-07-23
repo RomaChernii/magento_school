@@ -48,5 +48,14 @@ interface CommentRepositoryInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function deleteById($objectId);
+
+    /**
+     * Get comments by post id
+     *
+     * @param int $postId
+     *
+     * @return Collection
+     */
+    public function getCommentsByPostId($postId);
 }
 

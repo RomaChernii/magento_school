@@ -1,7 +1,9 @@
 <?php
 /** @var $block \Semysiuk\BlogModule\Block\Post\View */
 /** @var $post \Semysiuk\BlogModule\Api\Data\PostInterface */
+/** @var $comments \Semysiuk\BlogModule\Api\Data\CommentInterface */
 $post = $block->getPost();
+$comments = $block->getComments();
 ?>
 <div class="post-header">
     <h1 class="blog-post-item-title"><?php echo $post->getTitle(); ?></h1>
@@ -19,3 +21,11 @@ $post = $block->getPost();
     <strong><?php echo __('Created at:') ?></strong> <?php echo $post->getCreatedAt(); ?>
     <strong><?php echo __('Update at:') ?></strong> <?php echo $post->getUpdateAt(); ?>
 </div>
+
+<div class="blog-post-item-comments">
+    <?php if(!count($comments)) : ?>
+        <h1>No comments</h1>
+    <?php endif; ?>
+</div>
+
+

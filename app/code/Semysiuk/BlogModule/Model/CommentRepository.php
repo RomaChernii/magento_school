@@ -177,4 +177,17 @@ class CommentRepository implements CommentRepositoryInterface
     {
         return $this->delete($this->getById($commentId));
     }
+
+    /**
+     * Get comments by post id
+     *
+     * @param int $postId
+     *
+     * @return ResourceComment\Collection
+     */
+    public function getCommentsByPostId($postId)
+    {
+        $comments = $this->commentCollectionFactory->create();
+        return $comments->addFilter("post_id", $postId);
+    }
 }

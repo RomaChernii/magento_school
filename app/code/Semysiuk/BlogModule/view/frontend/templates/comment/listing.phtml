@@ -1,0 +1,33 @@
+<?php
+/** @var $block \Semysiuk\BlogModule\Block\Comment\Listing */
+/** @var $comments \Semysiuk\BlogModule\Api\Data\CommentInterface */
+$comments = $block->getCommentsByPost();
+
+?>
+
+<h1>asgfsdgdsfg</h1>
+
+<?php if (!count($comments)): ?>
+    <h1>NO COMMENTS YET...</h1>
+<?php else : ?>
+    <div class="blog-post-comments-list">
+        <?php /** @var $comment \Semysiuk\BlogModule\Model\Comment */ ?>
+        <?php foreach ($comments as $comment) : ?>
+            <div class="blog-post-comment-list-item">
+                <div class="post-comment-title">
+                    <h3 class="blog-post-comment-item-title">
+                        <?php echo $comment->getComment(); ?>
+                        <?php echo $comment->getDate(); ?></a>
+                        <?php echo $comment->getAnswer(); ?></a>
+                    </h3>
+                </div>
+                <?php if ($comment->getAnswer() !== null) : ?>
+                    <h2 style="margin-left:30px;">
+                        <?php $comment->getAnswer(); ?>
+                        <?php $comment->getStatus(); ?>
+                    </h2>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
