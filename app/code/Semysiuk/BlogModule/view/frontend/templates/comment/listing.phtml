@@ -17,17 +17,26 @@ $comments = $block->getCommentsByPost();
                 <div class="post-comment-title">
                     <h3 class="blog-post-comment-item-title">
                         <?php echo $comment->getComment(); ?>
-                        <?php echo $comment->getDate(); ?></a>
-                        <?php echo $comment->getAnswer(); ?></a>
                     </h3>
                 </div>
+                <div>
+                    <?php echo $comment->getDate(); ?></a>
+                    <?php echo $comment->getAnswer(); ?></a>
+                </div>
                 <?php if ($comment->getAnswer() !== null) : ?>
-                    <h2 style="margin-left:30px;">
+                <div style="display:block;margin-left:30px;">
+                    <h2>
                         <?php $comment->getAnswer(); ?>
+                    </h2>
+                </div>
+                <div>
+                    <h2>
                         <?php $comment->getStatus(); ?>
                     </h2>
+                </div>
                 <?php endif; ?>
             </div>
+        <hr/>
         <?php endforeach; ?>
     </div>
 <?php endif; ?>
