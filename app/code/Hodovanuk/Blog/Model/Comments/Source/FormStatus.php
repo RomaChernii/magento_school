@@ -8,7 +8,7 @@ use Hodovanuk\Blog\Model\Comment;
  * Class Status
  * @package Hodovanuk\Blog\Model\Comments\Source
  */
-class Status implements OptionSourceInterface
+class FormStatus implements OptionSourceInterface
 {
     /**
      * @var Comment
@@ -32,6 +32,7 @@ class Status implements OptionSourceInterface
     public function toOptionArray()
     {
         $availableOptions = $this->commentStatus->getAnswerStatuses();
+        unset($availableOptions['3']);
         $options = [];
         foreach ($availableOptions as $key => $value) {
             $options[] = [

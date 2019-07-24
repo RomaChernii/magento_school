@@ -87,7 +87,24 @@
                 </item>
             </argument>
         </field>
-
+        <field name="answer">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Hodovanuk\Blog\Model\Comments\Source\FormStatus</item>
+                <item name="config" xsi:type="array">
+                    <item name="multiple" xsi:type="boolean">true</item>
+                    <item name="source" xsi:type="string">comment</item>
+                    <item name="sortOrder" xsi:type="string">30</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="comments" xsi:type="string">Select post</item>
+                    <item name="dataScope" xsi:type="string">answer</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
         <field name="email">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -114,6 +131,23 @@
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Comment</item>
                     <item name="dataScope" xsi:type="string">comment</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="answer_data">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">comment</item>
+                    <item name="sortOrder" xsi:type="string">60</item>
+                    <item name="formElement" xsi:type="string">wysiwyg</item>
+                    <item name="wysiwyg" xsi:type="boolean">true</item>
+                    <item name="additionalClasses" xsi:type="string">admin__field-wide</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Write answer</item>
+                    <item name="dataScope" xsi:type="string">answer_date</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item>

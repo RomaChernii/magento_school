@@ -34,6 +34,15 @@ class UpgradeSchema implements UpgradeSchemaInterface
                     'comment' => 'Post Description']);
         }
 
+        if (version_compare($context->getVersion(), '0.0.7') < 0) {
+            $installer->getConnection()->addColumn(
+                $installer->getTable('hodovanuk_blog_comment'),
+                'answer_data',
+                ['type' => Table::TYPE_TEXT,
+                    'size' => '64k',
+                    'comment' => 'Admin answer data']);
+        }
+
         if((version_compare($context->getVersion(), '0.0.5') < 0) ){
             $table = $installer->getConnection()->newTable(
                 $installer->getTable('hodovanuk_blog_comment')

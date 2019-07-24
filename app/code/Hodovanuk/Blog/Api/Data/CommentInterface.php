@@ -19,6 +19,7 @@ interface CommentInterface
     const CREATE_DATA = 'data';
     const POST_ID     = 'post_id';
     const EMAIL       = 'email';
+    const ANSWER_DATA = 'answer_data';
     /**#@-*/
 
     /**
@@ -76,6 +77,8 @@ interface CommentInterface
      * @return string
      */
     public function getEmail();
+
+    public function getAnswerData();
 
     /**
      * Set ID
@@ -148,4 +151,6 @@ interface CommentInterface
      * @return CommentInterface
      */
     public function setEmail($commentEmail);
+
+    public function setAnswerData($answerData);
 }

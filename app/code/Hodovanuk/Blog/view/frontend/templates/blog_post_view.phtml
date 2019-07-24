@@ -27,3 +27,6 @@ $comments = $block->getComment();
         <br>
     <?php endforeach;?>
 </div>
+<?php if ($block->getPagerHtml()) : ?>
+    <div class="blog-post-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif; ?>
