@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+    <referenceContainer name="content">
+        <block class="Borovets\Blog\Block\Post\View" name="post_view" template="Borovets_Blog::post/view.phtml"/>
+        <block class="Borovets\Blog\Block\Comment\Listing" name="comment_listing" template="Borovets_Blog::comment/listing.phtml"/>
+        <block class="Borovets\Blog\Block\Comment\AddComment" name="comment_add_form" template="Borovets_Blog::comment/addcomment.phtml"/>
+    </referenceContainer>
+</body>
+</page>
