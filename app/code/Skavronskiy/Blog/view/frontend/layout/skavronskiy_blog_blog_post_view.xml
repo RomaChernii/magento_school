@@ -9,6 +9,11 @@
     <body>
         <referenceContainer name="content">
             <block class="Skavronskiy\Blog\Block\Post\View" name="post_view" template="Skavronskiy_Blog::post/view.phtml"/>
+            <block class="Magento\Cms\Block\Block" name="block-comment-policy">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block-comment-policy</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
