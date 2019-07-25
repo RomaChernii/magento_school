@@ -69,6 +69,7 @@ class Save extends Action
         $resultRedirect = $this->resultRedirectFactory->create();
 
         $data = $this->getRequest()->getPostValue();
+        var_dump($data);die();
         if ($data) {
             $postObject = new DataObject();
             $postObject->setData($data);

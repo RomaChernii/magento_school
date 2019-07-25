@@ -3,14 +3,8 @@ namespace Hodovanuk\Blog\Block\Adminhtml\Comment\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
-
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {
-    /**
-     * Get save button data
-     *
-     * @return array
-     */
     public function getButtonData()
     {
         return [
@@ -20,7 +14,7 @@ class SaveButton extends GenericButton implements ButtonProviderInterface
                 'mage-init' => ['button' => ['event' => 'save']],
                 'form-role' => 'save',
             ],
-            'sort_order' => 90,
+            'sort_order' => 40,
         ];
     }
 }

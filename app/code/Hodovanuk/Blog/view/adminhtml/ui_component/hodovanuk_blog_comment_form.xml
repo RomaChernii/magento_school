@@ -2,7 +2,7 @@
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">hodovanuk_blog_comment_form.hodovanuk_blog_comment_data_source</item>
+            <item name="provider" xsi:type="string">hodovanuk_blog_comment_form.comment_form_data_source</item>
         </item>
         <item name="label" xsi:type="string" translate="true">Comment Information</item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
@@ -12,6 +12,7 @@
             <button name="save" class="Hodovanuk\Blog\Block\Adminhtml\Comment\Edit\SaveButton"/>
             <button name="delete" class="Hodovanuk\Blog\Block\Adminhtml\Comment\Edit\DeleteButton"/>
             <button name="back" class="Hodovanuk\Blog\Block\Adminhtml\Comment\Edit\BackButton"/>
+            <button name="post" class="Hodovanuk\Blog\Block\Adminhtml\Comment\Edit\PostButton"/>
         </buttons>
         <namespace>hodovanuk_blog_comment_form</namespace>
         <dataScope>data</dataScope>
@@ -48,6 +49,7 @@
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">First name</item>
                     <item name="dataScope" xsi:type="string">first_name</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item>
@@ -63,6 +65,7 @@
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Last name</item>
                     <item name="dataScope" xsi:type="string">last_name</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item>
@@ -80,6 +83,7 @@
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Post</item>
                     <item name="comments" xsi:type="string">Select post</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
                     <item name="dataScope" xsi:type="string">post_id</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
@@ -93,11 +97,11 @@
                 <item name="config" xsi:type="array">
                     <item name="multiple" xsi:type="boolean">true</item>
                     <item name="source" xsi:type="string">comment</item>
-                    <item name="sortOrder" xsi:type="string">30</item>
+                    <item name="sortOrder" xsi:type="string">40</item>
                     <item name="formElement" xsi:type="string">select</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Status</item>
-                    <item name="comments" xsi:type="string">Select post</item>
+                    <item name="comments" xsi:type="string">Select status</item>
                     <item name="dataScope" xsi:type="string">answer</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
@@ -109,11 +113,12 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">comment</item>
-                    <item name="sortOrder" xsi:type="string">40</item>
+                    <item name="sortOrder" xsi:type="string">50</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Email</item>
                     <item name="dataScope" xsi:type="string">email</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item>
@@ -124,13 +129,12 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">comment</item>
-                    <item name="sortOrder" xsi:type="string">50</item>
-                    <item name="formElement" xsi:type="string">wysiwyg</item>
-                    <item name="wysiwyg" xsi:type="boolean">true</item>
-                    <item name="additionalClasses" xsi:type="string">admin__field-wide</item>
+                    <item name="sortOrder" xsi:type="string">60</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Comment</item>
                     <item name="dataScope" xsi:type="string">comment</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item>
@@ -141,7 +145,7 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">comment</item>
-                    <item name="sortOrder" xsi:type="string">60</item>
+                    <item name="sortOrder" xsi:type="string">70</item>
                     <item name="formElement" xsi:type="string">wysiwyg</item>
                     <item name="wysiwyg" xsi:type="boolean">true</item>
                     <item name="additionalClasses" xsi:type="string">admin__field-wide</item>
