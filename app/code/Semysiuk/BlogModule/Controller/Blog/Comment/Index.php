@@ -16,20 +16,16 @@ class Index extends Action
 
     protected $commentRepository;
 
-    public function __construct(Context $context)
+    public function __construct(
+        Context $context,
+        CommentRepositoryInterface $commentRepository,
+        CommentFactory $commentFactory
+    )
     {
         parent::__construct($context);
+        $this->commentRepository = $commentRepository;
+        $this->commentFactory = $commentFactory;
     }
-
-//    public function __construct(
-//        Context $context,
-//        CommentFactory $commentFactory,
-//        CommentRepositoryInterface $commentRepository
-//    ){
-//        $this->commentFactory = $commentFactory;
-//        $this->commentRepository = $commentRepository;
-//        parent::__construct($context);
-//    }
 
     public function execute()
     {
@@ -37,12 +33,12 @@ class Index extends Action
 
         $data =  $this->getRequest()->getPostValue();
 //
-//        print_r($data);
+        print_r($data);
 
-        //$model = $this->commentFactory->create();
-        //$model->setData($data);
+        $model = $this->commentFactory->create();
+        $model->setData($data);
 
-        //$this->commentRepository->save($model);
+        $this->commentRepository->save($model);
 
         //exit();
 

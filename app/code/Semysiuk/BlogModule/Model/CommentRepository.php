@@ -99,13 +99,14 @@ class CommentRepository implements CommentRepositoryInterface
      */
     public function getById($commentId)
     {
-        $comment = $this->postFactory->create();
+        $comment = $this->commentFactory->create();
         $this->resource->load($comment, $commentId);
+
         if (!$comment->getId()) {
             throw new NoSuchEntityException(__('Comment with id "%1" does not exist.', $commentId));
         }
 
-        return $commentId;
+        return $comment;
     }
 
     /**
