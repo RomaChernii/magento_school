@@ -1,6 +1,6 @@
 <?php
 /**
- * BlogVideh post model
+ * BlogVideh comment model
  *
  * @category  Dehtiarov
  * @package   Dehtiarov\BlogVideh
@@ -14,18 +14,19 @@ use Magento\Framework\Model\AbstractModel;
 use Dehtiarov\BlogVideh\Api\Data\CommentInterface;
 
 /**
- * Class Post
+ * Class Comment
  *
- * @package Dehtiarov\BlogVideh\Model\Post
+ * @package Dehtiarov\BlogVideh\Model\Comment
  *
  */
-class Post extends AbstractModel implements CommentInterface, IdentityInterface
+class Comment extends AbstractModel implements CommentInterface, IdentityInterface
 {
     /**#@+
      * Post's Statuses
      */
-    const STATUS_ENABLED = 1;
-    const STATUS_DISABLED = 0;
+    const STATUS_CLOSE = 0;
+    const STATUS_NEW = 1;
+    const STATUS_IN_PROGRESS = 2;
     /**#@-*/
 
     /**
@@ -273,6 +274,6 @@ class Post extends AbstractModel implements CommentInterface, IdentityInterface
      */
     public function getAvailableStatuses()
     {
-        return [self::STATUS_ENABLED => __('Enabled'), self::STATUS_DISABLED => __('Disabled')];
+        return [self::STATUS_CLOSE => __('Close'), self::STATUS_IN_PROGRESS => __('In_progress'), self::STATUS_NEW => __('New')];
     }
 }

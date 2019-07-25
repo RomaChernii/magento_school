@@ -1,20 +1,27 @@
 <?php
-
-namespace Semysiuk\BlogModule\Model;
+/**
+ * Blog comment repository
+ *
+ * @category  Dehtiarov
+ * @package   Dehtiarov\BlogVideh
+ * @author    Dehtiarov Victor <videh@smile.fr>
+ * @copyright 2018 Smile
+ */
+namespace Dehtiarov\BlogVideh\Model;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Semysiuk\BlogModule\Api\CommentRepositoryInterface;
-use Semysiuk\BlogModule\Api\Data;
-use Semysiuk\BlogModule\Model\ResourceModel\Comment as ResourceComment;
-use Semysiuk\BlogModule\Model\ResourceModel\Comment\CollectionFactory as CommentCollectionFactory;
+use Dehtiarov\BlogVideh\Api\Data;
+use Dehtiarov\BlogVideh\Api\CommentRepositoryInterface;
+use Dehtiarov\BlogVideh\Model\ResourceModel\Comment as ResourceComment;
+use Dehtiarov\BlogVideh\Model\ResourceModel\Comment\CollectionFactory as CommentCollectionFactory;
 
 /**
- * Class PostRepository
+ * Class CommentRepository
  *
- * @package Semysiuk\BlogModule\Model\CommentRepository
+ * @package Dehtiarov\BlogVideh\Model\CommentRepository
  *
  * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
  */
@@ -23,33 +30,33 @@ class CommentRepository implements CommentRepositoryInterface
     /**
      * Resource comment
      *
-     * @var \Semysiuk\BlogModule\Model\ResourceModel\Comment
+     * @var ResourceComment
      */
     private $resource;
 
     /**
-     * Post factory
+     * Comment factory
      *
      * @var CommentFactory
      */
     private $commentFactory;
 
     /**
-     * Post collection factory
+     * comment collection factory
      *
-     * @var \Semysiuk\BlogModule\Model\ResourceModel\Comment\CollectionFactory
+     * @var CommentCollectionFactory
      */
     private $commentCollectionFactory;
 
     /**
-     * Post search results interface factory
+     * Comment search results interface factory
      *
      * @var CommentSearchResultsInterfaceFactory
      */
     private $searchResultsFactory;
 
     /**
-     * PostRepository constructor
+     * CommentRepository constructor
      *
      * @param ResourceComment                           $resource
      * @param CommentFactory                            $commentFactory
@@ -71,7 +78,7 @@ class CommentRepository implements CommentRepositoryInterface
     /**
      * Save Comment data
      *
-     * @param \Semysiuk\BlogModule\Api\Data\CommentInterface $comment
+     * @param \Dehtiarov\BlogVideh\Api\Data\CommentInterface $comment
      *
      * @return Comment
      *
@@ -99,13 +106,13 @@ class CommentRepository implements CommentRepositoryInterface
      */
     public function getById($commentId)
     {
-        $comment = $this->postFactory->create();
+        $comment = $this->commentFactory->create();
         $this->resource->load($comment, $commentId);
         if (!$comment->getId()) {
             throw new NoSuchEntityException(__('Comment with id "%1" does not exist.', $commentId));
         }
 
-        return $commentId;
+        return $comment;
     }
 
     /**
@@ -113,7 +120,7 @@ class CommentRepository implements CommentRepositoryInterface
      *
      * @param \Magento\Framework\Api\SearchCriteriaInterface $criteria
      *
-     * @return \Semysiuk\BlogModule\Model\ResourceModel\Comment\Collection
+     * @return \Dehtiarov\BlogVideh\Model\ResourceModel\Comment\Collection
      *
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      * @SuppressWarnings(PHPMD.NPathComplexity)
@@ -146,7 +153,7 @@ class CommentRepository implements CommentRepositoryInterface
     /**
      * Delete Comment
      *
-     * @param \Semysiuk\BlogModule\Api\Data\CommentInterface $comment
+     * @param \Dehtiarov\BlogVideh\Api\Data\CommentInterface $comment
      *
      * @return bool
      *
