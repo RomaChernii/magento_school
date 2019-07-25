@@ -12,6 +12,7 @@
     <body>
         <referenceContainer name="content">
             <block class="Koshyk\Blog\Block\Post\View" name="post_view" template="Koshyk_Blog::post/view.phtml"/>
+            <block class="Koshyk\Blog\Block\Comment\View" name="comment_view" cacheable="false" template="Koshyk_Blog::comment/view.phtml"/>
         </referenceContainer>
     </body>
 </page>
