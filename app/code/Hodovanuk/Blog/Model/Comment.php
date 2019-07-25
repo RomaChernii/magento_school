@@ -17,7 +17,13 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
      * Comment's Statuses
      */
     const STATUS_NEW = 1;
+    /**
+     *
+     */
     const STATUS_CHECKED = 2;
+    /**
+     *
+     */
     const STATUS_ANSWERED = 3;
     /**#@-*/
 
@@ -140,6 +146,11 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
         return $this->getData(self::EMAIL);
     }
 
+    /**
+     * Get answer comment
+     *
+     * @return string
+     */
     public function getAnswerData()
     {
         return $this->getData(self::ANSWER_DATA);
@@ -241,6 +252,13 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
         return $this->setData(self::EMAIL, $commentEmail);
     }
 
+    /**
+     * Set answer comment
+     *
+     * @param $answerData
+     *
+     * @return Comment
+     */
     public function setAnswerData($answerData)
     {
         return $this->setData(self::ANSWER_DATA, $answerData);

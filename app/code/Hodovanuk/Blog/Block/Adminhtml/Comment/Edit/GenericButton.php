@@ -53,6 +53,11 @@ class GenericButton
         }
     }
 
+    /**
+     * Get post id for Post button
+     *
+     * @return post id
+     */
     public function getPostId()
     {
         try {

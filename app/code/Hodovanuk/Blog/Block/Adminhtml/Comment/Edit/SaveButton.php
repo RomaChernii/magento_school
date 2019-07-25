@@ -3,8 +3,17 @@ namespace Hodovanuk\Blog\Block\Adminhtml\Comment\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
+/**
+ * Class SaveButton
+ * @package Hodovanuk\Blog\Block\Adminhtml\Comment\Edit
+ */
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {
+    /**
+     * Get Save button
+     *
+     * @return array
+     */
     public function getButtonData()
     {
         return [

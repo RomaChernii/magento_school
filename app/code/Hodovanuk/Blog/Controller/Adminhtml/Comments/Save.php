@@ -22,6 +22,8 @@ class Save extends Action
      */
     const ADMIN_RESOURCE = 'Hodovanuk_Blog::comments_save';
 
+    const ADMIN_ANSWER_STATUS = '3';
+
     /**
      * @var DataPersistorInterface
      */
@@ -69,7 +71,7 @@ class Save extends Action
         $resultRedirect = $this->resultRedirectFactory->create();
 
         $data = $this->getRequest()->getPostValue();
-        var_dump($data);die();
+
         if ($data) {
             $postObject = new DataObject();
             $postObject->setData($data);
@@ -82,6 +84,10 @@ class Save extends Action
                     $model = $this->commentFactory->create();
                 } else {
                     $model = $this->commentRepository->getById($id);
+                }
+
+                if (!empty($data['answer_data'])) {
+                    $data['answer'] = self::ADMIN_ANSWER_STATUS;
                 }
                 $model->setData($data);
                 $this->commentRepository->save($model);

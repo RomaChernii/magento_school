@@ -3,7 +3,10 @@ namespace Hodovanuk\Blog\Block\Adminhtml\Post\Form;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
-
+/**
+ * Class SaveButton
+ * @package Hodovanuk\Blog\Block\Adminhtml\Post\Form
+ */
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {
     /**
