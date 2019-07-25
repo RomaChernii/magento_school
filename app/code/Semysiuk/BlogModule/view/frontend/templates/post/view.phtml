@@ -5,6 +5,7 @@
 $post = $block->getPost();
 $comments = $block->getComments();
 ?>
+
 <div class="post-header">
     <h1 class="blog-post-item-title"><?php echo $post->getTitle(); ?></h1>
 
@@ -14,18 +15,17 @@ $comments = $block->getComments();
 </div>
 
 <div class="blog-post-item-content">
-    <?php echo $post->getContent(); ?>
+    <div style="min-height: 100px;">
+        <?php echo $post->getContent(); ?>
+    </div>
 </div>
-
 <div class="blog-post-item-meta">
-    <strong><?php echo __('Created at:') ?></strong> <?php echo $post->getCreatedAt(); ?>
-    <strong><?php echo __('Update at:') ?></strong> <?php echo $post->getUpdateAt(); ?>
-</div>
-
-<div class="blog-post-item-comments">
-    <?php if(!count($comments)) : ?>
-        <h1>No comments</h1>
-    <?php endif; ?>
+    <div>
+        <strong><?php echo __('Created at:') ?></strong> <?php echo $post->getCreatedAt(); ?>
+    </div>
+    <div>
+        <strong><?php echo __('Update at:') ?></strong> <?php echo $post->getUpdateAt(); ?>
+    </div>
 </div>
 
 

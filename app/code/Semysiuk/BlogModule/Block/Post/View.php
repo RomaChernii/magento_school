@@ -141,7 +141,6 @@ class View extends AbstractPost
      */
     public function getComments()
     {
-        var_dump("sdfsd");
         if ($this->comments === null) {
             $postId = $this->getRequest()->getParam("id");
             $this->comments = $this->commentRepository->getCommentsByPostId($postId);

@@ -5,38 +5,42 @@ $comments = $block->getCommentsByPost();
 
 ?>
 
-<h1>asgfsdgdsfg</h1>
+<hr/>
 
-<?php if (!count($comments)): ?>
-    <h1>NO COMMENTS YET...</h1>
-<?php else : ?>
-    <div class="blog-post-comments-list">
-        <?php /** @var $comment \Semysiuk\BlogModule\Model\Comment */ ?>
-        <?php foreach ($comments as $comment) : ?>
-            <div class="blog-post-comment-list-item">
-                <div class="post-comment-title">
-                    <h3 class="blog-post-comment-item-title">
-                        <?php echo $comment->getComment(); ?>
-                    </h3>
+<div class="comments">
+    <?php if (!count($comments)): ?>
+        <h1>NO COMMENTS YET...</h1>
+    <?php else : ?>
+        <div class="blog-post-comments-list">
+            <?php /** @var $comment \Semysiuk\BlogModule\Model\Comment */ ?>
+            <?php foreach ($comments as $comment) : ?>
+                <div class="blog-post-comment-list-item">
+                    <div>
+                        <div class="post-comment-title">
+                            <h3 class="blog-post-comment-item-title">
+                                <?php echo $comment->getComment(); ?>
+                            </h3>
+                            <?php echo $comment->getDate(); ?>
+                        </div>
+                        <div>
+                            <?php echo $comment->getAnswer(); ?>
+                        </div>
+                    </div>
+                    <?php if ($comment->getAnswer() !== null) : ?>
+                    <div style="display:block;margin-left:30px;">
+                        <h2>
+                            <?php $comment->getAnswer(); ?>
+                        </h2>
+                    </div>
+                    <div>
+                        <h2>
+                            <?php $comment->getStatus(); ?>
+                        </h2>
+                    </div>
+                    <?php endif; ?>
                 </div>
-                <div>
-                    <?php echo $comment->getDate(); ?></a>
-                    <?php echo $comment->getAnswer(); ?></a>
-                </div>
-                <?php if ($comment->getAnswer() !== null) : ?>
-                <div style="display:block;margin-left:30px;">
-                    <h2>
-                        <?php $comment->getAnswer(); ?>
-                    </h2>
-                </div>
-                <div>
-                    <h2>
-                        <?php $comment->getStatus(); ?>
-                    </h2>
-                </div>
-                <?php endif; ?>
-            </div>
-        <hr/>
-        <?php endforeach; ?>
-    </div>
-<?php endif; ?>
+            <hr/>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>

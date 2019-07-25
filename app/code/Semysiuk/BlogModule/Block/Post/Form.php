@@ -6,17 +6,15 @@ use Magento\Framework\View\Element\Template;
 
 class Form extends Template
 {
-
-//    public function __construct(Template\Context $context, array $data = [])
-//    {
-//        parent::__construct($context, $data);
-//
-//        $this->postId = $this->getRequest()->getParam("id");
-//
-//    }
+    const FORM_URL = "semysiuk_blogmodule/blog_comment/index";
 
     public function getPostId()
     {
         return $this->getRequest()->getParam("id");
+    }
+
+    public function getFormUrlLink()
+    {
+        return $this->getUrl(static ::FORM_URL);
     }
 }

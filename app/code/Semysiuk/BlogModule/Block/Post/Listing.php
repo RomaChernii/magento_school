@@ -60,7 +60,7 @@ class Listing extends AbstractPost
     protected function _prepareLayout()
     {
         parent::_prepareLayout();
-        $this->pageConfig->getTitle()->set(__('Posts Listing'));
+        $this->pageConfig->getTitle()->set(__('Posts'));
 
         if ($this->getPosts()) {
             $pager = $this->getLayout()->createBlock(
