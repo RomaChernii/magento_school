@@ -2,34 +2,33 @@
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">hodovanuk_blog_comment_form.comment_form_data_source</item>
+            <item name="provider" xsi:type="string">hodovanuk_blog_post_form.hodovanuk_blog_post_data_source</item>
         </item>
-        <item name="label" xsi:type="string" translate="true">Comment Information</item>
+        <item name="label" xsi:type="string" translate="true">Post Information</item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
     <settings>
         <buttons>
-            <button name="save" class="Hodovanuk\Blog\Block\Adminhtml\Comment\Edit\SaveButton"/>
-            <button name="delete" class="Hodovanuk\Blog\Block\Adminhtml\Comment\Edit\DeleteButton"/>
-            <button name="back" class="Hodovanuk\Blog\Block\Adminhtml\Comment\Edit\BackButton"/>
-            <button name="post" class="Hodovanuk\Blog\Block\Adminhtml\Comment\Edit\PostButton"/>
+            <button name="save" class="Hodovanuk\Blog\Block\Adminhtml\Post\Form\SaveButton"/>
+            <button name="delete" class="Hodovanuk\Blog\Block\Adminhtml\Post\Form\DeleteButton"/>
+            <button name="back" class="Hodovanuk\Blog\Block\Adminhtml\Post\Form\BackButton"/>
         </buttons>
-        <namespace>hodovanuk_blog_comment_form</namespace>
+        <namespace>hodovanuk_blog_post_form</namespace>
         <dataScope>data</dataScope>
         <deps>
-            <dep>hodovanuk_blog_comment_form.comment_form_data_source</dep>
+            <dep>hodovanuk_blog_post_form.post_form_data_source</dep>
         </deps>
     </settings>
-    <dataSource name="comment_form_data_source">
+    <dataSource name="post_form_data_source">
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
         <settings>
-            <submitUrl path="hodovanuk_blog/comments/save"/>
+            <submitUrl path="hodovanuk_blog/post/save"/>
         </settings>
-        <dataProvider class="Hodovanuk\Blog\Model\Comments\DataProvider" name="comment_form_data_source">
+        <dataProvider class="Hodovanuk\Blog\Model\Post\DataProvider" name="post_form_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>id</primaryFieldName>
@@ -40,118 +39,87 @@
         <settings>
             <label/>
         </settings>
-        <field name="first_name">
+        <field name="title">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">comment</item>
+                    <item name="source" xsi:type="string">post</item>
                     <item name="sortOrder" xsi:type="string">10</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">First name</item>
-                    <item name="dataScope" xsi:type="string">first_name</item>
-                    <item name="disabled" xsi:type="boolean">true</item>
+                    <item name="label" xsi:type="string" translate="true">Title</item>
+                    <item name="dataScope" xsi:type="string">title</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item>
                 </item>
             </argument>
         </field>
-        <field name="last_name">
+        <field name="is_active">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">comment</item>
+                    <item name="source" xsi:type="string">post</item>
                     <item name="sortOrder" xsi:type="string">20</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Last name</item>
-                    <item name="dataScope" xsi:type="string">last_name</item>
-                    <item name="disabled" xsi:type="boolean">true</item>
-                    <item name="validation" xsi:type="array">
-                        <item name="required-entry" xsi:type="boolean">true</item>
+                    <item name="default" xsi:type="number">1</item>
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="label" xsi:type="string" translate="true">Is active</item>
+                    <item name="dataScope" xsi:type="string">is_active</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="false" xsi:type="string">0</item>
+                        <item name="true" xsi:type="string">1</item>
                     </item>
                 </item>
             </argument>
         </field>
-        <field name="post_id">
+        <field name="image">
             <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">Hodovanuk\Blog\Model\Comments\Source\Options</item>
                 <item name="config" xsi:type="array">
-                    <item name="multiple" xsi:type="boolean">true</item>
-                    <item name="source" xsi:type="string">comment</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">post</item>
+                    <item name="label" xsi:type="string" translate="true">Image</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="componentType" xsi:type="string">fileUploader</item>
+                    <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="dataScope" xsi:type="string">image</item>
                     <item name="sortOrder" xsi:type="string">30</item>
-                    <item name="formElement" xsi:type="string">select</item>
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Post</item>
-                    <item name="comments" xsi:type="string">Select post</item>
-                    <item name="disabled" xsi:type="boolean">true</item>
-                    <item name="dataScope" xsi:type="string">post_id</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="hodovanuk_blog/post/upload"/>
                     </item>
                 </item>
             </argument>
         </field>
-        <field name="answer">
+        <field name="description">
             <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">Hodovanuk\Blog\Model\Comments\Source\FormStatus</item>
                 <item name="config" xsi:type="array">
-                    <item name="multiple" xsi:type="boolean">true</item>
-                    <item name="source" xsi:type="string">comment</item>
+                    <item name="source" xsi:type="string">post</item>
                     <item name="sortOrder" xsi:type="string">40</item>
-                    <item name="formElement" xsi:type="string">select</item>
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Status</item>
-                    <item name="comments" xsi:type="string">Select status</item>
-                    <item name="dataScope" xsi:type="string">answer</item>
-                    <item name="validation" xsi:type="array">
-                        <item name="required-entry" xsi:type="boolean">true</item>
-                    </item>
-                </item>
-            </argument>
-        </field>
-        <field name="email">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">comment</item>
-                    <item name="sortOrder" xsi:type="string">50</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Email</item>
-                    <item name="dataScope" xsi:type="string">email</item>
-                    <item name="disabled" xsi:type="boolean">true</item>
-                    <item name="validation" xsi:type="array">
-                        <item name="required-entry" xsi:type="boolean">true</item>
-                    </item>
-                </item>
-            </argument>
-        </field>
-        <field name="comment">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">comment</item>
-                    <item name="sortOrder" xsi:type="string">60</item>
                     <item name="formElement" xsi:type="string">textarea</item>
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Comment</item>
-                    <item name="dataScope" xsi:type="string">comment</item>
-                    <item name="disabled" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">textarea</item>
+                    <item name="label" xsi:type="string" translate="true">Description</item>
+                    <item name="dataScope" xsi:type="string">description</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item>
                 </item>
             </argument>
         </field>
-        <field name="answer_data">
+        <field name="content">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="source" xsi:type="string">comment</item>
-                    <item name="sortOrder" xsi:type="string">70</item>
+                    <item name="source" xsi:type="string">post</item>
+                    <item name="sortOrder" xsi:type="string">50</item>
                     <item name="formElement" xsi:type="string">wysiwyg</item>
                     <item name="wysiwyg" xsi:type="boolean">true</item>
                     <item name="additionalClasses" xsi:type="string">admin__field-wide</item>
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Write answer</item>
-                    <item name="dataScope" xsi:type="string">answer_date</item>
+                    <item name="dataType" xsi:type="string">textarea</item>
+                    <item name="dataScope" xsi:type="string">content</item>
+                    <item name="label" xsi:type="string" translate="true">Content</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
                     </item>
