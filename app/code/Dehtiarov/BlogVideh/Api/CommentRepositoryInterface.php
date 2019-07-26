@@ -1,28 +1,35 @@
 <?php
-
-namespace Semysiuk\BlogModule\Api;
+/**
+ * Blog comment repository interface
+ *
+ * @category  Dehtiarov
+ * @package   Dehtiarov\BlogVideh
+ * @author    Dehtiarov Victor <videh@smile.fr>
+ * @copyright 2019 Smile
+ */
+namespace Dehtiarov\BlogVideh\Api;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
-use Semysiuk\BlogModule\Api\Data\CommentInterface;
+use Dehtiarov\BlogVideh\Api\Data\CommentInterface;
 
 /**
  * Interface CommentRepositoryInterface
  *
- * @package Semysiuk\BlogModule\Api
+ * @package Dehtiarov\BlogVideh\Api
  */
 interface CommentRepositoryInterface
 {
     /**
-     * Retrieve a post by it's id
+     * Retrieve a comment by it's id
      *
      * @param $objectId
      *
-     * @return \Semysiuk\BlogModule\Api\CommentRepositoryInterface
+     * @return CommentRepositoryInterface
      */
     public function getById($objectId);
 
     /**
-     * Retrieve comment which match a specified criteria.
+     * Retrieve post which match a specified criteria.
      *
      * @param SearchCriteriaInterface|null $searchCriteria
      *
@@ -33,7 +40,7 @@ interface CommentRepositoryInterface
     /**
      * Save post
      *
-     * @param \Semysiuk\BlogModule\Api\Data\CommentInterface $object
+     * @param CommentInterface $object
      *
      * @return CommentRepositoryInterface
      */
@@ -49,4 +56,3 @@ interface CommentRepositoryInterface
      */
     public function deleteById($objectId);
 }
-
