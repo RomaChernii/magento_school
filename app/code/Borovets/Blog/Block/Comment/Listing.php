@@ -4,18 +4,19 @@
  */
 namespace Borovets\Blog\Block\Comment;
 
+use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
-use Magento\Framework\App\Config\ScopeConfigInterface;
 use Borovets\Blog\Api\Data\CommentInterface;
 use Borovets\Blog\Model\ResourceModel\Comment\Collection as CommentCollection;
 use Borovets\Blog\Model\ResourceModel\Comment\CollectionFactory;
+use Borovets\Blog\Model\Comment;
 
 /**
  * Class Listing
  *
  * @package Borovets\Blog\Block\Comment
  */
-class Listing extends AbstractComment
+class Listing extends Template
 {
     /**
      * Comment collection factory
@@ -36,19 +37,16 @@ class Listing extends AbstractComment
      *
      * @param Context              $context
      * @param CollectionFactory    $commentCollectionFactory
-     * @param ScopeConfigInterface $scopeConfig
      * @param array                $data
      */
     public function __construct(
         Context $context,
         CollectionFactory $commentCollectionFactory,
-        ScopeConfigInterface $scopeConfig,
         array $data = []
     ) {
         $this->commentCollectionFactory = $commentCollectionFactory;
         parent::__construct(
             $context,
-            $scopeConfig,
             $data
         );
     }
@@ -103,5 +101,17 @@ class Listing extends AbstractComment
         }
 
         return $this->comments;
+    }
+
+    /**
+     * Get author full name
+     *
+     * @param Comment   $comment
+     *
+     * @return string
+     */
+    public function getAuthor($comment)
+    {
+        return $comment->getFirstName().' '.$comment->getLastName();
     }
 }

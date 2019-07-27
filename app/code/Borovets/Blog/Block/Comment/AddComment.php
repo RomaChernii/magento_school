@@ -14,16 +14,6 @@ use Magento\Framework\View\Element\Template;
 class AddComment extends Template
 {
     /**
-     * @param Template\Context $context
-     * @param array $data
-     */
-    public function __construct(Template\Context $context, array $data = [])
-    {
-        parent::__construct($context, $data);
-        $this->_isScopePrivate = true;
-    }
-
-    /**
      * Returns action url for add comment form
      *
      * @return string
@@ -40,9 +30,6 @@ class AddComment extends Template
      */
     public function getPostId()
     {
-        $id = $this->getRequest()->getParams('id');
-        $result = $id['id'];
-
-        return $result;
+        return $this->getRequest()->getParam('id');
     }
 }

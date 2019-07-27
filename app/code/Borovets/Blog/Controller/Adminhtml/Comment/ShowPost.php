@@ -48,12 +48,8 @@ class ShowPost extends Action
         $resultRedirect = $this->resultRedirectFactory->create();
 
         $commentId = $this->getRequest()->getParam('id');
-        $postId = $this->commentRepository->getById($commentId)['post_id'];
+        $postId = $this->commentRepository->getById($commentId)->getPostId();
 
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface');
-        $url = $storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_WEB);
-
-        return $resultRedirect->setPath($url.'borovets_blog/post/view/id/'.$postId);
+        return $resultRedirect->setPath('borovets_blog/post/edit/', ['id' => $postId]);
     }
 }

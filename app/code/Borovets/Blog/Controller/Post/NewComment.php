@@ -8,7 +8,6 @@ use Borovets\Blog\Api\CommentRepositoryInterface;
 use Borovets\Blog\Model\CommentFactory;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
-use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\Exception\NoSuchEntityException;
 
@@ -23,12 +22,6 @@ class NewComment extends Action
      * @var PageFactory
      */
     protected $_pageFactory;
-    /**
-     * Data persistor interface
-     *
-     * @var DataPersistorInterface
-     */
-    private $dataPersistor;
 
     /**
      * Comment repository interface
@@ -45,24 +38,21 @@ class NewComment extends Action
     private $commentFactory;
 
     /**
-     * Save constructor
+     * NewComment constructor
      *
-     * @param Action\Context          $context
-     * @param DataPersistorInterface  $dataPersistor
+     * @param Context                    $context
      * @param CommentRepositoryInterface $commentRepository
      * @param CommentFactory             $commentFactory
      */
     public function __construct(
         Context $context,
         PageFactory $pageFactory,
-        CommentFactory $cmFactory,
-        CommentRepositoryInterface $cmRepository,
-        DataPersistorInterface $dPresistor
+        CommentFactory $commentFactory,
+        CommentRepositoryInterface $commentRepository
     ) {
         $this->_pageFactory = $pageFactory;
-        $this->commentFactory = $cmFactory;
-        $this->commentRepository = $cmRepository;
-        $this->dataPersistor = $dPresistor;
+        $this->commentFactory = $commentFactory;
+        $this->commentRepository = $commentRepository;
         return parent::__construct($context);
     }
 
@@ -86,8 +76,6 @@ class NewComment extends Action
             try {
                 $this->commentRepository->save($model);
                 $this->messageManager->addSuccessMessage(__('Your comment is saved.'));
-
-                return $resultRedirect->setPath($this->_redirect->getRefererUrl());
             } catch (NoSuchEntityException $e) {
                 $this->messageManager->addErrorMessage($e->getMessage());
             } catch (\Exception $e) {

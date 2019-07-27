@@ -1,8 +1,6 @@
 <?php
 /**
- *
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Blog comment index
  */
 namespace Borovets\Blog\Controller\Post;
 
@@ -33,8 +31,7 @@ class Index extends Action
     public function __construct(
         Context $context,
         PageFactory $resultPageFactory
-    )
-    {
+    ) {
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
     }
