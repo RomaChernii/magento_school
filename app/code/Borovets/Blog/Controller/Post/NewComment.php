@@ -8,7 +8,6 @@ use Borovets\Blog\Api\CommentRepositoryInterface;
 use Borovets\Blog\Model\CommentFactory;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
-use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\Exception\NoSuchEntityException;
 
 /**
@@ -18,11 +17,6 @@ use Magento\Framework\Exception\NoSuchEntityException;
  */
 class NewComment extends Action
 {
-    /**
-     * @var PageFactory
-     */
-    protected $_pageFactory;
-
     /**
      * Comment repository interface
      *
@@ -46,11 +40,9 @@ class NewComment extends Action
      */
     public function __construct(
         Context $context,
-        PageFactory $pageFactory,
         CommentFactory $commentFactory,
         CommentRepositoryInterface $commentRepository
     ) {
-        $this->_pageFactory = $pageFactory;
         $this->commentFactory = $commentFactory;
         $this->commentRepository = $commentRepository;
         return parent::__construct($context);

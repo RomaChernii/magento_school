@@ -10,6 +10,7 @@ use Magento\Framework\DataObject;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Borovets\Blog\Api\CommentRepositoryInterface;
 use Borovets\Blog\Model\CommentFactory;
+use Borovets\Blog\Model\Comment;
 
 /**
  * Class Index
@@ -94,7 +95,8 @@ class Save extends Action
                 }
 
                 $model->setData($data);
-                $model->setStatus(3);
+                if($data['answer'])
+                    $model->setStatus(Comment::STATUS_CLOSED);
                 $this->commentRepository->save($model);
                 $this->messageManager->addSuccessMessage(__('Comment is saved.'));
                 $this->dataPersistor->clear('borovets_blog_comment');

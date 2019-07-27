@@ -112,6 +112,6 @@ class Listing extends Template
      */
     public function getAuthor($comment)
     {
-        return $comment->getFirstName().' '.$comment->getLastName();
+        return $comment->getFirstName() . ' ' . $comment->getLastName();
     }
 }
