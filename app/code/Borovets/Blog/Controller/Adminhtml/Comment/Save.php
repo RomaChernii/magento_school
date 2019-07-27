@@ -4,8 +4,6 @@
  */
 namespace Borovets\Blog\Controller\Adminhtml\Comment;
 
-use Borovets\Blog\Api\Data\CommentInterface;
-use Borovets\Blog\Model\CommentRepository;
 use Magento\Backend\App\Action;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\DataObject;
