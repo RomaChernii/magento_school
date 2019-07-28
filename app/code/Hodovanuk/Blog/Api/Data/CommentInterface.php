@@ -85,7 +85,7 @@ interface CommentInterface
     /**
      * Get answer data
      *
-     * @return mixed
+     * @return string
      */
     public function getAnswerData();
 
@@ -164,9 +164,9 @@ interface CommentInterface
     /**
      * Set answer data
      *
-     * @param $answerData
+     * @param string $answerData
      *
-     * @return mixed
+     * @return CommentInterface
      */
     public function setAnswerData($answerData);
 }

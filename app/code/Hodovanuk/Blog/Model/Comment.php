@@ -255,9 +255,9 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
     /**
      * Set answer comment
      *
-     * @param $answerData
+     * @param string $answerData
      *
-     * @return Comment
+     * @return CommentInterface
      */
     public function setAnswerData($answerData)
     {

@@ -49,11 +49,11 @@ class Save extends Action
     public function __construct(
         Action\Context $context,
         DataPersistorInterface $dataPersistor,
-        CommentRepositoryInterface $comRepository,
+        CommentRepositoryInterface $comentRepository,
         CommentFactory $comFactory
     ) {
         $this->dataPersistor = $dataPersistor;
-        $this->commentRepository = $comRepository;
+        $this->commentRepository = $comentRepository;
         $this->commentFactory = $comFactory;
         parent::__construct($context);
     }
@@ -86,15 +86,13 @@ class Save extends Action
                     $model = $this->commentRepository->getById($id);
                 }
 
-                if (!empty($data['answer_data'])) {
-                    $data['answer'] = self::ADMIN_ANSWER_STATUS;
-                }
                 $model->setData($data);
                 $this->commentRepository->save($model);
-                $this->messageManager->addSuccessMessage(__('You comment  save.'));
+                $this->messageManager->addSuccessMessage(__('Your comment  save.'));
                 $this->dataPersistor->clear('hodovanuk_blog_comment');
 
                 if ($this->getRequest()->getParam('back')) {
+
                     return $resultRedirect->setPath('*/*/edit', ['id' => $model->getId()]);
                 }
 

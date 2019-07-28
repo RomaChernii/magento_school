@@ -67,9 +67,9 @@ class Edit extends Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Hodovanuk_Blog::comments_answer')
-            ->addBreadcrumb(__('Hodovanuk'), __('Hodovanuk'))
-            ->addBreadcrumb(__('Answer Comment'), __('Answer Comment'));
+        $resultPage->setActiveMenu('Hodovanuk_Blog::comments');
+        $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
+        $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
 
         return $resultPage;
     }

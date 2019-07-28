@@ -11,6 +11,7 @@
                     <resource id="Hodovanuk_Blog::comments" title="Blog Comments" translate="title" sortOrder="10">
                         <resource id="Hodovanuk_Blog::comments_save" title="Save Comments" translate="title" sortOrder="10" />
                         <resource id="Hodovanuk_Blog::comments_delete" title="Delete Comments" translate="title" sortOrder="20" />
+                        <resource id="Hodovanuk_Blog::comments_answer" title="Answer Comments" translate="title" sortOrder="30" />
                     </resource>
                 </resource>
             </resource>
