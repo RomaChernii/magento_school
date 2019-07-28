@@ -12,7 +12,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Dehtiarov\BlogVideh\Block\Post\Listing" name="post_listing" template="Dehtiarov_BlogVideh::post/listing.phtml"/>
+            <block class="Dehtiarov\BlogVideh\Block\Post\Listing" name="post_listing" template="Dehtiarov_BlogVideh::blog/post/listing.phtml"/>
         </referenceContainer>
     </body>
 </page>
