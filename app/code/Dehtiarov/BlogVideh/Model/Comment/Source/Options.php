@@ -7,9 +7,12 @@
  * @author    Dehtiarov Victor <videh@smile.fr>
  * @copyright 2018 Smile
  */
+
 namespace Dehtiarov\BlogVideh\Model\Comment\Source;
+
 use Magento\Framework\Data\OptionSourceInterface;
 use Dehtiarov\BlogVideh\Model\ResourceModel\Post\CollectionFactory;
+
 /**
  * Class Status
  *
@@ -21,6 +24,7 @@ class Options implements OptionSourceInterface
      * @var CollectionFactory
      */
     private $_postFactory;
+
     /**
      * Options constructor.
      *
@@ -30,6 +34,7 @@ class Options implements OptionSourceInterface
     {
         $this->_postFactory = $posts;
     }
+
     /**
      * Get options
      *
@@ -46,6 +51,7 @@ class Options implements OptionSourceInterface
                 'value' => $post['id'],
             ];
         }
+
         return $options;
     }
 }

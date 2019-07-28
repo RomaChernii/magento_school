@@ -91,11 +91,7 @@ class View extends Template
     public function getPostId()
     {
         if ($this->post == null) {
-            try {
-                $postId = $this->getRequest()->getParam('id');
-            } catch (NoSuchEntityException $error) {
-                $this->messageManager->addErrorMessage($error->getMessage());
-            }
+            $postId = $this->getRequest()->getParam('id');
         }
 
         return $postId;
