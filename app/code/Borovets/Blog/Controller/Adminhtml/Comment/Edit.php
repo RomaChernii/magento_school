@@ -96,8 +96,7 @@ class Edit extends Action
         if ($id) {
             try {
                 $model = $this->commentRepository->getById($id);
-                $resultPage->getConfig()->getTitle()->prepend(__('Edit Comment - %1', $model->getTitle()));
-
+                $resultPage->getConfig()->getTitle()->prepend(__('Edit Comment'));
             } catch (NoSuchEntityException $e) {
                 $this->messageManager->addExceptionMessage($e, __('Something went wrong while editing the comment.'));
                 /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */

@@ -1,7 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Blog post index
  */
 
 namespace Borovets\Blog\Controller\Adminhtml\Post;
