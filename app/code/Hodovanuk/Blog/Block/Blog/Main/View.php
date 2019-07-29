@@ -23,6 +23,7 @@ class View extends AbstractPost
      * Config path const
      */
     const DEMANDED_IMAGE_HEIGHT = 'hodovanuk_blog/post_view/image/height';
+
     const DEMANDED_IMAGE_WIDTH = 'hodovanuk_blog/post_view/image/width';
     /**#@-*/
 
@@ -89,9 +90,9 @@ class View extends AbstractPost
     }
 
     /**
-     * Set post title
-     *
      * @return $this|AbstractPost
+     *
+     * @throws \Magento\Framework\Exception\LocalizedException
      */
     protected function _prepareLayout()
     {
@@ -107,6 +108,7 @@ class View extends AbstractPost
             $this->setChild('pager', $pager);
             $this->getComment()->load();
         }
+
         return $this;
     }
 
@@ -123,7 +125,7 @@ class View extends AbstractPost
     /**
      * Get post by id
      *
-     * @return mixed
+     * @return PostRepositoryInterface
      */
     public function getPost()
     {

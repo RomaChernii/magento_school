@@ -11,6 +11,8 @@ use Hodovanuk\Blog\Api\Data\PostInterface;
 interface PostRepositoryInterface
 {
     /**
+     * Get by id
+     *
      * @param $objectId
      *
      * @return mixed
@@ -18,6 +20,8 @@ interface PostRepositoryInterface
     public function getById($objectId);
 
     /**
+     * Get list
+     *
      * @param SearchCriteriaInterface|null $searchCriteria
      *
      * @return mixed
@@ -25,6 +29,8 @@ interface PostRepositoryInterface
     public function getList(SearchCriteriaInterface $searchCriteria = null);
 
     /**
+     * Save
+     *
      * @param PostInterface $object
      *
      * @return mixed
@@ -32,6 +38,8 @@ interface PostRepositoryInterface
     public function save(PostInterface $object);
 
     /**
+     * Delete by id
+     *
      * @param $objectId
      *
      * @return mixed

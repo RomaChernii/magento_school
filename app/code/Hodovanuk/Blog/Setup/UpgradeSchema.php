@@ -29,18 +29,12 @@ class UpgradeSchema implements UpgradeSchemaInterface
             $installer->getConnection()->addColumn(
                 $installer->getTable('hodovanuk_blog_post'),
                 'description',
-                ['type' => Table::TYPE_TEXT,
+                [
+                    'type' => Table::TYPE_TEXT,
                     'size' => '64k',
-                    'comment' => 'Post Description']);
-        }
-
-        if (version_compare($context->getVersion(), '0.0.7') < 0) {
-            $installer->getConnection()->addColumn(
-                $installer->getTable('hodovanuk_blog_comment'),
-                'answer_data',
-                ['type' => Table::TYPE_TEXT,
-                    'size' => '64k',
-                    'comment' => 'Admin answer data']);
+                    'comment' => 'Post Description'
+                ]
+            );
         }
 
         if((version_compare($context->getVersion(), '0.0.5') < 0) ){
@@ -123,6 +117,18 @@ class UpgradeSchema implements UpgradeSchemaInterface
             );
             $installer->getConnection()
                 ->createTable($table);
+        }
+
+        if (version_compare($context->getVersion(), '0.0.7') < 0) {
+            $installer->getConnection()->addColumn(
+                $installer->getTable('hodovanuk_blog_comment'),
+                'answer_data',
+                [
+                    'type' => Table::TYPE_TEXT,
+                    'size' => '64k',
+                    'comment' => 'Admin answer data'
+                ]
+            );
         }
         $installer->endSetup();
     }

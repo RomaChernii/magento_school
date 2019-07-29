@@ -11,6 +11,8 @@ use Hodovanuk\Blog\Api\Data\CommentInterface;
 interface CommentRepositoryInterface
 {
     /**
+     * Get by id
+     *
      * @param $objectId
      *
      * @return mixed
@@ -18,6 +20,8 @@ interface CommentRepositoryInterface
     public function getById($objectId);
 
     /**
+     * Get list
+     *
      * @param SearchCriteriaInterface|null $searchCriteria
      *
      * @return mixed
@@ -25,6 +29,8 @@ interface CommentRepositoryInterface
     public function getList(SearchCriteriaInterface $searchCriteria = null);
 
     /**
+     * Save
+     *
      * @param CommentInterface $object
      *
      * @return mixed
@@ -32,6 +38,8 @@ interface CommentRepositoryInterface
     public function save(CommentInterface $object);
 
     /**
+     * Delete by id
+     *
      * @param $objectId
      *
      * @return mixed
@@ -39,6 +47,8 @@ interface CommentRepositoryInterface
     public function deleteById($objectId);
 
     /**
+     * Get by post id
+     *
      * @param $postId
      *
      * @return mixed

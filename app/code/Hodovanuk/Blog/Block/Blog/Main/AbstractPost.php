@@ -46,7 +46,7 @@ abstract class AbstractPost extends Template
     /**
      * Create Image url
      *
-     * @param $post
+     * @param object $post
      *
      * @return string
      */

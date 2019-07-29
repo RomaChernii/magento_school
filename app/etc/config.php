@@ -159,6 +159,7 @@ return array (
     'Magento_WidgetSampleData' => 1,
     'Magento_Wishlist' => 1,
     'Magento_WishlistSampleData' => 1,
+    'Mgt_DeveloperToolbar' => 1,
     'Potapchuk_FirstModule' => 1,
     'Potapchuk_HomeTask' => 1,
     'Roche_Blog' => 0,

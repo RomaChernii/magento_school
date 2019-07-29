@@ -6,7 +6,7 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 use Hodovanuk\Blog\Api\Data\PostInterface;
 use Hodovanuk\Blog\Model\ResourceModel\Post\Collection as PostCollection;
 use Hodovanuk\Blog\Model\ResourceModel\Post\CollectionFactory;
-use Hodovanuk\Blog\Api\CommentRepositoryInterface;
+use Hodovanuk\Blog\Model\ResourceModel\Comment\CollectionFactory as CommentCollection;
 
 /**
  * Class Posts
@@ -15,6 +15,7 @@ use Hodovanuk\Blog\Api\CommentRepositoryInterface;
  */
 class Posts extends AbstractPost
 {
+    protected $comments;
     /**
      * @var CollectionFactory
      */
@@ -25,10 +26,8 @@ class Posts extends AbstractPost
      */
     protected $posts;
 
-    /**
-     * @var CommentRepositoryInterface
-     */
-    protected $commentsCount;
+
+    protected $commentsCollection;
 
     /**
      * Posts constructor.
@@ -41,11 +40,11 @@ class Posts extends AbstractPost
         Context $context,
         CollectionFactory $postCollectionFactory,
         ScopeConfigInterface $scopeConfig,
-        CommentRepositoryInterface $commentRepository,
+        CommentCollection $commentsCollectionFactory,
         array $data = []
     ) {
         $this->postCollectionFactory = $postCollectionFactory;
-        $this->commentsCount = $commentRepository;
+        $this->commentsCollection = $commentsCollectionFactory;
         parent::__construct(
             $context,
             $scopeConfig,
@@ -76,6 +75,7 @@ class Posts extends AbstractPost
             $this->setChild('pager', $pager);
             $this->getPosts()->load();
         }
+
         return $this;
     }
 
@@ -104,13 +104,14 @@ class Posts extends AbstractPost
                     PostCollection::SORT_ORDER_DESC
                 );
         }
+
         return $this->posts;
     }
 
     /**
      * Get for each post url
      *
-     * @param $post
+     * @param object $post
      *
      * @return string
      */
@@ -125,15 +126,25 @@ class Posts extends AbstractPost
     /**
      * Get comments number
      *
-     * @param $id
+     * @param int $id
      *
      * @return int|void
      */
     public function getCommentsNumber($id)
     {
-        $returnComments = $this->commentsCount->getByPostId($id);
-        $returnComments = count($returnComments);
+        if ($this->comments === null){
+            $this->comments = $this->commentsCollection->create();
+        }
 
-        return $returnComments;
+        $comments = $this->comments->getData();
+        $returnValue = 0;
+
+        foreach ($comments as $comment){
+            if ($comment['post_id'] == $id){
+                $returnValue++;
+            }
+        }
+
+        return $returnValue;
     }
 }

@@ -17,13 +17,7 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
      * Comment's Statuses
      */
     const STATUS_NEW = 1;
-    /**
-     *
-     */
     const STATUS_CHECKED = 2;
-    /**
-     *
-     */
     const STATUS_ANSWERED = 3;
     /**#@-*/
 
