@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed Blog comment answer layout
+ *
+ * @category  Lebed
+ * @package   Lebed\Blog
+ * @author    Tetiana Lebed <lebed@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="styles"/>
+    <update handle="editor"/>
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="lebed_blog_comment_answer_form"/>
+        </referenceContainer>
+    </body>
+</page>

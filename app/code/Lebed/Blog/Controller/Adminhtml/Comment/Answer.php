@@ -1,6 +1,6 @@
 <?php
 /**
- * Lebed Blog Comment Edit
+ * Lebed Blog Comment Answer
  *
  * @category  Lebed
  * @package   Lebed\Blog
@@ -9,18 +9,18 @@
  */
 namespace Lebed\Blog\Controller\Adminhtml\Comment;
 
+use Lebed\Blog\Api\CommentRepositoryInterface;
 use Magento\Backend\App\Action;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Registry;
 use Magento\Framework\View\Result\PageFactory;
-use Lebed\Blog\Api\CommentRepositoryInterface;
 
 /**
- * Class Edit
+ * Class Answer
  *
  * @package Lebed\Blog\Controller\Adminhtml\Comment
  */
-class Edit extends Action
+class Answer extends Action
 {
     /**
      * Authorization level of a basic admin session
@@ -30,77 +30,62 @@ class Edit extends Action
     const ADMIN_RESOURCE = 'Lebed_Blog::comment_save';
 
     /**
-     * Core registry
+     * Page Factory
      *
-     * @var Registry
-     */
-    private $coreRegistry;
-
-    /**
-     * Page factory
-     *
-     * @var PageFactory
+     * @var \Magento\Framework\View\Result\PageFactory
      */
     private $resultPageFactory;
 
     /**
-     * Comment repository interface
+     * Comment Repository
      *
-     * @var CommentRepositoryInterface
+     * @var \Lebed\Blog\Api\CommentRepositoryInterface
      */
     private $commentRepository;
 
     /**
-     * Edit constructor
+     * Registry
      *
-     * @param Action\Context              $context
-     * @param PageFactory                 $resultPageFactory
-     * @param Registry                    $registry
-     * @param CommentRepositoryInterface  $commentRepository
+     * @var \Magento\Framework\Registry
+     */
+    private $coreRegistry;
+
+    /**
+     * Answer constructor.
+     *
+     * @param \Magento\Backend\App\Action\Context        $context
+     * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
+     * @param \Lebed\Blog\Api\CommentRepositoryInterface $commentRepository
+     * @param \Magento\Framework\Registry                $registry
      */
     public function __construct(
         Action\Context $context,
         PageFactory $resultPageFactory,
-        Registry $registry,
-        CommentRepositoryInterface $commentRepository
+        CommentRepositoryInterface $commentRepository,
+        Registry $registry
     ) {
         $this->resultPageFactory = $resultPageFactory;
-        $this->coreRegistry = $registry;
         $this->commentRepository = $commentRepository;
+        $this->coreRegistry = $registry;
         parent::__construct($context);
     }
 
     /**
-     * Init actions
+     * Answer Action
      *
      * @return \Magento\Backend\Model\View\Result\Page
      */
-    private function _initAction()
+    public function execute()
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Lebed_Blog::comment')
-                   ->addBreadcrumb(__('Lebed'), __('Lebed'))
-                   ->addBreadcrumb(__('Manage Comment'), __('Manage Comment'));
-
-        return $resultPage;
-    }
-
-    /**
-     * Edit Comment page
-     *
-     * @return \Magento\Backend\Model\View\Result\Page | \Magento\Backend\Model\View\Result\Redirect
-     */
-    public function execute()
-    {
-        $resultPage = $this->resultPageFactory->create();
         $id = $this->getRequest()->getParam('id');
-        $resultPage->getConfig()->getTitle()->prepend(__('Comment Information'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Comment Answer'));
 
         if ($id) {
             try {
                 $model = $this->commentRepository->getById($id);
-                $resultPage->getConfig()->getTitle()->prepend(__('Edit Comment with id = %1', $model->getId()));
+                $resultPage->getConfig()->getTitle()->prepend(__('Answer the Comment with id = %1', $model->getId()));
 
             } catch (NoSuchEntityException $e) {
                 $this->messageManager->addExceptionMessage($e, __('Something went wrong while editing the comment.'));
@@ -111,10 +96,7 @@ class Edit extends Action
             }
             $this->coreRegistry->register('lebed_blog_comment', $model);
         }
-
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
-        //$resultPage = $this->_initAction();
-        $resultPage->addBreadcrumb(__('Edit Comment'), __('Edit Comment'));
+        $resultPage->addBreadcrumb(__('Answer the Comment'), __('Answer the Comment'));
 
         return $resultPage;
     }

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed Blog comment edit form
+ *
+ * @category  Lebed
+ * @package   Lebed\Blog
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">lebed_blog_comment_answer_form.lebed_blog_comment_answer_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Comment Answer</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Lebed\Blog\Block\Adminhtml\Comment\Edit\SaveButton"/>
+            <button name="back" class="Lebed\Blog\Block\Adminhtml\Comment\Edit\BackToCommentButton"/>
+        </buttons>
+        <namespace>lebed_blog_comment_answer_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>lebed_blog_comment_answer_form.lebed_blog_comment_answer_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="lebed_blog_comment_answer_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="lebed_blog/comment/save"/>
+        </settings>
+        <dataProvider class="Lebed\Blog\Model\Comment\DataProvider" name="lebed_blog_comment_answer_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <htmlContent name="comment_info">
+        <block class="Magento\Backend\Block\Template" name="comment_info" template="Lebed_Blog::comment/view/info.phtml">
+            <arguments>
+                <argument name="customer_info_view_model" xsi:type="object">Lebed\Blog\ViewModel\Comment\Item\InfoViewModel</argument>
+            </arguments>
+        </block>
+    </htmlContent>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">comment</item>
+                    <item name="sortOrder" xsi:type="string">10</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="dataScope" xsi:type="string">status</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                </item>
+                <item name="options" xsi:type="object">Lebed\Blog\Model\Comment\Source\Status</item>
+            </argument>
+        </field>
+        <field name="answer">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">comment</item>
+                    <item name="sortOrder" xsi:type="string">20</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="dataType" xsi:type="string">textarea</item>
+                    <item name="label" xsi:type="string" translate="true">Answer</item>
+                    <item name="dataScope" xsi:type="string">answer</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">false</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

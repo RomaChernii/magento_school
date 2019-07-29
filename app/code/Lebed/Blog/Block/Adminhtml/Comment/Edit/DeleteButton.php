@@ -1,20 +1,20 @@
 <?php
 /**
- * Blog post delete button
+ * Lebed Blog DeleteButton
  *
  * @category  Lebed
  * @package   Lebed\Blog
  * @author    Tetiana Lebed <teleb@smile.fr>
  * @copyright 2019 Smile
  */
-namespace Lebed\Blog\Block\Adminhtml\Post\Edit;
+namespace Lebed\Blog\Block\Adminhtml\Comment\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
 /**
  * Class DeleteButton
  *
- * @package Lebed\Blog\Block\Adminhtml\Post\Edit
+ * @package Lebed\Blog\Block\Adminhtml\Comment\Edit
  */
 class DeleteButton extends GenericButton implements ButtonProviderInterface
 {
@@ -26,13 +26,13 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
     public function getButtonData()
     {
         $data = [];
-        if ($this->getPostId()) {
+        if ($this->getCommentId()) {
             $data = [
-                'label' => __('Delete Post'),
+                'label' => __('Delete Comment'),
                 'class' => 'delete',
                 'on_click' => 'deleteConfirm(\'' . __(
-                    'Are you sure you want to do this?'
-                ) . '\', \'' . $this->getDeleteUrl() . '\')',
+                    'Are you sure you want to delete this comment?'
+                    ) . '\', \'' . $this->getDeleteUrl() . '\')',
                 'sort_order' => 20,
             ];
         }
@@ -41,12 +41,12 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
     }
 
     /**
-     * Get URL FOR delete button
+     * Get url for delete button
      *
      * @return string
      */
     public function getDeleteUrl()
     {
-        return $this->getUrl('*/*/delete', ['id' => $this->getPostId()]);
+        return $this->getUrl('*/*/delete', ['id' => $this->getCommentId()]);
     }
 }
