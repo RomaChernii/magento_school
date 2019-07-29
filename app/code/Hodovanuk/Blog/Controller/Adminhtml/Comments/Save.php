@@ -22,8 +22,6 @@ class Save extends Action
      */
     const ADMIN_RESOURCE = 'Hodovanuk_Blog::comments_save';
 
-    const ADMIN_ANSWER_STATUS = '3';
-
     /**
      * @var DataPersistorInterface
      */
