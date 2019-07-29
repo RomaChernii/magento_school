@@ -8,17 +8,18 @@
  */
 namespace Koshyk\Blog\Block\Comment;
 
+use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 use Koshyk\Blog\Api\Data\CommentInterface;
 use Koshyk\Blog\Model\ResourceModel\Comment\Collection as CommentCollection;
 use Koshyk\Blog\Model\ResourceModel\Comment\CollectionFactory;
 
 /**
- * Class Listing
+ * Class View
  *
  * @package Koshyk\Blog\Block\Comment
  */
-class View extends AbstractComment
+class View extends Template
 {
 
 
@@ -37,7 +38,7 @@ class View extends AbstractComment
     protected $comments;
 
     /**
-     * Listing constructor
+     * View constructor
      *
      * @param Context $context
      * @param CollectionFactory $commentCollectionFactory
@@ -46,9 +47,8 @@ class View extends AbstractComment
     public function __construct(
         Context $context,
         CollectionFactory $commentCollectionFactory,
-          array $data = []
-    )
-    {
+        array $data = []
+    ) {
         $this->commentCollectionFactory = $commentCollectionFactory;
         parent::__construct(
             $context,
