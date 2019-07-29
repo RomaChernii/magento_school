@@ -3,6 +3,7 @@ namespace Hodovanuk\Blog\Controller\Adminhtml\Comments;
 
 use Magento\Backend\App\Action;
 use Magento\Framework\App\Request\DataPersistorInterface;
+use Hodovanuk\Blog\Model\Comment;
 use Magento\Framework\DataObject;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\MediaStorage\Model\File\Uploader;
@@ -80,6 +81,10 @@ class Save extends Action
                 if (!$id) {
                     $data['id']= null;
                     $model = $this->commentFactory->create();
+
+                    if (!empty($data['answer_data'])) {
+                        $data['answer_data'] = Comment::STATUS_ANSWERED;
+                    }
                 } else {
                     $model = $this->commentRepository->getById($id);
                 }

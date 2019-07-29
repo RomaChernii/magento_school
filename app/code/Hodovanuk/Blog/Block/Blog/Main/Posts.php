@@ -130,7 +130,7 @@ class Posts extends AbstractPost
      *
      * @return int|void
      */
-    public function getCommentsNumber($id)
+    public function getPostCommentsNumber($id)
     {
         if ($this->comments === null) {
             $this->comments = $this->commentsCollection->create();

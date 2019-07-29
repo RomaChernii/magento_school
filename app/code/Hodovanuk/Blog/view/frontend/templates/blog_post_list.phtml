@@ -1,6 +1,5 @@
 <?php $posts = $block->getPosts()->getItems(); ?>
     <h1><?php echo __('Blog Posts'); ?></h1>
-<?php $data = $block->getCommentsCollection(); ?>
 <?php if (count($posts)): ?>
     <div class="blog-post-list">
         <?php foreach ($posts as $post) : ?>
