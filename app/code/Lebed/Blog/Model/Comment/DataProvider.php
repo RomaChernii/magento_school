@@ -9,6 +9,7 @@
  */
 namespace Lebed\Blog\Model\Comment;
 
+use Lebed\Blog\Model\ResourceModel\Comment\Collection;
 use Lebed\Blog\Model\ResourceModel\Comment\CollectionFactory;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Ui\DataProvider\AbstractDataProvider;
@@ -20,10 +21,38 @@ use Magento\Ui\DataProvider\AbstractDataProvider;
  */
 class DataProvider extends AbstractDataProvider
 {
+    /**
+     * Comment Collection
+     *
+     * @var Collection
+     */
     protected  $collection;
+
+    /**
+     * Loaded data
+     *
+     * @var array
+     */
     private $loadedData;
+
+    /**
+     * Data persistor interface
+     *
+     * @var DataPersistorInterface
+     */
     private $dataPersistor;
 
+    /**
+     * DataProvider constructor.
+     *
+     * @param string                 $name
+     * @param string                 $primaryFieldName
+     * @param string                 $requestFieldName
+     * @param CollectionFactory      $commentCollectionFactory
+     * @param DataPersistorInterface $dataPersistor
+     * @param array                  $meta
+     * @param array                  $data
+     */
     public function __construct(
         $name,
         $primaryFieldName,
@@ -44,6 +73,11 @@ class DataProvider extends AbstractDataProvider
         );
     }
 
+    /**
+     * Get data
+     *
+     * @return array
+     */
     public function getData()
     {
         if ($this->loadedData === null) {

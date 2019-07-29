@@ -31,13 +31,35 @@ class Save extends Action
      */
     const ADMIN_RESOURCE = 'Lebed_Blog::comment_save';
 
-    private $commentFactory;
-    private $commentRepository;
     /**
+     * Comment Factory
+     *
+     * @var CommentFactory
+     */
+    private $commentFactory;
+
+    /**
+     * Comment Repository
+     *
+     * @var CommentRepositoryInterface
+     */
+    private $commentRepository;
+
+    /**
+     * Data Persistor
+     *
      * @var \Magento\Framework\App\Request\DataPersistorInterface
      */
     private $dataPersistor;
 
+    /**
+     * Save constructor.
+     *
+     * @param \Magento\Backend\App\Action\Context                   $context
+     * @param \Magento\Framework\App\Request\DataPersistorInterface $dataPersistor
+     * @param \Lebed\Blog\Api\CommentRepositoryInterface            $commentRepository
+     * @param \Lebed\Blog\Model\CommentFactory                      $commentFactory
+     */
     public function __construct(
         Action\Context $context,
         DataPersistorInterface $dataPersistor,
