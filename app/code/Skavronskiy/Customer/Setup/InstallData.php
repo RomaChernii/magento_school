@@ -10,7 +10,6 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Eav\Api\AttributeRepositoryInterface;
 use Magento\Customer\Model\Customer;
 
-
 class InstallData implements InstallDataInterface
 {
     /**
