@@ -145,7 +145,7 @@ class View extends AbstractPost
     /**
      * Ge comments by post_id
      *
-     * @return mixed
+     * @return object CommentRepositoryInterface
      */
     public function getComment()
     {
@@ -165,7 +165,7 @@ class View extends AbstractPost
      *
      * @param $status
      *
-     * @return comment status
+     * @return string
      */
     public function getCommentStatus($status)
     {

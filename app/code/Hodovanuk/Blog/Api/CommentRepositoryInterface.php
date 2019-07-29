@@ -1,6 +1,8 @@
 <?php
 namespace Hodovanuk\Blog\Api;
 
+use Hodovanuk\Blog\Model\CommentFactory;
+use Hodovanuk\Blog\Model\CommentRepository;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Hodovanuk\Blog\Api\Data\CommentInterface;
 
@@ -13,9 +15,9 @@ interface CommentRepositoryInterface
     /**
      * Get by id
      *
-     * @param $objectId
+     * @param int $objectId
      *
-     * @return mixed
+     * @return object CommentRepository
      */
     public function getById($objectId);
 
@@ -24,7 +26,7 @@ interface CommentRepositoryInterface
      *
      * @param SearchCriteriaInterface|null $searchCriteria
      *
-     * @return mixed
+     * @return object CommentRepository
      */
     public function getList(SearchCriteriaInterface $searchCriteria = null);
 
@@ -33,25 +35,25 @@ interface CommentRepositoryInterface
      *
      * @param CommentInterface $object
      *
-     * @return mixed
+     * @return bool
      */
     public function save(CommentInterface $object);
 
     /**
      * Delete by id
      *
-     * @param $objectId
+     * @param object $objectId
      *
-     * @return mixed
+     * @return bool
      */
     public function deleteById($objectId);
 
     /**
      * Get by post id
      *
-     * @param $postId
+     * @param int $postId
      *
-     * @return mixed
+     * @return object CommentRepository
      */
     public function getByPostId($postId);
 }

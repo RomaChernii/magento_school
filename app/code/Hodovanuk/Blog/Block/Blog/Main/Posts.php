@@ -133,18 +133,12 @@ class Posts extends AbstractPost
     public function getCommentsNumber($id)
     {
         if ($this->comments === null){
-            $this->comments = $this->commentsCollection->create();
+        $this->comments = $this->commentsCollection->create();
+        $this->comments->addFieldToFilter('post_id', ['in' => $this->getPosts()->getColumnValues('id')]);
         }
+        $postId = $this->comments->getColumnValues('post_id');
+        $commentCount = array_count_values($postId);
 
-        $comments = $this->comments->getData();
-        $returnValue = 0;
-
-        foreach ($comments as $comment){
-            if ($comment['post_id'] == $id){
-                $returnValue++;
-            }
-        }
-
-        return $returnValue;
+        return array_key_exists($id, $commentCount) ? $commentCount[$id] : 0 ;
     }
 }
