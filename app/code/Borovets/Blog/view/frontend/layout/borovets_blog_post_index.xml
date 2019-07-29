@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Borovets\Blog\Block\Post\Listing" name="blog_posts_listing" template="Borovets_Blog::post/listing.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

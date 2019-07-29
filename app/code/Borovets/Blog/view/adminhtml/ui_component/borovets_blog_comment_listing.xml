@@ -1,22 +1,8 @@
 <?xml version="1.0"?>
-<!--
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
--->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">borovets_blog_comment_listing.borovets_blog_comment_listing_data_source</item>
-        </item>
-        <item name="buttons" xsi:type="array">
-            <item name="add" xsi:type="array">
-                <item name="name" xsi:type="string">add</item>
-                <item name="label" xsi:type="string" translate="true">Add New Comment</item>
-                <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">borovets_blog/comment/edit</item>
-            </item>
         </item>
     </argument>
     <settings>
@@ -142,8 +128,8 @@
         <column name="post_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="label" xsi:type="string" translate="true">Post ID</item>
                     <item name="filter" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Post ID</item>
                     <item name="sortOrder" xsi:type="number">90</item>
                 </item>
             </argument>
