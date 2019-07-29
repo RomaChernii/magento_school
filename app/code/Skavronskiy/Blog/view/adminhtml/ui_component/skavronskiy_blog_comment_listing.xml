@@ -10,14 +10,6 @@
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">skavronskiy_blog_comment_listing.skavronskiy_blog_comment_listing_data_source</item>
         </item>
-        <item name="buttons" xsi:type="array">
-            <item name="add" xsi:type="array">
-                <item name="name" xsi:type="string">add</item>
-                <item name="label" xsi:type="string" translate="true">Add New Comment</item>
-                <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">skavronskiy_blog/comment/edit</item>
-            </item>
-        </item>
     </argument>
     <settings>
         <spinner>skavronskiy_blog_comment_columns</spinner>
