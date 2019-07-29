@@ -5,6 +5,11 @@
             <block class="Borovets\Blog\Block\Post\View" name="post_view" template="Borovets_Blog::post/view.phtml"/>
             <block class="Borovets\Blog\Block\Comment\Listing" name="comment_listing" template="Borovets_Blog::comment/listing.phtml"/>
             <block class="Borovets\Blog\Block\Comment\AddComment" name="comment_add_form" template="Borovets_Blog::comment/addcomment.phtml"/>
+            <block class="Magento\Cms\Block\Block" name="block-comment-policy">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block-comment-policy</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
