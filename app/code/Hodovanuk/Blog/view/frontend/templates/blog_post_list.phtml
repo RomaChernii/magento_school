@@ -21,7 +21,7 @@
                         <strong><?php echo __('Created at:') ?></strong> <?php echo $post->getCreatedAt(); ?>
                         <strong><?php echo __('Update at:') ?></strong> <?php echo $post->getUpdateAt(); ?>
                         <br>
-                        <strong><?php echo $block->getCommentsNumber($post->getId()); ?></strong><?php echo __(' Comments') ?>
+                        <strong><?php echo $block->getPostCommentsNumber($post->getId()); ?></strong><?php echo __(' Comments') ?>
                     </div>
                 </div>
             </div>

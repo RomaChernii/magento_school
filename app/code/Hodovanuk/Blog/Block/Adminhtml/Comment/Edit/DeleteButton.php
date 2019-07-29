@@ -25,7 +25,7 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
                 'on_click' => 'deleteConfirm(\'' . __(
                     'Do you want delete this comment?'
                 ) . '\', \'' . $this->getDeleteUrl() . '\')',
-                'sort_order' => 20,
+                'sort_order' => 30,
             ];
         }
 

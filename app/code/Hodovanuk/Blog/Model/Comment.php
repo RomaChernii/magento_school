@@ -141,6 +141,16 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
     }
 
     /**
+     * Get answer comment
+     *
+     * @return string
+     */
+    public function getAnswerData()
+    {
+        return $this->getData(self::ANSWER_DATA);
+    }
+
+    /**
      * Set ID
      *
      * @param int $id
@@ -234,6 +244,18 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
     public function setEmail($commentEmail)
     {
         return $this->setData(self::EMAIL, $commentEmail);
+    }
+
+    /**
+     * Set answer comment
+     *
+     * @param string $answerData
+     *
+     * @return CommentInterface
+     */
+    public function setAnswerData($answerData)
+    {
+        return $this->setData(self::ANSWER_DATA, $answerData);
     }
 
     /**
