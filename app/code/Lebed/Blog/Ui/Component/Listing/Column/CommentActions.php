@@ -22,12 +22,14 @@ use Magento\Ui\Component\Listing\Columns\Column;
 class CommentActions extends Column
 {
     /**
-     * Url path
+     * #@+
+     * Config comment actions url path const
      */
     const URL_PATH_EDIT = 'lebed_blog/comment/edit';
     const URL_PATH_ANSWER = 'lebed_blog/comment/answer';
     const URL_PATH_DELETE = 'lebed_blog/comment/delete';
     const BLOG_URL_PATH_EDIT = 'lebed_blog/post/edit';
+    /**#@-*/
 
     /**
      * Url builder

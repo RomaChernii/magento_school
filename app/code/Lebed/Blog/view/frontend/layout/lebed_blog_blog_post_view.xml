@@ -13,6 +13,7 @@
     <body>
         <referenceContainer name="content">
             <block class="Lebed\Blog\Block\Post\View" name="post_view" template="Lebed_Blog::post/view.phtml"/>
+            <block class="Lebed\Blog\Block\Comment\Listing" name="post_comments_list" template="Lebed_Blog::comment/list.phtml"/>
         </referenceContainer>
     </body>
 </page>
