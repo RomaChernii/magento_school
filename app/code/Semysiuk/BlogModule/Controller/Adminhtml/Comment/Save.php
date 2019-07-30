@@ -3,10 +3,10 @@
 namespace Semysiuk\BlogModule\Controller\Adminhtml\Comment;
 
 use Magento\Backend\App\Action;
-use Magento\Framework\Exception\NoSuchEntityException;
 use Semysiuk\BlogModule\Api\CommentRepositoryInterface;
 use Semysiuk\BlogModule\Model\CommentFactory;
 use Magento\Framework\App\Request\DataPersistorInterface;
+use Semysiuk\BlogModule\Model\Comment;
 
 /**
  * Class Index
@@ -46,9 +46,10 @@ class Save extends Action
     /**
      * Save constructor
      *
-     * @param Action\Context          $context
+     * @param Action\Context $context
      * @param CommentRepositoryInterface $commentRepository
-     * @param CommentFactory             $commentFactory
+     * @param CommentFactory $commentFactory
+     * @param DataPersistorInterface $dataPersistor
      */
     public function __construct(
         Action\Context $context,
@@ -71,39 +72,32 @@ class Save extends Action
      */
     public function execute()
     {
-        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
-        $resultRedirect = $this->resultRedirectFactory->create();
-        $data = $this->getRequest()->getPostValue();
-        if ($data) {
-            $id = $this->getRequest()->getParam('id');
-            try {
-                if (!$id) {
-                    $data['id'] = null;
-                    $model = $this->commentFactory->create();
-                } else {
-                    $model = $this->commentRepository->getById($id);
-                }
-                $model->setData($data);
-                if ($data['answer'])
-                    $model->setStatus(Comment::STATUS_CLOSED);
-                $this->commentRepository->save($model);
-                $this->messageManager->addSuccessMessage(__('The reply to the comment is written.'));
-                $this->dataPersistor->clear('semysiuk_blogmodule_comment');
-                if ($this->getRequest()->getParam('back')) {
-                    return $resultRedirect->setPath('*/*/edit', ['id' => $model->getId()]);
-                }
-                return $resultRedirect->setPath('*/*/');
-            } catch (NoSuchEntityException $e) {
-                $this->messageManager->addErrorMessage($e->getMessage());
-            } catch (\Exception $e) {
-                $this->messageManager->addExceptionMessage($e, __('Something went wrong while save the comment.'));
-            }
-            $this->dataPersistor->set('semysiuk_blogmodule_comment', $data);
-            return $resultRedirect->setPath(
-                '*/*/edit',
-                ['id' => $this->getRequest()->getParam('id')]
-            );
-        }
-        return $resultRedirect->setPath('*/*/');
+        echo var_dump(123);
+        die();
+
+//        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
+//        $resultRedirect = $this->resultRedirectFactory->create();
+//
+//        $data = $this->getRequest()->getPostValue();
+//
+//        $id = $this->getRequest()->getParam('id');
+//
+//        if ($data['answer'])
+//        {
+//            $model = $this->commentRepository->getById($id);
+//            $model->setStatus(Semysiuk/BlogModule/Comment::STATUS_CLOSED);
+//
+//            $this->commentRepository->save($model);
+//
+//            $this->messageManager->addSuccessMessage(__('The reply to the comment is written.'));
+//
+//            return $resultRedirect->setPath('*/*/');
+//        }
+//
+//        return $resultRedirect->setPath(
+//            '*/*/edit',
+//            [
+//                'id' => $this->getRequest()->getParam('id')
+//            ]);
     }
 }

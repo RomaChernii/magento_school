@@ -27,9 +27,9 @@
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
-<!--        <settings>-->
-<!--            <submitUrl path="semysiuk_blogmodule/comment/save"/>-->
-<!--        </settings>-->
+        <settings>
+            <submitUrl path="semysiuk_blogmodule/comment/save"/>
+        </settings>
         <dataProvider class="Semysiuk\BlogModule\Model\Comment\DataProvider" name="comment_edit_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
