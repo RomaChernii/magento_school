@@ -65,20 +65,7 @@ class Comments extends Template
      */
     protected function _prepareLayout()
     {
-        parent::_prepareLayout();
-
-        if ($this->getComments()) {
-            $pager = $this->getLayout()->createBlock(
-                'Magento\Theme\Block\Html\Pager',
-                'blog.comment.listing.pager'
-            )->setCollection(
-                $this->getComment()
-            );
-            $this->setChild('pager', $pager);
-            $this->getComments()->load();
-        }
-
-        return $this;
+        return $this->getChildHtml('pager');
     }
 
     /**
@@ -97,7 +84,7 @@ class Comments extends Template
     public function getComments()
     {
         $id = $this->getRequest()->getParam('id');
-        if ($this->comments !== null) {
+        if ($this->comments === null) {
             $this->comments = $this->commentCollectionFactory->create()
                 ->addFilter(CommentInterface::POST_ID, $id)
                 ->addOrder(

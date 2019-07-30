@@ -81,6 +81,6 @@ class AddComment extends Action
             }
         }
 
-        return $resultRedirect->setPath($this->_redirect->getRefererUrl());
+        return $resultRedirect->setPath($this->_redirect->getRefererUrl(), ['sss' => 'g', 'ff' => 'dd']);
     }
 }
