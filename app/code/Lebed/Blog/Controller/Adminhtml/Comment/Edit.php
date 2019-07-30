@@ -71,28 +71,13 @@ class Edit extends Action
     }
 
     /**
-     * Init actions
-     *
-     * @return \Magento\Backend\Model\View\Result\Page
-     */
-    private function _initAction()
-    {
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
-        $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Lebed_Blog::comment')
-                   ->addBreadcrumb(__('Lebed'), __('Lebed'))
-                   ->addBreadcrumb(__('Manage Comment'), __('Manage Comment'));
-
-        return $resultPage;
-    }
-
-    /**
      * Edit Comment page
      *
      * @return \Magento\Backend\Model\View\Result\Page | \Magento\Backend\Model\View\Result\Redirect
      */
     public function execute()
     {
+        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
         $id = $this->getRequest()->getParam('id');
         $resultPage->getConfig()->getTitle()->prepend(__('Comment Information'));
@@ -112,8 +97,6 @@ class Edit extends Action
             $this->coreRegistry->register('lebed_blog_comment', $model);
         }
 
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
-        //$resultPage = $this->_initAction();
         $resultPage->addBreadcrumb(__('Edit Comment'), __('Edit Comment'));
 
         return $resultPage;
