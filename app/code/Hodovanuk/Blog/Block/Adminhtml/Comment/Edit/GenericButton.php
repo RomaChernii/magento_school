@@ -54,6 +54,22 @@ class GenericButton
     }
 
     /**
+     * Get post id for Post button
+     *
+     * @return post id
+     */
+    public function getPostId()
+    {
+        try {
+            $modelId = $this->context->getRequest()->getParam('id');
+
+            return $this->commentRepository->getById($modelId)->getPostId();
+        } catch (NoSuchEntityException $e) {
+            return null;
+        }
+    }
+
+    /**
      * Generate url by route and parameters
      *
      * @param   string $route

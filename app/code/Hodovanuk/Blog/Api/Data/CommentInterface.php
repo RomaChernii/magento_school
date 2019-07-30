@@ -1,6 +1,10 @@
 <?php
 namespace Hodovanuk\Blog\Api\Data;
 
+/**
+ * Interface CommentInterface
+ * @package Hodovanuk\Blog\Api\Data
+ */
 interface CommentInterface
 {
     /**
@@ -19,6 +23,7 @@ interface CommentInterface
     const CREATE_DATA = 'data';
     const POST_ID     = 'post_id';
     const EMAIL       = 'email';
+    const ANSWER_DATA = 'answer_data';
     /**#@-*/
 
     /**
@@ -76,6 +81,13 @@ interface CommentInterface
      * @return string
      */
     public function getEmail();
+
+    /**
+     * Get answer data
+     *
+     * @return string
+     */
+    public function getAnswerData();
 
     /**
      * Set ID
@@ -148,4 +160,13 @@ interface CommentInterface
      * @return CommentInterface
      */
     public function setEmail($commentEmail);
+
+    /**
+     * Set answer data
+     *
+     * @param string $answerData
+     *
+     * @return CommentInterface
+     */
+    public function setAnswerData($answerData);
 }

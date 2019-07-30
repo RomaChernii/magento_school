@@ -84,7 +84,12 @@ class DataProvider extends AbstractDataProvider
             return $this->loadedData;
         }
 
-        $data = $this->dataPersistor->get('hodovanuk_blog_comment');
+        $items = $this->collection->getItems();
+
+        foreach ($items as $comment) {
+            $this->loadedData[$comment->getId()] = $comment->getData();
+        }
+
         if (!empty($data)) {
             $post = $this->collection->getNewEmptyItem();
             $post->setData($data);
