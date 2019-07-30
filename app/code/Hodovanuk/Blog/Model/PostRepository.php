@@ -69,7 +69,7 @@ class PostRepository implements PostRepositoryInterface
      *
      * @param Data\PostInterface $post
      *
-     * @return Data\PostInterface|mixed
+     * @return Data\PostInterface
      *
      * @throws CouldNotSaveException
      */
@@ -109,7 +109,7 @@ class PostRepository implements PostRepositoryInterface
      *
      * @param SearchCriteriaInterface|null $criteria
      *
-     * @return mixed
+     * @return Data\PostSearchResultsInterfaceFactory
      */
     public function getList(SearchCriteriaInterface $criteria = null)
     {
@@ -159,9 +159,9 @@ class PostRepository implements PostRepositoryInterface
     /**
      * Delete by post id
      *
-     * @param $postId
+     * @param int $postId
      *
-     * @return bool|mixed
+     * @return bool
      *
      * @throws CouldNotDeleteException
      * @throws NoSuchEntityException

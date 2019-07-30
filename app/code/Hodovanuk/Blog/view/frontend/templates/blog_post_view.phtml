@@ -20,10 +20,18 @@ $comments = $block->getComment();
 <div class="blog-post-item-content">
     <h2><?php echo __('Comments') ?></h2>
     <?php foreach ($comments as $comment):?>
-    <div><?php echo __('Name: ') ?><?= $comment->getFirstName(); ?><?= $comment->getLastName(); ?></div>
-    <div><?= $comment->getComment(); ?></div>
+    <div>
+        <span><?= $comment->getFirstName(); ?><?= $comment->getLastName(); ?> : </span>
+        <span><?= $comment->getComment(); ?></span>
+    </div>
+    <?php if (!empty($comment->getAnswerData()) && $comment->getAnswer() == 3) : ?>
+        <div><?php echo __('Admin: ') ?><?= $comment->getAnswerData(); ?></div>
+    <?php endif;?>
     <div><?php echo __('commented at: ') ?><?= $comment->getCreateData(); ?></div>
     <div><?php echo __('comment status: ') ?><?= $block->getCommentStatus($comment->getAnswer()) ; ?></div>
         <br>
     <?php endforeach;?>
 </div>
+<?php if ($block->getPagerHtml()) : ?>
+    <div class="blog-post-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+<?php endif; ?>

@@ -1,6 +1,7 @@
 <?php
 namespace Hodovanuk\Blog\Api;
 
+use Hodovanuk\Blog\Model\PostRepository;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Hodovanuk\Blog\Api\Data\PostInterface;
 
@@ -11,30 +12,38 @@ use Hodovanuk\Blog\Api\Data\PostInterface;
 interface PostRepositoryInterface
 {
     /**
-     * @param $objectId
+     * Get by id
      *
-     * @return mixed
+     * @param int $objectId
+     *
+     * @return PostRepository
      */
     public function getById($objectId);
 
     /**
+     * Get list
+     *
      * @param SearchCriteriaInterface|null $searchCriteria
      *
-     * @return mixed
+     * @return PostRepository
      */
     public function getList(SearchCriteriaInterface $searchCriteria = null);
 
     /**
+     * Save
+     *
      * @param PostInterface $object
      *
-     * @return mixed
+     * @return PostRepository
      */
     public function save(PostInterface $object);
 
     /**
-     * @param $objectId
+     * Delete by id
      *
-     * @return mixed
+     * @param  int $objectId
+     *
+     * @return PostRepository
      */
     public function deleteById($objectId);
 }

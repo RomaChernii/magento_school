@@ -38,7 +38,8 @@
         "pdepend/pdepend": "2.5.0",
         "friendsofphp/php-cs-fixer": "~2.1.1",
         "lusitanian/oauth": "~0.8.10",
-        "sebastian/phpcpd": "2.0.4"
+        "sebastian/phpcpd": "2.0.4",
+        "mgtcommerce/module-mgtdevelopertoolbar": "^1.0"
     },
     "autoload": {
         "psr-4": {

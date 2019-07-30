@@ -18,7 +18,7 @@ class Edit extends Action
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'Hodovanuk_Blog::comments_save';
+    const ADMIN_RESOURCE = 'Hodovanuk_Blog::comments_answer';
 
     /**
      * Core registry
@@ -37,29 +37,29 @@ class Edit extends Action
     /**
      * @var CommentRepositoryInterface
      */
-    private $postRepository;
+    private $commentRepository;
 
     /**
      * Edit constructor.
      * @param Action\Context $context
      * @param PageFactory $resultPageFactory
      * @param Registry $registry
-     * @param CommentRepositoryInterface $postRepository
+     * @param CommentRepositoryInterface $comRepository
      */
     public function __construct(
         Action\Context $context,
         PageFactory $resultPageFactory,
         Registry $registry,
-        CommentRepositoryInterface $postRepository
+        CommentRepositoryInterface $comRepository
     ) {
         $this->resultPageFactory = $resultPageFactory;
         $this->coreRegistry = $registry;
-        $this->postRepository = $postRepository;
+        $this->commentRepository = $comRepository;
         parent::__construct($context);
     }
 
     /**
-     * Init actions
+     *  Set active menu
      *
      * @return \Magento\Backend\Model\View\Result\Page
      */
@@ -67,9 +67,9 @@ class Edit extends Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Hodovanuk_Blog::comments')
-            ->addBreadcrumb(__('Hodovanuk'), __('Hodovanuk'))
-            ->addBreadcrumb(__('Manage Comment'), __('Manage Comment'));
+        $resultPage->setActiveMenu('Hodovanuk_Blog::comments');
+        $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
+        $resultPage->addBreadcrumb(__('Blog Comments'), __('Blog Comments'));
 
         return $resultPage;
     }
@@ -77,17 +77,35 @@ class Edit extends Action
     /**
      * Edit action
      *
-     * @return \Magento\Backend\Model\View\Result\Page|\Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|\Magento\Framework\View\Result\Page
+     * Set title by current comment title
+     *
+     * @return \Magento\Backend\Model\View\Result\Page|\Magento\Backend\Model\View\Result\Redirect|\Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|\Magento\Framework\View\Result\Page
      */
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
-        $id = $this->getRequest()->getParam('post_id');
-        $resultPage->getConfig()->getTitle()->prepend(__('Comment Information'));
+        $id = $this->getRequest()->getParam('id');
+
+        if ($id) {
+            try {
+                $model = $this->commentRepository->getById($id);
+                $resultPage->getConfig()->getTitle()->prepend(__('Answer Comment - %1', $model->getTitle()));
+
+            } catch (NoSuchEntityException $e) {
+                $this->messageManager->addExceptionMessage($e, __('Something went wrong while editing the comment.'));
+                /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
+                $resultRedirect = $this->resultRedirectFactory->create();
+
+                return $resultRedirect->setPath('*/*/');
+            }
+            $this->coreRegistry->register('blog_comment', $model);
+        }
+
+        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->_initAction();
         $resultPage->addBreadcrumb(
-            $id ? __('Edit Comment') : __('New Comment'),
-            $id ? __('Edit Comment') : __('New Comment')
+            __('Answer Comment'),
+            __('Answer Comment')
         );
 
         return $resultPage;
