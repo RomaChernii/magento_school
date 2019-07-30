@@ -55,11 +55,4 @@ interface CommentRepositoryInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function deleteById($objectId);
-
-    /**
-     * @param $postId
-     *
-     * @return mixed
-     */
-    public function getByPostId($postId);
 }
