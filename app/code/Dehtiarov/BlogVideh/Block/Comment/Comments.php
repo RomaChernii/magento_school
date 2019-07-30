@@ -16,6 +16,7 @@ use Dehtiarov\BlogVideh\Api\Data\CommentInterface;
 use Dehtiarov\BlogVideh\Model\ResourceModel\Comment\Collection as CommentCollection;
 use Dehtiarov\BlogVideh\Model\ResourceModel\Comment\CollectionFactory;
 use Dehtiarov\BlogVideh\Model\Comment;
+use Magento\Customer\Model\Session;
 
 /**
  * Class Comment
@@ -30,6 +31,14 @@ class Comments extends Template
      * @var CollectionFactory
      */
     protected $commentCollectionFactory;
+
+    /**
+     * Session
+     *
+     * @var Session
+     */
+
+    protected $session;
 
     /**
      * Comment collection
@@ -48,9 +57,11 @@ class Comments extends Template
     public function __construct(
         Context $context,
         CollectionFactory $commentCollectionFactory,
+        Session $session,
         array $data = []
     ) {
         $this->commentCollectionFactory = $commentCollectionFactory;
+        $this->session = $session;
         parent::__construct(
             $context,
             $data
@@ -126,20 +137,14 @@ class Comments extends Template
      */
     public function getCustomerInfo()
     {
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $customerSession = $objectManager->create('Magento\Customer\Model\Session');
+        $response = NULL;
 
-        if ($customerSession->isLoggedIn()) {
-            $customerSession->getCustomerId();  // get Customer Id
-            $customerSession->getCustomerGroupId();
-            $customerSession->getCustomer();
-            $customerSession->getCustomerData();
-
-            $response['first_name'] = $customerSession->getCustomer()->getData('firstname');
-            $response['last_name'] = $customerSession->getCustomer()->getData('lastname');
-            $response['email'] = $customerSession->getCustomer()->getData('email');
-
-            return $response;
+        if ($this->session->isLoggedIn()){
+            $response['first_name'] = $this->session->getCustomer()->getData('firstname');
+            $response['last_name'] = $this->session->getCustomer()->getData('lastname');
+            $response['email'] = $this->session->getCustomer()->getData('email');
         }
+
+        return $response;
     }
 }
