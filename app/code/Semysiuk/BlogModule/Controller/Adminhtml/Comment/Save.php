@@ -72,32 +72,29 @@ class Save extends Action
      */
     public function execute()
     {
-        echo var_dump(123);
-        die();
+        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
+        $resultRedirect = $this->resultRedirectFactory->create();
 
-//        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
-//        $resultRedirect = $this->resultRedirectFactory->create();
-//
-//        $data = $this->getRequest()->getPostValue();
-//
-//        $id = $this->getRequest()->getParam('id');
-//
-//        if ($data['answer'])
-//        {
-//            $model = $this->commentRepository->getById($id);
-//            $model->setStatus(Semysiuk/BlogModule/Comment::STATUS_CLOSED);
-//
-//            $this->commentRepository->save($model);
-//
-//            $this->messageManager->addSuccessMessage(__('The reply to the comment is written.'));
-//
-//            return $resultRedirect->setPath('*/*/');
-//        }
-//
-//        return $resultRedirect->setPath(
-//            '*/*/edit',
-//            [
-//                'id' => $this->getRequest()->getParam('id')
-//            ]);
+        $data = $this->getRequest()->getPostValue();
+
+        $id = $this->getRequest()->getParam('id');
+
+        if ($data['answer'])
+        {
+            $model = $this->commentRepository->getById($id);
+            $model->setStatus(Comment::STATUS_CLOSED);
+
+            $this->commentRepository->save($model);
+
+            $this->messageManager->addSuccessMessage(__('The reply to the comment is written.'));
+
+            return $resultRedirect->setPath('*/*/');
+        }
+
+        return $resultRedirect->setPath(
+            '*/*/edit',
+            [
+                'id' => $this->getRequest()->getParam('id')
+            ]);
     }
 }
