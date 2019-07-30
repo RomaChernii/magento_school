@@ -23,10 +23,6 @@ class ShowPostButton extends GenericButton implements ButtonProviderInterface
             'label' => __('Show post'),
             'class' => 'showPost',
             'on_click' => 'window.open( \'' . $this->getShowPostUrl() . '\')',
-            'data_attribute' => [
-                'mage-init' => ['button' => ['event' => 'showPost']],
-                'form-role' => 'showPost',
-            ],
             'sort_order' => 80
         ];
     }
