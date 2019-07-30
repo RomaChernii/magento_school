@@ -10,12 +10,15 @@
 namespace Lebed\Customer\Setup;
 
 use Magento\Eav\Setup\EavSetupFactory;
-use Magento\Customer\Setup\CustomerSetupFactory;
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
-use Magento\Eav\Api\AttributeRepositoryInterface;
 use Magento\Customer\Model\Customer;
+use Magento\Customer\Api\CustomerMetadataInterface;
+use Magento\Customer\Model\ResourceModel\Attribute as AttributeCustomerResource;
+use Magento\Eav\Model\Entity\Attribute\SetFactory as AttributeSetFactory;
+use Magento\Eav\Model\Config;
+use Magento\Eav\Api\AttributeRepositoryInterface;
 
 /**
  * Class InstallData
@@ -25,25 +28,32 @@ use Magento\Customer\Model\Customer;
 class InstallData implements InstallDataInterface
 {
     /**
-     * EAV setup factory
+     * Eav config
      *
-     * @var \Magento\Eav\Setup\EavSetupFactory
+     * @var Config
      */
-    private $eavSetupFactory;
+    private $eavConfig;
 
     /**
-     * Customer setup factory
+     * Attribute resource
      *
-     * @var CustomerSetupFactory
+     * @var AttributeCustomerResource
      */
-    private $customerSetupFactory;
+    protected $attributeResource;
 
     /**
-     * Attribute repository interface
+     * Attribute set factor
+     *
+     * @var AttributeSetFactory
+     */
+    protected $attributeSetFactory;
+
+    /**
+     * AttributeRepositoryInterface
      *
      * @var AttributeRepositoryInterface
      */
-    private $attributeRepository;
+    protected $attributeRepository;
 
     /**
      * Constructor InstallData
@@ -54,19 +64,42 @@ class InstallData implements InstallDataInterface
      */
     public function __construct(
         EavSetupFactory $eavSetupFactory,
-        CustomerSetupFactory $customerSetupFactory,
+        Config $eavConfig,
+        AttributeCustomerResource $attributeResource,
+        AttributeSetFactory $attributeSetFactory,
         AttributeRepositoryInterface $attributeRepository
     ) {
         $this->eavSetupFactory = $eavSetupFactory;
-        $this->customerSetupFactory = $customerSetupFactory;
+        $this->eavConfig = $eavConfig;
+        $this->attributeResource = $attributeResource;
+        $this->attributeSetFactory = $attributeSetFactory;
         $this->attributeRepository = $attributeRepository;
     }
 
+    /**
+     * Install attribute 'customer_company_lebed'
+     *
+     * @param ModuleDataSetupInterface $setup
+     * @param ModuleContextInterface   $context
+     *
+     * @throws \Magento\Framework\Exception\AlreadyExistsException
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     * @throws \Magento\Framework\Exception\StateException
+     */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
-        $customerSetup = $this->customerSetupFactory->create(['setup' => $setup]);
+        $customerSetup = $this->eavSetupFactory->create(['setup' => $setup]);
 
-        $this->attributeRepository->deleteById(156);
+        //Remove incorect attribute
+        $this->attributeRepository->deleteById(157);
+
+        // Get default attribute set id for customer
+        $attributeSetId = $this->eavConfig->getEntityType(Customer::ENTITY)->getDefaultAttributeSetId();
+
+        // Get default group id for default customer attribute set
+        $attributeGroupId = $this->attributeSetFactory->create()->getDefaultGroupId($attributeSetId);
+
         $customerSetup->addAttribute(
             Customer::ENTITY,
             'customer_company_lebed',
@@ -81,14 +114,23 @@ class InstallData implements InstallDataInterface
                 'source'         => '',
                 'validate_rules' => '',
                 'system'         => 0,
+                'user_defined'   => 1,
                 'frontend_label' => 'Company name Lebed frontend label',
                 'backend_model'  => ''
             ]
         );
 
-        // show the attribute in the following forms
-        $attribute = $customerSetup
-            ->getEavConfig()
+        // Add custom customer attribute to attribute set
+        $customerSetup->addAttributeToSet(
+            CustomerMetadataInterface::ENTITY_TYPE_CUSTOMER,
+            $attributeSetId,
+            $attributeGroupId,
+            'customer_company_lebed'
+        );
+
+        // Show the attribute in the following forms
+        $attribute = $this
+            ->eavConfig
             ->getAttribute(
                 Customer::ENTITY,
                 'customer_company_lebed'
@@ -103,7 +145,7 @@ class InstallData implements InstallDataInterface
                 ]
             );
 
-        $this->attributeRepository->save($attribute);
+        $this->attributeResource->save($attribute);
 
         $setup->endSetup();
     }
