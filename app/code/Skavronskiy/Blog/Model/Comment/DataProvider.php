@@ -100,6 +100,7 @@ class DataProvider extends AbstractDataProvider
                 $this->dataPersistor->clear('skavronskiy_blog_comment');
             }
         }
+
         return $this->loadedData;
     }
 }

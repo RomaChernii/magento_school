@@ -74,6 +74,7 @@ class NewComment extends Action
                 $this->messageManager->addExceptionMessage($e, __('Something went wrong while save the comment.'));
             }
         }
+
         return $resultRedirect->setPath($this->_redirect->getRefererUrl());
     }
 }

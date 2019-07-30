@@ -44,6 +44,7 @@ class PostId implements OptionSourceInterface
                 'value' => $post['id'],
             ];
         }
+
         return $options;
     }
 }

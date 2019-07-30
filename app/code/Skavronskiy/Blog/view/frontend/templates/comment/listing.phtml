@@ -6,7 +6,7 @@
 ?>
 <?php $comments = $block->getComments()->getItems(); ?>
 <h2><?php echo __('Comments:'); ?></h2>
-<?php if (count($comments)): ?>
+<?php if (count($comments)) : ?>
     <div class="blog-comment-list">
         <?php /** @var $comment \Skavronskiy\Blog\Model\Comment */ ?>
         <?php foreach ($comments as $comment) : ?>
@@ -18,7 +18,7 @@
                     <div class="blog-comment-item-comment">
                         <?php echo $comment->getComment(); ?>
                     <div class="blog-comment-item-answer">
-                        <?php if($comment->getAnswer()) {?><strong><?php echo __('Answer: '); ?></strong><?php echo $comment->getAnswer(); } ?>
+                        <?php if ($comment->getAnswer()) {?><strong><?php echo __('Answer: '); ?></strong><?php echo $comment->getAnswer(); } ?>
                     </div>
                 </div>
                 <div class="comment-status-and-date" align="right">
