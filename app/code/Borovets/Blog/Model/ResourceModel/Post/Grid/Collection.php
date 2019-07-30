@@ -1,7 +1,6 @@
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * Blog post grid collection
  */
 
 namespace Borovets\Blog\Model\ResourceModel\Post\Grid;

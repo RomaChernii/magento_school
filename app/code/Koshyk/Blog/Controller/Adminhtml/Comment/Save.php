@@ -82,7 +82,7 @@ class Save extends Action
         /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
 
-        $data = $this->getRequest()->getCommentValue();
+        $data = $this->getRequest()->getPostValue();
 
         if ($data) {
             $commentObject = new DataObject();

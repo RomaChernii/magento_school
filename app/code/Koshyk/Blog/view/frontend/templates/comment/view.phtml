@@ -1,0 +1,56 @@
+<?php
+/**
+* Koshyk blog comment view template
+*
+* @category  Koshyk
+* @package   Koshyk\Blog
+* @author    Roman Koshyk <romadaaaa@gmail.com>
+*/
+/** @var \Koshyk\Blog\Block\Comment\View $block */
+?>
+<style>
+    .blog-comment-list-item {
+        line-height: 2;
+        padding: 10px;
+        border: 1px solid #949494;
+    }
+</style>
+<?php $comments = $block->getComments()->getItems(); ?>
+<?php if (count($comments)): ?>
+<div class="blog-comment-list">
+    <?php /** @var $comment \Koshyk\Blog\Model\Comment */ ?>
+    <?php foreach ($comments as $comment) : ?>
+        <div class="blog-comment-list-item">
+            <div class="comment-title">
+                <h3 class="blog-comment-item-name">
+                    <?php echo __('Author:') ?> <?php echo $comment->getFirstName(); ?> <?php echo $comment->getLastName(); ?>
+                </h3>
+                <div class="blog-comment-item-email">
+                    <?php echo __('Email:') ?> <?php echo $comment->getEmail(); ?>
+                </div>
+            </div>
+            <div class="blog-comment-item-content">
+                <div class="blog-comment-item-comment">
+                    <?php echo __('Comment:') ?><br>
+                    <?php echo $comment->getComment(); ?>
+                </div>
+                <div class="blog-comment-item-answer">
+                    <?php if($comment->getAnswer()) {?>
+                        <?php echo __('Answer:') ?><br>
+                        <?php echo $comment->getAnswer(); } ?>
+                </div>
+
+                <div class="blog-comment-item-meta">
+                    <strong><?php echo __('Created at:') ?></strong> <?php echo $comment->getCreateDate() ?>
+                    <strong><?php echo __('Status: '); ?></strong> <?php echo $comment->getAnswerStatuses()[$comment->getStatus()]; ?>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <?php if ($block->getPagerHtml()) : ?>
+        <div class="blog-comment-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+    <?php endif; ?>
+</div>
+<?php else : ?>
+    <div class="message info empty"><span><?php /* @escapeNotVerified */ echo __('Blog haven\'t comments.'); ?></span></div>
+<?php endif; ?>

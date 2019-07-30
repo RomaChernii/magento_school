@@ -1,0 +1,37 @@
+<?php
+/**
+ * Borovets blog comment listing template
+ */
+/** @var \Borovets\Blog\Block\Comment\Listing $block */
+?>
+<?php $comments = $block->getComments()->getItems(); ?>
+<h2><?php echo __('Comments:'); ?></h2>
+<?php if (count($comments)): ?>
+    <div class="blog-comment-list">
+        <?php /** @var $comment \Borovets\Blog\Model\Comment */ ?>
+        <?php foreach ($comments as $comment) : ?>
+            <div class="blog-comment-list-item">
+                <div class="blog-comment-item-content" style="background-color: #e0e0e0;">
+                    <div class="blog-comment-item-author" align="right">
+                        <strong><?php echo __('Author: '); ?></strong> <?php echo $block->getAuthor($comment); ?>
+                    </div>
+                    <div class="blog-comment-item-comment">
+                        <?php echo $comment->getComment(); ?>
+                    <div class="blog-comment-item-answer">
+                        <?php if($comment->getAnswer()) {?><strong><?php echo __('Answer: '); ?></strong><?php echo $comment->getAnswer(); } ?>
+                    </div>
+                </div>
+                <div class="comment-status-and-date" align="right">
+                    <strong><?php echo __('Status: '); ?></strong> <?php echo $comment->getAvailableStatuses()[$comment->getStatus()]; ?>
+                    <strong><?php echo __('Writed at: '); ?></strong> <?php echo $comment->getWritedAt(); ?>
+                </div>
+            </div>
+        <BR>
+        <?php endforeach; ?>
+        <?php if ($block->getPagerHtml()) : ?>
+            <div class="blog-comment-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+        <?php endif; ?>
+    </div>
+<?php else : ?>
+    <div class="message info empty"><span><?php /* @escapeNotVerified */ echo __('Post haven\'t comments.'); ?></span></div>
+<?php endif; ?>
