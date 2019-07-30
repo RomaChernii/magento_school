@@ -7,15 +7,35 @@ use Magento\Framework\App\Action\Context;
 use Semysiuk\BlogModule\Model\CommentFactory;
 use Semysiuk\BlogModule\Api\CommentRepositoryInterface;
 
-
+/**
+ * Class Index
+ *
+ * @package Semysiuk\BlogModule\Controller\Blog\Comment
+ */
 class Index extends Action
 {
     const COMMENT_SUCCESS_URL = "semysiuk_blogmodule/blog_post/view";
 
+    /**
+     * Comment Factory
+     *
+     * @var CommentFactory
+     */
     protected $commentFactory;
 
+    /**
+     * Comment repository interface
+     *
+     * @var CommentRepositoryInterface
+     */
     protected $commentRepository;
 
+    /**
+     * Index constructor.
+     * @param Context $context
+     * @param CommentRepositoryInterface $commentRepository
+     * @param CommentFactory $commentFactory
+     */
     public function __construct(
         Context $context,
         CommentRepositoryInterface $commentRepository,
@@ -27,36 +47,28 @@ class Index extends Action
         $this->commentFactory = $commentFactory;
     }
 
+    /**
+     * @return \Magento\Framework\Controller\ResultInterface
+     */
     public function execute()
     {
-        //echo "Hello World from Home";
-
-        $data =  $this->getRequest()->getPostValue();
-//
-        print_r($data);
-
-        $model = $this->commentFactory->create();
-        $model->setData($data);
-
-        $this->commentRepository->save($model);
-
-        //exit();
-
         $resultRedirect = $this->resultRedirectFactory->create();
+        $data =  $this->getRequest()->getPostValue();
 
-//        $data = $this->getRequest()->getPostValue();
-//
-//        if ($data)
-//        {
-//            $model = $this->commentFactory->create();
-//
-//            $model->setData($data);
-//
-//            v
-//        }
+        if ($data)
+        {
+            $model = $this->commentFactory->create();
+            $model->setData($data);
 
-        $resultRedirect->setPath(static::COMMENT_SUCCESS_URL, ['id' => $data->getPostId()]);
-//
+            $this->commentRepository->save($model);
+
+            $resultRedirect->setPath(static::COMMENT_SUCCESS_URL, ['id' => $model->getPostId()]);
+        }
+        else
+        {
+            $resultRedirect->setPath(static::COMMENT_SUCCESS_URL, ['id' => $this->getRequest()->getParam('id')]);
+        }
+
         return $resultRedirect;
     }
 }

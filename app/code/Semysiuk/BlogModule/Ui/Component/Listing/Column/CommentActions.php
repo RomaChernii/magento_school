@@ -17,8 +17,7 @@ class CommentActions extends Column
     /**
      * Url path
      */
-    const URL_PATH_ANSWER = 'semysiuk_blogmodule/comment/answer';
-    const URL_PATH_PREVIEW = 'semysiuk_blogmodule/comment/preview';
+    const URL_PATH_EDIT = 'semysiuk_blogmodule/comment/edit';
 
     /**
      * Url builder
@@ -66,23 +65,14 @@ class CommentActions extends Column
             foreach ($dataSource['data']['items'] as & $item) {
                 if (isset($item['id'])) {
                     $item[$this->getData('name')] = [
-                        'answer' => [
+                        'edit' => [
                             'href' => $this->urlBuilder->getUrl(
-                                static::URL_PATH_ANSWER,
+                                static::URL_PATH_EDIT,
                                 [
                                     'id' => $item['id']
                                 ]
                             ),
-                            'label' => __('Give an answer')
-                        ],
-                        'preview' => [
-                            'href' => $this->urlBuilder->getUrl(
-                                static::URL_PATH_PREVIEW,
-                                [
-                                    'id' => $item['id']
-                                ]
-                            ),
-                            'label' => __('Preview')
+                            'label' => __('Edit')
                         ]
                     ];
                 }

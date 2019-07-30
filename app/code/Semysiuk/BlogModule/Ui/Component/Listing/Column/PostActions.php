@@ -18,7 +18,6 @@ class PostActions extends Column
      * Url path
      */
     const URL_PATH_EDIT = 'semysiuk_blogmodule/post/edit';
-    const URL_PATH_DELETE = 'semysiuk_blogmodule/post/delete';
 
     /**
      * Url builder

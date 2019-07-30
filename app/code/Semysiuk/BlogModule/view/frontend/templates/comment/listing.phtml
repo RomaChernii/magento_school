@@ -2,11 +2,9 @@
 /** @var $block \Semysiuk\BlogModule\Block\Comment\Listing */
 /** @var $comments \Semysiuk\BlogModule\Api\Data\CommentInterface */
 $comments = $block->getCommentsByPost();
-
 ?>
 
 <hr/>
-
 <div class="comments">
     <?php if (!count($comments)): ?>
         <h1>NO COMMENTS YET...</h1>
@@ -16,25 +14,30 @@ $comments = $block->getCommentsByPost();
             <?php foreach ($comments as $comment) : ?>
                 <div class="blog-post-comment-list-item">
                     <div>
-                        <div class="post-comment-title">
-                            <h3 class="blog-post-comment-item-title">
-                                <?php echo $comment->getComment(); ?>
-                            </h3>
-                            <?php echo $comment->getDate(); ?>
-                        </div>
                         <div>
-                            <?php echo $comment->getAnswer(); ?>
+                            <div>
+                                <span style="font-size:15px; font-weight:bold;">
+                                    <?php echo $comment->getFullName(); ?>
+                                </span>
+                                <span style="float:right; margin-right:500px;vertical-align:center;">
+                                    <?php echo $comment->getDate(); ?>
+                                </span>
+                            </div>
+                        <div class="post-comment-title" style="clear:both;">
+                            <h2 class="blog-post-comment-item-title">
+                                <?php echo $comment->getComment(); ?>
+                            </h2>
                         </div>
                     </div>
-                    <?php if ($comment->getAnswer() !== null) : ?>
-                    <div style="display:block;margin-left:30px;">
-                        <h2>
-                            <?php $comment->getAnswer(); ?>
+                    <?php if ($comment->getAnswer()) : ?>
+                    <div class="post-comment-answer" style="margin-left:50px;margin-top:20px;"">
+                        <h2>Answer:
+                            <?php echo $comment->getAnswer(); ?>
                         </h2>
                     </div>
                     <div>
-                        <h2>
-                            <?php $comment->getStatus(); ?>
+                        <h2>Status:
+                            <?php echo $comment->getStatus(); ?>
                         </h2>
                     </div>
                     <?php endif; ?>

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Semysiuk\BlogModule\Controller\Adminhtml\Comment;
 
 use Magento\Backend\App\Action;
@@ -10,18 +9,18 @@ use Magento\Framework\View\Result\PageFactory;
 use Semysiuk\BlogModule\Api\CommentRepositoryInterface;
 
 /**
- * Class Preview
+ * Class Edit
  *
  * @package Semysiuk\BlogModule\Controller\Adminhtml\Comment
  */
-class Preview extends Action
+class Edit extends Action
 {
     /**
      * Authorization level of a basic admin session
      *
      * @see _isAllowed()
      */
-    const ADMIN_RESOURCE = 'Semysiuk_BlogModule::comment_preview';
+    const ADMIN_RESOURCE = 'Semysiuk_BlogModule::comment_edit';
 
     /**
      * Core registry
@@ -73,8 +72,8 @@ class Preview extends Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Semysiuk_BlogModule::comment')
-            ->addBreadcrumb(__('Semysiuk'), __('Semysiuk'))
+        $resultPage->setActiveMenu('Semysiuk_BlogModule::comment_edit')
+            ->addBreadcrumb(__('Manage Comment'), __('Manage Comment'))
             ->addBreadcrumb(__('Manage Comment'), __('Manage Comment'));
 
         return $resultPage;
@@ -89,29 +88,22 @@ class Preview extends Action
     {
         $resultPage = $this->resultPageFactory->create();
         $id = $this->getRequest()->getParam('id');
-        $resultPage->getConfig()->getTitle()->prepend(__('Comment Information'));
+
         if ($id) {
             try {
                 $model = $this->commentRepository->getById($id);
 
-                $resultPage->getConfig()->getTitle()->prepend(__('Preview Comment - %1', $model->getFirstName()));
+                $resultPage->getConfig()->getTitle()->prepend(__('Preview Comment - %1', $model->getFirstName() . $model->getLastName()));
 
             } catch (NoSuchEntityException $e) {
-                $this->messageManager->addExceptionMessage($e, __('Something went wrong while editing the post.'));
+                $this->messageManager->addExceptionMessage($e, __('Something went wrong while editing the comment.'));
                 /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
 
                 return $resultRedirect->setPath('*/*/');
             }
-            //$this->coreRegistry->register('blog_post', $model);
         }
-        //var_dump(000);
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
-        $resultPage = $this->_initAction();
-        $resultPage->addBreadcrumb( __('Preview Comment'), __('Preview Comment'));
 
-        var_dump(123);
         return $resultPage;
     }
 }
-

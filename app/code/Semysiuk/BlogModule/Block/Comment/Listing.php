@@ -5,12 +5,33 @@ namespace Semysiuk\BlogModule\Block\Comment;
 use Magento\Framework\View\Element\Template;
 use Semysiuk\BlogModule\Api\CommentRepositoryInterface;
 
+/**
+ * Class Listing
+ *
+ * @package Semysiuk\BlogModule\Block\Comment
+ */
 class Listing extends Template
 {
+    /**
+     * Comment Collection
+     *
+     * @var CommentCollection
+     */
     protected $comments;
-    protected $postId;
+
+    /**
+     *Comment Repository
+     *
+     * @var CommentRepositoryInterface
+     */
     protected $commentRepository;
 
+    /**
+     * Listing constructor.
+     * @param Template\Context $context
+     * @param CommentRepositoryInterface $commentRepository
+     * @param array $data
+     */
     public function __construct(
         Template\Context $context,
         CommentRepositoryInterface $commentRepository,
@@ -18,13 +39,12 @@ class Listing extends Template
     {
         parent::__construct($context, $data);
         $this->commentRepository = $commentRepository;
-        $this->postId = $this->getRequest()->getParam(("id"));
     }
 
     public function getCommentsByPost()
     {
         return $this->comments === null ?
-            $this->commentRepository->getCommentsByPostId($this->postId) :
+            $this->commentRepository->getCommentsByPostId($this->getRequest()->getParam(("id"))) :
             $this->comments;
     }
 }
