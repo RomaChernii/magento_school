@@ -102,11 +102,11 @@ class CommentRepository implements CommentRepositoryInterface
     }
 
     /**
-     * Load Post data collection by given search criteria
+     * Load Comment data collection by given search criteria
      *
      * @param \Magento\Framework\Api\SearchCriteriaInterface $criteria
      *
-     * @return \Skavronskiy\Blog\Model\ResourceModel\Post\Collection
+     * @return \Skavronskiy\Blog\Model\ResourceModel\Comment\Collection
      *
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      * @SuppressWarnings(PHPMD.NPathComplexity)
@@ -127,12 +127,12 @@ class CommentRepository implements CommentRepositoryInterface
         $searchResults->setTotalCount($collection->getSize());
         $collection->setCurPage($criteria->getCurrentPage());
         $collection->setPageSize($criteria->getPageSize());
-        $post = [];
-        /** @var Data\PostInterface $postModel */
-        foreach ($collection as $postModel) {
-            $post[] = $postModel;
+        $comment = [];
+        /** @var Data\CommentInterface $postModel */
+        foreach ($collection as $commentModel) {
+            $comment[] = $commentModel;
         }
-        $searchResults->setItems($post);
+        $searchResults->setItems($comment);
 
         return $searchResults;
     }
@@ -140,7 +140,7 @@ class CommentRepository implements CommentRepositoryInterface
     /**
      * Delete Post
      *
-     * @param \Skavronskiy\Blog\Api\Data\PostInterface $post
+     * @param \Skavronskiy\Blog\Api\Data\CommentInterface $post
      *
      * @return bool
      *
@@ -158,9 +158,9 @@ class CommentRepository implements CommentRepositoryInterface
     }
 
     /**
-     * Delete Post by given Post Identity
+     * Delete Comment by given Comment Identity
      *
-     * @param string $postId
+     * @param string $commentId
      *
      * @return bool
      *
