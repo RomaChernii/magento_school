@@ -57,7 +57,7 @@
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">First name</item>
                     <item name="dataScope" xsi:type="string">first_name</item>
-                    <item name="disabled" xsi:type="boolean">true</item>
+                    <!--<item name="disabled" xsi:type="boolean">true</item>-->
                 </item>
             </argument>
         </field>

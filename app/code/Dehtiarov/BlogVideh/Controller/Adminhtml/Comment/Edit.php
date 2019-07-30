@@ -9,7 +9,6 @@
  */
 namespace Dehtiarov\BlogVideh\Controller\Adminhtml\Comment;
 
-use Chleck\Blog\Model\Comment;
 use Magento\Backend\App\Action;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Registry;
@@ -67,7 +66,7 @@ class Edit extends Action
     ) {
         $this->resultPageFactory = $resultPageFactory;
         $this->coreRegistry = $registry;
-        $this->postRepository = $commentRepository;
+        $this->commentRepository = $commentRepository;
         parent::__construct($context);
     }
 
@@ -88,7 +87,7 @@ class Edit extends Action
     }
 
     /**
-     * Edit Post page
+     * Edit Comment page
      *
      * @return \Magento\Backend\Model\View\Result\Page | \Magento\Backend\Model\View\Result\Redirect
      */

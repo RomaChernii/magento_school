@@ -21,14 +21,14 @@ interface CommentSearchResultsInterface extends SearchResultsInterface
     /**
      * Get comment list
      *
-     * @return \Dehtiarov\BlogVideh\Api\Data\PostInterface[]
+     * @return \Dehtiarov\BlogVideh\Api\Data\CommentInterface[]
      */
     public function getItems();
 
     /**
      * Set comment list
      *
-     * @param \Dehtiarov\BlogVideh\Api\Data\PostInterface[] $items
+     * @param \Dehtiarov\BlogVideh\Api\Data\CommentInterface[] $items
      *
      * @return CommentSearchResultsInterface
      */
