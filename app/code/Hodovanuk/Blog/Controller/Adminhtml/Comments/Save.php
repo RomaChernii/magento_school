@@ -3,6 +3,7 @@ namespace Hodovanuk\Blog\Controller\Adminhtml\Comments;
 
 use Magento\Backend\App\Action;
 use Magento\Framework\App\Request\DataPersistorInterface;
+use Hodovanuk\Blog\Model\Comment;
 use Magento\Framework\DataObject;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\MediaStorage\Model\File\Uploader;
@@ -47,11 +48,11 @@ class Save extends Action
     public function __construct(
         Action\Context $context,
         DataPersistorInterface $dataPersistor,
-        CommentRepositoryInterface $comRepository,
+        CommentRepositoryInterface $comentRepository,
         CommentFactory $comFactory
     ) {
         $this->dataPersistor = $dataPersistor;
-        $this->commentRepository = $comRepository;
+        $this->commentRepository = $comentRepository;
         $this->commentFactory = $comFactory;
         parent::__construct($context);
     }
@@ -69,6 +70,7 @@ class Save extends Action
         $resultRedirect = $this->resultRedirectFactory->create();
 
         $data = $this->getRequest()->getPostValue();
+
         if ($data) {
             $postObject = new DataObject();
             $postObject->setData($data);
@@ -79,15 +81,21 @@ class Save extends Action
                 if (!$id) {
                     $data['id']= null;
                     $model = $this->commentFactory->create();
+
+                    if (!empty($data['answer_data'])) {
+                        $data['answer_data'] = Comment::STATUS_ANSWERED;
+                    }
                 } else {
                     $model = $this->commentRepository->getById($id);
                 }
+
                 $model->setData($data);
                 $this->commentRepository->save($model);
-                $this->messageManager->addSuccessMessage(__('You comment  save.'));
+                $this->messageManager->addSuccessMessage(__('Your comment  save.'));
                 $this->dataPersistor->clear('hodovanuk_blog_comment');
 
                 if ($this->getRequest()->getParam('back')) {
+
                     return $resultRedirect->setPath('*/*/edit', ['id' => $model->getId()]);
                 }
 

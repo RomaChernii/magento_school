@@ -104,7 +104,7 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
      */
     public function getCreateDate()
     {
-        return (bool)$this->getData(self::CREATE_DATE);
+        return $this->getData(self::CREATE_DATE);
     }
     /**
      * Get email

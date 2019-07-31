@@ -1,0 +1,42 @@
+<form class="form add comment"
+      action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+      method="post"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <legend class="legend"><h2><?= $block->escapeHtml(__('Add comment:')) ?></h2></legend>
+        <div class="field note no-label"><?= $block->escapeHtml(__('Leave comment here and admin give answer to you as quickly as possible.')) ?></div>
+        <div class="field first name required">
+            <label class="label" for="first_name"><span><?= $block->escapeHtml(__('First name')) ?></span></label>
+            <div class="control">
+                <input name="first_name" id="first_name" title="<?= $block->escapeHtmlAttr(__('First name')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field last name required">
+            <label class="label" for="last_name"><span><?= $block->escapeHtml(__('Last name')) ?></span></label>
+            <div class="control">
+                <input name="last_name" id="last_name" title="<?= $block->escapeHtmlAttr(__('Last name')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="email"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?= $block->escapeHtmlAttr(__('Email')) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>
+        <div class="field comment required">
+            <label class="label" for="comment"><span><?= $block->escapeHtml(__('Comment')) ?></span></label>
+            <div class="control">
+                <textarea name="comment" id="comment" title="<?= $block->escapeHtmlAttr(__('Comment')) ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="post_id" id="post_id" value="<?php echo $block->getPostId(); ?>" />
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Add comment')) ?>" class="action add comment primary">
+                <span><?= $block->escapeHtml(__('Add comment')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>
