@@ -144,12 +144,6 @@ class View extends AbstractPost
         if ($this->comments === null) {
             $postId = $this->getRequest()->getParam("id");
             $this->comments = $this->commentRepository->getCommentsByPostId($postId);
-//            $this->comments = $this->commentCollectionFactory->create()
-//                ->addFilter('post_id', $this->getRequest()->getParam(("post_id")))
-//                ->addOrder(
-//                    CommentInterface::UPDATE_AT,
-//                    CommentCollection::SORT_ORDER_DESC
-//                );
         }
 
         return $this->comments;

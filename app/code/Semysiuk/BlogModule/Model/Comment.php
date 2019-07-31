@@ -88,7 +88,6 @@ class Comment extends AbstractModel implements IdentityInterface, CommentInterfa
     public function getFullName()
     {
         $fullName = $this->getFirstName() . " " . $this->getLastName();
-        //$fullName = $fullName . $this->getLastName();
 
         return $fullName;
     }
