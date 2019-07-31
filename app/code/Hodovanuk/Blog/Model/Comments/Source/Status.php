@@ -39,6 +39,7 @@ class Status implements OptionSourceInterface
                 'value' => $key,
             ];
         }
+
         return $options;
     }
 }

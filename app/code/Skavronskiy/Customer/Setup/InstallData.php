@@ -1,30 +1,54 @@
 <?php
-
+/**
+ * Customer install data
+ */
 namespace Skavronskiy\Customer\Setup;
 
+use Magento\Eav\Api\AttributeRepositoryInterface;
 use Magento\Eav\Setup\EavSetupFactory;
-use Magento\Customer\Setup\CustomerSetupFactory;
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
-use Magento\Eav\Api\AttributeRepositoryInterface;
 use Magento\Customer\Model\Customer;
+use Magento\Customer\Api\CustomerMetadataInterface;
+use Magento\Customer\Model\ResourceModel\Attribute as AttributeCustomerResource;
+use Magento\Eav\Model\Entity\Attribute\SetFactory as AttributeSetFactory;
+use Magento\Eav\Model\Config;
 
+/**
+ * Class InstallData
+ *
+ * @package Skavronskiy\Customer\Setup
+ */
 class InstallData implements InstallDataInterface
 {
     /**
      * EAV setup factory
      *
-     * @var \Magento\Eav\Setup\EavSetupFactory
+     * @var EavSetupFactory
      */
     private $eavSetupFactory;
 
     /**
-     * Customer setup factory
+     * Eav config
      *
-     * @var CustomerSetupFactory
+     * @var Config
      */
-    private $customerSetupFactory;
+    private $eavConfig;
+
+    /**
+     * Attribute resource
+     *
+     * @var AttributeCustomerResource
+     */
+    protected $attributeResource;
+
+    /**
+     * Attribute set factor
+     *
+     * @var AttributeSetFactory
+     */
+    protected $attributeSetFactory;
 
     /**
      * Attribute repository interface
@@ -36,24 +60,46 @@ class InstallData implements InstallDataInterface
     /**
      * Constructor InstallData
      *
-     * @param EavSetupFactory              $eavSetupFactory
-     * @param CustomerSetupFactory         $customerSetupFactory
-     * @param AttributeRepositoryInterface $attributeRepository
+     * @param EavSetupFactory           $eavSetupFactory
+     * @param Config                    $eavConfig
+     * @param AttributeCustomerResource $attributeResource
+     * @param AttributeSetFactory       $attributeSetFactory
      */
     public function __construct(
         EavSetupFactory $eavSetupFactory,
-        CustomerSetupFactory $customerSetupFactory,
+        Config $eavConfig,
+        AttributeCustomerResource $attributeResource,
+        AttributeSetFactory $attributeSetFactory,
         AttributeRepositoryInterface $attributeRepository
     ) {
         $this->eavSetupFactory = $eavSetupFactory;
-        $this->customerSetupFactory = $customerSetupFactory;
+        $this->eavConfig = $eavConfig;
+        $this->attributeResource = $attributeResource;
+        $this->attributeSetFactory = $attributeSetFactory;
         $this->attributeRepository = $attributeRepository;
     }
 
+    /**
+     *  Add new customer attribute 'customer_company'
+     *
+     * @param ModuleDataSetupInterface $setup
+     * @param ModuleContextInterface $context
+     *
+     * @return void
+     */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
-        $customerSetup = $this->customerSetupFactory->create(['setup' => $setup]);
+        //$this->attributeRepository->deleteById(155);
+        $this->attributeRepository->deleteById(156);
+        $customerSetup = $this->eavSetupFactory->create(['setup' => $setup]);
 
+        // Get default attribute set id for customer
+        $attributeSetId = $this->eavConfig->getEntityType(Customer::ENTITY)->getDefaultAttributeSetId();
+
+        // Get default group id for default customer attribute set
+        $attributeGroupId = $this->attributeSetFactory->create()->getDefaultGroupId($attributeSetId);
+
+        // Add custom customer attribute
         $customerSetup->addAttribute(
             Customer::ENTITY,
             'customer_company_skavronskiy',
@@ -68,14 +114,23 @@ class InstallData implements InstallDataInterface
                 'source'         => '',
                 'validate_rules' => '',
                 'system'         => 0,
+                'user_defined'   => 1,
                 'frontend_label' => 'Company name Skavronskiy',
                 'backend_model'  => ''
             ]
         );
 
-        // show the attribute in the following forms
-        $attribute = $customerSetup
-            ->getEavConfig()
+        // Add custom customer attribute to attribute set
+        $customerSetup->addAttributeToSet(
+            CustomerMetadataInterface::ENTITY_TYPE_CUSTOMER,
+            $attributeSetId,
+            $attributeGroupId,
+            'customer_company_skavronskiy'
+        );
+
+        // Show the attribute in the following forms
+        $attribute = $this
+            ->eavConfig
             ->getAttribute(
                 Customer::ENTITY,
                 'customer_company_skavronskiy'
@@ -90,7 +145,7 @@ class InstallData implements InstallDataInterface
                 ]
             );
 
-        $this->attributeRepository->save($attribute);
+        $this->attributeResource->save($attribute);
 
         $setup->endSetup();
     }

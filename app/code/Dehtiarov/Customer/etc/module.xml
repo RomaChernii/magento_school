@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Dehtiarov Customer config
+ *
+ * @category  Dehtiarov
+ * @package   Dehtiarov\Customer
+ * @author    Dehtiarov Victor <videh@smile.fr>
+ * @copyright 2019 Smile
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Dehtiarov_Customer" setup_version="0.0.1">
+        <sequence>
+            <module name="Magento_Customer"/>
+            <module name="Magento_Eav"/>
+        </sequence>
+    </module>
+</config>

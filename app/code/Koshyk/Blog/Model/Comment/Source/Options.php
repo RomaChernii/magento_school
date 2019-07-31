@@ -1,7 +1,16 @@
 <?php
+/**
+ * Blog Comment options
+ *
+ * @category  Koshyk
+ * @package   Koshyk\Blog
+ * @author    Roman Koshyk <romadaaaa@gmail.com>
+ */
 namespace Koshyk\Blog\Model\Comment\Source;
+
 use Magento\Framework\Data\OptionSourceInterface;
 use Koshyk\Blog\Model\ResourceModel\Post\CollectionFactory;
+
 /**
  * Class Status
  *

@@ -102,6 +102,95 @@ class UpgradeSchema implements UpgradeSchemaInterface
             $setup->endSetup();
         }
 
+        if (version_compare($context->getVersion(), '0.0.4') < 0) {
+            $setup->startSetup();
+
+            $connection = $setup->getConnection();
+            $connection->dropTable($connection->getTableName('videh_blog_comment'));
+
+
+            $table = $connection->newTable(
+                $setup->getTable('videh_blog_comment')
+            )->addColumn(
+                'id',
+                Table::TYPE_INTEGER,
+                null,
+                [
+                    'identity' => true,
+                    'unsigned' => true,
+                    'nullable' => false,
+                    'primary' => true
+                ],
+                'Comment id'
+            )->addColumn(
+                'post_id',
+                Table::TYPE_INTEGER,
+                null,
+                [],
+                'Post id'
+            )->addColumn(
+                'first_name',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'First name'
+            )->addColumn(
+                'last_name',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'Last name'
+            )->addColumn(
+                'email',
+                Table::TYPE_TEXT,
+                255,
+                [],
+                'Email'
+            )->addColumn(
+                'comment',
+                Table::TYPE_TEXT,
+                '2M',
+                [],
+                'Comment'
+            )->addColumn(
+                'answer',
+                Table::TYPE_TEXT,
+                '2M',
+                [],
+                'Answer'
+            )->addColumn(
+                'status',
+                Table::TYPE_SMALLINT,
+                null,
+                [
+                    'nullable' => false,
+                    'default' => '1'
+                ],
+                'Is Post Active'
+            )->addColumn(
+                'created_at',
+                Table::TYPE_TIMESTAMP,
+                null,
+                [
+                    'nullable' => false,
+                    'default' => Table::TIMESTAMP_INIT
+                ],
+                'Post created at'
+            )->addForeignKey(
+                $setup->getFkName('videh_blog_comment', 'id', 'videh_blog_post', 'id'),
+                'id',
+                $setup->getTable('videh_blog_post'),
+                'id',
+                Table::ACTION_CASCADE
+            )->setComment(
+                'Blog Comment Table'
+            );
+
+            $connection->createTable($table);
+
+            $setup->endSetup();
+        }
+
         $setup->endSetup();
     }
 }

@@ -23,6 +23,7 @@ class View extends AbstractPost
      * Config path const
      */
     const DEMANDED_IMAGE_HEIGHT = 'hodovanuk_blog/post_view/image/height';
+
     const DEMANDED_IMAGE_WIDTH = 'hodovanuk_blog/post_view/image/width';
     /**#@-*/
 
@@ -89,21 +90,42 @@ class View extends AbstractPost
     }
 
     /**
-     * Set post title
-     *
      * @return $this|AbstractPost
+     *
+     * @throws \Magento\Framework\Exception\LocalizedException
      */
     protected function _prepareLayout()
     {
         parent::_prepareLayout();
         $this->pageConfig->getTitle()->set(__($this->getPost()->getTitle()));
+        if ($this->getComment()) {
+            $pager = $this->getLayout()->createBlock(
+                'Magento\Theme\Block\Html\Pager',
+                'blog.post.listing.pager'
+            )->setCollection(
+                $this->getComment()
+            );
+            $this->setChild('pager', $pager);
+            $this->getComment()->load();
+        }
+
         return $this;
+    }
+
+    /**
+     * Get child template pager
+     *
+     * @return string
+     */
+    public function getPagerHtml()
+    {
+        return $this->getChildHtml('pager');
     }
 
     /**
      * Get post by id
      *
-     * @return mixed
+     * @return PostRepositoryInterface
      */
     public function getPost()
     {
@@ -123,7 +145,7 @@ class View extends AbstractPost
     /**
      * Ge comments by post_id
      *
-     * @return mixed
+     * @return object CommentRepositoryInterface
      */
     public function getComment()
     {
@@ -143,7 +165,7 @@ class View extends AbstractPost
      *
      * @param $status
      *
-     * @return comment status
+     * @return string
      */
     public function getCommentStatus($status)
     {

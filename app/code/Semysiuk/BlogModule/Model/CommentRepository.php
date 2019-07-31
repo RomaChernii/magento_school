@@ -6,7 +6,7 @@ use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
 use Magento\Framework\Exception\CouldNotSaveException;
 use Magento\Framework\Exception\NoSuchEntityException;
-use Semysiu\BlogModule\Api\CommentRepositoryInterface;
+use Semysiuk\BlogModule\Api\CommentRepositoryInterface;
 use Semysiuk\BlogModule\Api\Data;
 use Semysiuk\BlogModule\Model\ResourceModel\Comment as ResourceComment;
 use Semysiuk\BlogModule\Model\ResourceModel\Comment\CollectionFactory as CommentCollectionFactory;

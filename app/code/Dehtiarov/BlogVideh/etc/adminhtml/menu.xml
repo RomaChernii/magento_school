@@ -24,5 +24,13 @@
              parent="Dehtiarov_BlogVideh::blog_core"
              action="dehtiarov_blogvideh/post"
              resource="Dehtiarov_BlogVideh::post" />
+
+        <add id="Dehtiarov_BlogVideh::comment"
+             title="Comments"
+             module="Dehtiarov_BlogVideh"
+             sortOrder="20"
+             parent="Dehtiarov_BlogVideh::blog_core"
+             action="dehtiarov_blogvideh/comment"
+             resource="Dehtiarov_BlogVideh::comment" />
     </menu>
 </config>

@@ -9,7 +9,32 @@
  */
 /** @var \Roche\Test\Block\Renderer\Wording $block */
 /** @var \Roche\Configuration\Helper\Data $configData */
-$configData = $this->helper('Roche\Configuration\Helper\Data');
 ?>
 <h1><?php echo $block->getText(); ?></h1>
-<h1><?php echo $configData->getInputValue(); ?></h1>
+
+<!-- Redirect to 'roche_test/index/index' -->
+<button class="action accept"
+      id="redirect-accept"
+      data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect?'); ?>"
+      data-url="<?php /* @escapeNotVerified */ echo $block->getPageUrl(); ?>"
+      data-mage-init='{"buttonAlert": {"title": "<?= __('Title to redirect'); ?>"}}'>
+            <?php /* @escapeNotVerified */ echo __('Go to another page'); ?>
+</button>
+
+<!-- Redirect to 'checkout/cart' -->
+<button class="action accept"
+      id="redirect-accept"
+      data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect to cart?'); ?>"
+      data-url="<?php /* @escapeNotVerified */ echo $block->getCartUrl(); ?>"
+      data-mage-init='{"buttonAlert": {}}'>
+            <?php /* @escapeNotVerified */ echo __('Go to cat page'); ?>
+</button>
+
+<!-- Redirect to home page -->
+<button class="action accept"
+      id="redirect-accept"
+      data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect to home page?'); ?>"
+      data-url="<?php /* @escapeNotVerified */ echo $block->getHomeUrl(); ?>"
+      data-mage-init='{"buttonAlert": {}}'>
+            <?php /* @escapeNotVerified */ echo __('Go to home page'); ?>
+</button>
