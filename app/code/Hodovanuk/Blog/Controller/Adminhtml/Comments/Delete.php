@@ -50,9 +50,11 @@ class Delete extends Action
                 $postRepository = $this->commentRepository;
                 $postRepository->deleteById($id);
                 $this->messageManager->addSuccessMessage(__('The comment has been deleted.'));
+
                 return $resultRedirect->setPath('*/*/');
             } catch (\Exception $e) {
                 $this->messageManager->addErrorMessage($e->getMessage());
+
                 return $resultRedirect->setPath('*/*/edit', ['id' => $id]);
             }
         }

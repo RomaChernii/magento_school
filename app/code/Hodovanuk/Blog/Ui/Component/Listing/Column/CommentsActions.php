@@ -15,7 +15,7 @@ class CommentsActions extends Column
     /**
      * Url path to answer page
      */
-    const URL_PATH_ANSWER = 'hodovanuk_blog/comments/answer';
+    const URL_PATH_ANSWER = 'hodovanuk_blog/comments/edit';
 
     /**
      * Url path to delete page
@@ -72,7 +72,7 @@ class CommentsActions extends Column
             foreach ($dataSource['data']['items'] as & $item) {
                 if (isset($item['id'])) {
                     $item[$this->getData('name')] = [
-                        'answer' => [
+                        'edit' => [
                             'href' => $this->urlBuilder->getUrl(
                                 static::URL_PATH_ANSWER,
                                 [

@@ -10,7 +10,7 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 class SaveButton extends GenericButton implements ButtonProviderInterface
 {
     /**
-     * Get save button data
+     * Get Save button
      *
      * @return array
      */
@@ -23,7 +23,7 @@ class SaveButton extends GenericButton implements ButtonProviderInterface
                 'mage-init' => ['button' => ['event' => 'save']],
                 'form-role' => 'save',
             ],
-            'sort_order' => 90,
+            'sort_order' => 40,
         ];
     }
 }

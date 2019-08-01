@@ -1,30 +1,59 @@
 <?php
+/**
+ * Customer install data
+ *
+ * @category  Roche
+ * @package   Roche\Customer
+ * @author    Roman Chernii <roche@smile.fr>
+ * @copyright 2019 Smile
+ */
 namespace Koshyk\Customer\Setup;
 
 use Magento\Eav\Setup\EavSetupFactory;
-use Magento\Customer\Setup\CustomerSetupFactory;
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
-use Magento\Eav\Api\AttributeRepositoryInterface;
 use Magento\Customer\Model\Customer;
+use Magento\Customer\Api\CustomerMetadataInterface;
+use Magento\Customer\Model\ResourceModel\Attribute as AttributeCustomerResource;
+use Magento\Eav\Model\Entity\Attribute\SetFactory as AttributeSetFactory;
+use Magento\Eav\Model\Config;
+use Magento\Eav\Api\AttributeRepositoryInterface;
 
-
+/**
+ * Class InstallData
+ *
+ * @package Roche\Customer\Setup
+ */
 class InstallData implements InstallDataInterface
 {
     /**
      * EAV setup factory
      *
-     * @var \Magento\Eav\Setup\EavSetupFactory
+     * @var EavSetupFactory
      */
     private $eavSetupFactory;
 
     /**
-     * Customer setup factory
+     * Eav config
      *
-     * @var CustomerSetupFactory
+     * @var Config
      */
-    private $customerSetupFactory;
+    private $eavConfig;
+
+    /**
+     * Attribute resource
+     *
+     * @var AttributeCustomerResource
+     */
+    protected $attributeResource;
+
+    /**
+     * Attribute set factor
+     *
+     * @var AttributeSetFactory
+     */
+    protected $attributeSetFactory;
 
     /**
      * Attribute repository interface
@@ -33,33 +62,52 @@ class InstallData implements InstallDataInterface
      */
     private $attributeRepository;
 
+
     /**
      * Constructor InstallData
      *
-     * @param EavSetupFactory              $eavSetupFactory
-     * @param CustomerSetupFactory         $customerSetupFactory
-     * @param AttributeRepositoryInterface $attributeRepository
+     * @param EavSetupFactory           $eavSetupFactory
+     * @param Config                    $eavConfig
+     * @param AttributeCustomerResource $attributeResource
+     * @param AttributeSetFactory       $attributeSetFactory
      */
     public function __construct(
         EavSetupFactory $eavSetupFactory,
-        CustomerSetupFactory $customerSetupFactory,
-        AttributeRepositoryInterface $attributeRepository
+        Config $eavConfig,
+        AttributeCustomerResource $attributeResource,
+        AttributeSetFactory $attributeSetFactory
     ) {
         $this->eavSetupFactory = $eavSetupFactory;
-        $this->customerSetupFactory = $customerSetupFactory;
-        $this->attributeRepository = $attributeRepository;
+        $this->eavConfig = $eavConfig;
+        $this->attributeResource = $attributeResource;
+        $this->attributeSetFactory = $attributeSetFactory;
     }
 
+    /**
+     *  Add new customer attribute 'customer_company'
+     *
+     * @param ModuleDataSetupInterface $setup
+     * @param ModuleContextInterface $context
+     *
+     * @return void
+     */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
-        $customerSetup = $this->customerSetupFactory->create(['setup' => $setup]);
+        $customerSetup = $this->eavSetupFactory->create(['setup' => $setup]);
 
+        // Get default attribute set id for customer
+        $attributeSetId = $this->eavConfig->getEntityType(Customer::ENTITY)->getDefaultAttributeSetId();
+
+        // Get default group id for default customer attribute set
+        $attributeGroupId = $this->attributeSetFactory->create()->getDefaultGroupId($attributeSetId);
+
+        // Add custom customer attribute
         $customerSetup->addAttribute(
             Customer::ENTITY,
             'people_check',
             [
                 'type'           => 'text',
-                'label'          => 'People check',
+                'label'          => 'People Check',
                 'input'          => 'text',
                 'required'       => 0,
                 'visible'        => 1,
@@ -68,14 +116,23 @@ class InstallData implements InstallDataInterface
                 'source'         => '',
                 'validate_rules' => '',
                 'system'         => 0,
-                'frontend_label' => 'Who are you?',
+                'user_defined'   => 1,
+                'frontend_label' => 'People Check',
                 'backend_model'  => ''
             ]
         );
 
-        // show the attribute in the following forms
-        $attribute = $customerSetup
-            ->getEavConfig()
+        // Add custom customer attribute to attribute set
+        $customerSetup->addAttributeToSet(
+            CustomerMetadataInterface::ENTITY_TYPE_CUSTOMER,
+            $attributeSetId,
+            $attributeGroupId,
+            'people_check'
+        );
+
+        // Show the attribute in the following forms
+        $attribute = $this
+            ->eavConfig
             ->getAttribute(
                 Customer::ENTITY,
                 'people_check'
@@ -90,7 +147,7 @@ class InstallData implements InstallDataInterface
                 ]
             );
 
-        $this->attributeRepository->save($attribute);
+        $this->attributeResource->save($attribute);
 
         $setup->endSetup();
     }

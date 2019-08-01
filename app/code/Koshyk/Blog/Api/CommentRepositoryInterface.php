@@ -1,6 +1,6 @@
 <?php
 /**
- * Blog post repository interface
+ * Blog comment repository interface
  *
  * @category  Koshyk
  * @package   Koshyk\Blog
@@ -12,23 +12,23 @@ use Magento\Framework\Api\SearchCriteriaInterface;
 use Koshyk\Blog\Api\Data\CommentInterface;
 
 /**
- * Interface PostRepositoryInterface
+ * Interface CommentRepositoryInterface
  *
  * @package Koshyk\Blog\Api
  */
 interface CommentRepositoryInterface
 {
     /**
-     * Retrieve a post by it's id
+     * Retrieve a comment by it's id
      *
      * @param $objectId
      *
-     * @return PostRepositoryInterface
+     * @return CommentRepositoryInterface
      */
     public function getById($objectId);
 
     /**
-     * Retrieve post which match a specified criteria.
+     * Retrieve comment which match a specified criteria.
      *
      * @param SearchCriteriaInterface|null $searchCriteria
      *
@@ -37,16 +37,16 @@ interface CommentRepositoryInterface
     public function getList(SearchCriteriaInterface $searchCriteria = null);
 
     /**
-     * Save post
+     * Save comment
      *
      * @param CommentInterface $object
      *
-     * @return PostRepositoryInterface
+     * @return CommentRepositoryInterface
      */
     public function save(CommentInterface $object);
 
     /**
-     * Delete a post by its id
+     * Delete a comment by its id
      *
      * @param int $objectId
      *

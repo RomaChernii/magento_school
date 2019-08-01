@@ -1,6 +1,6 @@
 <?php
 
-namespace Semysiu\BlogModule\Api;
+namespace Semysiuk\BlogModule\Api;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Semysiuk\BlogModule\Api\Data\CommentInterface;

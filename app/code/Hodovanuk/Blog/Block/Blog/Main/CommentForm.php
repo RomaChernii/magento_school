@@ -23,7 +23,7 @@ class CommentForm extends Template
     /**
      * Get current post id
      *
-     * @return mixed
+     * @return int
      */
     public function getCurrentPostId()
     {

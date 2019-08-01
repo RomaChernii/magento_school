@@ -25,7 +25,7 @@ class SaveButton implements ButtonProviderInterface
     public function getButtonData()
     {
         return [
-            'label' => __('Quick Post'),
+            'label' => __('Save Comment'),
             'class' => 'save primary',
             'data_attribute' => [
                 'mage-init' => ['button' => ['event' => 'save']],
