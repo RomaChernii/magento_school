@@ -43,8 +43,7 @@ class Listing extends Template
 
     public function getCommentsByPost()
     {
-        return $this->comments === null ?
-            $this->commentRepository->getCommentsByPostId($this->getRequest()->getParam(("id"))) :
-            $this->comments;
+        return $this->comments = 
+            $this->commentRepository->getCommentsByPostId($this->getRequest()->getParam("id"));
     }
 }
