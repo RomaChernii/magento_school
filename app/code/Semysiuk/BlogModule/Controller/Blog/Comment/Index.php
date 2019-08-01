@@ -54,20 +54,20 @@ class Index extends Action
     {
         $resultRedirect = $this->resultRedirectFactory->create();
         $data =  $this->getRequest()->getPostValue();
+        $resultRedirect->setPath(static::COMMENT_SUCCESS_URL, ['id' => $this->getRequest()->getParam('id')]);
 
-        if ($data)
-        {
+        if ($data) {
             $model = $this->commentFactory->create();
             $model->setData($data);
-
-            $this->commentRepository->save($model);
-
-            $resultRedirect->setPath(static::COMMENT_SUCCESS_URL, ['id' => $model->getPostId()]);
-        }
-        else
-        {
-            $resultRedirect->setPath(static::COMMENT_SUCCESS_URL, ['id' => $this->getRequest()->getParam('id')]);
-        }
+            
+            try {
+                $this->commentRepository->save($model);
+                $this->messageManager->addSuccessMessage(__('Comment successfully saved.'));
+            }
+            catch (\Exception $e) {
+                $this->messageManager->addExceptionMessage($e, __('Something went wrong while save the comment.'));
+            }
+        }        
 
         return $resultRedirect;
     }
