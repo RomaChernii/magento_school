@@ -189,6 +189,7 @@ class CommentRepository implements CommentRepositoryInterface
     public function getCommentsByPostId($postId)
     {
         $comments = $this->commentCollectionFactory->create();
+        
         return $comments->addFilter("post_id", $postId);
     }
 }
