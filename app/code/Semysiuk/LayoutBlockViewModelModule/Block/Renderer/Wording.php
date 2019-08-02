@@ -18,4 +18,32 @@ class Wording extends Template
     {
         return self::TEXT;
     }
+
+    /**
+     * Get page url
+     *
+     * @return string
+     */
+    public function getPageUrl()
+    {
+        return $this->getUrl('layoutblockviewmodel');
+    }
+    /**
+     * Get cart url
+     *
+     * @return string
+     */
+    public function getCartUrl()
+    {
+        return $this->getUrl('checkout/cart');
+    }
+    /**
+     * Get home url
+     *
+     * @return string
+     */
+    public function getHomeUrl()
+    {
+        return $this->getBaseUrl();
+    }
 }
