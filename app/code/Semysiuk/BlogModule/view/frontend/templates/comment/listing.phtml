@@ -1,7 +1,7 @@
 <?php
 /** @var $block \Semysiuk\BlogModule\Block\Comment\Listing */
 /** @var $comments \Semysiuk\BlogModule\Api\Data\CommentInterface */
-$comments = $block->getCommentsByPost();
+$comments = $block->getCommentsByPost()->getItems();
 ?>
 
 <hr/>

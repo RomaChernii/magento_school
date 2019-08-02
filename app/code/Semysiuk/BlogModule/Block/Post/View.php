@@ -10,6 +10,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Message\ManagerInterface;
 use Semysiuk\BlogModule\Model\ResourceModel\Comment\Collection as CommentCollection;
 use Semysiuk\BlogModule\Model\ResourceModel\Comment\CollectionFactory;
+use Semysiuk\BlogModule\Api\Data\CommentInterface;
 
 /**
  * Class View
@@ -108,9 +109,28 @@ class View extends AbstractPost
     protected function _prepareLayout()
     {
         parent::_prepareLayout();
-        $this->pageConfig->getTitle()->set(__($this->getPost()->getTitle()));
+        $this->pageConfig->getTitle()->set(__('Commetns:'));
+
+        if ($this->getComments()) {
+            $pager = $this->getLayout()->createBlock(
+                'Magento\Theme\Block\Html\Pager',
+                'blog.post.listing.pager'
+            )->setCollection(
+                $this->getComments()
+            );
+            $this->setChild('pager', $pager);
+            $this->getComments()->load();
+        }
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPagerHtml()
+    {
+        return $this->getChildHtml('pager');
     }
 
     /**
@@ -144,6 +164,10 @@ class View extends AbstractPost
         if ($this->comments === null) {
             $postId = $this->getRequest()->getParam("id");
             $this->comments = $this->commentRepository->getCommentsByPostId($postId);
+            $this->comments->addOrder(
+                CommentInterface::STATUS,
+                CommentCollection::SORT_ORDER
+            );
         }
 
         return $this->comments;
