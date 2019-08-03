@@ -1,5 +1,33 @@
 <?php
 $configData = $this->helper('Skavronskiy\SamConfiguration\Helper\Data');
 ?>
-<h1> <?php echo $block->getText(); ?></h1>
 <h1> <?php echo $configData->getValue(); ?></h1>
+<h1> <?php echo $block->getText(); ?></h1>
+
+<!-- Redirect to 'skavronskiy_blog/blog_post' -->
+<button class="skavronskiy_first_module"
+        id="skavronskiy_first_module"
+        data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect to blog?'); ?>"
+        data-url="<?php /* @escapeNotVerified */ echo $block->getBlogUrl(); ?>"
+        data-mage-init='{"buttonAlert": {"title": "<?= __('Title to redirect'); ?>"}}'>
+    <?php /* @escapeNotVerified */ echo __('Go to blog page'); ?>
+</button>
+
+<!-- Redirect to 'checkout/cart' -->
+<button class="skavronskiy_first_module"
+        id="skavronskiy_first_module"
+        data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect to cart?'); ?>"
+        data-url="<?php /* @escapeNotVerified */ echo $block->getCartUrl(); ?>"
+        data-mage-init='{"buttonAlert": {}}'>
+    <?php /* @escapeNotVerified */ echo __('Go to cat page'); ?>
+</button>
+
+<!-- Redirect to home page -->
+<button class="skavronskiy_first_module"
+        id="skavronskiy_first_module"
+        data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect to home page?'); ?>"
+        data-url="<?php /* @escapeNotVerified */ echo $block->getHomeUrl(); ?>"
+        data-mage-init='{"buttonAlert": {}}'>
+    <?php /* @escapeNotVerified */ echo __('Go to home page'); ?>
+</button>
+
