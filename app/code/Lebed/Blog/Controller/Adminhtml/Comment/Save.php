@@ -16,6 +16,7 @@ use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\DataObject;
 use Magento\Framework\Exception\NoSuchEntityException;
+use Lebed\Blog\Model\Comment as CommentModel;
 
 /**
  * Class Save
@@ -101,11 +102,11 @@ class Save extends Action
 
                 $status = $model->getStatus();
                 $answer = $model->getAnswer();
-                if ($status == \Lebed\Blog\Model\Comment::STATUS_NEW && !$answer) {
-                    $model->setStatus(\Lebed\Blog\Model\Comment::STATUS_IN_PROGRESS);
+                if ($status == CommentModel::STATUS_NEW && !$answer) {
+                    $model->setStatus(CommentModel::STATUS_IN_PROGRESS);
                 }
                 if ($answer) {
-                    $model->setStatus(\Lebed\Blog\Model\Comment::STATUS_CLOSED);
+                    $model->setStatus(CommentModel::STATUS_CLOSED);
                 }
                 $this->commentRepository->save($model);
 
