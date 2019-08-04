@@ -26,6 +26,7 @@ $comments = $block->getComments()->getItems();
                     <p><b><?= __('Answer:') ?></b> <?= $block->escapeHtml($comment->getAnswer()) ?></p>
                 <?php endif; ?>
             </div>
+            <hr />
         <?php endforeach; ?>
         <?php if ($block->getPagerHtml()) : ?>
             <div class="blog-post-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>

@@ -12,6 +12,7 @@ namespace Lebed\Blog\Model;
 use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Model\AbstractModel;
 use Lebed\Blog\Api\Data\CommentInterface;
+use Magento\Framework\Validator\EmailAddress;
 
 /**
  * Class Comment
@@ -279,5 +280,42 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
             self::STATUS_IN_PROGRESS => __('In progress'),
             self::STATUS_CLOSED      => __('Closed'),
         ];
+    }
+
+    /**
+     * Validate Comment
+     *
+     * @return array|bool
+     * @throws \Zend_Validate_Exception
+     */
+    public function validate()
+    {
+        $errors = [];
+
+        if (!\Zend_Validate::is($this->getFirstName(), 'NotEmpty')) {
+            $errors[] = __('Please enter your first name');
+        }
+
+        if (!\Zend_Validate::is($this->getLastName(), 'NotEmpty')) {
+            $errors[] = __('Please enter your last name');
+        }
+
+        if (!\Zend_Validate::is($this->getEmail(), 'NotEmpty')) {
+            $errors[] = __('Please enter your e-mail');
+        }
+
+        if (!\Zend_Validate::is($this->getEmail(), EmailAddress::class)) {
+            $errors[] = __('Please enter a valid e-mail');
+        }
+
+        if (!\Zend_Validate::is($this->getComment(), 'NotEmpty')) {
+            $errors[] = __('Please enter a comment');
+        }
+
+        if (empty($errors)) {
+            return true;
+        }
+
+        return $errors;
     }
 }
