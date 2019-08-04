@@ -17,6 +17,7 @@
                     <argument name="css_class" xsi:type="string">page-title</argument>
                 </arguments>
             </block>
+            <block class="Magento\Framework\View\Element\Template" name="button.popup.lebed" template="Lebed_SecondHomeModule::button.phtml" after="-" />
         </referenceContainer>
     </body>
 </page>

@@ -1,0 +1,26 @@
+<?php
+/**
+ * Lebed SecondHomeModule button.phtml
+ *
+ * @category  Lebed
+ * @package   Lebed/SecondHomeModule
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+/** @var \Magento\Framework\View\Element\Template $block */
+?>
+
+<button id="btn-popup-lebed"
+        data-mage-init='{"buttonAlertLebed": {"title": "First Popup title"}}'
+        data-content="Data content for first popup"
+        data-url="<?= $block->getUrl('lebed_blog/blog_post/index')?>"><?= __('Button for Pop-up') ?></button>
+
+<button id="btn-popup-lebed2"
+        data-mage-init='{"buttonAlertLebed": {"title": "Second Popup title"}}'
+        data-content="Data content for second popup"
+        data-url="<?= $block->getUrl('/')?>"><?= __('Button for Pop-up') ?></button>
+
+<button id="btn-popup-lebed3"
+        data-mage-init='{"buttonAlertLebed": {"title": "Third Popup title"}}'
+        data-content="Data content for third popup"
+        data-url="<?= $block->getUrl('customer/account/login')?>"><?= __('Button for Pop-up') ?></button>
