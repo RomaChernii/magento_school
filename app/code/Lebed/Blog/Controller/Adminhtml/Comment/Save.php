@@ -94,15 +94,21 @@ class Save extends Action
             $id = $this->getRequest()->getParam('id');
 
             try {
+                /** @var \Lebed\Blog\Model\Comment $model */
                 $model = $this->commentRepository->getById($id);
-                if (($data['status'] == 'new') && (!$data['answer'])) {
-                    $data['status'] = 'in_progress';
-                }
-                if ($data['answer']) {
-                    $data['status'] = 'closed';
-                }
                 $model->setData($data);
                 $this->commentRepository->save($model);
+
+                $status = $model->getStatus();
+                $answer = $model->getAnswer();
+                if ($status == \Lebed\Blog\Model\Comment::STATUS_NEW && !$answer) {
+                    $model->setStatus(\Lebed\Blog\Model\Comment::STATUS_IN_PROGRESS);
+                }
+                if ($answer) {
+                    $model->setStatus(\Lebed\Blog\Model\Comment::STATUS_CLOSED);
+                }
+                $this->commentRepository->save($model);
+
                 $this->messageManager->addSuccessMessage(__('Your comment updated'));
                 $this->dataPersistor->clear('lebed_blog_comment');
 
