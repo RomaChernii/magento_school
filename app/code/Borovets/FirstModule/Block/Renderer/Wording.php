@@ -19,4 +19,24 @@ class Wording extends Template
     {
         return __('Hello World');
     }
+
+    /**
+     * Get blog url
+     *
+     * @return string
+     */
+    public function getBlogUrl()
+    {
+        return $this->getUrl('borovets_blog/post');
+    }
+
+    /**
+     * Get home page url
+     *
+     * @return string
+     */
+    public function getHomeUrl()
+    {
+        return $this->getBaseUrl();
+    }
 }
