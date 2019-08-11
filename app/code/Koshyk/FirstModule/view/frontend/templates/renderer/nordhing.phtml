@@ -1,1 +1,17 @@
 <h1><?php echo $block->getText(); ?></h1>
+
+<button class="action accept"
+        id="redirect-accept"
+        data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect?'); ?>"
+        data-url="<?php /* @escapeNotVerified */ echo $block->getPageUrl(); ?>"
+        data-mage-init='{"buttonAlert": {"title": "<?= __('Title to redirect'); ?>"}}'>
+    <?php /* @escapeNotVerified */ echo __('Go to another page'); ?>
+</button>
+
+<button class="action accept"
+        id="redirect-accept"
+        data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect?'); ?>"
+        data-url="<?php /* @escapeNotVerified */ echo $block->getAdminMenuUrl(); ?>"
+        data-mage-init='{"buttonAlert": {"title": "<?= __('Title to redirect'); ?>"}}'>
+    <?php /* @escapeNotVerified */ echo __('Go to admin menu'); ?>
+</button>

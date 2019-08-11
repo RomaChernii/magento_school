@@ -18,6 +18,26 @@ use Magento\Framework\View\Element\Template;
 class Nordhing extends Template
 {
     /**
+     * Get page url
+     *
+     * @return string
+     */
+    public function getPageUrl()
+    {
+        return $this->getUrl('koshyk_blog/blog_post');
+    }
+
+    /**
+     * Get page url
+     *
+     * @return string
+     */
+    public function getAdminMenuUrl()
+    {
+        return $this->getUrl('admin');
+    }
+
+    /**
      * Get text
      *
      * return string
