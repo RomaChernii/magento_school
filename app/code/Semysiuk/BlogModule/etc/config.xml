@@ -5,14 +5,14 @@
         <semysiuk_blogmodule>
             <post_listing>
                 <image>
-                    <height>500</height>
-                    <width>500</width>
+                    <height>400</height>
+                    <width>400</width>
                 </image>
             </post_listing>
             <post_view>
                 <image>
-                    <height>1000</height>
-                    <width>1000</width>
+                    <height>500</height>
+                    <width>500</width>
                 </image>
             </post_view>
         </semysiuk_blogmodule>
