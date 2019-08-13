@@ -13,13 +13,6 @@ use Semysiuk\BlogModule\Api\CommentRepositoryInterface;
 class Listing extends Template
 {
     /**
-     * Comment Collection
-     *
-     * @var CommentCollection
-     */
-    protected $comments;
-
-    /**
      *Comment Repository
      *
      * @var CommentRepositoryInterface
@@ -43,7 +36,6 @@ class Listing extends Template
 
     public function getCommentsByPost()
     {
-        return $this->comments = 
-            $this->commentRepository->getCommentsByPostId($this->getRequest()->getParam("id"));
+        return $this->commentRepository->getCommentsByPostId($this->getRequest()->getParam("id"));
     }
 }

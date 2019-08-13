@@ -77,20 +77,24 @@ class Save extends Action
 
         $data = $this->getRequest()->getPostValue();
 
-        $id = $this->getRequest()->getParam('id');
-
-        if ($data['answer']) {
-            $model = $this->commentRepository->getById($id);
-            $model->setData($data);
-            
+        if ($data) {
+            $id = $this->getRequest()->getParam('id');
             try {
+                if (!$id) {
+                    $data['id'] = null;
+                    $model = $this->commentFactory->create();
+                } else {
+                    $model = $this->commentRepository->getById($id);
+                }
+                $model->setData($data);
+                if ($model['answer'] != null) {
+                    $model->setStatus(Comment::STATUS_CLOSED);
+                }
                 $this->commentRepository->save($model);
-                $model->setStatus(Comment::STATUS_CLOSED);
                 $this->messageManager->addSuccessMessage(__('The reply to the comment is written.'));
-                
+
                 return $resultRedirect->setPath('*/*/');
-            }
-            catch (\Exception $e) {
+            } catch (\Exception $e) {
                 $this->messageManager->addExceptionMessage($e, __('Something went wrong while save the comment.'));
             }
         }
