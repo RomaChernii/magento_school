@@ -1,0 +1,49 @@
+<?php
+/** @var $block \Semysiuk\BlogModule\Block\Comment\Listing */
+/** @var $comments \Semysiuk\BlogModule\Api\Data\CommentInterface */
+$comments = $block->getCommentsByPost()->getItems();
+?>
+
+<hr/>
+<div class="comments">
+    <?php if (!count($comments)): ?>
+        <h1>NO COMMENTS YET...</h1>
+    <?php else : ?>
+        <div class="blog-post-comments-list">
+            <?php /** @var $comment \Semysiuk\BlogModule\Model\Comment */ ?>
+            <?php foreach ($comments as $comment) : ?>
+                <div class="blog-post-comment-list-item">
+                    <div>
+                        <div>
+                            <div>
+                                <span style="font-size:15px; font-weight:bold;">
+                                    <?php echo $comment->getFullName(); ?>
+                                </span>
+                                <span style="float:right; margin-right:500px;vertical-align:center;">
+                                    <?php echo $comment->getDate(); ?>
+                                </span>
+                            </div>
+                        <div class="post-comment-title" style="clear:both;">
+                            <h2 class="blog-post-comment-item-title">
+                                <?php echo $comment->getComment(); ?>
+                            </h2>
+                        </div>
+                    </div>
+                    <?php if ($comment->getAnswer()) : ?>
+                    <div class="post-comment-answer" style="margin-left:50px;margin-top:20px;"">
+                        <h2>Answer:
+                            <?php echo $comment->getAnswer(); ?>
+                        </h2>
+                    </div>
+                    <div>
+                        <h2>Status:
+                            <?php echo $comment->getStatus(); ?>
+                        </h2>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            <hr/>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>

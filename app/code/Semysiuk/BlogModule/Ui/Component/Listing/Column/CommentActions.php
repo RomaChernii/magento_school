@@ -8,16 +8,16 @@ use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 
 /**
- * Class PostActions
+ * Class CommentActions
  *
- * @package Semysiuk\BlogModule\Ui\Component\Listing\Colum\PostActions
+ * @package Semysiuk\BlogModule\Ui\Component\Listing\Colum\CommentActions
  */
-class PostActions extends Column
+class CommentActions extends Column
 {
     /**
      * Url path
      */
-    const URL_PATH_EDIT = 'semysiuk_blogmodule/post/edit';
+    const URL_PATH_EDIT = 'semysiuk_blogmodule/comment/edit';
 
     /**
      * Url builder

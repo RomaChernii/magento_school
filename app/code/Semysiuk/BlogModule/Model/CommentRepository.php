@@ -12,7 +12,7 @@ use Semysiuk\BlogModule\Model\ResourceModel\Comment as ResourceComment;
 use Semysiuk\BlogModule\Model\ResourceModel\Comment\CollectionFactory as CommentCollectionFactory;
 
 /**
- * Class PostRepository
+ * Class CommentRepository
  *
  * @package Semysiuk\BlogModule\Model\CommentRepository
  *
@@ -28,28 +28,28 @@ class CommentRepository implements CommentRepositoryInterface
     private $resource;
 
     /**
-     * Post factory
+     * Comment factory
      *
      * @var CommentFactory
      */
     private $commentFactory;
 
     /**
-     * Post collection factory
+     * Comment collection factory
      *
      * @var \Semysiuk\BlogModule\Model\ResourceModel\Comment\CollectionFactory
      */
     private $commentCollectionFactory;
 
     /**
-     * Post search results interface factory
+     * Comment search results interface factory
      *
      * @var CommentSearchResultsInterfaceFactory
      */
     private $searchResultsFactory;
 
     /**
-     * PostRepository constructor
+     * CommentRepository constructor
      *
      * @param ResourceComment                           $resource
      * @param CommentFactory                            $commentFactory
@@ -99,13 +99,14 @@ class CommentRepository implements CommentRepositoryInterface
      */
     public function getById($commentId)
     {
-        $comment = $this->postFactory->create();
+        $comment = $this->commentFactory->create();
         $this->resource->load($comment, $commentId);
+
         if (!$comment->getId()) {
             throw new NoSuchEntityException(__('Comment with id "%1" does not exist.', $commentId));
         }
 
-        return $commentId;
+        return $comment;
     }
 
     /**
@@ -176,5 +177,19 @@ class CommentRepository implements CommentRepositoryInterface
     public function deleteById($commentId)
     {
         return $this->delete($this->getById($commentId));
+    }
+
+    /**
+     * Get comments by post id
+     *
+     * @param int $postId
+     *
+     * @return ResourceComment\Collection
+     */
+    public function getCommentsByPostId($postId)
+    {
+        $comments = $this->commentCollectionFactory->create();
+        
+        return $comments->addFilter("post_id", $postId);
     }
 }
