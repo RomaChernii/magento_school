@@ -87,7 +87,7 @@ class Save extends Action
                     $model = $this->commentRepository->getById($id);
                 }
                 $model->setData($data);
-                if ($model['answer'] != null) {
+                if ($model['answer']) {
                     $model->setStatus(Comment::STATUS_CLOSED);
                 }
                 $this->commentRepository->save($model);
