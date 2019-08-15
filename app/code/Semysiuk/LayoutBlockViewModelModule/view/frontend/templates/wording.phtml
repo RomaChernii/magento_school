@@ -2,3 +2,30 @@
     <h1 style="text-align: center; font-weight: bold; font-size: 50px;"><?php echo $block->getText(); ?></h1>
     <a class="data-link" href="<?php echo $block->getUrlLink(); ?>" style="text-decoration: none; font-size: 30px; font-weight: bold; color:darkred" title="Checkout/Cart/Index">CHECKOUT</a>
 </div>
+
+<!-- Redirect to 'roche_test/index/index' -->
+<button class="action accept"
+        id="redirect-accept"
+        data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect?'); ?>"
+        data-url="<?php /* @escapeNotVerified */ echo $block->getPageUrl(); ?>"
+        data-mage-init='{"buttonAlertSem": {"title": "<?= __('Title to redirect'); ?>"}}'>
+    <?php /* @escapeNotVerified */ echo __('Go to another page'); ?>
+</button>
+
+<!-- Redirect to 'checkout/cart' -->
+<button class="action accept"
+        id="redirect-accept"
+        data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect to cart?'); ?>"
+        data-url="<?php /* @escapeNotVerified */ echo $block->getCartUrl(); ?>"
+        data-mage-init='{"buttonAlertSem": {}}'>
+    <?php /* @escapeNotVerified */ echo __('Go to cat page'); ?>
+</button>
+
+<!-- Redirect to home page -->
+<button class="action accept"
+        id="redirect-accept"
+        data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect to home page?'); ?>"
+        data-url="<?php /* @escapeNotVerified */ echo $block->getHomeUrl(); ?>"
+        data-mage-init='{"buttonAlertSem": {}}'>
+    <?php /* @escapeNotVerified */ echo __('Go to home page'); ?>
+</button>

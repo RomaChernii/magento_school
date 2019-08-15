@@ -13,7 +13,7 @@ use Semysiuk\BlogModule\Api\Data\CommentInterface;
 interface CommentRepositoryInterface
 {
     /**
-     * Retrieve a post by it's id
+     * Retrieve a comment by it's id
      *
      * @param $objectId
      *
@@ -31,7 +31,7 @@ interface CommentRepositoryInterface
     public function getList(SearchCriteriaInterface $searchCriteria = null);
 
     /**
-     * Save post
+     * Save comment
      *
      * @param \Semysiuk\BlogModule\Api\Data\CommentInterface $object
      *
@@ -48,5 +48,14 @@ interface CommentRepositoryInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function deleteById($objectId);
+
+    /**
+     * Get comments by post id
+     *
+     * @param int $postId
+     *
+     * @return Collection
+     */
+    public function getCommentsByPostId($postId);
 }
 

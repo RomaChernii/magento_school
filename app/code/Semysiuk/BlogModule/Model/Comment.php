@@ -85,6 +85,13 @@ class Comment extends AbstractModel implements IdentityInterface, CommentInterfa
         return $this->getData(self::LAST_NAME);
     }
 
+    public function getFullName()
+    {
+        $fullName = $this->getFirstName() . " " . $this->getLastName();
+
+        return $fullName;
+    }
+
     /**
      * Get email
      *
@@ -122,7 +129,7 @@ class Comment extends AbstractModel implements IdentityInterface, CommentInterfa
      */
     public function getStatus()
     {
-        return $this->getData(self::POST_ID);
+        return $this->getData(self::STATUS);
     }
 
     /**
@@ -142,7 +149,7 @@ class Comment extends AbstractModel implements IdentityInterface, CommentInterfa
      */
     public function getPostId()
     {
-        return $this->getData(self::LAST_NAME);
+        return $this->getData(self::POST_ID);
     }
 
     /**

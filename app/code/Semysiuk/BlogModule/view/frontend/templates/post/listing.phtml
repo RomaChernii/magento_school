@@ -1,14 +1,14 @@
 <?php
-
+/** @var $block \Semysiuk\BlogModule\Block\Post\listing */
+/** @var $posts \Semysiuk\BlogModule\Api\Data\PostInterface */
+    $posts = $block->getPosts()->getItems();
 ?>
-<?php $postViewModel = $block->getData('post'); ?>
-<?php $posts = $block->getPosts()->getItems(); ?>
-<h1><?php echo __('Blog Posts'); ?></h1>
+
 <?php if (count($posts)): ?>
-    <div class="blog-post-list">
+    <div class="blog-post-list" style="display:flex;flex-flow:row wrap;">
         <?php /** @var $post \Semysiuk\BlogModule\Model\Post */ ?>
         <?php foreach ($posts as $post) : ?>
-            <div class="blog-post-list-item">
+            <div class="blog-post-list-item" style="border:2px solid grey;margin:10px 10px 10px 10px;position:relative;">
                 <div class="post-title">
                     <h3 class="blog-post-item-title">
                         <a href="<?php echo $block->getPostUrl($post); ?>"><?php echo $post->getTitle(); ?></a>
@@ -21,18 +21,26 @@
                     <div class="blog-post-item-discription">
                         <?php echo $post->getDescription(); ?>
                     </div>
-
-                    <div class="blog-post-item-meta">
+                    <div>
+                        <p>
+                            <?php echo $post->getContent(); ?>
+                        </p>
+                    </div>
+                </div>
+                <div class="blog-post-item-meta">
+                    <div>
                         <strong><?php echo __('Created at:') ?></strong> <?php echo $post->getCreatedAt(); ?>
+                    </div>
+                    <div>
                         <strong><?php echo __('Update at:') ?></strong> <?php echo $post->getUpdateAt(); ?>
                     </div>
                 </div>
             </div>
         <?php endforeach; ?>
-        <?php if ($block->getPagerHtml()) : ?>
-            <div class="blog-post-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
-        <?php endif; ?>
     </div>
+    <?php if ($block->getPagerHtml()) : ?>
+        <div class="blog-post-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+    <?php endif; ?>
 <?php else : ?>
     <div class="message info empty"><span><?php /* @escapeNotVerified */ echo __('Blog haven\'t posts.'); ?></span></div>
 <?php endif; ?>
