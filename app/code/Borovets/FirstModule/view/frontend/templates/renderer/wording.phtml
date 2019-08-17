@@ -1,3 +1,21 @@
 <?php $configData = $this->helper('Borovets\Configuration_Borovets\Helper\Data'); ?>
 <h1><?php echo $block->getText(); ?></h1>
 <h1><?php echo $configData->getInputFieldValue(); ?></h1>
+
+<!-- Redirect to blog -->
+<button class="action"
+        id="redirect"
+        data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you want to go to the blog?'); ?>"
+        data-url="<?php /* @escapeNotVerified */ echo $block->getBlogUrl(); ?>"
+        data-mage-init='{"buttonAlert": {"title": "<?= __('Redirect to blog'); ?>"}}'>
+    <?php /* @escapeNotVerified */ echo __('Go to blog'); ?>
+</button>
+
+<!-- Redirect to home page -->
+<button class="action"
+        id="redirect"
+        data-content="<?php /* @escapeNotVerified */ echo __('Are you sure you agree to redirect to home page?'); ?>"
+        data-url="<?php /* @escapeNotVerified */ echo $block->getHomeUrl(); ?>"
+        data-mage-init='{"buttonAlert": {}}'>
+    <?php /* @escapeNotVerified */ echo __('Go to home page'); ?>
+</button>
