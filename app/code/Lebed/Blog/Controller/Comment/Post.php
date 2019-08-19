@@ -96,7 +96,7 @@ class Post extends Action
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
         if (!$this->formKeyValidator->validate($this->getRequest())) {
             $resultRedirect->setUrl($this->_redirect->getRefererUrl());
-            echo $this->_redirect->getRefererUrl();
+
             return $resultRedirect;
         }
 
@@ -116,13 +116,10 @@ class Post extends Action
                 } catch (CouldNotSaveException $exception) {
                     $this->messageManager->addErrorMessage(__('We can\'t save your comment right now.'));
                 }
-            } else {
-                if (is_array($validate)) {
-                    foreach ($validate as $errorMessage) {
-                        $this->messageManager->addErrorMessage($errorMessage);
-                    }
-                } else {
-                    $this->messageManager->addErrorMessage(__('We can\'t save your comment right now.'));
+            }
+            if (is_array($validate)) {
+                foreach ($validate as $errorMessage) {
+                    $this->messageManager->addErrorMessage($errorMessage);
                 }
             }
         }
@@ -139,12 +136,7 @@ class Post extends Action
      * @return bool|\Lebed\Blog\Model\Post
      */
     public function getPostById($postId) {
-        if ($this->post === null) {
-
-            if (!$postId) {
-                return false;
-            }
-
+        if ($this->post === null && $postId) {
             try {
                 $this->post = $this->postRepository->getById($postId);
             } catch (NoSuchEntityException $e) {
