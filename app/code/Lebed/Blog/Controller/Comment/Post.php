@@ -94,36 +94,31 @@ class Post extends Action
     {
         /** @var \Magento\Framework\Controller\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
-        if (!$this->formKeyValidator->validate($this->getRequest())) {
-            $resultRedirect->setUrl($this->_redirect->getRefererUrl());
 
-            return $resultRedirect;
-        }
+        if ($this->formKeyValidator->validate($this->getRequest())) {
+            $postId = $this->getRequest()->getParam('post_id');
+            $data = $this->getRequest()->getPostValue();
 
-        $postId = $this->getRequest()->getParam('post_id');
-        $data = $this->getRequest()->getPostValue();
-
-        if ($this->getPostById($postId) && !empty($data)) {
-            /** @var \Lebed\Blog\Model\Comment $comment */
-            $comment = $this->commentFactory->create();
-            $comment->setData($data);
-            $comment->setPostId($postId);
-            $validate = $comment->validate();
-            if ($validate === true) {
-                try {
-                    $this->commentRepository->save($comment);
-                    $this->messageManager->addSuccessMessage(__('Your comment has been saved'));
-                } catch (CouldNotSaveException $exception) {
-                    $this->messageManager->addErrorMessage(__('We can\'t save your comment right now.'));
+            if ($this->getPostById($postId) && !empty($data)) {
+                /** @var \Lebed\Blog\Model\Comment $comment */
+                $comment = $this->commentFactory->create();
+                $comment->setData($data);
+                $comment->setPostId($postId);
+                $validationErrors = $comment->getValidationErrors();
+                if (empty($validationErrors)) {
+                    try {
+                        $this->commentRepository->save($comment);
+                        $this->messageManager->addSuccessMessage(__('Your comment has been saved'));
+                    } catch (CouldNotSaveException $exception) {
+                        $this->messageManager->addErrorMessage(__('We can\'t save your comment right now.'));
+                    }
                 }
-            }
-            if (is_array($validate)) {
-                foreach ($validate as $errorMessage) {
+                foreach ($validationErrors as $errorMessage) {
                     $this->messageManager->addErrorMessage($errorMessage);
                 }
             }
         }
-        $resultRedirect->setUrl($this->_redirect->getRedirectUrl());
+        $resultRedirect->setUrl($this->_redirect->getRefererUrl());
 
         return $resultRedirect;
     }

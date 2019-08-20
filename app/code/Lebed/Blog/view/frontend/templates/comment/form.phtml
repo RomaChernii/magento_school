@@ -8,13 +8,13 @@
  * @copyright 2019 Smile
  */
 /** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Lebed\Blog\ViewModel\Comment\FormUrlViewModel $formUrlViewModel */
+$formUrlViewModel = $block->getFormUrlViewModle();
+$actionUrl = $formUrlViewModel->getActionUrl();
 ?>
 <div class="comment-form-wrap">
     <form method="post" class="form" data-mage-init='{"validation":{}}'
-          action="<?= $block->escapeUrl($block->getUrl(
-              'lebed_blog/comment/post',
-              ['post_id' => $block->getRequest()->getParam('id')]
-          )) ?>">
+          action="<?= $block->escapeUrl($actionUrl) ?>">
         <?= $block->getBlockHtml('formkey') ?>
         <fieldset class="fieldset">
             <legend class="legend"><span><?= $block->escapeHtml(__("Comment Post:")) ?></span></legend>

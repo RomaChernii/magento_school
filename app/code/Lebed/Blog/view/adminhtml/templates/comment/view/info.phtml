@@ -14,6 +14,7 @@ $commentViewModel = $block->getCustomerInfoViewModel();
 $comment = $commentViewModel->getComment();
 $postId = $comment->getPostId();
 $post = $commentViewModel->getPostById($postId);
+$postUrl = $commentViewModel->getPostUrl($postId);
 ?>
 <div class="row">
     <div class="fieldset-wrapper comment-information col-l-6 col-l-offset-3">
@@ -28,9 +29,11 @@ $post = $commentViewModel->getPostById($postId);
                 </tr>
                 <tr>
                     <th><?= $block->escapeHtml(__('Post (id %1):', $postId)) ?></th>
-                    <td><a href="<?= $block->escapeUrl(
-                        $block->getUrl('lebed_blog/post/edit', ['id' => $postId])
-                        ) ?>" target="_blank"><?= $block->escapeHtml($post->getTitle()) ?></a></td>
+                    <td>
+                        <a href="<?= $block->escapeUrl($postUrl) ?>" target="_blank">
+                            <?= $block->escapeHtml($post->getTitle()) ?>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <th><?= $block->escapeHtml(__('First name:')) ?></th>

@@ -283,12 +283,12 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
     }
 
     /**
-     * Validate Comment
+     * Get Validation Errors Comment
      *
      * @return array|bool
      * @throws \Zend_Validate_Exception
      */
-    public function validate()
+    public function getValidationErrors()
     {
         $errors = [];
 
@@ -310,10 +310,6 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
 
         if (!\Zend_Validate::is($this->getComment(), 'NotEmpty')) {
             $errors[] = __('Please enter a comment');
-        }
-
-        if (empty($errors)) {
-            return true;
         }
 
         return $errors;
