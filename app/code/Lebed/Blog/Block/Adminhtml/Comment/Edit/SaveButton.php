@@ -1,20 +1,20 @@
 <?php
 /**
- * Lebed Blog Post SaveButton
+ * Lebed Blog Comment SaveButton
  *
  * @category  Lebed
  * @package   Lebed\Blog
  * @author    Tetiana Lebed <teleb@smile.fr>
  * @copyright 2019 Smile
  */
-namespace Lebed\Blog\Block\Adminhtml\Post\Edit;
+namespace Lebed\Blog\Block\Adminhtml\Comment\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
 /**
  * Class SaveButton
  *
- * @package Lebed\Blog\Block\Adminhtml\Post\Edit
+ * @package Lebed\Blog\Block\Adminhtml\Comment\Edit
  */
 class SaveButton implements ButtonProviderInterface
 {
@@ -26,7 +26,7 @@ class SaveButton implements ButtonProviderInterface
     public function getButtonData()
     {
         return [
-            'label' => __('Quick Post'),
+            'label' => __('Save'),
             'class' => 'save primary',
             'data_attribute' => [
                 'mage-init' => ['button' => ['event' => 'save']],

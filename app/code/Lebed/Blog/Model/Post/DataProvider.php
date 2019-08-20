@@ -1,6 +1,6 @@
 <?php
 /**
- * Lebed Blog DataProvider
+ * Lebed Blog Post DataProvider
  *
  * @category  Lebed
  * @package   Lebed\Blog

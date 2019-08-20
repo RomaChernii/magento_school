@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Roche Blog event config
+ *
+ * @category  Roche
+ * @package   Roche\Blog
+ * @author    Roman Chernii <roche@smile.fr>
+ * @copyright 2019 Smile
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="roche_blog_post_save_before">
+        <observer name="roche_before_save_post" instance="Roche\Blog\Observer\BeforeSavePost" />
+    </event>
+</config>
