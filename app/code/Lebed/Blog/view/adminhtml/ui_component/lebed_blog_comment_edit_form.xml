@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed Blog comment edit form
+ *
+ * @category  Lebed
+ * @package   Lebed\Blog
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">lebed_blog_comment_edit_form.lebed_blog_comment_edit_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Comment Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Lebed\Blog\Block\Adminhtml\Comment\Edit\SaveButton"/>
+            <button name="delete" class="Lebed\Blog\Block\Adminhtml\Comment\Edit\DeleteButton"/>
+            <button name="back" class="Lebed\Blog\Block\Adminhtml\Comment\Edit\BackButton"/>
+            <button name="go_to_post" class="Lebed\Blog\Block\Adminhtml\Comment\Edit\GoToPostButton"/>
+            <button name="answer" class="Lebed\Blog\Block\Adminhtml\Comment\Edit\AnswerButton"/>
+        </buttons>
+        <namespace>lebed_blog_comment_edit_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>lebed_blog_comment_edit_form.lebed_blog_comment_edit_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="lebed_blog_comment_edit_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="lebed_blog/comment/save"/>
+        </settings>
+        <dataProvider class="Lebed\Blog\Model\Comment\DataProvider" name="lebed_blog_comment_edit_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="post_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">comment</item>
+                    <item name="sortOrder" xsi:type="string">10</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Post ID</item>
+                    <item name="dataScope" xsi:type="string">post_id</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="first_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">comment</item>
+                    <item name="sortOrder" xsi:type="string">20</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">First Name</item>
+                    <item name="dataScope" xsi:type="string">first_name</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="last_name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">comment</item>
+                    <item name="sortOrder" xsi:type="string">30</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Last Name</item>
+                    <item name="dataScope" xsi:type="string">last_name</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="email">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">comment</item>
+                    <item name="sortOrder" xsi:type="string">40</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">E-mail</item>
+                    <item name="dataScope" xsi:type="string">email</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="validate-email" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="comment">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">comment</item>
+                    <item name="sortOrder" xsi:type="string">50</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="dataType" xsi:type="string">textarea</item>
+                    <item name="label" xsi:type="string" translate="true">Comment</item>
+                    <item name="dataScope" xsi:type="string">comment</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="created_at">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">comment</item>
+                    <item name="sortOrder" xsi:type="string">60</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Commented at</item>
+                    <item name="dataScope" xsi:type="string">created_at</item>
+                    <item name="disabled" xsi:type="boolean">true</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">comment</item>
+                    <item name="sortOrder" xsi:type="string">70</item>
+                    <item name="dataType" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="dataScope" xsi:type="string">status</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                </item>
+                <item name="options" xsi:type="object">Lebed\Blog\Model\Comment\Source\Status</item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

@@ -13,6 +13,12 @@
     <body>
         <referenceContainer name="content">
             <block class="Lebed\Blog\Block\Post\View" name="post_view" template="Lebed_Blog::post/view.phtml"/>
+            <block class="Lebed\Blog\Block\Comment\Listing" name="post_comments_list" template="Lebed_Blog::comment/list.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="post.comment.form" template="Lebed_Blog::comment/form.phtml" after="post_comments_list">
+                <arguments>
+                    <argument name="form_url_view_modle" xsi:type="object">Lebed\Blog\ViewModel\Comment\FormUrlViewModel</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
