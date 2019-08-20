@@ -1,6 +1,6 @@
 <?php
 /**
- * Lebed Blog Save
+ * Lebed Blog Post Save
  *
  * @category  Lebed
  * @package   Lebed\Blog

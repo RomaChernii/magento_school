@@ -1,0 +1,37 @@
+<?php
+/**
+ * Lebed blog comment list template
+ *
+ * @category  Lebed
+ * @package   Lebed\Blog
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+/** @var \Lebed\Blog\Block\Comment\Listing $block */
+$comments = $block->getComments()->getItems();
+?>
+<h2><?= __('Comments') ?></h2>
+<?php if (count($comments)): ?>
+    <div>
+        <?php /** @var \Lebed\Blog\Model\Comment $comment */ ?>
+        <?php foreach ($comments as $comment): ?>
+            <div>
+                <p>
+                    <?= $block->escapeHtml($comment->getFirstName()) ?>
+                    <?= $block->escapeHtml($comment->getLastName()) ?>
+                </p>
+                <p><?= $block->escapeHtml($comment->getCreatedAt()) ?></p>
+                <p><?= $block->escapeHtml($comment->getComment()) ?></p>
+                <?php if ($comment->hasAnswer()): ?>
+                    <p><b><?= __('Answer:') ?></b> <?= $block->escapeHtml($comment->getAnswer()) ?></p>
+                <?php endif; ?>
+            </div>
+            <hr />
+        <?php endforeach; ?>
+        <?php if ($block->getPagerHtml()) : ?>
+            <div class="blog-post-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+        <?php endif; ?>
+    </div>
+<?php else : ?>
+    <div class="message info"><span><?php /* @escapeNotVerified */ echo __('Be the first to leave a comment.'); ?></span></div>
+<?php endif; ?>

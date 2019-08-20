@@ -22,10 +22,14 @@ use Magento\Ui\Component\Listing\Columns\Column;
 class CommentActions extends Column
 {
     /**
-     * Url path
+     * #@+
+     * Config comment actions url path const
      */
     const URL_PATH_EDIT = 'lebed_blog/comment/edit';
+    const URL_PATH_ANSWER = 'lebed_blog/comment/answer';
     const URL_PATH_DELETE = 'lebed_blog/comment/delete';
+    const BLOG_URL_PATH_EDIT = 'lebed_blog/post/edit';
+    /**#@-*/
 
     /**
      * Url builder
@@ -81,6 +85,38 @@ class CommentActions extends Column
                             ),
                             'label' => __('Edit'),
                         ],
+                        'answer'     => [
+                            'href'  => $this->urlBuilder->getUrl(
+                                static::URL_PATH_ANSWER,
+                                [
+                                    'id' => $item['id'],
+                                ]
+                            ),
+                            'label' => __('Answer'),
+                        ],
+                        'go_to_post' => [
+                            'href'   => $this->urlBuilder->getUrl(
+                                static::BLOG_URL_PATH_EDIT,
+                                [
+                                    'id' => $item['post_id'],
+                                ]
+                            ),
+                            'label'  => __('Go to Post %1', $item['post_id']),
+                            'target' => '_blank',
+                        ],
+                        'delete' => [
+                            'href'  => $this->urlBuilder->getUrl(
+                                static::URL_PATH_DELETE,
+                                [
+                                    'id' => $item['id'],
+                                ]
+                            ),
+                            'label' => __('Delete'),
+                            'confirm' => [
+                                'title' => __('Delete comment id %1', $item['post_id']),
+                                'message' => __('Are you sure you want to delete a comment id %1 ?', $item['post_id'])
+                            ]
+                        ]
                     ];
                 }
             }

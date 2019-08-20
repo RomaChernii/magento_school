@@ -15,7 +15,7 @@ use Lebed\Blog\Model\Comment;
 /**
  * Class Status
  *
- * @package Lebed\Blog\Model\Comment\Source\Status
+ * @package Lebed\Blog\Model\Comment\Source
  */
 class Status implements OptionSourceInterface
 {
