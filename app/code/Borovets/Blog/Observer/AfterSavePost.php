@@ -34,7 +34,7 @@ class AfterSavePost implements ObserverInterface
      */
     public function execute(Observer $observer)
     {
-        $id = $observer->getEvent()['id'];
+        $id = $observer->getEvent()->getId();
         $this->messageManager->addSuccessMessage(__('You save the post with ID ' . $id));
     }
 }
