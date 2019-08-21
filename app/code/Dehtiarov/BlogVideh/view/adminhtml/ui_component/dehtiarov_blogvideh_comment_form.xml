@@ -20,7 +20,6 @@
     <settings>
         <buttons>
             <button name="save" class="Dehtiarov\BlogVideh\Block\Adminhtml\Comment\Edit\SaveButton"/>
-            <!--<button name="delete" class="Dehtiarov\BlogVideh\Block\Adminhtml\Comment\Edit\DeleteButton"/>-->
             <button name="back" class="Dehtiarov\BlogVideh\Block\Adminhtml\Comment\Edit\BackButton"/>
         </buttons>
         <namespace>dehtiarov_blogvideh_comment_form</namespace>
@@ -58,7 +57,7 @@
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">First name</item>
                     <item name="dataScope" xsi:type="string">first_name</item>
-                    <item name="disabled" xsi:type="boolean">true</item>
+                    <!--<item name="disabled" xsi:type="boolean">true</item>-->
                 </item>
             </argument>
         </field>

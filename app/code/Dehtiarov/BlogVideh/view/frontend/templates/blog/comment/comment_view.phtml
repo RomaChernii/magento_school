@@ -1,0 +1,25 @@
+<?php
+$comments = $block->getComments()->getData();
+?>
+<h2><?= $block->escapeHtmlAttr(__('Comments')) ?></h2>
+
+<?php if ($comments) : ?>
+<div class="comment-box">
+    <?php foreach ($comments as $comment) : ?>
+        <div class="comment-info">
+            <p class="create"><?= $comment['created_at']; ?></p>
+            <p><?= $comment['first_name']; ?> <?= $comment['last_name']; ?></p>
+        </div>
+        <div class="comment">
+            <?= $comment['comment']; ?>
+            <?php if ($comment['answer']) : ?>
+            <div class="answer">
+                <?= $comment['answer']; ?>
+            </div>
+            <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<?php endif; ?>
+
