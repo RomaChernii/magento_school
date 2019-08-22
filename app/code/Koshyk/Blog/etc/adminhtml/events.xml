@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Koshyk Blog event config
+ *
+ * @category  Koshyk
+ * @package   Koshyk\Blog
+ * @author    Roman Koshyk <romadaaaa@gmail.com>
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="koshyk_blog_post_save_before">
+        <observer name="koshyk_before_save_post" instance="Koshyk\Blog\Observer\BeforeSavePost" />
+    </event>
+    <event name="koshyk_blog_post_save_after">
+        <observer name="koshyk_after_save_post" instance="Koshyk\Blog\Observer\AfterSavePost" />
+    </event>
+</config>
