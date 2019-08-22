@@ -101,8 +101,19 @@ class Save extends Action
                 }
 
                 $model->setData($data);
+
+                $this->_eventManager->dispatch(
+                    'borovets_blog_post_before_save',
+                    ['post' => $model]
+                );
+
                 $this->postRepository->save($model);
-                $this->messageManager->addSuccessMessage(__('You the post save.'));
+
+                $this->_eventManager->dispatch(
+                    'borovets_blog_post_after_save',
+                    ['id' => $model->getId()]
+                );
+
                 $this->dataPersistor->clear('borovets_blog_post');
 
                 if ($this->getRequest()->getParam('back')) {
