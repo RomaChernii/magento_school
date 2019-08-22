@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Skavronskiy Blog event config
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="skavronskiy_blog_post_save_before">
+        <observer name="skavronskiy_before_save_post" instance="Skavronskiy\Blog\Observer\BeforeSavePost" />
+    </event>
+    <event name="skavronskiy_blog_post_save_after">
+        <observer name="skavronskiy_after_save_post" instance="Skavronskiy\Blog\Observer\AfterSavePost" />
+    </event>
+</config>

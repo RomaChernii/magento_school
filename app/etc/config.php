@@ -180,7 +180,6 @@ return array (
     'Semysiuk_LayoutBlockViewModelModule' => 1,
     'Shopial_Facebook' => 1,
     'Skavronskiy_Blog' => 1,
-    'Skavronskiy_Customer' => 1,
     'Skavronskiy_FirstModule' => 1,
     'Skavronskiy_FirstModule_HW' => 1,
     'Skavronskiy_SamConfiguration' => 1,
