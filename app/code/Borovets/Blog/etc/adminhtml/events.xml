@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Borovets Blog event config
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="borovets_blog_post_before_save">
+        <observer name="borovets_blog_before_save_post" instance="Borovets\Blog\Observer\BeforeSavePost" />
+    </event>
+    <event name="borovets_blog_post_after_save">
+        <observer name="borovets_blog_after_save_post" instance="Borovets\Blog\Observer\AfterSavePost" />
+    </event>
+</config>
