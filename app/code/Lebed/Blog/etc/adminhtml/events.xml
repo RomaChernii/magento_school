@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Lebed Blog event config
+ *
+ * @category  Lebed
+ * @package   Lebed\Blog
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="lebed_blog_post_save_before">
+        <observer name="lebed_before_save_post" instance="Lebed\Blog\Observer\BeforeSavePost" />
+    </event>
+    <event name="lebed_blog_post_success_save">
+        <observer name="lebed_after_save_post" instance="Lebed\Blog\Observer\AfterSavePost" />
+    </event>
+</config>
