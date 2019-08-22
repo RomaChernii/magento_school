@@ -100,7 +100,9 @@ class Save extends Action
                 } else {
                     $model = $this->postRepository->getById($id);
                 }
-
+                
+                $model->setData($data);
+                
                 $this->_eventManager->dispatch(
                     'skavronskiy_blog_post_save_before',
                     ['post' => $model]
