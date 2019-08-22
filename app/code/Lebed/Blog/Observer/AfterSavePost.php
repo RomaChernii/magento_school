@@ -23,16 +23,28 @@ class AfterSavePost implements ObserverInterface
     /**
      * Message Manager
      *
-     * @var \Magento\Framework\Message\ManagerInterface
+     * @var ManagerInterface
      */
     protected $messageManager;
 
+    /**
+     * AfterSavePost constructor.
+     *
+     * @param ManagerInterface $messageManager
+     */
     public function __construct(
         ManagerInterface $messageManager
     ) {
         $this->messageManager = $messageManager;
     }
 
+    /**
+     * Observer execute
+     *
+     * event: lebed_blog_post_success_save
+     *
+     * @param Observer $observer
+     */
     public function execute(Observer $observer)
     {
         $data = $observer->getEvent()->getPost();
