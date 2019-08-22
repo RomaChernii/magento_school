@@ -99,8 +99,19 @@ class Save extends Action
                 }
 
                 $model->setData($data);
+
+                $this->_eventManager->dispatch(
+                    'semysiuk_blog_post_before_save',
+                    ['post' => $model]
+                );
+
                 $this->postRepository->save($model);
-                $this->messageManager->addSuccessMessage(__('Post successfully saved.'));
+
+                $this->_eventManager->dispatch(
+                    "semysiuk_blog_post_after_save",
+                    ['post_id' => $model->getId()]
+                );
+
                 $this->dataPersistor->clear('semysiuk_blogmodule_post');
 
                 if ($this->getRequest()->getParam('back')) {
