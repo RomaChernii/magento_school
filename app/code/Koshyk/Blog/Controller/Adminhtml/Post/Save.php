@@ -105,8 +105,18 @@ class Save extends Action
                 }
 
                 $model->setData($data);
+
+                $this->_eventManager->dispatch(
+                    'koshyk_blog_post_save_before',
+                    ['post' => $model]
+                );
+
                 $this->postRepository->save($model);
-                $this->messageManager->addSuccessMessage(__('You the post save.'));
+
+                $this->_eventManager->dispatch(
+                    'koshyk_blog_post_save_after'
+                );
+
                 $this->dataPersistor->clear('koshyk_blog_post');
 
                 if ($this->getRequest()->getParam('back')) {
